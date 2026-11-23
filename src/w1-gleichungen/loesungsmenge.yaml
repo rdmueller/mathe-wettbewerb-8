@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Lösungsmenge und Grundmenge
+description: "Die Lösungsmenge aufzählend angeben, die Grundmenge ℤ beachten, die leere Menge erkennen und die Probe machen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann die Lösungsmenge aufzählend angeben, die Grundmenge ℤ beachten und die Probe machen. Du
+      löst dafür [Gleichungen](/w1-gleichungen/gleichungen/) und [Ungleichungen](/w1-gleichungen/ungleichungen/)
+      wie bisher und prüfst danach, welche Lösungen erlaubt sind.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: loesungsmenge-start
+        text: "Die ganzen Zahlen sind …, −2, −1, 0, 1, 2, … – ohne Kommazahlen dazwischen. Die Gleichung 2x = 5 hat die Lösung x = 2,5. Ist 2,5 eine ganze Zahl?"
+        options:
+          - text: Nein, 2,5 liegt zwischen den ganzen Zahlen 2 und 3.
+            correct: true
+            info: "2,5 liegt genau in der Mitte zwischen 2 und 3."
+          - text: Ja, weil 2 und 5 ganze Zahlen sind.
+            correct: false
+            info: "Die Lösung selbst ist 2,5, nicht 2 oder 5."
+          - text: Ja, weil 2,5 positiv ist.
+            correct: false
+            info: "Auch 0,1 ist positiv und keine ganze Zahl."
+        hint: Liegt 2,5 in der Liste …, −1, 0, 1, 2, 3, …?
+        explanation: "Sind nur ganze Zahlen erlaubt, hat 2x = 5 keine Lösung."
+        links:
+          - title: Lösungsmenge einer Gleichung (Serlo)
+            url: https://de.serlo.org/mathe/154971/loesungsmenge-einer-gleichung
+  - type: section
+    id: regel
+    title: Welche Lösungen erlaubt sind
+    blocks:
+      - type: text
+        text: |
+          Die **Grundmenge** G sagt, welche Zahlen du einsetzen darfst. Im Wettbewerb ist sie oft $G = ℤ$, die
+          ganzen Zahlen. Die **Lösungsmenge** L enthält alle Zahlen aus der Grundmenge, die die Gleichung oder
+          Ungleichung erfüllen. Du schreibst sie in geschweifte Klammern und trennst die Zahlen mit Semikolon, zum
+          Beispiel $L = \{4; 5\}$.
+      - type: text
+        text: |
+          Liegt keine Lösung in der Grundmenge, ist die Lösungsmenge leer: $L = \{\,\}$, die **leere Menge**. So ist
+          es oben bei $2x = 5$ mit der Grundmenge ℤ.
+      - type: text
+        text: |
+          Bei einer Ungleichung zählst du alle ganzen Zahlen im Bereich auf. Für $-3 < x \le 2{,}5$ gehört −3 nicht
+          dazu (Zeichen $<$), und 2,5 ist keine ganze Zahl – die größte ist 2.
+      - type: figure
+        image: images/w1-zahlenstrahl-menge.svg
+        alt: Ein Zahlenstrahl von −4 bis 4. Bei −3 ein leerer Kreis, bei 2,5 ein Strich. Dazwischen sind die ganzen Zahlen −2 bis 2 orange markiert.
+        caption: "Der leere Kreis heißt: −3 gehört nicht dazu. Nur die orangen Punkte sind ganze Zahlen im Bereich."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'L = \{-2; -1; 0; 1; 2\}'
+      - type: text
+        text: Zum Schluss machst du die **Probe**. Setze jede Zahl aus L ein und prüfe, ob die Aussage stimmt.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Eine Lösung fällt heraus
+        blocks:
+          - type: text
+            text: |
+              Gib die Lösungsmenge von $(x - 4) \cdot (2x + 3) = 0$ an, Grundmenge $G = ℤ$. Der Haken: Es gibt zwei
+              Lösungen, aber nur eine ist eine ganze Zahl.
+          - type: formula
+            formula: 'x - 4 = 0 \quad \Rightarrow \quad x = 4'
+          - type: formula
+            formula: '2x + 3 = 0 \quad \Rightarrow \quad x = -1{,}5'
+          - type: text
+            text: "Antwort – −1,5 liegt nicht in ℤ, also $L = \\{4\\}$. Probe: $0 \\cdot 11 = 0$."
+  - type: section
+    id: merke
+    title: Leer ist nicht null
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Prüfe jede Lösung: Liegt sie in der Grundmenge? Wenn keine übrig bleibt, schreibst du $L = \{\,\}$.
+              Schreib dann nicht $L = \{0\}$ – das hieße, dass 0 eine Lösung ist.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: loesungsmenge-leer
+        text: "Gib die Lösungsmenge von 4x + 2 = 4 an, Grundmenge G = ℤ."
+        options:
+          - text: "L = { }"
+            correct: true
+            info: "Die einzige Lösung 0,5 liegt nicht in ℤ."
+          - text: "L = {0,5}"
+            correct: false
+            info: "0,5 liegt nicht in der Grundmenge ℤ."
+          - text: "L = {0}"
+            correct: false
+            info: "Für x = 0 ist 4x + 2 = 2, nicht 4."
+          - text: "L = {2}"
+            correct: false
+            info: "4x = 2 heißt x = 2 : 4, nicht 4 : 2."
+        explanation: "4x = 2, also x = 0,5. 0,5 liegt nicht in ℤ, also L = { }."
+        links:
+          - title: Lösungsmenge einer Gleichung (Serlo)
+            url: https://de.serlo.org/mathe/154971/loesungsmenge-einer-gleichung
+      - type: multiple-choice
+        id: loesungsmenge-bereich
+        text: "Welche Zahlen gehören zur Lösungsmenge von −2 ≤ x < 3, Grundmenge G = ℤ? Wähle alle passenden."
+        options:
+          - text: "−2"
+            correct: true
+            info: "Das Zeichen ≤ schließt −2 ein."
+          - text: "0"
+            correct: true
+            info: "0 ist eine ganze Zahl zwischen −2 und 3."
+          - text: "2"
+            correct: true
+            info: "2 ist kleiner als 3."
+          - text: "3"
+            correct: false
+            info: "Das Zeichen < schließt 3 aus."
+          - text: "2,5"
+            correct: false
+            info: "2,5 liegt im Bereich, ist aber keine ganze Zahl."
+        explanation: "L = {−2; −1; 0; 1; 2}."
+        links:
+          - title: Lösungsmenge einer Gleichung (Serlo)
+            url: https://de.serlo.org/mathe/154971/loesungsmenge-einer-gleichung
+      - type: generated
+        id: loesungsmenge-anzahl
+        given:
+          m: { int: [1, 9] }
+          n: { int: [1, 9] }
+        task:
+          text: "Wie viele Zahlen enthält die Lösungsmenge von −{{m}} < x ≤ {{n}}, Grundmenge G = ℤ?"
+        answer: { value: "m + n", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "m + n + 1"
+            message: "Das Zeichen < schließt −{{m}} aus. Zähle −{{m}} nicht mit."
+          - value: "m + n - 1"
+            message: "Das Zeichen ≤ schließt {{n}} ein. Zähle {{n}} mit."
+        hint: Schreib die Zahlen auf. Gehören −{{m}} und {{n}} dazu?
+        steps:
+          - "−{{m}} gehört nicht dazu, {{n}} schon. Das sind {{answer}} Zahlen."
+      - type: generated
+        id: loesungsmenge-kleinste
+        given:
+          a: { oneOf: [2, 4, 5] }
+          b: { int: [1, 20] }
+          c: { int: [1, 20] }
+        where: ["decimals((b - c) / a) == 0", "b != c"]
+        task:
+          text: "Grundmenge G = ℤ. Welches ist die kleinste Zahl in der Lösungsmenge von {{b}} − {{a}}x < {{c}}?"
+        answer: { value: "(b - c) / a + 1", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "(b - c) / a"
+            message: "Die Grenze selbst gehört nicht dazu."
+          - value: "(c - b) / a + 1"
+            message: "Prüfe das Vorzeichen beim Teilen durch −{{a}}."
+          - value: "(b - c) / a - 1"
+            message: "Beim Teilen durch −{{a}} dreht sich das Zeichen."
+        hint: "Zieh {{b}} ab und teile durch −{{a}}. Was passiert mit dem Zeichen?"
+        steps:
+          - "Minus {{b}}, dann durch −{{a}} teilen und das Zeichen drehen: x > ({{b}} − {{c}}) : {{a}}."
+          - "Die Grenze gehört nicht dazu. Die kleinste Zahl in L ist {{answer}}."
+      - type: single-choice
+        id: loesungsmenge-wettbewerb
+        text: "Gib die Lösungsmenge in aufzählender Form an, Grundmenge G = ℤ: x ≥ −1 und 2 · (x + 3) > 5x − 6."
+        options:
+          - text: "L = {−1; 0; 1; 2; 3}"
+            correct: true
+            info: "x < 4 und x ≥ −1."
+          - text: "L = {−1; 0; 1; 2; 3; 4}"
+            correct: false
+            info: "Bei x < 4 gehört die 4 nicht dazu."
+          - text: "L = {4; 5; 6; …}"
+            correct: false
+            info: "Beim Teilen durch −3 dreht sich das Zeichen: x < 4, nicht x > 4."
+          - text: "L = {0; 1; 2; 3}"
+            correct: false
+            info: "x ≥ −1 schließt −1 ein."
+        explanation: "2x + 6 > 5x − 6, also −3x > −12 und x < 4. Zusammen mit x ≥ −1: L = {−1; 0; 1; 2; 3}. Probe mit 3: 12 > 9."
+        links:
+          - title: Lösungsmenge einer Gleichung (Serlo)
+            url: https://de.serlo.org/mathe/154971/loesungsmenge-einer-gleichung
+      - type: text
+        text: |
+          Damit hast du das Kapitel zur Wahlaufgabe W1 geschafft: Du löst Gleichungen und Ungleichungen und gibst die
+          Lösungsmenge richtig an. Im nächsten Kapitel geht es um die Wahlaufgabe W3: Prozent-Sachaufgaben mit
+          mehreren Schritten.

@@ -1,0 +1,216 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Ungleichungen lösen
+description: "Ungleichungen lösen wie Gleichungen – und das Zeichen drehen, wenn du mit einer negativen Zahl malnimmst oder durch sie teilst."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann eine Ungleichung lösen und weiß, wann sich das Zeichen dreht. Du rechnest fast genauso wie
+      bei den [Gleichungen](/w1-gleichungen/gleichungen/) – mit einer Ausnahme, die du gleich selbst entdeckst.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: ungleichungen-start
+        text: "Es gilt −2 < 3. Nimm beide Zahlen mal (−1): Aus −2 wird 2, aus 3 wird −3. Welches Zeichen gehört zwischen 2 und −3?"
+        material:
+          - type: figure
+            image: images/w1-zahlenstrahl-start.svg
+            alt: Ein Zahlenstrahl von −4 bis 4. Die Zahlen −2 und 3 sind blau markiert.
+            caption: Auf dem Zahlenstrahl liegt die kleinere Zahl links.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: "2 > −3"
+            correct: true
+            info: "2 liegt rechts von −3."
+          - text: "2 < −3"
+            correct: false
+            info: "−3 liegt links von 2, ist also kleiner."
+          - text: "2 = −3"
+            correct: false
+            info: "2 und −3 sind verschiedene Zahlen."
+        hint: Such 2 und −3 auf dem Zahlenstrahl. Welche Zahl liegt weiter links?
+        explanation: "Nach dem Mal (−1) hat sich das Zeichen gedreht."
+        links:
+          - title: Ungleichungen lösen (Serlo)
+            url: https://de.serlo.org/mathe/1995/ungleichungen-loesen
+  - type: section
+    id: regel
+    title: Wann sich das Zeichen dreht
+    blocks:
+      - type: text
+        text: |
+          Eine **Ungleichung** vergleicht zwei Seiten mit $<$ (kleiner), $>$ (größer), $\le$ (kleiner oder gleich)
+          oder $\ge$ (größer oder gleich). Mal $(-1)$ spiegelt jede Zahl an der 0. Dabei tauschen die Zahlen ihre
+          Reihenfolge – genau das hast du oben gesehen.
+      - type: figure
+        image: images/w1-zahlenstrahl-spiegeln.svg
+        alt: "Ein Zahlenstrahl von −4 bis 4. −2 springt nach 2, 3 springt nach −3. Oben steht −2 < 3, unten 2 > −3."
+        caption: "Vorher liegt die −2 links von der 3, danach liegt die 2 rechts von der −3."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          Du löst eine Ungleichung mit denselben Schritten wie eine Gleichung. Addieren und Abziehen ändern das
+          Zeichen nie, Malnehmen und Teilen mit einer positiven Zahl auch nicht. Nur wenn du mit einer **negativen
+          Zahl malnimmst oder durch sie teilst**, drehst du das Zeichen: aus $<$ wird $>$, aus $\le$ wird $\ge$.
+      - type: formula
+        formula: '-3x + 4 < 10 \quad | - 4'
+      - type: formula
+        formula: '-3x < 6 \quad | : (-3)'
+      - type: formula
+        formula: "x > -2"
+      - type: text
+        text: Die Lösung sind alle Zahlen größer als −2. Prüf mit einer davon, zum Beispiel x = 0 – $4 < 10$ stimmt.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: x auf beiden Seiten
+        blocks:
+          - type: text
+            text: |
+              Löse $2x - 5 \ge 5x + 7$. Der Haken: Wenn du $5x$ abziehst, bleibt links eine negative Zahl vor dem x –
+              erst beim Teilen dreht sich das Zeichen, nicht beim Abziehen.
+          - type: formula
+            formula: '-3x - 5 \ge 7 \quad | + 5'
+          - type: formula
+            formula: '-3x \ge 12 \quad | : (-3)'
+          - type: formula
+            formula: 'x \le -4'
+          - type: text
+            text: "Antwort – Alle Zahlen kleiner oder gleich −4. Probe mit x = −5: links −15, rechts −18, und −15 ≥ −18 stimmt."
+  - type: section
+    id: merke
+    title: Teilen durch eine Minuszahl
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Das Zeichen dreht sich nur beim Malnehmen oder Teilen mit einer negativen Zahl. Wer es vergisst, bekommt
+              genau die falsche Hälfte der Zahlen. Prüf deshalb immer mit einer Zahl aus deiner Lösung.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: ungleichungen-wann
+        text: Bei welchem Schritt drehst du das Zeichen?
+        options:
+          - text: Beide Seiten durch −2 teilen
+            correct: true
+            info: "Teilen durch eine negative Zahl kehrt die Reihenfolge um."
+          - text: Auf beiden Seiten 4 abziehen
+            correct: false
+            info: "Abziehen verschiebt beide Seiten gleich weit."
+          - text: Auf beiden Seiten 3x abziehen
+            correct: false
+            info: "Auch das ist Abziehen."
+          - text: Beide Seiten mal 2 nehmen
+            correct: false
+            info: "2 ist positiv. Die Reihenfolge bleibt."
+        explanation: Nur Malnehmen und Teilen mit einer negativen Zahl drehen das Zeichen.
+        links:
+          - title: Ungleichungen lösen (Serlo)
+            url: https://de.serlo.org/mathe/1995/ungleichungen-loesen
+      - type: generated
+        id: ungleichungen-teilen
+        given:
+          a: { int: [2, 9] }
+          c: { int: [2, 54] }
+          r: { int: [0, 2] }
+        where: ["decimals(c / a) == 0", "c / a <= 6"]
+        task:
+          text: "Löse die Ungleichung −{{a}}x < {{c}}."
+        answer:
+          value: "[['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 - c / a], ['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 - c / a], ['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 - c / a]][r]"
+          compare:
+            {
+              choice: "[['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 - c / a], ['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 - c / a], ['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 + c / a], ['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 + c / a]]",
+            }
+        mistakes:
+          - value: "['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 - c / a]"
+            message: "Du hast durch −{{a}} geteilt. Dabei dreht sich das Zeichen."
+          - value: "['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 + c / a]"
+            message: "Prüfe das Vorzeichen: {{c}} geteilt durch −{{a}} ist negativ."
+          - value: "['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 + c / a]"
+            message: "Prüfe das Zeichen und das Vorzeichen der Zahl."
+        hint: Durch welche Zahl teilst du? Ist sie positiv oder negativ?
+        steps:
+          - "Beide Seiten durch −{{a}} teilen. −{{a}} ist negativ, also wird aus < ein >."
+          - "Die Lösung ist {{answer}}."
+      - type: generated
+        id: ungleichungen-zwei-seiten
+        given:
+          a: { int: [1, 6] }
+          d: { int: [2, 9] }
+          b: { int: [1, 20] }
+          e: { int: [1, 20] }
+          r: { int: [0, 2] }
+        where:
+          - "a < d"
+          - "b != e"
+          - "decimals((b - e) / (d - a)) == 0"
+          - "(b - e) / (d - a) >= -6 and (b - e) / (d - a) <= 6"
+        task:
+          text: "Löse die Ungleichung {{a}}x + {{b}} > {{d}}x + {{e}}."
+        answer:
+          value: "[['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 + (b - e) / (d - a)], ['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 + (b - e) / (d - a)], ['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 + (b - e) / (d - a)]][r]"
+          compare:
+            {
+              choice: "[['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 + (b - e) / (d - a)], ['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 + (b - e) / (d - a)], ['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 - (b - e) / (d - a)], ['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 - (b - e) / (d - a)]]",
+            }
+        mistakes:
+          - value: "['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 + (b - e) / (d - a)]"
+            message: "Vor dem x steht eine negative Zahl. Beim Teilen dreht sich das Zeichen."
+          - value: "['x < −6', 'x < −5', 'x < −4', 'x < −3', 'x < −2', 'x < −1', 'x < 0', 'x < 1', 'x < 2', 'x < 3', 'x < 4', 'x < 5', 'x < 6'][6 - (b - e) / (d - a)]"
+            message: "Prüfe die Vorzeichen beim Sortieren."
+          - value: "['x > −6', 'x > −5', 'x > −4', 'x > −3', 'x > −2', 'x > −1', 'x > 0', 'x > 1', 'x > 2', 'x > 3', 'x > 4', 'x > 5', 'x > 6'][6 - (b - e) / (d - a)]"
+            message: "Prüfe das Zeichen und die Vorzeichen beim Sortieren."
+        hint: Zieh {{d}}x und {{b}} auf beiden Seiten ab. Welche Zahl steht dann vor dem x?
+        steps:
+          - "Auf beiden Seiten − {{d}}x und − {{b}}: Links steht ({{a}} − {{d}})x, rechts {{e}} − {{b}}."
+          - "{{a}} − {{d}} ist negativ. Beim Teilen dreht sich das Zeichen: {{answer}}."
+      - type: single-choice
+        id: ungleichungen-gleich
+        text: Löse die Ungleichung 7 − 2x ≥ 15.
+        options:
+          - text: x ≤ −4
+            correct: true
+            info: "−2x ≥ 8, dann durch −2 teilen und das Zeichen drehen."
+          - text: x ≥ −4
+            correct: false
+            info: "Beim Teilen durch −2 dreht sich ≥ zu ≤."
+          - text: x ≤ 4
+            correct: false
+            info: "8 geteilt durch −2 ist −4."
+          - text: x ≥ 11
+            correct: false
+            info: "Die 7 wird auf beiden Seiten abgezogen, nicht addiert."
+        explanation: "7 − 2x ≥ 15, minus 7: −2x ≥ 8, durch −2: x ≤ −4. Probe mit x = −5: 7 + 10 = 17 ≥ 15."
+        links:
+          - title: Ungleichungen lösen (Serlo)
+            url: https://de.serlo.org/mathe/1995/ungleichungen-loesen
+      - type: number
+        id: ungleichungen-wettbewerb
+        text: Welches ist die größte ganze Zahl, für die 3 · (x − 2) − 5x > 4 gilt?
+        answer: -6
+        tolerance: 0
+        mistakes:
+          - answer: -5
+            message: "Das Zeichen < schließt die Grenze selbst aus."
+          - answer: -4
+            message: "Prüfe das Zeichen beim Teilen durch eine negative Zahl."
+          - answer: 4
+            message: "Prüfe das Vorzeichen beim Teilen."
+        hint: Löse zuerst die Klammer auf und fasse zusammen.
+        explanation: "3x − 6 − 5x > 4, also −2x − 6 > 4, −2x > 10 und x < −5. Die größte ganze Zahl kleiner als −5 ist −6."
+        links:
+          - title: Ungleichungen lösen (Serlo)
+            url: https://de.serlo.org/mathe/1995/ungleichungen-loesen
+      - type: text
+        text: Ungleichungen löst du jetzt mit dem richtigen Zeichen. Als Nächstes geht es um Gleichungen, in denen ein Produkt gleich 0 ist.

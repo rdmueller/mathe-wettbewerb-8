@@ -1,0 +1,224 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Gleichungen lösen
+description: "Gleichungen wie eine Waage lösen: Klammern auflösen, zusammenfassen, sortieren, teilen – auch wenn x² wegfällt."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann eine Gleichung lösen, auch wenn x² auf beiden Seiten wegfällt oder Dezimalzahlen vorkommen.
+      Auf der vorigen Seite hast du [Klammern aufgelöst](/w1-gleichungen/klammern/) – das ist hier oft der erste
+      Schritt.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: gleichungen-start
+        text: Die Waage ist im Gleichgewicht. Alle drei Säckchen sind gleich schwer. Wie schwer ist ein Säckchen?
+        material:
+          - type: figure
+            image: images/w1-waage.svg
+            alt: Eine Waage im Gleichgewicht. Links drei Säckchen mit x und zwei Gewichte zu je 1 kg, rechts Gewichte zu 10 kg, 2 kg und 2 kg.
+            caption: Links und rechts liegt gleich viel Gewicht.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 4
+        tolerance: 0
+        unit: kg
+        mistakes:
+          - answer: 12
+            message: "So viel wiegen alle drei Säckchen zusammen."
+          - answer: 14
+            message: "Links liegen auch zwei Gewichte zu 1 kg."
+        hint: Nimm auf beiden Seiten 2 kg weg. Was bleibt dann links liegen?
+        explanation: "14 kg − 2 kg = 12 kg für drei Säckchen, also 12 : 3 = 4 kg."
+        links:
+          - title: Lineare Gleichung (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Lineare_Gleichung
+  - type: section
+    id: regel
+    title: Auf beiden Seiten dasselbe
+    blocks:
+      - type: text
+        text: |
+          Die Waage ist die Gleichung $3x + 2 = 14$. Du hast auf beiden Seiten 2 abgezogen und dann beide Seiten durch
+          3 geteilt. Die Waage bleibt im Gleichgewicht, solange du **auf beiden Seiten dasselbe** tust. So gehst du bei
+          jeder Gleichung vor:
+
+          1. Klammern auflösen.
+          2. Auf jeder Seite gleichartige Glieder zusammenfassen.
+          3. Sortieren: Glieder mit x nach links, Zahlen nach rechts. Ein Glied wechselt die Seite, indem du es auf
+             beiden Seiten abziehst oder addierst – darum dreht sich sein Vorzeichen.
+          4. Durch die Zahl vor dem x teilen, mit ihrem Vorzeichen.
+      - type: text
+        text: |
+          Im Wettbewerb steht oft auf beiden Seiten $x^2$. Ziehst du $x^2$ auf beiden Seiten ab, fällt es weg, und es
+          bleibt eine Gleichung ohne $x^2$.
+      - type: formula
+        formula: '(x + 2) \cdot (x - 3) = x^2 + 4'
+      - type: formula
+        formula: 'x^2 - x - 6 = x^2 + 4 \quad | - x^2'
+      - type: formula
+        formula: '-x - 6 = 4 \quad | + 6'
+      - type: formula
+        formula: '-x = 10 \quad | : (-1)'
+      - type: formula
+        formula: "x = -10"
+      - type: text
+        text: "Probe – links $(-8) \\cdot (-13) = 104$, rechts $100 + 4 = 104$. Hinter dem Strich | steht, was du auf beiden Seiten tust."
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Dezimalzahlen und eine Minusklammer
+        blocks:
+          - type: text
+            text: |
+              Löse $2{,}5x - (x - 4) = 0{,}5x + 10$. Der Haken: Das Minus vor der Klammer macht aus $-4$ ein $+4$.
+              Dezimalzahlen fasst du zusammen wie ganze Zahlen.
+          - type: formula
+            formula: "2{,}5x - x + 4 = 0{,}5x + 10"
+          - type: formula
+            formula: '1{,}5x + 4 = 0{,}5x + 10 \quad | - 0{,}5x'
+          - type: formula
+            formula: 'x + 4 = 10 \quad | - 4'
+          - type: formula
+            formula: "x = 6"
+          - type: text
+            text: "Antwort – x = 6. Probe: links $15 - 2 = 13$, rechts $3 + 10 = 13$."
+  - type: section
+    id: merke
+    title: Drei Stellen, an denen man sich verrechnet
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              $x^2$ fällt nur weg, wenn du es auf **beiden** Seiten abziehst – und nur, wenn auf beiden Seiten gleich
+              viel $x^2$ steht. Wechselt ein Glied die Seite, dreht sich sein Vorzeichen: Aus $+6$ wird $-6$. Und
+              geteilt wird durch die ganze Zahl vor dem x, mit Vorzeichen: Aus $-x = 10$ wird $x = -10$.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: ordering
+        id: gleichungen-schritte
+        text: "Lina löst die Gleichung 3 · (x − 2) = x + 4. Bring ihre Zeilen in die richtige Reihenfolge."
+        items:
+          - "3x − 6 = x + 4"
+          - "2x − 6 = 4"
+          - "2x = 10"
+          - "x = 5"
+        explanation: "Klammer auflösen, − x, + 6, : 2. Probe: 3 · 3 = 9 und 5 + 4 = 9."
+        links:
+          - title: Äquivalenzumformungen (Serlo)
+            url: https://de.serlo.org/mathe/1847/aequivalenzumformungen
+      - type: generated
+        id: gleichungen-einfach
+        given:
+          a: { oneOf: [2, 4, 5] }
+          b: { int: [1, 20] }
+          c: { int: [1, 40] }
+        where: ["decimals((c - b) / a) == 0", "c != b"]
+        task:
+          text: "Löse die Gleichung {{a}}x + {{b}} = {{c}}. Wie groß ist x?"
+        answer: { value: "(c - b) / a", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "(c + b) / a"
+            message: "Die + {{b}} wechselt die Seite. Dabei wird sie zu − {{b}}."
+          - value: "c - b"
+            message: "Das ist {{a}}x. Teile noch durch {{a}}."
+        hint: Zieh zuerst {{b}} auf beiden Seiten ab.
+        steps:
+          - "Minus {{b}}: {{a}}x = {{c}} − {{b}}."
+          - "Geteilt durch {{a}}: x = {{answer}}."
+      - type: generated
+        id: gleichungen-beide-seiten
+        given:
+          a: { int: [3, 12] }
+          c: { int: [1, 10] }
+          b: { int: [1, 15] }
+          d: { int: [1, 30] }
+        where:
+          - "a - c == 2 or a - c == 4 or a - c == 5"
+          - "decimals((d - b) / (a - c)) == 0"
+          - "d != b"
+        task:
+          text: "Löse die Gleichung {{a}}x + {{b}} = {{c}}x + {{d}}. Wie groß ist x?"
+        answer: { value: "(d - b) / (a - c)", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "(d + b) / (a - c)"
+            message: "Prüfe das Vorzeichen der {{b}} beim Seitenwechsel."
+          - value: "d - b"
+            message: "Teile noch durch die Zahl vor dem x."
+        hint: Zieh zuerst {{c}}x auf beiden Seiten ab.
+        steps:
+          - "Minus {{c}}x und minus {{b}}: Links bleibt {{a}} − {{c}} vor dem x, rechts {{d}} − {{b}}."
+          - "Durch die Zahl vor dem x teilen: x = {{answer}}."
+      - type: generated
+        id: gleichungen-dezimal
+        given:
+          p: { decimal: [1, 5], step: 0.5 }
+          q: { decimal: [0.5, 4], step: 0.5 }
+          b: { int: [1, 12] }
+          d: { int: [1, 30] }
+        where:
+          - "p > q"
+          - "p - q != 1"
+          - "decimals((d - b) / (p - q)) == 0"
+          - "decimals((d + b) / (p - q)) <= 2"
+          - "d != b"
+        task:
+          text: "Löse die Gleichung {{p}}x + {{b}} = {{q}}x + {{d}}. Wie groß ist x?"
+        answer: { value: "(d - b) / (p - q)", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "d - b"
+            message: "Teile noch durch die Zahl vor dem x."
+          - value: "(d + b) / (p - q)"
+            message: "Die + {{b}} wird auf der rechten Seite zu − {{b}}."
+        hint: Fasse die x zusammen wie bei ganzen Zahlen – {{p}}x − {{q}}x.
+        steps:
+          - "{{q}}x und {{b}} abziehen: Vor dem x steht jetzt {{p}} − {{q}}, rechts {{d}} − {{b}}."
+          - "Durch die Zahl vor dem x teilen: x = {{answer}}."
+      - type: generated
+        id: gleichungen-x-quadrat
+        given:
+          a: { int: [1, 9] }
+          b: { int: [1, 9] }
+          c: { int: [1, 20] }
+        where:
+          - "a != b"
+          - "decimals((c + a * b) / (a - b)) == 0"
+          - "decimals((c - a * b) / (a - b)) <= 2"
+          - "(c + a * b) / (a - b) != 0"
+          - "(c + a * b) / (a - b) >= -20 and (c + a * b) / (a - b) <= 20"
+        task:
+          text: "Löse die Gleichung (x + {{a}}) · (x − {{b}}) = x² + {{c}}. Wie groß ist x?"
+        answer: { value: "(c + a * b) / (a - b)", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "(c - a * b) / (a - b)"
+            message: "Prüfe das Vorzeichen von {{a}} · {{b}} beim Seitenwechsel."
+          - value: "(c + a * b) / (b - a)"
+            message: "Prüfe die Vorzeichen der zwei Produkte mit x."
+        hint: Multipliziere links aus. Dann zieh x² auf beiden Seiten ab.
+        steps:
+          - "Links: x² − {{b}}x + {{a}}x − {{a}} · {{b}}. Minus x² links und rechts – x² fällt weg."
+          - "Es bleibt ({{a}} − {{b}})x − {{a}} · {{b}} = {{c}}. Zahl nach rechts, durch {{a}} − {{b}} teilen: x = {{answer}}."
+      - type: number
+        id: gleichungen-wettbewerb
+        text: "Löse die Gleichung (2x − 1) · (x + 3) = 2 · (x² + 4) + x. Wie groß ist x?"
+        answer: 2.75
+        tolerance: 0
+        mistakes:
+          - answer: 1.75
+            message: "Prüfe die Klammer rechts: Auch die 4 wird mit 2 malgenommen."
+          - answer: 1.25
+            message: "Prüfe das Vorzeichen der −3 beim Seitenwechsel."
+        hint: Multipliziere beide Seiten aus. Dann zieh 2x² auf beiden Seiten ab.
+        explanation: "Links 2x² + 6x − x − 3 = 2x² + 5x − 3, rechts 2x² + 8 + x. Ohne 2x²: 5x − 3 = x + 8, also 4x = 11 und x = 2,75."
+        links:
+          - title: Lineare Gleichung (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Lineare_Gleichung
+      - type: text
+        text: Jetzt löst du Gleichungen auch mit Klammern, x² und Dezimalzahlen. Als Nächstes geht es um Ungleichungen – mit einer Regel, die bei Gleichungen nicht vorkommt.

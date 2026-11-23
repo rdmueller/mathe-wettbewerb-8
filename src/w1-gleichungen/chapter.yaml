@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: "Wahlaufgabe W1: Terme und Gleichungen"
+summary: Klammern auflösen, Gleichungen und Ungleichungen lösen, der Satz vom Nullprodukt und die Lösungsmenge mit der Grundmenge ℤ.
+pages: [klammern, gleichungen, ungleichungen, nullprodukt, loesungsmenge]

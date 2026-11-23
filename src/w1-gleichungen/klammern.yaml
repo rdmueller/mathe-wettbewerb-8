@@ -1,0 +1,205 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Klammern auflösen
+description: "Zahl mal Klammer, Minusklammer und zwei Klammern ausmultiplizieren: jedes Glied mit jedem, dann zusammenfassen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Klammern auflösen, auch Minusklammern, und zwei Klammern ausmultiplizieren. Du brauchst
+      dafür das [Zusammenfassen](/terme/zusammenfassen/) gleichartiger Glieder und die
+      [Vorzeichenregel](/terme/produkte/) aus dem Kapitel Terme.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: klammern-start
+        text: "Das Rechteck ist x + 5 lang und x + 2 hoch. Seine Fläche ist (x + 5) · (x + 2). Die vier Teile zusammen ergeben x² + □x + 10. Welche Zahl gehört in das Kästchen?"
+        material:
+          - type: figure
+            image: images/w1-rechteck-klammern.svg
+            alt: Ein Rechteck, oben x und 5 lang, links x und 2 hoch, in vier Teile geteilt. Oben links steht x², in den anderen drei Teilen ein Fragezeichen.
+            caption: Jeder Teil ist ein kleines Rechteck. Seine Seiten stehen am Rand.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 7
+        tolerance: 0
+        mistakes:
+          - answer: 5
+            message: "Das ist nur der Teil oben rechts. Auch unten links steckt ein x."
+          - answer: 0
+            message: "Du hast nur x · x und 5 · 2 gerechnet. Zwei Teile fehlen."
+          - answer: 10
+            message: "10 ist der Teil ohne x. Gesucht ist, wie oft x vorkommt."
+        hint: Rechne die Fläche jedes Teils aus. Welche Teile enthalten ein x?
+        explanation: "Die Teile sind x², 5x, 2x und 10. Zusammen: x² + 7x + 10."
+        links:
+          - title: Distributivgesetz (Serlo)
+            url: https://de.serlo.org/mathe/1677/distributivgesetz
+  - type: section
+    id: regel
+    title: Jedes Glied mit jedem
+    blocks:
+      - type: text
+        text: |
+          Im Rechteck hast du jedes Stück der oberen Seite mit jedem Stück der linken Seite malgenommen. Genauso
+          löst du jede Klammer auf. Bei **Zahl mal Klammer** nimmst du jedes Glied in der Klammer mit der Zahl mal.
+          Steht ein Minus vor der Klammer, ist das wie mal $(-1)$: **Jedes** Vorzeichen in der Klammer dreht sich.
+      - type: formula
+        formula: '3 \cdot (x + 4) = 3x + 12'
+      - type: formula
+        formula: "5 - (2x - 3) = 5 - 2x + 3 = 8 - 2x"
+      - type: text
+        text: |
+          Bei **zwei Klammern** gibt es vier Produkte, wie die vier Teile des Rechtecks. Achte bei jedem Produkt auf
+          das Vorzeichen, das vor dem Glied steht.
+      - type: figure
+        image: images/w1-jedes-mit-jedem.svg
+        alt: "Der Term (x + 3) · (x − 2) mit vier Bögen: vom x der ersten Klammer zu x und zu −2, von +3 zu x und zu −2. Unten die vier Produkte x · x, x · (−2), 3 · x und 3 · (−2)."
+        caption: "Jedes Glied der ersten Klammer bekommt zwei Bögen – einen zu jedem Glied der zweiten Klammer."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '(x + 3) \cdot (x - 2) = x^2 - 2x + 3x - 6'
+      - type: text
+        text: Zum Schluss fasst du gleichartige Glieder zusammen – erst $x^2$, dann $x$, dann die Zahlen.
+      - type: formula
+        formula: "= x^2 + x - 6"
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Minus vor einer Klammer, und x² fällt weg
+        blocks:
+          - type: text
+            text: |
+              Vereinfache $(x - 3) \cdot (x + 4) - (x^2 - 5)$. Der Haken: Das Minus vor der zweiten Klammer dreht
+              beide Vorzeichen, also wird aus $-5$ ein $+5$.
+          - type: formula
+            formula: "= x^2 + 4x - 3x - 12 - x^2 + 5"
+          - type: formula
+            formula: "= x - 7"
+          - type: text
+            text: "Antwort – Der Term ist $x - 7$. Probe mit x = 1: links $(-2) \\cdot 5 - (1 - 5) = -10 + 4 = -6$, rechts $1 - 7 = -6$."
+  - type: section
+    id: merke
+    title: Alle Vorzeichen, alle Produkte
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Ein Minus vor der Klammer dreht **jedes** Vorzeichen darin, nicht nur das erste:
+              $-(2x - 3) = -2x + 3$. Und zwei Klammern ergeben vier Produkte, nicht zwei:
+              $(x + 3) \cdot (x + 2)$ ist nicht $x^2 + 6$ – die zwei Teile mit $x$ fehlen.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: number
+        id: klammern-minus
+        text: "Löse die Klammer auf: 9 − (4x − 2) = □ − 4x. Welche Zahl gehört in das Kästchen?"
+        answer: 11
+        tolerance: 0
+        mistakes:
+          - answer: 7
+            message: "Das Minus vor der Klammer dreht auch das Vorzeichen der 2."
+        hint: Was macht das Minus vor der Klammer mit den Gliedern darin?
+        explanation: "9 − (4x − 2) = 9 − 4x + 2 = 11 − 4x."
+        links:
+          - title: Distributivgesetz (Serlo)
+            url: https://de.serlo.org/mathe/1677/distributivgesetz
+      - type: generated
+        id: klammern-zahl
+        given:
+          a: { int: [2, 9] }
+          b: { int: [2, 12] }
+        where: ["a * b != a + b"]
+        task:
+          text: "Löse die Klammer auf: {{a}} · (x + {{b}}) = {{a}}x + □. Welche Zahl gehört in das Kästchen?"
+        answer: { value: "a * b", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "b"
+            message: "Auch die {{b}} wird mit {{a}} malgenommen."
+          - value: "a + b"
+            message: "Du hast addiert. Vor der Klammer steht ein Malpunkt."
+        hint: Jedes Glied in der Klammer wird mit der Zahl davor malgenommen.
+        steps:
+          - "{{a}} · x = {{a}}x und {{a}} · {{b}} = {{answer}}."
+      - type: generated
+        id: klammern-zwei
+        given:
+          a: { int: [1, 9] }
+          b: { int: [1, 9] }
+        where: ["a * b != a + b"]
+        task:
+          text: "Multipliziere aus und fasse zusammen: (x + {{a}}) · (x + {{b}}) = x² + □x + {{a}} · {{b}}. Welche Zahl steht vor dem x?"
+        answer: { value: "a + b", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "a * b"
+            message: "Das ist die Zahl ohne x. Gesucht ist die Zahl vor dem x."
+          - value: "0"
+            message: "Es gibt vier Produkte, nicht zwei. Zwei davon enthalten x."
+        hint: Denk an das Rechteck – welche zwei Teile enthalten ein x?
+        steps:
+          - "Die Produkte mit x: x · {{b}} = {{b}}x und {{a}} · x = {{a}}x. Zusammen {{answer}}x."
+      - type: generated
+        id: klammern-zwei-minus
+        given:
+          a: { int: [1, 9] }
+          b: { int: [1, 9] }
+        where: ["a != b"]
+        task:
+          text: "Multipliziere aus und fasse zusammen: (x + {{a}}) · (x − {{b}}). Welche Zahl steht im Ergebnis vor dem x? Gib auch das Vorzeichen an."
+        answer: { value: "a - b", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "a + b"
+            message: "Das Produkt x · (−{{b}}) ist −{{b}}x, mit Minus."
+          - value: "b - a"
+            message: "Prüfe, welches der zwei Produkte ein Minus hat."
+        hint: Schreib die zwei Produkte mit x einzeln auf.
+        steps:
+          - "x · (−{{b}}) = −{{b}}x und {{a}} · x = {{a}}x. Zusammen {{answer}}x."
+      - type: single-choice
+        id: klammern-term
+        text: Multipliziere aus und fasse zusammen – (2x − 3) · (x + 4)
+        options:
+          - text: 2x² + 5x − 12
+            correct: true
+            info: "2x² + 8x − 3x − 12, dann 8x − 3x = 5x."
+          - text: 2x² − 12
+            correct: false
+            info: "Hier fehlen die Produkte 2x · 4 und −3 · x."
+          - text: 2x² + 11x − 12
+            correct: false
+            info: "Bei −3 · x fehlt das Minus: Es ist −3x, nicht +3x."
+          - text: 2x² + 5x + 12
+            correct: false
+            info: "−3 · 4 ist −12, nicht +12."
+        explanation: Vier Produkte, dann gleichartige Glieder zusammenfassen.
+        links:
+          - title: Distributivgesetz (Serlo)
+            url: https://de.serlo.org/mathe/1677/distributivgesetz
+      - type: single-choice
+        id: klammern-wettbewerb
+        text: Vereinfache so weit wie möglich – (x + 5) · (x − 2) − (x − 1) · (x + 3)
+        options:
+          - text: x − 7
+            correct: true
+            info: "Die Minusklammer dreht alle drei Vorzeichen."
+          - text: 5x − 13
+            correct: false
+            info: "Hier wurde nur das erste Vorzeichen gedreht."
+          - text: x − 13
+            correct: false
+            info: "Aus − (−3) wird + 3, nicht − 3."
+          - text: 2x² + 5x − 13
+            correct: false
+            info: "Das Minus dreht auch x² – dann fällt x² weg."
+        explanation: "Das zweite Produkt bleibt in Klammern: x² + 3x − 10 − (x² + 2x − 3) = x − 7."
+        links:
+          - title: Distributivgesetz (Serlo)
+            url: https://de.serlo.org/mathe/1677/distributivgesetz
+      - type: text
+        text: Klammern löst du jetzt sicher auf. Als Nächstes löst du Gleichungen, in denen solche Klammern stehen.

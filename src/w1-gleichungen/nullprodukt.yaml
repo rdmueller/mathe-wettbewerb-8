@@ -1,0 +1,192 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Satz vom Nullprodukt
+description: "Gleichungen wie (5x + 5) · (x − 5) = 0 lösen: Jeder Faktor kann 0 sein – darum gibt es zwei Lösungen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann eine Gleichung wie $(5x + 5) \cdot (x - 5) = 0$ mit dem Satz vom Nullprodukt lösen. Du
+      brauchst dafür nur einfache [Gleichungen](/w1-gleichungen/gleichungen/) – aber gleich zwei davon.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: nullprodukt-start
+        text: "Zwei Zahlen werden malgenommen, das Ergebnis ist 0. Die erste Zahl ist 7. Wie heißt die zweite?"
+        answer: 0
+        tolerance: 0
+        mistakes:
+          - answer: -7
+            message: "7 · (−7) ist −49, nicht 0."
+          - answer: 1
+            message: "7 · 1 ist 7, nicht 0."
+        hint: Welche Zahl macht jedes Produkt zu 0, egal womit du sie malnimmst?
+        explanation: "Nur 7 · 0 ergibt 0."
+        links:
+          - title: Lösung von quadratischen Gleichungen (Serlo)
+            url: https://de.serlo.org/mathe/221122/loesung-von-quadratischen-gleichungen
+  - type: section
+    id: regel
+    title: Ein Faktor muss 0 sein
+    blocks:
+      - type: text
+        text: |
+          Ein Produkt ist nur dann 0, wenn mindestens einer seiner **Faktoren** 0 ist – die Zahlen, die malgenommen
+          werden. Das heißt **Satz vom Nullprodukt**. In der Aufgabe oben war die 7 nicht 0, also musste die zweite
+          Zahl 0 sein. Bei einer Gleichung weißt du nicht, welcher Faktor 0 ist. Darum setzt du jeden Faktor
+          einzeln gleich 0 und löst zwei kleine Gleichungen.
+      - type: figure
+        image: images/w1-nullprodukt-zweige.svg
+        alt: "Oben (5x + 5) · (x − 5) = 0, darunter zwei Zweige: 5x + 5 = 0 führt zu x = −1, x − 5 = 0 führt zu x = 5."
+        caption: Jeder Zweig ist eine eigene kleine Gleichung. Beide Ergebnisse sind Lösungen.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '5x + 5 = 0 \quad \Rightarrow \quad x = -1'
+      - type: formula
+        formula: 'x - 5 = 0 \quad \Rightarrow \quad x = 5'
+      - type: text
+        text: |
+          Probe mit $x = -1$: $(-5 + 5) \cdot (-6) = 0 \cdot (-6) = 0$. Probe mit $x = 5$:
+          $30 \cdot 0 = 0$. Die Gleichung hat also zwei Lösungen. Ausmultiplizieren brauchst du nicht – es macht die
+          Gleichung nur schwerer.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Wenn x selbst ein Faktor ist
+        blocks:
+          - type: text
+            text: |
+              Löse $3x \cdot (2x - 8) = 0$. Der Haken: Der erste Faktor ist $3x$. Auch er kann 0 sein – dann ist
+              $x = 0$ eine Lösung. Teile die Gleichung nie durch x, sonst verlierst du diese Lösung.
+          - type: formula
+            formula: '3x = 0 \quad \Rightarrow \quad x = 0'
+          - type: formula
+            formula: '2x - 8 = 0 \quad \Rightarrow \quad x = 4'
+          - type: text
+            text: "Antwort – x = 0 oder x = 4. Probe: $0 \\cdot (-8) = 0$ und $12 \\cdot 0 = 0$."
+  - type: section
+    id: merke
+    title: Zwei Lösungen, richtiges Vorzeichen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Setz **jeden** Faktor gleich 0 – sonst fehlt eine Lösung. Achte auf das Vorzeichen: Aus $x - 5 = 0$
+              folgt $x = 5$, nicht $-5$. Und der Satz gilt nur, wenn auf einer Seite 0 steht: Aus
+              $(x - 1) \cdot (x - 2) = 6$ folgt nicht $x - 1 = 6$.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: multiple-choice
+        id: nullprodukt-loesungen
+        text: Welche Zahlen sind Lösungen von (x + 4) · (x − 3) = 0? Wähle alle passenden.
+        options:
+          - text: "−4"
+            correct: true
+            info: "Probe: 0 · (−7) = 0."
+          - text: "3"
+            correct: true
+            info: "Probe: 7 · 0 = 0."
+          - text: "4"
+            correct: false
+            info: "Probe: 8 · 1 = 8."
+          - text: "−3"
+            correct: false
+            info: "Probe: 1 · (−6) = −6."
+        explanation: "Jeder Faktor kann 0 sein: x + 4 = 0 oder x − 3 = 0. Also x = −4 oder x = 3."
+        links:
+          - title: Lösung von quadratischen Gleichungen (Serlo)
+            url: https://de.serlo.org/mathe/221122/loesung-von-quadratischen-gleichungen
+      - type: multiple-choice
+        id: nullprodukt-x-faktor
+        text: Welche Zahlen sind Lösungen von x · (x − 7) = 0? Wähle alle passenden.
+        options:
+          - text: "0"
+            correct: true
+            info: "Der Faktor x selbst ist 0: 0 · (−7) = 0."
+          - text: "7"
+            correct: true
+            info: "Für x = 7 wird der zweite Faktor 0."
+          - text: "−7"
+            correct: false
+            info: "Für x = −7 ist kein Faktor 0, das Produkt ist 98."
+          - text: "1"
+            correct: false
+            info: "Für x = 1 ist kein Faktor 0."
+        explanation: "x = 0 oder x − 7 = 0, also x = 0 oder x = 7."
+        links:
+          - title: Lösung von quadratischen Gleichungen (Serlo)
+            url: https://de.serlo.org/mathe/221122/loesung-von-quadratischen-gleichungen
+      - type: generated
+        id: nullprodukt-kleinere
+        given:
+          p: { int: [2, 5] }
+          q: { int: [2, 30] }
+          b: { int: [1, 9] }
+        where: ["decimals(q / p) == 0", "q / p <= 9"]
+        task:
+          text: "Löse ({{p}}x + {{q}}) · (x − {{b}}) = 0. Gib die kleinere der beiden Lösungen an."
+        answer: { value: "-(q / p)", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "q / p"
+            message: "Prüfe das Vorzeichen: Aus {{p}}x + {{q}} = 0 wird {{p}}x = −{{q}}."
+          - value: "-q"
+            message: "Du hast vergessen, durch {{p}} zu teilen."
+          - value: "b"
+            message: "Das ist die größere Lösung. Gesucht ist die kleinere."
+        hint: Setz jeden Faktor gleich 0. Welche der zwei Lösungen ist kleiner?
+        steps:
+          - "{{p}}x + {{q}} = 0 ergibt {{p}}x = −{{q}}, also x = {{answer}}. Die andere Lösung ist {{b}}."
+      - type: generated
+        id: nullprodukt-groessere
+        given:
+          a: { int: [1, 9] }
+          p: { int: [2, 5] }
+          q: { int: [2, 40] }
+        where: ["decimals(q / p) == 0", "q / p <= 10", "q / p != a"]
+        task:
+          text: "Löse (x + {{a}}) · ({{p}}x − {{q}}) = 0. Gib die größere der beiden Lösungen an."
+        answer: { value: "q / p", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "-(q / p)"
+            message: "Prüfe das Vorzeichen: Aus {{p}}x − {{q}} = 0 wird {{p}}x = +{{q}}."
+          - value: "q"
+            message: "Du hast vergessen, durch {{p}} zu teilen."
+          - value: "a"
+            message: "Aus x + {{a}} = 0 folgt x = −{{a}}, nicht {{a}}."
+        hint: Setz jeden Faktor gleich 0 und löse beide kleinen Gleichungen.
+        steps:
+          - "x = −{{a}} oder {{p}}x = {{q}}, also x = {{answer}}. Das ist die größere Lösung."
+      - type: true-false
+        id: nullprodukt-nur-null
+        text: "Aus (x − 1) · (x − 2) = 6 folgt: x − 1 = 6 oder x − 2 = 6."
+        answer: false
+        explanation: "Der Satz gilt nur für das Produkt 0. Mit x = 7 wäre das Produkt 6 · 5 = 30, nicht 6."
+        links:
+          - title: Lösung von quadratischen Gleichungen (Serlo)
+            url: https://de.serlo.org/mathe/221122/loesung-von-quadratischen-gleichungen
+      - type: number
+        id: nullprodukt-wettbewerb
+        text: "Die Gleichung (2x + 6) · (x − 4) · x = 0 hat drei Lösungen. Wie groß ist ihre Summe?"
+        answer: 1
+        tolerance: 0
+        mistakes:
+          - answer: 7
+            message: "Prüfe das Vorzeichen bei 2x + 6 = 0: 2x = −6."
+          - answer: -7
+            message: "Prüfe das Vorzeichen bei x − 4 = 0."
+          - answer: -2
+            message: "Bei 2x + 6 = 0 musst du noch durch 2 teilen."
+        hint: Setz jeden der drei Faktoren gleich 0.
+        explanation: "2x + 6 = 0 ergibt x = −3, x − 4 = 0 ergibt x = 4, und x = 0. Summe: −3 + 4 + 0 = 1."
+        links:
+          - title: Lösung von quadratischen Gleichungen (Serlo)
+            url: https://de.serlo.org/mathe/221122/loesung-von-quadratischen-gleichungen
+      - type: text
+        text: Jetzt findest du beide Lösungen eines Nullprodukts. Auf der letzten Seite schreibst du Lösungen als Lösungsmenge auf und prüfst, ob sie überhaupt erlaubt sind.
