@@ -2,3 +2,14 @@
 title: Prozentrechnung
 summary: Grundwert, Prozentsatz und Prozentwert – vom Hunderterfeld zur Formel G · p % = P und zu Sachaufgaben in vier Schritten.
 pages: [prozentwert, prozentsatz-grundwert, sachaufgaben]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /prozent/prozentwert/#prozentwert-verein
+        - /prozent/prozentwert/#prozentwert-rabatt
+        - /prozent/prozentsatz-grundwert/#prozentsatz-grundwert-umfrage
+    - exercises:
+        - /prozent/prozentsatz-grundwert/#prozentsatz-grundwert-sparen
+        - /prozent/sachaufgaben/#sachaufgaben-teurer
+        - /prozent/sachaufgaben/#sachaufgaben-vorher

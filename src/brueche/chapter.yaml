@@ -2,3 +2,14 @@
 title: Bruchrechnung
 summary: Brüche und Dezimalbrüche addieren, subtrahieren, multiplizieren und dividieren – ohne Taschenrechner und in der richtigen Reihenfolge.
 pages: [plus-minus, mal-geteilt, rechenregeln]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /brueche/plus-minus/#plus-minus-addieren
+        - /brueche/plus-minus/#plus-minus-dezimal
+        - /brueche/mal-geteilt/#mal-geteilt-mal
+    - exercises:
+        - /brueche/mal-geteilt/#mal-geteilt-geteilt
+        - /brueche/rechenregeln/#rechenregeln-punkt-vor-strich
+        - /brueche/rechenregeln/#rechenregeln-klammer

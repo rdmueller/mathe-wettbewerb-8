@@ -2,3 +2,11 @@
 title: Symmetrie und Abbildungen
 summary: Achsen- und Punktsymmetrie erkennen, Figuren an einer Achse spiegeln und um einen Punkt drehen – mit Koordinaten im Gitter.
 pages: [symmetrie-erkennen, spiegeln-drehen]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /symmetrie/symmetrie-erkennen/#symmetrie-erkennen-art
+        - /symmetrie/symmetrie-erkennen/#symmetrie-erkennen-achsen
+        - /symmetrie/spiegeln-drehen/#spiegeln-drehen-achse
+        - /symmetrie/spiegeln-drehen/#spiegeln-drehen-halbe

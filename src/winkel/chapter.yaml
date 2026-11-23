@@ -2,3 +2,11 @@
 title: "Winkel: Winkelsumme und Geradenkreuzungen"
 summary: Winkelsumme in Dreieck und Viereck, Neben-, Scheitel-, Stufen- und Wechselwinkel – fehlende Winkel ohne Messen berechnen.
 pages: [winkelsumme, geradenkreuzungen]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /winkel/winkelsumme/#winkelsumme-dreieck
+        - /winkel/winkelsumme/#winkelsumme-viereck
+        - /winkel/geradenkreuzungen/#geradenkreuzungen-nebenwinkel
+        - /winkel/geradenkreuzungen/#geradenkreuzungen-zwei-schritte

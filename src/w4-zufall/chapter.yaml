@@ -2,3 +2,14 @@
 title: "Wahlaufgabe W4: Zweistufige Zufallsversuche"
 summary: Ziehen ohne Zurücklegen, Ereignisse wie „genau einmal“ und „mindestens einmal“ als Pfade im Baum und das Gegenereignis – für die Wahlaufgabe mit Urnen, Losen und Glücksrädern.
 pages: [ohne-zuruecklegen, ereignisse-pfade, gegenereignis]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /w4-zufall/ohne-zuruecklegen/#ohne-zuruecklegen-zweimal-rot
+        - /w4-zufall/ohne-zuruecklegen/#ohne-zuruecklegen-lose
+        - /w4-zufall/ereignisse-pfade/#ereignisse-pfade-genau
+    - exercises:
+        - /w4-zufall/ereignisse-pfade/#ereignisse-pfade-hoechstens-rot
+        - /w4-zufall/gegenereignis/#gegenereignis-urne
+        - /w4-zufall/gegenereignis/#gegenereignis-gluecksrad-prozent

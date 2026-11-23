@@ -2,3 +2,16 @@
 title: "Wahlaufgabe W2: Dreieckskonstruktionen und Kongruenzsätze"
 summary: Planfigur, Kongruenzsätze, die Schritte einer Konstruktion und das Prüfen – alles, was du im Heft mit Zirkel und Geodreieck brauchst.
 pages: [planfigur, kongruenzsaetze, konstruktion-schritte, winkel-pruefen]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order. winkel-pruefen-hoehe is not asked: its figure stands before it on the page.
+selfAssessment:
+  pages:
+    - exercises:
+        - /w2-konstruktionen/planfigur/#planfigur-gegenueber
+        - /w2-konstruktionen/planfigur/#planfigur-winkel-b
+        - /w2-konstruktionen/kongruenzsaetze/#kongruenzsaetze-satz
+        - /w2-konstruktionen/kongruenzsaetze/#kongruenzsaetze-eindeutig
+    - exercises:
+        - /w2-konstruktionen/konstruktion-schritte/#konstruktion-schritte-zuerst
+        - /w2-konstruktionen/konstruktion-schritte/#konstruktion-schritte-sws
+        - /w2-konstruktionen/winkel-pruefen/#winkel-pruefen-wsw
+        - /w2-konstruktionen/winkel-pruefen/#winkel-pruefen-wettbewerb

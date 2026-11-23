@@ -2,3 +2,16 @@
 title: Terme
 summary: Terme aufstellen, Werte berechnen, gleichartige Glieder zusammenfassen und Produkte mit Vorzeichen – Rechnen mit Buchstaben statt Zahlen.
 pages: [aufstellen, werte-berechnen, zusammenfassen, produkte]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /terme/aufstellen/#aufstellen-umfang
+        - /terme/aufstellen/#aufstellen-popcorn
+        - /terme/werte-berechnen/#werte-berechnen-einsetzen
+        - /terme/werte-berechnen/#werte-berechnen-klammer
+    - exercises:
+        - /terme/zusammenfassen/#zusammenfassen-koeffizient
+        - /terme/zusammenfassen/#zusammenfassen-sortieren
+        - /terme/produkte/#produkte-koeffizient
+        - /terme/produkte/#produkte-minus-minus

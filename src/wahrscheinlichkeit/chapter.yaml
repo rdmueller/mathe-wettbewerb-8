@@ -2,3 +2,14 @@
 title: Wahrscheinlichkeit
 summary: Ergebnisraum, Laplace-Wahrscheinlichkeit, Baumdiagramm und Pfadregeln – Gewinnchancen bei Würfel, Münze, Glücksrad und Urne berechnen.
 pages: [laplace, baumdiagramm, pfadregeln]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /wahrscheinlichkeit/laplace/#laplace-ueben
+        - /wahrscheinlichkeit/laplace/#laplace-anzahl
+        - /wahrscheinlichkeit/baumdiagramm/#baumdiagramm-ergaenzen
+    - exercises:
+        - /wahrscheinlichkeit/baumdiagramm/#baumdiagramm-pfade
+        - /wahrscheinlichkeit/pfadregeln/#pfadregeln-pfad
+        - /wahrscheinlichkeit/pfadregeln/#pfadregeln-gleiche-farbe

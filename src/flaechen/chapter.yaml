@@ -2,3 +2,21 @@
 title: Flächeninhalt, Umfang und Volumen
 summary: Formeln für Rechteck, Dreieck, Parallelogramm, Trapez, Quader und Würfel – hergeleitet, damit du sie behältst.
 pages: [quadrat-rechteck, dreieck, parallelogramm-trapez, quader-wuerfel, netz-oberflaeche, formeln-umstellen]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /flaechen/quadrat-rechteck/#quadrat-rechteck-flaeche
+        - /flaechen/quadrat-rechteck/#quadrat-rechteck-umfang
+        - /flaechen/dreieck/#dreieck-flaeche
+        - /flaechen/dreieck/#dreieck-hoehe-aussen
+    - exercises:
+        - /flaechen/parallelogramm-trapez/#parallelogramm-trapez-parallelogramm
+        - /flaechen/parallelogramm-trapez/#parallelogramm-trapez-trapez
+        - /flaechen/quader-wuerfel/#quader-wuerfel-volumen
+        - /flaechen/quader-wuerfel/#quader-wuerfel-wuerfel
+    - exercises:
+        - /flaechen/netz-oberflaeche/#netz-oberflaeche-quader
+        - /flaechen/netz-oberflaeche/#netz-oberflaeche-ohne-deckel
+        - /flaechen/formeln-umstellen/#formeln-umstellen-dreieck
+        - /flaechen/formeln-umstellen/#formeln-umstellen-quader

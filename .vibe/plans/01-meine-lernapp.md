@@ -41,6 +41,9 @@ Taschenrechner – alle 8 Pflichtthemen und die 4 Wahlaufgaben W1–W4.
 - App zum Teilen mit `@lernapps/tooling`, nicht `@lernapps/practice`: der Wettbewerb betrifft alle 8. Klassen in Hessen. (guess)
 - Kein `scope`: keine `open-task`, und die App folgt nicht dem Material der Erstellerin/des Erstellers, sondern nur seiner
   Themenliste; dafür `tutor.rules` in `src/app.yaml`: ohne Taschenrechner rechnen, Wettbewerbsniveau Klasse 8. (guess)
+- Selbsteinschätzung in allen 12 Kapiteln, 2 Aufgaben je Seite (84 insgesamt, mehr als die empfohlenen 15–20 für die
+  ganze App): Die Kapitel sind die Einheit wie in der Checkliste. Kein Link auf `/einschaetzung/` möglich (die Laufzeit
+  0.14.0 lässt ihn nicht zu); die Startseite hat den Knopf „Selbsteinschätzung starten“. (guess)
 
 ## Notes
 
@@ -622,7 +625,7 @@ page, which a link. -->
 
 ### Tasks
 
-- [ ] Load skill `lernapps-explainer-self-assessment`. Add the self-assessment as it says, or write under "Key
+- [x] Load skill `lernapps-explainer-self-assessment`. Add the self-assessment as it says, or write under "Key
       decisions" why the app has none. Commit.
 - [ ] Load skill `lernapps-github`. Set up the repository and Pages as it says. Ask for the repository's name and
       every click only the creator can make, in one message.

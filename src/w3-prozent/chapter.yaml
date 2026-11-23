@@ -2,3 +2,14 @@
 title: "Wahlaufgabe W3: Prozent in mehreren Schritten"
 summary: Zu- und Abnahme mit dem Faktor, Vergleiche in Prozent und mehrere Änderungen nacheinander – mit Prozentpunkten und den typischen Fallen der Wahlaufgabe.
 pages: [zu-abnahme, vergleich, mehrere-aenderungen]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /w3-prozent/zu-abnahme/#zu-abnahme-zunahme
+        - /w3-prozent/zu-abnahme/#zu-abnahme-abnahme
+        - /w3-prozent/vergleich/#vergleich-mehr
+    - exercises:
+        - /w3-prozent/vergleich/#vergleich-weniger
+        - /w3-prozent/mehrere-aenderungen/#mehrere-aenderungen-preis
+        - /w3-prozent/mehrere-aenderungen/#mehrere-aenderungen-insgesamt

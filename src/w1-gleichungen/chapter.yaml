@@ -2,3 +2,19 @@
 title: "Wahlaufgabe W1: Terme und Gleichungen"
 summary: Klammern auflösen, Gleichungen und Ungleichungen lösen, der Satz vom Nullprodukt und die Lösungsmenge mit der Grundmenge ℤ.
 pages: [klammern, gleichungen, ungleichungen, nullprodukt, loesungsmenge]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /w1-gleichungen/klammern/#klammern-zahl
+        - /w1-gleichungen/klammern/#klammern-zwei
+        - /w1-gleichungen/gleichungen/#gleichungen-beide-seiten
+        - /w1-gleichungen/gleichungen/#gleichungen-x-quadrat
+    - exercises:
+        - /w1-gleichungen/ungleichungen/#ungleichungen-teilen
+        - /w1-gleichungen/ungleichungen/#ungleichungen-zwei-seiten
+        - /w1-gleichungen/nullprodukt/#nullprodukt-kleinere
+    - exercises:
+        - /w1-gleichungen/nullprodukt/#nullprodukt-groessere
+        - /w1-gleichungen/loesungsmenge/#loesungsmenge-anzahl
+        - /w1-gleichungen/loesungsmenge/#loesungsmenge-kleinste

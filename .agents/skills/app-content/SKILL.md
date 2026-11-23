@@ -128,7 +128,7 @@ Ordner `src/<kapitel>/`, Seite `src/<kapitel>/<seite>.yaml`. Übungs-Ids: `<seit
   Grundkonstruktionen bei `w2-konstruktionen`): kurz, ohne Aufgabe.
 - Seitenbeginn: ein Satz „Ziel: Ich kann …“ und wie die Seite an die vorige anknüpft.
 - Höchstens 350 Wörter Text und 350 in Aufgaben je Seite; Abbildung, Tabelle oder Aufgabe in den ersten 4 Blöcken.
-- Selbsteinschätzung in jedem `chapter.yaml` (`selfAssessment`), 2 Aufgaben je Seite, bevorzugt `generated`.
+- Selbsteinschätzung in jedem `chapter.yaml` (`selfAssessment`): je Seite 2 Aufgaben, die ohne die Seite verständlich sind (zwei verschiedene `generated`, sonst eine Frage mit Abbildung in `material`; nicht `winkel-pruefen-hoehe`, deren Abbildung davor steht), in Kursreihenfolge, Schritte zu 3–4 Aufgaben (2 Seiten je Schritt, bei 3 Seiten 3 + 3); app-weit 84 Aufgaben in 24 Schritten, mehr als die Faustregel 15–20, weil die Kapitel die eigentliche Einheit sind.
 - Kapitel 9–12 heißen „Wahlaufgabe W2 …“, „W1 …“, „W3 …“, „W4 …“ wie im Wettbewerb; Reihenfolge wie die Checkliste.
 - Aufgaben- und Rückmeldungstext je Seite oft 350–450 Wörter (Hinweis `explainer-text-load`, akzeptiert: viele
   Übungen sind der Zweck der App); Lesetext unter 350.

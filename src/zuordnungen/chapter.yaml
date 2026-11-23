@@ -2,3 +2,16 @@
 title: Zuordnungen
 summary: Tabellen und Koordinatensystem, proportionale und antiproportionale Zuordnungen und ihre Graphen – mit dem Test, der wirklich entscheidet.
 pages: [tabelle-koordinaten, proportional, antiproportional, graphen]
+# The chapter's self-assessment: two exercises per page, generated ones where possible, in course order.
+selfAssessment:
+  pages:
+    - exercises:
+        - /zuordnungen/tabelle-koordinaten/#tabelle-koordinaten-taxi
+        - /zuordnungen/tabelle-koordinaten/#tabelle-koordinaten-rechteck
+        - /zuordnungen/proportional/#proportional-preis
+        - /zuordnungen/proportional/#proportional-rezept
+    - exercises:
+        - /zuordnungen/antiproportional/#antiproportional-helfer
+        - /zuordnungen/antiproportional/#antiproportional-vorrat
+        - /zuordnungen/graphen/#graphen-gerade
+        - /zuordnungen/graphen/#graphen-hyperbel
