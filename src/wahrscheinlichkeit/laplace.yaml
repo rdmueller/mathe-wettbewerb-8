@@ -5,7 +5,7 @@ blocks:
   - type: text
     text: |
       **Ziel:** Ich kann den Ergebnisraum aufschreiben und die Laplace-Wahrscheinlichkeit berechnen. Du brauchst
-      dafür nur Brüche und das Kürzen – mehr dazu im Kapitel Bruchrechnung weiter hinten.
+      dafür nur Brüche und das Kürzen – mehr dazu im Kapitel [Bruchrechnung](/brueche/plus-minus/) weiter hinten.
   - type: section
     id: start
     title: Probier zuerst

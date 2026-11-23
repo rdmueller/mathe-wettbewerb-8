@@ -1,0 +1,330 @@
+# Bruchaufgaben mit zwei Brüchen (Nenner bis 12). Alle Ergebnisse gekürzt, als Text (die Auswahl zeigt sie so),
+# von Hand nachgerechnet. a/b und c/d: die beiden Brüche der Rechnung; schritt1, schritt2: der Rechenweg.
+# ergebnis: richtig. fehler1 bis fehler3 je nach art (a/b und c/d sind die beiden Brüche, HN der Hauptnenner):
+# - plus:    fehler1 = (a + c)/(b + d), Zähler plus Zähler, Nenner plus Nenner (IQB „Apfelsaftschorle“);
+#            fehler2 = (a + c)/HN, Zähler nicht erweitert; fehler3 = (a + c)/(b · d), Nenner multipliziert,
+#            Zähler nicht erweitert. Nenner haben einen gemeinsamen Teiler, damit fehler2 und fehler3 verschieden sind.
+# - minus:   fehler1 = (a − c)/(b − d); fehler2 = (a − c)/HN, Zähler nicht erweitert; fehler3 = a/b + c/d.
+# - mal:     fehler1 = (a · d)/(b · c), zweiten Bruch umgedreht wie beim Teilen; fehler2 = erst auf den HN
+#            erweitert, dann die Zähler multipliziert und den Nenner behalten; fehler3 = a/b + c/d.
+# - geteilt: fehler1 = den ersten statt den zweiten Bruch umgedreht; fehler2 = mal gerechnet, nichts umgedreht;
+#            fehler3 = beide Brüche umgedreht.
+- art: plus
+  a: 3
+  b: 4
+  c: 1
+  d: 6
+  schritt1: "Hauptnenner von 4 und 6 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 3/4 = 9/12 und 1/6 = 2/12."
+  schritt2: "9/12 + 2/12 = 11/12."
+  ergebnis: "11/12"
+  fehler1: "2/5"
+  fehler2: "1/3"
+  fehler3: "1/6"
+- art: plus
+  a: 1
+  b: 4
+  c: 3
+  d: 8
+  schritt1: "Hauptnenner von 4 und 8 ist 8, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/4 = 2/8."
+  schritt2: "2/8 + 3/8 = 5/8."
+  ergebnis: "5/8"
+  fehler1: "1/3"
+  fehler2: "1/2"
+  fehler3: "1/8"
+- art: plus
+  a: 1
+  b: 3
+  c: 1
+  d: 6
+  schritt1: "Hauptnenner von 3 und 6 ist 6, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/3 = 2/6."
+  schritt2: "2/6 + 1/6 = 3/6, gekürzt 1/2."
+  ergebnis: "1/2"
+  fehler1: "2/9"
+  fehler2: "1/3"
+  fehler3: "1/9"
+- art: plus
+  a: 2
+  b: 5
+  c: 3
+  d: 10
+  schritt1: "Hauptnenner von 5 und 10 ist 10, die kleinste Zahl, in der beide aufgehen. Erweitert: 2/5 = 4/10."
+  schritt2: "4/10 + 3/10 = 7/10."
+  ergebnis: "7/10"
+  fehler1: "1/3"
+  fehler2: "1/2"
+  fehler3: "1/10"
+- art: plus
+  a: 5
+  b: 12
+  c: 1
+  d: 4
+  schritt1: "Hauptnenner von 12 und 4 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/4 = 3/12."
+  schritt2: "5/12 + 3/12 = 8/12, gekürzt 2/3."
+  ergebnis: "2/3"
+  fehler1: "3/8"
+  fehler2: "1/2"
+  fehler3: "1/8"
+- art: plus
+  a: 1
+  b: 2
+  c: 3
+  d: 10
+  schritt1: "Hauptnenner von 2 und 10 ist 10, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/2 = 5/10."
+  schritt2: "5/10 + 3/10 = 8/10, gekürzt 4/5."
+  ergebnis: "4/5"
+  fehler1: "1/3"
+  fehler2: "2/5"
+  fehler3: "1/5"
+- art: plus
+  a: 1
+  b: 6
+  c: 5
+  d: 12
+  schritt1: "Hauptnenner von 6 und 12 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/6 = 2/12."
+  schritt2: "2/12 + 5/12 = 7/12."
+  ergebnis: "7/12"
+  fehler1: "1/3"
+  fehler2: "1/2"
+  fehler3: "1/12"
+- art: plus
+  a: 1
+  b: 4
+  c: 5
+  d: 12
+  schritt1: "Hauptnenner von 4 und 12 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/4 = 3/12."
+  schritt2: "3/12 + 5/12 = 8/12, gekürzt 2/3."
+  ergebnis: "2/3"
+  fehler1: "3/8"
+  fehler2: "1/2"
+  fehler3: "1/8"
+- art: minus
+  a: 5
+  b: 6
+  c: 1
+  d: 4
+  schritt1: "Hauptnenner von 6 und 4 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 5/6 = 10/12 und 1/4 = 3/12."
+  schritt2: "10/12 − 3/12 = 7/12."
+  ergebnis: "7/12"
+  fehler1: "2"
+  fehler2: "1/3"
+  fehler3: "13/12"
+- art: minus
+  a: 7
+  b: 8
+  c: 1
+  d: 2
+  schritt1: "Hauptnenner von 8 und 2 ist 8, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/2 = 4/8."
+  schritt2: "7/8 − 4/8 = 3/8."
+  ergebnis: "3/8"
+  fehler1: "1"
+  fehler2: "3/4"
+  fehler3: "11/8"
+- art: minus
+  a: 5
+  b: 12
+  c: 1
+  d: 3
+  schritt1: "Hauptnenner von 12 und 3 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 1/3 = 4/12."
+  schritt2: "5/12 − 4/12 = 1/12."
+  ergebnis: "1/12"
+  fehler1: "4/9"
+  fehler2: "1/3"
+  fehler3: "3/4"
+- art: minus
+  a: 9
+  b: 10
+  c: 2
+  d: 5
+  schritt1: "Hauptnenner von 10 und 5 ist 10, die kleinste Zahl, in der beide aufgehen. Erweitert: 2/5 = 4/10."
+  schritt2: "9/10 − 4/10 = 5/10, gekürzt 1/2."
+  ergebnis: "1/2"
+  fehler1: "7/5"
+  fehler2: "7/10"
+  fehler3: "13/10"
+- art: minus
+  a: 3
+  b: 4
+  c: 1
+  d: 3
+  schritt1: "Hauptnenner von 4 und 3 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 3/4 = 9/12 und 1/3 = 4/12."
+  schritt2: "9/12 − 4/12 = 5/12."
+  ergebnis: "5/12"
+  fehler1: "2"
+  fehler2: "1/6"
+  fehler3: "13/12"
+- art: minus
+  a: 11
+  b: 12
+  c: 3
+  d: 4
+  schritt1: "Hauptnenner von 12 und 4 ist 12, die kleinste Zahl, in der beide aufgehen. Erweitert: 3/4 = 9/12."
+  schritt2: "11/12 − 9/12 = 2/12, gekürzt 1/6."
+  ergebnis: "1/6"
+  fehler1: "1"
+  fehler2: "2/3"
+  fehler3: "5/3"
+- art: minus
+  a: 5
+  b: 6
+  c: 2
+  d: 3
+  schritt1: "Hauptnenner von 6 und 3 ist 6, die kleinste Zahl, in der beide aufgehen. Erweitert: 2/3 = 4/6."
+  schritt2: "5/6 − 4/6 = 1/6."
+  ergebnis: "1/6"
+  fehler1: "1"
+  fehler2: "1/2"
+  fehler3: "3/2"
+- art: mal
+  a: 2
+  b: 3
+  c: 3
+  d: 4
+  schritt1: "Zähler mal Zähler, Nenner mal Nenner: (2 · 3)/(3 · 4)."
+  schritt2: "= 6/12, gekürzt 1/2."
+  ergebnis: "1/2"
+  fehler1: "8/9"
+  fehler2: "6"
+  fehler3: "17/12"
+- art: mal
+  a: 1
+  b: 2
+  c: 1
+  d: 3
+  schritt1: "Zähler mal Zähler, Nenner mal Nenner: (1 · 1)/(2 · 3)."
+  schritt2: "= 1/6."
+  ergebnis: "1/6"
+  fehler1: "3/2"
+  fehler2: "1"
+  fehler3: "5/6"
+- art: mal
+  a: 2
+  b: 5
+  c: 1
+  d: 2
+  schritt1: "Zähler mal Zähler, Nenner mal Nenner: (2 · 1)/(5 · 2)."
+  schritt2: "= 2/10, gekürzt 1/5."
+  ergebnis: "1/5"
+  fehler1: "4/5"
+  fehler2: "2"
+  fehler3: "9/10"
+- art: mal
+  a: 5
+  b: 6
+  c: 3
+  d: 4
+  schritt1: "Zähler mal Zähler, Nenner mal Nenner: (5 · 3)/(6 · 4)."
+  schritt2: "= 15/24, gekürzt 5/8."
+  ergebnis: "5/8"
+  fehler1: "10/9"
+  fehler2: "15/2"
+  fehler3: "19/12"
+- art: mal
+  a: 4
+  b: 5
+  c: 1
+  d: 2
+  schritt1: "Zähler mal Zähler, Nenner mal Nenner: (4 · 1)/(5 · 2)."
+  schritt2: "= 4/10, gekürzt 2/5."
+  ergebnis: "2/5"
+  fehler1: "8/5"
+  fehler2: "4"
+  fehler3: "13/10"
+- art: mal
+  a: 3
+  b: 8
+  c: 2
+  d: 3
+  schritt1: "Zähler mal Zähler, Nenner mal Nenner: (3 · 2)/(8 · 3)."
+  schritt2: "= 6/24, gekürzt 1/4."
+  ergebnis: "1/4"
+  fehler1: "9/16"
+  fehler2: "6"
+  fehler3: "25/24"
+- art: mal
+  a: 1
+  b: 3
+  c: 3
+  d: 5
+  schritt1: "Zähler mal Zähler, Nenner mal Nenner: (1 · 3)/(3 · 5)."
+  schritt2: "= 3/15, gekürzt 1/5."
+  ergebnis: "1/5"
+  fehler1: "5/9"
+  fehler2: "3"
+  fehler3: "14/15"
+- art: geteilt
+  a: 3
+  b: 4
+  c: 1
+  d: 2
+  schritt1: "Teilen heißt mal den Kehrwert des zweiten Bruchs: 3/4 : 1/2 = 3/4 · 2/1."
+  schritt2: "= (3 · 2)/(4 · 1) = 6/4, gekürzt 3/2."
+  ergebnis: "3/2"
+  fehler1: "2/3"
+  fehler2: "3/8"
+  fehler3: "8/3"
+- art: geteilt
+  a: 2
+  b: 3
+  c: 1
+  d: 6
+  schritt1: "Teilen heißt mal den Kehrwert des zweiten Bruchs: 2/3 : 1/6 = 2/3 · 6/1."
+  schritt2: "= (2 · 6)/(3 · 1) = 12/3 = 4."
+  ergebnis: "4"
+  fehler1: "1/4"
+  fehler2: "1/9"
+  fehler3: "9"
+- art: geteilt
+  a: 1
+  b: 2
+  c: 3
+  d: 4
+  schritt1: "Teilen heißt mal den Kehrwert des zweiten Bruchs: 1/2 : 3/4 = 1/2 · 4/3."
+  schritt2: "= (1 · 4)/(2 · 3) = 4/6, gekürzt 2/3."
+  ergebnis: "2/3"
+  fehler1: "3/2"
+  fehler2: "3/8"
+  fehler3: "8/3"
+- art: geteilt
+  a: 4
+  b: 5
+  c: 2
+  d: 5
+  schritt1: "Teilen heißt mal den Kehrwert des zweiten Bruchs: 4/5 : 2/5 = 4/5 · 5/2."
+  schritt2: "= (4 · 5)/(5 · 2) = 20/10 = 2."
+  ergebnis: "2"
+  fehler1: "1/2"
+  fehler2: "8/25"
+  fehler3: "25/8"
+- art: geteilt
+  a: 3
+  b: 8
+  c: 3
+  d: 4
+  schritt1: "Teilen heißt mal den Kehrwert des zweiten Bruchs: 3/8 : 3/4 = 3/8 · 4/3."
+  schritt2: "= (3 · 4)/(8 · 3) = 12/24, gekürzt 1/2."
+  ergebnis: "1/2"
+  fehler1: "2"
+  fehler2: "9/32"
+  fehler3: "32/9"
+- art: geteilt
+  a: 5
+  b: 6
+  c: 2
+  d: 3
+  schritt1: "Teilen heißt mal den Kehrwert des zweiten Bruchs: 5/6 : 2/3 = 5/6 · 3/2."
+  schritt2: "= (5 · 3)/(6 · 2) = 15/12, gekürzt 5/4."
+  ergebnis: "5/4"
+  fehler1: "4/5"
+  fehler2: "5/9"
+  fehler3: "9/5"
+- art: geteilt
+  a: 1
+  b: 4
+  c: 1
+  d: 3
+  schritt1: "Teilen heißt mal den Kehrwert des zweiten Bruchs: 1/4 : 1/3 = 1/4 · 3/1."
+  schritt2: "= (1 · 3)/(4 · 1) = 3/4."
+  ergebnis: "3/4"
+  fehler1: "4/3"
+  fehler2: "1/12"
+  fehler3: "12"

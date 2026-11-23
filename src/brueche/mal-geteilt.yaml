@@ -1,0 +1,225 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Brüche und Dezimalbrüche multiplizieren und dividieren
+description: "Am Rechteck sehen, warum Zähler mal Zähler und Nenner mal Nenner gilt, mit dem Kehrwert teilen und das Komma richtig setzen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Brüche und Dezimalbrüche multiplizieren und dividieren. Auf der
+      [vorigen Seite](/brueche/plus-minus/) hast du addiert und subtrahiert – jetzt nimmst du mal und teilst. Einen
+      Hauptnenner brauchst du dafür nicht.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: mal-geteilt-start
+        text: Von einem Blech Kuchen ist noch ein Drittel übrig. Du isst die Hälfte davon. Welcher Teil des ganzen Blechs ist das?
+        material:
+          - type: figure
+            image: images/brueche-drittel.svg
+            alt: Ein rechteckiges Kuchenblech in drei gleiche Streifen geteilt. Der linke Streifen ist blau und mit 1/3 übrig beschriftet, die anderen zwei sind schon gegessen.
+            caption: Das blaue Drittel ist noch übrig. Davon isst du die Hälfte.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 1/6
+            correct: true
+            info: Halbierst du jedes Drittel, hat das Blech 6 gleiche Stücke.
+          - text: 1/5
+            correct: false
+            info: "Das wäre 1/(2 + 3). Nenner werden nicht addiert."
+          - text: 2/3
+            correct: false
+            info: Das ist das Doppelte des Drittels, nicht die Hälfte.
+          - text: 1/2
+            correct: false
+            info: Das wäre die Hälfte des ganzen Blechs.
+        explanation: Die Hälfte von einem Drittel ist ein Sechstel.
+        links:
+          - title: Rechnen mit Brüchen – Überblick (Serlo)
+            url: https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick
+  - type: section
+    id: regel
+    title: „Von“ heißt mal
+    blocks:
+      - type: text
+        text: |
+          Halbiere das übrige Drittel durch eine waagerechte Linie. Sie teilt das ganze Blech in 3 Spalten und 2
+          Reihen, also in 3 · 2 = 6 gleiche Felder. Das orange Feld ist eines davon. „Die Hälfte von“ heißt „mal
+          $\frac{1}{2}$“: Zähler mal Zähler zählt die orangen Felder, Nenner mal Nenner alle Felder.
+      - type: figure
+        image: images/brueche-rechteck-modell.svg
+        alt: Das Kuchenblech in 3 Spalten und durch eine gestrichelte waagerechte Linie in 2 Reihen geteilt. Die linke Spalte ist blau und mit 1/3 beschriftet, ihr oberes Feld orange mit einem Fragezeichen. Links stehen 1/2 und 1/2 an den Reihen.
+        caption: Das orange Feld ist die Hälfte des blauen Drittels. Zähle, wie viele solche Felder das ganze Blech hat.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '\frac{1}{2} \cdot \frac{1}{3} = \frac{1 \cdot 1}{2 \cdot 3} = \frac{1}{6}'
+      - type: text
+        text: |
+          Teilen fragt: Wie oft passt der zweite Bruch in den ersten? In $\frac{1}{2} = \frac{3}{6}$ passt
+          $\frac{1}{6}$ dreimal – genau so viel wie $\frac{1}{2} \cdot 6$. Darum nimmst du mit dem **Kehrwert** des
+          zweiten Bruchs mal. Beim Kehrwert tauschen Zähler und Nenner die Plätze.
+      - type: formula
+        formula: '\frac{1}{2} : \frac{1}{6} = \frac{1}{2} \cdot \frac{6}{1} = 3'
+      - type: formula
+        formula: '\frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c}'
+      - type: text
+        text: |
+          Dezimalbrüche nimmst du erst ohne Komma mal. Das Ergebnis bekommt so viele Nachkommastellen wie beide
+          Zahlen zusammen, denn Zehntel mal Zehntel sind Hundertstel. Beim Teilen verschiebst du das Komma in beiden
+          Zahlen gleich weit nach rechts, bis du durch eine ganze Zahl teilst.
+      - type: formula
+        formula: '0{,}3 \cdot 0{,}2 = \frac{3}{10} \cdot \frac{2}{10} = \frac{6}{100} = 0{,}06'
+      - type: formula
+        formula: "1{,}2 : 0{,}3 = 12 : 3 = 4"
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Saft in Gläsern
+        blocks:
+          - type: text
+            text: |
+              Eine Flasche enthält 0,75 l Saft. Du gießt $\frac{2}{3}$ davon in Gläser. Als Dezimalbruch ist
+              $\frac{2}{3} = 0{,}666…$, das bricht nie ab. Also schreibst du 0,75 als Bruch: 0,75 ist
+              $\frac{75}{100}$, gekürzt $\frac{3}{4}$.
+          - type: formula
+            formula: '\frac{3}{4} \cdot \frac{2}{3} = \frac{6}{12} = \frac{1}{2} = 0{,}5'
+          - type: text
+            text: |
+              Antwort – In den Gläsern ist 0,5 l Saft. Ein gekürzter Bruch wird ein abbrechender Dezimalbruch, wenn
+              sein Nenner nur die Teiler 2 und 5 hat, zum Beispiel 4, 5, 8, 20 oder 25.
+  - type: section
+    id: merke
+    title: Den richtigen Bruch umdrehen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Beim Teilen drehst du nur den zweiten Bruch um – den, durch den du teilst. Beim Malnehmen von
+              Dezimalbrüchen zählst du die Nachkommastellen: 0,3 · 0,2 = 0,06, nicht 0,6. Ein Überschlag hilft:
+              0,3 · 0,2 ist kleiner als 0,3 · 1 = 0,3.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: generated
+        id: mal-geteilt-mal
+        given:
+          e: { pick: 1, from: { data: bruchaufgaben } }
+        where: ["e.art == 'mal'"]
+        task:
+          text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } \\cdot \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
+        answer:
+          value: "e.ergebnis"
+          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+        mistakes:
+          - value: "e.fehler1"
+            message: Umgedreht wird nur beim Teilen.
+          - value: "e.fehler2"
+            message: Beim Malnehmen brauchst du keinen Hauptnenner.
+          - value: "e.fehler3"
+            message: Du hast addiert statt malgenommen.
+        hint: Zähler mal Zähler, Nenner mal Nenner.
+        steps:
+          - "{{e.schritt1}}"
+          - "{{e.schritt2}} Das Ergebnis ist {{answer}}."
+      - type: generated
+        id: mal-geteilt-geteilt
+        given:
+          e: { pick: 1, from: { data: bruchaufgaben } }
+        where: ["e.art == 'geteilt'"]
+        task:
+          text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } : \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
+        answer:
+          value: "e.ergebnis"
+          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+        mistakes:
+          - value: "e.fehler1"
+            message: Umgedreht wird der zweite Bruch, nicht der erste.
+          - value: "e.fehler2"
+            message: Teilen heißt mal den Kehrwert.
+          - value: "e.fehler3"
+            message: Nur der zweite Bruch wird umgedreht.
+        hint: Welcher der beiden Brüche wird zum Kehrwert?
+        steps:
+          - "{{e.schritt1}}"
+          - "{{e.schritt2}} Das Ergebnis ist {{answer}}."
+      - type: generated
+        id: mal-geteilt-komma
+        given:
+          x: { decimal: [0.2, 2.5], step: 0.1 }
+          y: { decimal: [0.2, 0.9], step: 0.1 }
+        where: ["decimals(x) == 1"]
+        task:
+          text: "Ein Beet ist {{x}} m lang und {{y}} m breit. Wie groß ist seine Fläche?"
+        answer: { value: "x * y", compare: { number: { format: decimal, decimals: 2, unit: m² } } }
+        mistakes:
+          - value: "10 * x * y"
+            message: Zähle die Nachkommastellen beider Zahlen zusammen.
+          - value: "100 * x * y"
+            message: Das Komma fehlt.
+        hint: Rechne erst ohne Komma. Dann zähle die Nachkommastellen.
+        steps:
+          - "Mit der Länge {{x}} m und der Breite {{y}} m: Rechne erst ohne Komma, dann bekommt das Ergebnis 1 + 1 = 2 Nachkommastellen."
+          - "Das Beet hat eine Fläche von {{answer}} m²."
+      - type: generated
+        id: mal-geteilt-stuecke
+        given:
+          x: { decimal: [1.2, 9.6], step: 0.1 }
+          y: { oneOf: [0.2, 0.3, 0.4, 0.5, 0.6, 0.8] }
+        where: ["decimals(x) == 1", "decimals(x / y) == 0", "x / y <= 30"]
+        task:
+          text: "Eine Leiste ist {{x}} m lang. Du sägst sie in gleiche Stücke von {{y}} m. Wie viele Stücke bekommst du?"
+        answer: { value: "x / y", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "x / y / 10"
+            message: "Verschiebe das Komma auch bei {{x}}."
+          - value: "10 * x / y"
+            message: "Verschiebe das Komma auch bei {{y}}."
+        hint: Verschiebe das Komma in beiden Zahlen um eine Stelle nach rechts.
+        steps:
+          - "Länge {{x}} m geteilt durch die Stücklänge {{y}} m: Komma in beiden Zahlen eine Stelle nach rechts."
+          - "Du bekommst {{answer}} Stücke."
+      - type: matching
+        id: mal-geteilt-dezimal
+        text: Welcher Dezimalbruch gehört zu welchem Bruch?
+        pairs:
+          - left: 1/4
+            right: "0,25"
+          - left: 3/5
+            right: "0,6"
+          - left: 1/8
+            right: "0,125"
+          - left: 7/20
+            right: "0,35"
+        distractors:
+          - "0,34"
+        explanation: "Erweitere auf 10, 100 oder 1000: 1/4 = 25/100, 3/5 = 6/10, 1/8 = 125/1000, 7/20 = 35/100."
+        links:
+          - title: Dezimalbrüche (Serlo)
+            url: https://de.serlo.org/mathe/19482/dezimalbrueche
+      - type: number
+        id: mal-geteilt-band
+        text: "Ein Geschenkband ist 2,4 m lang. Du schneidest 3/8 davon ab. Vom Rest bekommt deine Schwester die Hälfte. Wie viel Meter Band bleiben dir?"
+        answer: 0.75
+        tolerance: 0
+        unit: m
+        mistakes:
+          - answer: 0.9
+            message: Das ist das abgeschnittene Stück.
+          - answer: 1.5
+            message: Die Hälfte des Rests bekommt noch deine Schwester.
+          - answer: 0.45
+            message: Halbiert wird der Rest, nicht das abgeschnittene Stück.
+        hint: Rechne in drei Schritten – abgeschnitten, Rest, Hälfte.
+        explanation: "3/8 von 2,4 m sind 2,4 : 8 · 3 = 0,9 m. Rest: 2,4 m − 0,9 m = 1,5 m. Die Hälfte davon ist 0,75 m."
+        links:
+          - title: Rechnen mit Brüchen – Überblick (Serlo)
+            url: https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick
+      - type: text
+        text: Als Nächstes kommt alles zusammen – in langen Rechnungen mit Klammern und Punkt vor Strich.

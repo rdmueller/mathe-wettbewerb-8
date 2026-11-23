@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Bruchrechnung
+summary: Brüche und Dezimalbrüche addieren, subtrahieren, multiplizieren und dividieren – ohne Taschenrechner und in der richtigen Reihenfolge.
+pages: [plus-minus, mal-geteilt, rechenregeln]

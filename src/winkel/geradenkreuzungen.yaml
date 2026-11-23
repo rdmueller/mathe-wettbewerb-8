@@ -215,4 +215,4 @@ blocks:
           - title: Winkel (Serlo)
             url: https://de.serlo.org/mathe/1707/winkel
       - type: text
-        text: Damit kannst du jeden fehlenden Winkel an Dreiecken, Vierecken und Geradenkreuzungen berechnen. Im nächsten Kapitel geht es um Bruchrechnung.
+        text: Damit kannst du jeden fehlenden Winkel an Dreiecken, Vierecken und Geradenkreuzungen berechnen. Im nächsten Kapitel geht es um [Bruchrechnung](/brueche/plus-minus/).

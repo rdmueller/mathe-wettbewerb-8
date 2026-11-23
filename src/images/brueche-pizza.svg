@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="220" viewBox="0 0 300 220" font-family="sans-serif" font-size="14">
+  <title>Eine runde Pizza: die linke Hälfte blau für Lena, das Viertel rechts oben orange für Tom, das Viertel rechts unten ist noch übrig</title>
+  <rect width="300" height="220" fill="#ffffff"/>
+  <path d="M 150 30 A 80 80 0 0 0 150 190 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M 150 30 A 80 80 0 0 1 230 110 L 150 110 Z" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/>
+  <path d="M 230 110 A 80 80 0 0 1 150 190 L 150 110 Z" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="108" y="106" text-anchor="middle" fill="#1e3a8a" font-weight="bold">Lena</text>
+  <text x="108" y="126" text-anchor="middle" fill="#1e3a8a">1/2</text>
+  <text x="184" y="80" text-anchor="middle" fill="#9a3412" font-weight="bold">Tom</text>
+  <text x="184" y="98" text-anchor="middle" fill="#9a3412">1/4</text>
+  <text x="186" y="150" text-anchor="middle" fill="#374151">übrig</text>
+</svg>

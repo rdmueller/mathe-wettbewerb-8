@@ -1,0 +1,172 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Klammern und Punkt vor Strich
+description: "Die Reihenfolge einer langen Rechnung markieren und dann Schritt für Schritt rechnen – mit Brüchen und Dezimalbrüchen gemischt."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Klammern und Punkt vor Strich beachten, wenn ich mit Brüchen und Dezimalbrüchen rechne.
+      Du brauchst alle vier Rechenarten von den Seiten [Plus und Minus](/brueche/plus-minus/) und
+      [Mal und Geteilt](/brueche/mal-geteilt/).
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: rechenregeln-start
+        text: 'Berechne $\frac{1}{2} + \frac{1}{2} \cdot 4$. Gib das Ergebnis als Dezimalbruch an.'
+        answer: 2.5
+        tolerance: 0
+        mistakes:
+          - answer: 4
+            message: "Du hast von links nach rechts gerechnet, erst das Plus. Welche Rechnung kommt zuerst?"
+          - answer: 2
+            message: "1/2 · 4 = 2 stimmt. Das 1/2 vorne gehört aber noch dazu."
+        hint: Mal oder Plus – was rechnest du zuerst?
+        explanation: "Erst die Malaufgabe: 1/2 · 4 = 2. Dann 1/2 + 2 = 2,5."
+        links:
+          - title: Umgang mit Klammern (Serlo)
+            url: https://de.serlo.org/mathe/111923/umgang-mit-klammern
+  - type: section
+    id: regel
+    title: Erst markieren, dann rechnen
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben stehen Mal und Plus. Es gilt **Punkt vor Strich**: Mal und Geteilt (Punktrechnung)
+          kommen vor Plus und Minus (Strichrechnung). Also erst $\frac{1}{2} \cdot 4 = 2$, dann
+          $\frac{1}{2} + 2 = 2{,}5$. Wer von links nach rechts rechnet, bekommt 4. Vor allem anderen kommen die
+          **Klammern**. Markiere die Reihenfolge, bevor du rechnest – wie im Bild.
+      - type: figure
+        image: images/brueche-reihenfolge.svg
+        alt: "Der Term 1/2 + 2 · (1/2 − 1/4). Darunter drei Linien: orange unter der Klammer mit 1 Klammer, blau unter 2 · Klammer mit 2 Punkt, grau gestrichelt unter dem ganzen Term mit 3 Strich."
+        caption: Je länger die Linie, desto später kommt der Schritt. Jeder Schritt nimmt das Ergebnis des vorigen mit.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '\frac{1}{2} + 2 \cdot \left(\frac{1}{2} - \frac{1}{4}\right)'
+      - type: formula
+        formula: '= \frac{1}{2} + 2 \cdot \frac{1}{4}'
+      - type: formula
+        formula: '= \frac{1}{2} + \frac{1}{2} = 1'
+      - type: text
+        text: |
+          Stehen nur Punkt- oder nur Strichrechnungen nebeneinander, rechnest du von links nach rechts:
+          $6 : 2 \cdot 3 = 3 \cdot 3 = 9$. Ein Trick für den Wettbewerb: Eine Klammer mal eine Zahl darfst du auch
+          ausmultiplizieren, also jedes Glied in der Klammer mit der Zahl malnehmen. So bleiben die Zahlen ganz.
+      - type: formula
+        formula: '\left(\frac{1}{2} + \frac{1}{3}\right) \cdot 6'
+      - type: formula
+        formula: '= \frac{1}{2} \cdot 6 + \frac{1}{3} \cdot 6 = 3 + 2 = 5'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Brüche und Dezimalbrüche gemischt
+        blocks:
+          - type: formula
+            formula: '\left(0{,}5 + \frac{1}{4}\right) : \frac{3}{8} - 1{,}2'
+          - type: text
+            text: |
+              Markiere zuerst: 1 Klammer, 2 Geteilt, 3 Minus. In der Klammer schreibst du 0,5 als Bruch, weil
+              danach durch einen Bruch geteilt wird.
+          - type: formula
+            formula: '0{,}5 + \frac{1}{4} = \frac{2}{4} + \frac{1}{4} = \frac{3}{4}'
+          - type: formula
+            formula: '\frac{3}{4} : \frac{3}{8} = \frac{3}{4} \cdot \frac{8}{3} = 2'
+          - type: formula
+            formula: "2 - 1{,}2 = 0{,}8"
+          - type: text
+            text: Antwort – Das Ergebnis ist 0,8.
+  - type: section
+    id: merke
+    title: Nicht einfach von links nach rechts
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Erst Klammern, dann Punkt, dann Strich. Nur gleichrangige Rechnungen gehen von links nach rechts.
+              Schreib nach jedem Schritt die ganze Zeile neu ab, mit allem, was noch nicht gerechnet ist. Dann geht
+              kein Teil verloren.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: ordering
+        id: rechenregeln-schritte
+        text: 'Bring die Rechenschritte für $\frac{5}{6} - \frac{1}{3} \cdot \left(\frac{1}{4} + \frac{1}{2}\right)$ in die richtige Reihenfolge.'
+        items:
+          - 1/4 + 1/2 = 3/4
+          - 1/3 · 3/4 = 1/4
+          - 5/6 − 1/4 = 7/12
+        explanation: "Zuerst die Klammer, dann das Mal, zuletzt das Minus: 5/6 − 1/4 = 10/12 − 3/12 = 7/12."
+        links:
+          - title: Umgang mit Klammern (Serlo)
+            url: https://de.serlo.org/mathe/111923/umgang-mit-klammern
+      - type: generated
+        id: rechenregeln-punkt-vor-strich
+        given:
+          a: { int: [1, 20] }
+          b: { oneOf: [0.2, 0.25, 0.5, 0.75, 1.5, 2.5] }
+          n: { int: [2, 12] }
+        task:
+          text: "Berechne {{a}} + {{b}} · {{n}}."
+        answer: { value: "a + b * n", compare: { number: { format: decimal, decimals: 2 } } }
+        mistakes:
+          - value: "(a + b) * n"
+            message: "Du hast von links nach rechts gerechnet. Punkt vor Strich: Das Mal kommt zuerst."
+          - value: "b * n"
+            message: "Das ist nur das Produkt. Addiere noch {{a}}."
+        hint: Welche Rechnung ist eine Punktrechnung?
+        steps:
+          - "Punkt vor Strich: erst {{b}} · {{n}}, dann {{a}} plus dieses Ergebnis."
+          - "Das Ergebnis ist {{answer}}."
+      - type: generated
+        id: rechenregeln-klammer
+        given:
+          b: { oneOf: [2, 4, 5] }
+          d: { oneOf: [2, 4, 5, 10] }
+          n: { int: [2, 20] }
+        where: ["b != d"]
+        task:
+          text: 'Berechne $\left(\frac{1}{{{b}}} + \frac{1}{{{d}}}\right) \cdot {{n}}$. Gib das Ergebnis als Dezimalbruch an.'
+        answer: { value: "(1 / b + 1 / d) * n", compare: { number: { format: decimal, decimals: 2 } } }
+        mistakes:
+          - value: "1 / b + n / d"
+            message: "Du hast die Klammer übersehen. Die ganze Klammer wird mit {{n}} malgenommen."
+          - value: "n / b + 1 / d"
+            message: "Du hast nur den ersten Bruch mit {{n}} malgenommen. Beim Ausmultiplizieren kommt jedes Glied dran."
+        hint: Rechne die Klammer zuerst – oder nimm jedes Glied der Klammer mit {{n}} mal.
+        steps:
+          - 'Jedes Glied mal {{n}}: $\frac{1}{{{b}}} \cdot {{n}} + \frac{1}{{{d}}} \cdot {{n}}$'
+          - "Das Ergebnis ist {{answer}}."
+      - type: true-false
+        id: rechenregeln-links-rechts
+        text: "6 : 2 · 3 = 1, denn Mal kommt vor Geteilt."
+        answer: false
+        explanation: "Mal und Geteilt sind gleichrangig, beide sind Punktrechnung. Darum gilt von links nach rechts: 6 : 2 · 3 = 3 · 3 = 9."
+        links:
+          - title: Umgang mit Klammern (Serlo)
+            url: https://de.serlo.org/mathe/111923/umgang-mit-klammern
+      - type: number
+        id: rechenregeln-wettbewerb
+        text: 'Berechne $\left(2\frac{1}{2} - 0{,}75\right) : \frac{7}{4} + 0{,}2 \cdot 5$. Dabei heißt $2\frac{1}{2}$ zwei und ein halb, also $2 + \frac{1}{2}$.'
+        answer: 2
+        tolerance: 0
+        mistakes:
+          - answer: 6
+            message: "Du hast am Ende von links nach rechts gerechnet. Punkt vor Strich gilt auch nach der Klammer."
+          - answer: 4.0625
+            message: "Beim Teilen durch 7/4 nimmst du mit dem Kehrwert 4/7 mal."
+        hint: "Markiere zuerst: Was ist Klammer, was Punkt, was Strich?"
+        explanation: "Klammer: 2,5 − 0,75 = 1,75 = 7/4. Punkt: 7/4 : 7/4 = 1 und 0,2 · 5 = 1. Strich: 1 + 1 = 2."
+        links:
+          - title: Umgang mit Klammern (Serlo)
+            url: https://de.serlo.org/mathe/111923/umgang-mit-klammern
+      - type: text
+        text: |
+          Damit hast du das Kapitel Bruchrechnung geschafft: Du rechnest mit Brüchen und Dezimalbrüchen in allen vier
+          Rechenarten und in der richtigen Reihenfolge. Im nächsten Kapitel geht es um die Wahlaufgabe W2:
+          Dreiecke konstruieren.

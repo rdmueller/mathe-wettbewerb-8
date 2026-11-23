@@ -71,7 +71,7 @@ blocks:
         formula: 'G \cdot p\,\% = P \qquad 200 \cdot 0{,}15 = 30'
       - type: text
         text: |
-          Ohne Taschenrechner helfen dir Anteile, die du sofort siehst: 50 % ist die Hälfte, 25 % ein Viertel, 20 %
+          Ohne Taschenrechner helfen dir [Anteile](/brueche/plus-minus/), die du sofort siehst: 50 % ist die Hälfte, 25 % ein Viertel, 20 %
           ein Fünftel, 12,5 % ein Achtel, 10 % ein Zehntel. Für 35 % rechnest du 10 % + 10 % + 10 % + 5 %.
   - type: section
     id: beispiel

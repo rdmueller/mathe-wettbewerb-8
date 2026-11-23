@@ -584,7 +584,7 @@ page, which a link. -->
 - [x] Kapitel wahrscheinlichkeit: 3 Seiten (laplace, baumdiagramm, pfadregeln) mit Daten zufallsversuche.yaml und SVG-Bäumen, Selbsteinschätzung
 - [x] Kapitel symmetrie: 2 Seiten (symmetrie-erkennen, spiegeln-drehen) mit Daten figuren.yaml, Selbsteinschätzung
 - [x] Kapitel winkel: 2 Seiten (winkelsumme, geradenkreuzungen) mit SVG-Winkelpaaren, Selbsteinschätzung
-- [ ] Kapitel brueche: 3 Seiten (plus-minus, mal-geteilt, rechenregeln), Brüche als Auswahl, Abschnitt Kürzen/Erweitern, Selbsteinschätzung
+- [x] Kapitel brueche: 3 Seiten (plus-minus, mal-geteilt, rechenregeln), Brüche als Auswahl, Abschnitt Kürzen/Erweitern, Selbsteinschätzung
 - [ ] Kapitel w2-konstruktionen: 4 Seiten (planfigur, kongruenzsaetze, konstruktion-schritte, winkel-pruefen) mit Planfiguren als SVG, Daten kongruenzsaetze.yaml, Abschnitt Grundkonstruktionen, Selbsteinschätzung
 - [ ] Kapitel w1-gleichungen: 5 Seiten (klammern, gleichungen, ungleichungen, nullprodukt, loesungsmenge), Selbsteinschätzung
 - [ ] Kapitel w3-prozent: 3 Seiten (zu-abnahme, vergleich, mehrere-aenderungen), Selbsteinschätzung

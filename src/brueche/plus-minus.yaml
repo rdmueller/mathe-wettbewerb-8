@@ -1,0 +1,233 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Brüche und Dezimalbrüche addieren und subtrahieren
+description: "Den Hauptnenner selbst finden, Brüche addieren und subtrahieren und Dezimalbrüche schriftlich rechnen – Komma unter Komma."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Brüche und Dezimalbrüche addieren und subtrahieren. Du brauchst dafür Kürzen und Erweitern
+      aus Klasse 6 – hier kurz wiederholt.
+  - type: section
+    id: brauchst
+    title: Das brauchst du hier
+    blocks:
+      - type: text
+        text: |
+          Ein Bruch wie $\frac{3}{4}$ hat oben den **Zähler** 3 und unten den **Nenner** 4: Das Ganze ist in 4
+          gleiche Teile geteilt, 3 davon sind gemeint. **Erweitern** heißt, Zähler und Nenner mit derselben Zahl
+          malzunehmen. **Kürzen** heißt, beide durch dieselbe Zahl zu teilen. Der Wert bleibt gleich, nur die Teile
+          werden feiner oder gröber.
+      - type: formula
+        formula: '\frac{3}{4} = \frac{3 \cdot 3}{4 \cdot 3} = \frac{9}{12}'
+      - type: formula
+        formula: '\frac{8}{12} = \frac{8 : 4}{12 : 4} = \frac{2}{3}'
+      - type: text
+        text: |
+          Ein **Dezimalbruch** ist ein Bruch mit dem Nenner 10, 100, 1000 …, nur anders geschrieben: 0,7 ist
+          $\frac{7}{10}$, 0,25 ist $\frac{25}{100} = \frac{1}{4}$. Ergebnisse gibst du immer vollständig gekürzt an.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: plus-minus-start
+        text: Lena isst eine halbe Pizza, Tom ein Viertel derselben Pizza. Welcher Teil der Pizza ist zusammen gegessen?
+        material:
+          - type: figure
+            image: images/brueche-pizza.svg
+            alt: Eine runde Pizza. Die linke Hälfte ist blau und mit Lena 1/2 beschriftet, das Viertel rechts oben orange und mit Tom 1/4, das Viertel rechts unten ist weiß und mit übrig beschriftet.
+            caption: Lenas Hälfte ist blau, Toms Viertel orange.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 3/4
+            correct: true
+            info: Die Hälfte sind zwei Viertel, dazu Toms Viertel.
+          - text: 1/3
+            correct: false
+            info: "Das ist (1 + 1)/(2 + 4) = 2/6. Zusammen ist aber mehr gegessen als Lenas Hälfte."
+          - text: 1/2
+            correct: false
+            info: Das sind 1 + 1 Viertel. Lenas Hälfte ist aber mehr als ein Viertel.
+          - text: 1/8
+            correct: false
+            info: 1/8 ist 1/2 mal 1/4. Gefragt ist die Summe.
+        explanation: "1/2 = 2/4, und 2/4 + 1/4 = 3/4."
+        links:
+          - title: Rechnen mit Brüchen – Überblick (Serlo)
+            url: https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick
+  - type: section
+    id: regel
+    title: Erst gleich große Stücke, dann zählen
+    blocks:
+      - type: text
+        text: |
+          Bei der Pizza hast du gesehen: Lenas Hälfte ist so groß wie zwei Viertel. Erst als beide Teile Viertel
+          waren, konntest du zählen: $\frac{2}{4} + \frac{1}{4} = \frac{3}{4}$. Gleich große Stücke heißt gleicher
+          Nenner. Der **Hauptnenner** ist die kleinste Zahl, in der beide Nenner aufgehen. Erweitere beide Brüche auf
+          ihn und addiere die Zähler. Der Nenner bleibt.
+      - type: figure
+        image: images/brueche-hauptnenner.svg
+        alt: Drei gleich lange Streifen. Oben ist der Streifen in 3 Teile geteilt, 2 davon blau. In der Mitte ist er in 4 Teile geteilt, 1 davon orange. Unten ist er in 12 Teile geteilt, 8 davon blau und 3 orange.
+        caption: "Drittel und Viertel sind verschieden groß. In Zwölfteln passen beide: Die 2 Drittel sind 8 Zwölftel, das Viertel 3 Zwölftel."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '\frac{2}{3} + \frac{1}{4} = \frac{8}{12} + \frac{3}{12} = \frac{11}{12}'
+      - type: text
+        text: |
+          Den Hauptnenner findest du, indem du die Vielfachen des größeren Nenners durchgehst: 4, 8, 12 – und 12
+          ist auch durch 3 teilbar. Beim Subtrahieren gehst du genauso vor. Zum Schluss kürzt du, wenn es geht.
+      - type: text
+        text: |
+          Dezimalbrüche rechnest du schriftlich: **Komma unter Komma**, fehlende Stellen füllst du mit 0 auf. Das
+          ist dieselbe Idee wie beim Hauptnenner: Zehntel unter Zehntel, Hundertstel unter Hundertstel.
+      - type: formula
+        formula: "3{,}50 + 0{,}75 = 4{,}25"
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Reicht das Mehl?
+        blocks:
+          - type: text
+            text: |
+              Für einen Kuchen brauchst du $\frac{3}{4}$ kg Mehl für den Teig und $\frac{1}{6}$ kg für die Streusel.
+              Die Packung hat 1 kg. 4 · 6 = 24 wäre ein gemeinsamer Nenner, aber 12 ist kleiner: Auch 12 ist durch 4
+              und 6 teilbar.
+          - type: formula
+            formula: '\frac{3}{4} + \frac{1}{6} = \frac{9}{12} + \frac{2}{12} = \frac{11}{12}'
+          - type: formula
+            formula: '1 - \frac{11}{12} = \frac{12}{12} - \frac{11}{12} = \frac{1}{12}'
+          - type: text
+            text: Antwort – Das Mehl reicht. Es bleibt $\frac{1}{12}$ kg übrig, gut 80 g.
+  - type: section
+    id: merke
+    title: Nenner werden nicht addiert
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Zähler plus Zähler und Nenner plus Nenner ist falsch. Prüf es mit $\frac{1}{2} + \frac{1}{2}$: Das
+              ergäbe $\frac{2}{4}$, also wieder nur eine Hälfte – zwei Hälften sind aber ein Ganzes. Der Zähler
+              zählt die Stücke, der Nenner sagt, wie groß sie sind. Bei Dezimalbrüchen steht Komma unter Komma,
+              nicht die letzte Ziffer unter der letzten.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: generated
+        id: plus-minus-addieren
+        given:
+          e: { pick: 1, from: { data: bruchaufgaben } }
+        where: ["e.art == 'plus'"]
+        task:
+          text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } + \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
+        answer:
+          value: "e.ergebnis"
+          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+        mistakes:
+          - value: "e.fehler1"
+            message: Nenner werden nicht addiert. Erweitere erst auf den Hauptnenner.
+          - value: "e.fehler2"
+            message: Beim Erweitern nimmst du auch den Zähler mal.
+          - value: "e.fehler3"
+            message: Nenner multipliziert, Zähler aber nicht erweitert.
+        hint: Suche die kleinste Zahl, in der beide Nenner aufgehen.
+        steps:
+          - "{{e.schritt1}}"
+          - "{{e.schritt2}} Das Ergebnis ist {{answer}}."
+      - type: generated
+        id: plus-minus-subtrahieren
+        given:
+          e: { pick: 1, from: { data: bruchaufgaben } }
+        where: ["e.art == 'minus'"]
+        task:
+          text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } - \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
+        answer:
+          value: "e.ergebnis"
+          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+        mistakes:
+          - value: "e.fehler1"
+            message: Nenner werden nicht subtrahiert. Erst gleiche Nenner.
+          - value: "e.fehler2"
+            message: "Prüfe die Zähler: Wurden sie mit erweitert?"
+          - value: "e.fehler3"
+            message: Du hast addiert statt subtrahiert.
+        hint: Erst Hauptnenner, dann nur die Zähler subtrahieren.
+        steps:
+          - "{{e.schritt1}}"
+          - "{{e.schritt2}} Das Ergebnis ist {{answer}}."
+      - type: generated
+        id: plus-minus-dezimal
+        given:
+          x: { decimal: [1.1, 9.9], step: 0.1 }
+          y: { decimal: [0.11, 0.99], step: 0.01 }
+        where: ["decimals(x) == 1", "decimals(y) == 2"]
+        task:
+          text: "Eine Radtour ist {{x}} km lang. Der Umweg zum Eisladen ist {{y}} km lang. Wie lang ist die Tour mit dem Umweg?"
+        answer: { value: "x + y", compare: { number: { format: decimal, decimals: 2, unit: km } } }
+        mistakes:
+          - value: "x / 10 + y"
+            message: Schreib Komma unter Komma, nicht Ziffer unter Ziffer.
+          - value: "x + 10 * y"
+            message: "{{y}} km ist weniger als 1 km."
+        hint: Komma unter Komma, die fehlende Stelle mit 0 auffüllen.
+        steps:
+          - "Komma unter Komma: {{x}} km bekommt eine 0 als zweite Nachkommastelle, dann addierst du {{y}} km Stelle für Stelle."
+          - "Die Tour mit Umweg ist {{answer}} km lang."
+      - type: single-choice
+        id: plus-minus-luecke
+        text: 'Welcher Bruch gehört in die Lücke? $\frac{1}{4} + \text{?} = \frac{5}{6}$'
+        options:
+          - text: 7/12
+            correct: true
+            info: "1/4 + 7/12 = 3/12 + 7/12 = 10/12 = 5/6."
+          - text: 1/3
+            correct: false
+            info: "1/3 = 4/12, also 5 − 1 ohne Erweitern."
+          - text: "2"
+            correct: false
+            info: "4/2 = 2 ist schon größer als 5/6."
+          - text: 13/12
+            correct: false
+            info: Das ist 5/6 + 1/4. Gesucht ist der Unterschied.
+        explanation: "Rückwärts: 5/6 − 1/4 = 10/12 − 3/12 = 7/12."
+        links:
+          - title: Rechnen mit Brüchen – Überblick (Serlo)
+            url: https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick
+      - type: number
+        id: plus-minus-gemischt
+        text: 'Berechne $0{,}5 + \frac{3}{4}$. Gib das Ergebnis als Dezimalbruch an.'
+        answer: 1.25
+        tolerance: 0
+        mistakes:
+          - answer: 0.84
+            message: 3/4 ist nicht 0,34. Erweitere auf Hundertstel.
+          - answer: 3.9
+            message: 3/4 ist kleiner als 1, also nicht 3,4.
+        hint: Erweitere 3/4 auf den Nenner 100.
+        explanation: "3/4 = 75/100 = 0,75. Dann 0,50 + 0,75 = 1,25."
+        links:
+          - title: Dezimalbrüche (Serlo)
+            url: https://de.serlo.org/mathe/19482/dezimalbrueche
+      - type: number
+        id: plus-minus-taschengeld
+        text: "Mia gibt von ihrem Taschengeld ein Drittel für ein Buch und ein Viertel für das Kino aus. Danach hat sie noch 15 €. Wie viel Taschengeld hatte sie?"
+        answer: 36
+        tolerance: 0
+        unit: €
+        mistakes:
+          - answer: 21
+            message: 1/3 + 1/4 ist nicht 2/7.
+          - answer: 6.25
+            message: Die 15 € sind schon der Rest – ein Teil des Taschengelds.
+        hint: Welcher Teil bleibt übrig? Dieser Teil sind die 15 €.
+        explanation: "Ausgegeben 4/12 + 3/12 = 7/12, übrig 5/12 = 15 €. Also 1/12 = 3 € und alles 12 · 3 € = 36 €."
+        links:
+          - title: Rechnen mit Brüchen – Überblick (Serlo)
+            url: https://de.serlo.org/mathe/50493/rechnen-mit-bruechen-ueberblick
+      - type: text
+        text: Als Nächstes nimmst du Brüche und Dezimalbrüche mal und teilst sie.
