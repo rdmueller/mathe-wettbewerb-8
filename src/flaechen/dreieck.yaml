@@ -4,8 +4,8 @@ description: "Die Dreiecksformel aus dem Rechteck herleiten, die Höhe finden �
 blocks:
   - type: text
     text: |
-      **Ziel:** Ich kann Flächeninhalt und Umfang von Dreiecken berechnen und zu jeder Seite die Höhe finden, auch
-      wenn sie außen liegt. Du brauchst dafür nur die Rechteckformel $A = a \cdot b$.
+      **Ziel:** Ich kann Flächeninhalt und Umfang von Dreiecken berechnen und die Höhe erkennen, auch wenn sie
+      außen liegt. Du brauchst dafür nur die Rechteckformel $A = a \cdot b$.
   - type: section
     id: start
     title: Probier zuerst
@@ -39,9 +39,10 @@ blocks:
     blocks:
       - type: text
         text: |
-          Das klappt nicht nur bei rechtwinkligen Dreiecken. Zeichne um ein Dreieck ein Rechteck mit derselben
-          Grundseite $g$. Seine Breite ist die **Höhe** $h$: der Abstand der Spitze von der Grundseite, senkrecht
-          gemessen. Die Höhe teilt das Rechteck in zwei Teile. In jedem Teil liegt genau die Hälfte im Dreieck.
+          Das Dreieck oben hat einen rechten Winkel. Der Trick klappt aber bei jedem Dreieck: Zeichne ein Rechteck
+          mit derselben Grundseite $g$ darum. Seine Breite ist die **Höhe** $h$, der Abstand der Spitze von der
+          Grundseite, im rechten Winkel gemessen. Die Höhe teilt das Rechteck in zwei kleinere Rechtecke. Jedes wird
+          von einer Dreiecksseite halbiert – genau wie in der Aufgabe oben.
       - type: figure
         image: images/flaechen-dreieck-im-rechteck.svg
         alt: Ein blaues Dreieck in einem gestrichelten Rechteck. Die orange gestrichelte Höhe h steht senkrecht auf der Grundseite g und teilt das Rechteck in Teil 1 und Teil 2.
@@ -52,60 +53,74 @@ blocks:
         formula: 'A = \frac{g \cdot h}{2} \qquad u = a + b + c'
       - type: text
         text: |
-          Jede der drei Seiten kann die Grundseite sein. Darum hat jedes Dreieck **drei Höhen**. Bei einem stumpfen
-          Winkel liegen zwei davon außen: Du verlängerst die Grundseite und misst senkrecht bis zur Spitze.
+          Der **Umfang** $u$ ist wie beim Rechteck der Weg einmal um die Figur: alle drei Seiten zusammen.
+          Jede der drei Seiten kann die Grundseite sein, darum hat jedes Dreieck **drei Höhen**. Hat das Dreieck
+          einen stumpfen Winkel (größer als 90°), liegen zwei davon außen: Du verlängerst die Grundseite um ein Stück
+          $x$ und misst im rechten Winkel bis zur Spitze.
       - type: figure
         image: images/flaechen-dreieck-hoehen.svg
-        alt: Links ein spitzwinkliges Dreieck, die Höhe h liegt innen. Rechts ein stumpfwinkliges Dreieck, die Grundseite g ist gestrichelt verlängert, die Höhe h liegt außen.
-        caption: Rechts liegt die Höhe außerhalb des Dreiecks. Die Formel bleibt dieselbe.
+        alt: Links ein spitzwinkliges Dreieck, die Höhe h liegt innen. Rechts ein stumpfwinkliges Dreieck, die Grundseite g ist um das Stück x gestrichelt verlängert, die Höhe h liegt außen.
+        caption: "Rechts liegt die Höhe außen. Das blaue Dreieck ist das große rechtwinklige Dreieck über g + x minus das kleine über x."
         source: eigene Zeichnung
         licence: CC-BY-4.0
+      - type: formula
+        formula: 'A = \frac{(g + x) \cdot h}{2} - \frac{x \cdot h}{2} = \frac{g \cdot h}{2}'
+      - type: text
+        text: Die Formel bleibt also dieselbe. Rückwärts gerechnet ergibt sie die Höhe, wenn $A$ und $g$ bekannt sind.
+      - type: formula
+        formula: 'h = \frac{2 \cdot A}{g}'
   - type: section
     id: beispiel
     title: Ein Beispiel
     blocks:
       - type: example
-        title: Ein Dreieck mit g = 8 cm und h = 5 cm
+        title: Ein Garten mit einer zu vielen Angabe
         blocks:
-          - type: formula
-            formula: 'A = \frac{8\text{ cm} \cdot 5\text{ cm}}{2} = \frac{40\text{ cm}^2}{2} = 20\text{ cm}^2'
           - type: text
-            text: Antwort – Das Dreieck hat einen Flächeninhalt von 20 cm².
+            text: |
+              Ein dreieckiges Beet hat eine Seite von 4 m. Die Höhe zu dieser Seite ist 12 m und liegt außen. Die
+              anderen Seiten sind 13 m und 15 m lang. Gesucht sind Fläche und Umfang. Die 13 m und 15 m sind schräg
+              und keine Höhe: Du brauchst sie nur für den Umfang.
+          - type: formula
+            formula: 'A = \frac{4 \cdot 12}{2} = 24 \qquad u = 4 + 13 + 15 = 32'
+          - type: text
+            text: Antwort – Das Beet hat 24 m² Fläche und 32 m Umfang.
   - type: section
     id: merke
-    title: Die Höhe ist keine Seite
+    title: Die Höhe ist meist keine Seite
     blocks:
       - type: note
         title: Merke
         blocks:
           - type: text
             text: |
-              Die Höhe steht immer **senkrecht** auf der Grundseite. Eine schräge Seite ist nie die Höhe – auch wenn
-              ihre Länge in der Aufgabe steht. Der Flächeninhalt hat cm², der Umfang nur cm.
+              Nur im rechtwinkligen Dreieck ist eine Seite zugleich Höhe. Sonst ist eine schräge Seite nie die
+              Höhe – auch wenn ihre Länge in der Aufgabe steht. Und „senkrecht“ heißt: im rechten Winkel zur
+              Grundseite, nicht unbedingt nach unten.
   - type: section
     id: uebung
     title: Jetzt du
     blocks:
       - type: single-choice
         id: dreieck-welche-hoehe
-        text: Welche Strecke ist die Höhe zur Seite c?
+        text: Die Seite c liegt der Ecke C gegenüber. Welche Strecke ist die Höhe zur Seite c?
         material:
           - type: figure
             image: images/flaechen-welche-hoehe.svg
-            alt: Ein Dreieck ABC mit der Seite c unten. Von C aus gehen drei gestrichelte Strecken 1, 2 und 3 zur Seite c.
+            alt: Ein Dreieck ABC, die Seite c liegt schräg unten. Von C aus gehen drei gestrichelte Strecken 1, 2 und 3 zur Seite c.
             caption: Alle drei Strecken beginnen bei C und enden auf der Seite c.
             source: eigene Zeichnung
             licence: CC-BY-4.0
         options:
           - text: Strecke 1
             correct: false
-            info: Strecke 1 trifft die Seite c schräg. Eine Höhe bildet mit der Grundseite einen rechten Winkel.
+            info: "Strecke 1 geht genau nach unten. Weil c schräg liegt, trifft sie c aber nicht im rechten Winkel."
           - text: Strecke 2
             correct: true
             info: Strecke 2 trifft die Seite c im rechten Winkel. Sie ist der kürzeste Weg von C zur Seite c.
           - text: Strecke 3
             correct: false
-            info: Strecke 3 endet in der Mitte von c, sie heißt Seitenhalbierende. Sie trifft c schräg.
+            info: Strecke 3 endet in der Mitte von c, sie heißt Seitenhalbierende. Sie trifft c nicht im rechten Winkel.
         explanation: Die Höhe zur Seite c ist die Strecke von C, die senkrecht auf c steht.
         links:
           - title: Höhe (Geometrie) (Wikipedia)
@@ -141,16 +156,16 @@ blocks:
           b: { int: [3, 15] }
         where: ["decimals(c * h / 2) == 0", "b > h"]
         task:
-          text: "Ein Dreieck hat einen stumpfen Winkel. Die Grundseite c ist {{c}} cm lang. Die Höhe zu c liegt außen und ist {{h}} cm lang. Die schräge Seite b ist {{b}} cm lang. Wie groß ist der Flächeninhalt?"
+          text: "Ein Dreieck hat einen stumpfen Winkel. Die Grundseite c ist {{c}} cm lang. Die Höhe zu c liegt außen und ist {{h}} cm lang. Die Seite b ist {{b}} cm lang. Wie groß ist der Flächeninhalt?"
         answer: { value: "c * h / 2", compare: { number: { format: integer, unit: cm² } } }
         mistakes:
           - value: "c * b / 2"
-            message: "Du hast die schräge Seite b genommen. Die Höhe steht senkrecht auf c – auch wenn sie außen liegt."
+            message: "Du hast die Seite b genommen. Sie ist schräg. Die Höhe steht im rechten Winkel auf c – auch wenn sie außen liegt."
           - value: "c * h"
             message: "Das ist doppelt so viel. Teile noch durch 2."
-        hint: Die Länge von b brauchst du nicht. Nimm die Höhe.
+        hint: Welche der Längen steht im rechten Winkel auf c?
         steps:
-          - '$A = \frac{{{c}} \cdot {{h}}}{2}$ – die Seite b spielt keine Rolle.'
+          - '$A = \frac{{{c}} \cdot {{h}}}{2}$ – die Seite b ist schräg und keine Höhe.'
           - "Der Flächeninhalt ist {{answer}} cm²."
       - type: generated
         id: dreieck-umfang
@@ -169,10 +184,30 @@ blocks:
             message: "Du hast eine Seite vergessen. Der Umfang ist der Weg einmal ganz um das Dreieck herum."
           - value: "a * b / 2"
             message: "Das wäre ein Flächeninhalt. Für den Umfang addierst du alle drei Seiten."
-        hint: Fahre mit dem Finger einmal um das Dreieck und addiere jede Seite.
+        hint: Der Umfang ist der Weg einmal ganz um das Dreieck.
         steps:
           - "$u = {{a}} + {{b}} + {{c}}$"
           - "Der Umfang ist {{answer}} cm."
+      - type: generated
+        id: dreieck-rest
+        given:
+          a: { int: [6, 20] }
+          b: { int: [4, 16] }
+          x: { int: [2, 10] }
+          y: { int: [2, 10] }
+        where: ["x < a", "y < b", "decimals(x * y / 2) == 0"]
+        task:
+          text: "Eine rechteckige Platte ist {{a}} cm lang und {{b}} cm breit. An einer Ecke wird ein rechtwinkliges Dreieck abgeschnitten: {{x}} cm entlang der Länge und {{y}} cm entlang der Breite. Wie groß ist die restliche Fläche?"
+        answer: { value: "a * b - x * y / 2", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "a * b - x * y"
+            message: "Du hast ein ganzes Rechteck x · y abgezogen. Das abgeschnittene Dreieck ist nur die Hälfte davon."
+          - value: "x * y / 2"
+            message: "Das ist das abgeschnittene Dreieck. Gefragt ist, was von der Platte übrig bleibt."
+        hint: Rechne die ganze Platte aus und ziehe das Dreieck ab. Die zwei Schnittkanten sind seine Grundseite und seine Höhe.
+        steps:
+          - "Platte: {{a}} · {{b}} cm². Dreieck: $\\frac{ {{x}} \\cdot {{y}} }{2}$ cm²."
+          - "Rest: Platte minus Dreieck = {{answer}} cm²."
       - type: generated
         id: dreieck-rueckwaerts
         given:
@@ -189,7 +224,7 @@ blocks:
             message: "Das ist g · h. Teile noch durch die Grundseite g."
         hint: "In der Formel steht A = g · h : 2. Rechne rückwärts: erst mal 2, dann durch g."
         steps:
-          - "$g \\cdot h = 2 \\cdot {{A}}$"
+          - "Mit A = {{A}} cm² und g = {{g}} cm: $h = \\frac{2 \\cdot A}{g}$"
           - '$h = \frac{2 \cdot {{A}}}{{{g}}}$'
           - "Die Höhe ist {{answer}} cm lang."
       - type: text
