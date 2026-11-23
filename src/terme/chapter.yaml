@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Terme
+summary: Terme aufstellen, Werte berechnen, gleichartige Glieder zusammenfassen und Produkte mit Vorzeichen – Rechnen mit Buchstaben statt Zahlen.
+pages: [aufstellen, werte-berechnen, zusammenfassen, produkte]

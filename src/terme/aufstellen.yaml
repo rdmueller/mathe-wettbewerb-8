@@ -1,0 +1,214 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Terme aufstellen
+description: "Eine Rechenvorschrift oder einen Text Schritt für Schritt in einen Term übersetzen – mit der Klammer an der richtigen Stelle."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann zu einem Text oder einer Rechenvorschrift einen Term aufstellen. Du kennst schon Formeln
+      wie $A = a \cdot b$ aus dem Kapitel [Flächen](/flaechen/quadrat-rechteck/): Dort stehen Buchstaben für Zahlen.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: aufstellen-start
+        text: Lea denkt sich die Zahl 6. Sie addiert 4 und verdoppelt dann das Ergebnis. Welche Zahl erhält sie?
+        answer: 20
+        tolerance: 0
+        mistakes:
+          - answer: 16
+            message: "Du hast nur die 6 verdoppelt. Lea verdoppelt das Ergebnis von 6 + 4."
+          - answer: 12
+            message: "Du hast 6 + 4 + 2 gerechnet. Verdoppeln heißt: mal 2."
+        hint: Rechne Schritt für Schritt. Was ist das Ergebnis nach dem ersten Schritt?
+        explanation: "Erst 6 + 4 = 10, dann das Ergebnis verdoppeln: 10 · 2 = 20."
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+  - type: section
+    id: regel
+    title: Schritt für Schritt in Zeichen
+    blocks:
+      - type: text
+        text: |
+          Lea rechnet mit jeder Zahl gleich. Statt der Zahl schreibst du einen Buchstaben, die **Variable** $x$. Eine
+          Rechnung aus Zahlen, Variablen und Rechenzeichen heißt **Term**. Übersetze jeden Schritt einzeln. Jeder
+          neue Schritt gilt für alles, was schon dasteht.
+      - type: table
+        caption: Leas Rechenvorschrift als Term
+        header: [Schritt, Term]
+        rows:
+          - [Denk dir eine Zahl., x]
+          - [Addiere 4., x + 4]
+          - [Verdopple das Ergebnis., "2 · (x + 4)"]
+      - type: formula
+        formula: '2 \cdot (x + 4)'
+      - type: text
+        text: |
+          Die Klammer zeigt: Verdoppelt wird die ganze Summe. Ohne Klammer hieße $2 \cdot x + 4$ „erst verdoppeln,
+          dann 4 addieren“ – genau so kam oben die falsche 16 heraus. Den Malpunkt vor einer Variablen darfst du
+          weglassen: $2 \cdot x = 2x$. Diese Wörter kommen in Aufgaben oft vor:
+      - type: table
+        caption: Wörter und Rechenzeichen
+        header: [Wort, Term]
+        rows:
+          - [Summe von x und 4, x + 4]
+          - [Differenz von x und 4, x − 4]
+          - [Produkt von 4 und x, 4 · x]
+          - [Quotient von x und 4, "x : 4"]
+          - [das Doppelte von x, 2 · x]
+          - [die Hälfte von x, "x : 2"]
+      - type: text
+        text: Auch Formeln sind Terme. Für ein Rechteck mit den Seiten $x$ und 3 gilt
+      - type: figure
+        image: images/terme-rechteck.svg
+        alt: Ein blaues Rechteck, die lange Seite ist mit x beschriftet, die kurze mit 3.
+        caption: Die Länge x ist eine Variable, die Breite 3 eine feste Zahl.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'A = 3 \cdot x = 3x'
+      - type: formula
+        formula: 'u = 2 \cdot x + 2 \cdot 3'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Perlen teilen
+        blocks:
+          - type: text
+            text: |
+              Mia hat $x$ Perlen. Sie kauft 20 dazu und schenkt ihrer Schwester die Hälfte von allen. Wie viele
+              Perlen bekommt die Schwester? Der Haken: Die Hälfte gilt für alle Perlen, also für die Summe.
+          - type: formula
+            formula: "(x + 20) : 2"
+          - type: text
+            text: "Antwort – Die Schwester bekommt $(x + 20) : 2$ Perlen. Ohne Klammer, also $x + 20 : 2$, wären nur die 20 neuen Perlen halbiert."
+  - type: section
+    id: merke
+    title: Die Klammer nicht vergessen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              „Das Doppelte der Summe von $x$ und 5“ ist $2 \cdot (x + 5)$, nicht $2 \cdot x + 5$. Gilt ein Schritt für
+              ein ganzes Ergebnis (eine Summe, eine Differenz), kommt dieses Ergebnis in Klammern. Prüfe deinen Term,
+              indem du ihn als Satz zurückliest.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: aufstellen-dreifache-summe
+        text: Welcher Term beschreibt „das Dreifache der Summe von x und 7“?
+        options:
+          - text: 3 · (x + 7)
+            correct: true
+            info: "Die Klammer zeigt: Die ganze Summe wird mal 3 genommen."
+          - text: 3 · x + 7
+            correct: false
+            info: Hier wird nur x verdreifacht, die 7 nicht.
+          - text: 3 + x + 7
+            correct: false
+            info: Das Dreifache heißt mal 3, nicht plus 3.
+          - text: x + 7 · 3
+            correct: false
+            info: Wegen Punkt vor Strich wird nur die 7 mal 3 genommen.
+        explanation: Das Dreifache gilt für die ganze Summe, darum die Klammer.
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+      - type: matching
+        id: aufstellen-woerter
+        text: Ordne jedem Text den passenden Term zu.
+        pairs:
+          - left: die Differenz von x und 4
+            right: x − 4
+          - left: das Produkt von 4 und x
+            right: 4x
+          - left: der Quotient von x und 4
+            right: "x : 4"
+          - left: um 4 größer als x
+            right: x + 4
+        distractors: [4 − x]
+        explanation: Differenz heißt minus, Produkt mal, Quotient geteilt. 4 − x wäre die Differenz von 4 und x.
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+      - type: ordering
+        id: aufstellen-schritte
+        text: Denk dir eine Zahl x, subtrahiere 3, nimm das Ergebnis mal 5, addiere 1. Ordne die Terme so, wie sie entstehen.
+        items:
+          - x
+          - x − 3
+          - 5 · (x − 3)
+          - 5 · (x − 3) + 1
+        explanation: Jeder Schritt gilt für den ganzen Term davor, darum steht x − 3 in Klammern.
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+      - type: generated
+        id: aufstellen-umfang
+        given:
+          b: { int: [3, 20] }
+        task:
+          text: "Ein Rechteck ist x cm lang und {{b}} cm breit. Für den Umfang gilt u = 2 · x + □. Welche Zahl gehört in das Kästchen?"
+        answer: { value: "2 * b", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "b"
+            message: "Du hast die Breite nur einmal gezählt. Das Rechteck hat zwei Seiten mit {{b}} cm."
+          - value: "b + 2"
+            message: "Du hast 2 addiert. Zwei gleiche Seiten nimmst du mal 2."
+        hint: Geh einmal um das Rechteck herum. Welche Seiten kommen dabei vor?
+        steps:
+          - "Einmal herum: x + {{b}} + x + {{b}}. Das sind zwei Seiten x und zwei Seiten {{b}}."
+          - "u = 2 · x + 2 · {{b}}, ins Kästchen gehört {{answer}}."
+      - type: generated
+        id: aufstellen-popcorn
+        given:
+          p: { int: [5, 15] }
+          q: { int: [2, 8] }
+        task:
+          text: "Im Kino kostet der Eintritt {{p}} € pro Person. Jede Person kauft dazu eine Tüte Popcorn für {{q}} €. Der Preis für n Personen ist □ · n Euro. Welche Zahl gehört in das Kästchen?"
+        answer: { value: "p + q", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "p * q"
+            message: "Du hast {{p}} · {{q}} gerechnet. Was zahlt eine Person für beides zusammen?"
+          - value: "p"
+            message: "Das ist nur der Eintritt. Das Popcorn fehlt."
+        hint: Rechne zuerst aus, was eine Person zahlt.
+        steps:
+          - "Eine Person zahlt {{p}} € Eintritt und {{q}} € Popcorn."
+          - "n Personen zahlen ({{p}} + {{q}}) · n = {{answer}} · n Euro."
+      - type: single-choice
+        id: aufstellen-figur
+        text: Welcher Term gibt den Flächeninhalt der Figur an?
+        material:
+          - type: figure
+            image: images/terme-zwei-rechtecke.svg
+            alt: Eine blaue Figur aus zwei Rechtecken. Das linke ist unten mit x beschriftet und links mit 5. Das rechte, niedrigere ist unten mit 3 und rechts mit 2 beschriftet.
+            caption: Die gestrichelte Linie trennt die zwei Rechtecke. Die Skizze ist nicht maßstabsgetreu.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 5 · x + 3 · 2
+            correct: true
+            info: Linkes Rechteck 5 · x plus rechtes Rechteck 3 · 2.
+          - text: 5 · (x + 3)
+            correct: false
+            info: Das rechte Rechteck ist nur 2 hoch, nicht 5.
+          - text: x · 5 · 3 · 2
+            correct: false
+            info: Jedes Rechteck hat seine eigene Fläche. Die zwei Flächen werden addiert.
+          - text: x + 5 + 3 + 2
+            correct: false
+            info: Das ist ein Teil des Umfangs. Fläche heißt Länge mal Breite.
+        explanation: "Zerlege die Figur an der gestrichelten Linie: 5 · x + 3 · 2 = 5x + 6."
+        links:
+          - title: Flächenformeln ebener Figuren (Serlo)
+            url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+      - type: text
+        text: Du übersetzt jetzt Text in Mathe. Als Nächstes setzt du Zahlen für x ein und berechnest, welchen Wert ein Term hat.

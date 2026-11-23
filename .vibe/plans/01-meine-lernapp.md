@@ -580,7 +580,7 @@ page, which a link. -->
 - [x] Kapitel zuordnungen: 4 Seiten (tabelle-koordinaten, proportional, antiproportional, graphen) mit SVG-Koordinatensystemen, Selbsteinschätzung
 - [x] Kapitel prozent: 3 Seiten (prozentwert, prozentsatz-grundwert, sachaufgaben) mit Hunderterfeld, generated mit Fehlerdiagnose, Selbsteinschätzung
 - [x] Kapitel flaechen, übrige 5 Seiten (quadrat-rechteck, parallelogramm-trapez, quader-wuerfel, netz-oberflaeche, formeln-umstellen) nach der Musterseite, Abschnitt Einheiten, Selbsteinschätzung
-- [ ] Kapitel terme: 4 Seiten (aufstellen, werte-berechnen, zusammenfassen, produkte), Terme als Auswahl, Selbsteinschätzung
+- [x] Kapitel terme: 4 Seiten (aufstellen, werte-berechnen, zusammenfassen, produkte), Terme als Auswahl, Selbsteinschätzung
 - [ ] Kapitel wahrscheinlichkeit: 3 Seiten (laplace, baumdiagramm, pfadregeln) mit Daten zufallsversuche.yaml und SVG-Bäumen, Selbsteinschätzung
 - [ ] Kapitel symmetrie: 2 Seiten (symmetrie-erkennen, spiegeln-drehen) mit Daten figuren.yaml, Selbsteinschätzung
 - [ ] Kapitel winkel: 2 Seiten (winkelsumme, geradenkreuzungen) mit SVG-Winkelpaaren, Selbsteinschätzung

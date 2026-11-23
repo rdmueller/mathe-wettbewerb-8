@@ -1,0 +1,229 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Produkte von Termen
+description: "Produkte wie 3x · (−2y) berechnen: erst das Vorzeichen, dann die Zahlen, dann die Variablen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Produkte wie $3x \cdot (-2y)$ berechnen und dabei zuerst das Vorzeichen bestimmen. Auf der
+      vorigen Seite hast du gleichartige Glieder [addiert](/terme/zusammenfassen/). Jetzt nimmst du mal, und dabei
+      kommen Zahlen unter null vor – **negative Zahlen** wie −3, wie bei Temperaturen im Winter.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: produkte-start
+        text: Setze die Reihe fort. Was ist 3 · (−1)?
+        material:
+          - type: table
+            caption: Eine Reihe von Malaufgaben
+            header: [Aufgabe, Ergebnis]
+            rows:
+              - ["3 · 3", "9"]
+              - ["3 · 2", "6"]
+              - ["3 · 1", "3"]
+              - ["3 · 0", "0"]
+              - ["3 · (−1)", "?"]
+        answer: -3
+        tolerance: 0
+        mistakes:
+          - answer: 3
+            message: "Schau auf die Ergebnisse von oben nach unten: Jedes Mal werden sie um 3 kleiner. Was kommt nach der 0?"
+          - answer: 2
+            message: "Du hast 3 + (−1) gerechnet. Gefragt ist das Produkt."
+        hint: Um wie viel ändert sich das Ergebnis von Zeile zu Zeile?
+        explanation: "Die Ergebnisse werden immer um 3 kleiner: 9, 6, 3, 0, −3. Also ist 3 · (−1) = −3."
+        links:
+          - title: Rechnen mit ganzen Zahlen (Serlo)
+            url: https://de.serlo.org/mathe/62045/rechnen-mit-ganzen-zahlen
+  - type: section
+    id: regel
+    title: Erst das Vorzeichen
+    blocks:
+      - type: text
+        text: |
+          Das Zeichen vor einer Zahl heißt **Vorzeichen**. Links im Bild siehst du deine Reihe weitergeführt: Plus mal
+          Minus ergibt Minus. Rechts beginnt die Reihe mit $-3$. Hier werden die Ergebnisse nach unten immer um 3
+          größer – nach der 0 kommen 3 und 6.
+      - type: figure
+        image: images/terme-vorzeichen-muster.svg
+        alt: "Zwei Spalten. Links 3 · 2 = 6, 3 · 1 = 3, 3 · 0 = 0, 3 · (−1) = −3, 3 · (−2) = −6. Rechts (−3) · 2 = −6, (−3) · 1 = −3, (−3) · 0 = 0, (−3) · (−1) = 3, (−3) · (−2) = 6. Die letzten zwei Zeilen jeder Spalte sind orange."
+        caption: Die orangen Zeilen folgen aus dem Muster darüber. Achte auf die rechte Spalte.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: table
+        caption: Vorzeichenregel beim Malnehmen
+        header: [Vorzeichen, Ergebnis]
+        rows:
+          - [plus mal plus, plus]
+          - [plus mal minus, minus]
+          - [minus mal plus, minus]
+          - [minus mal minus, plus]
+      - type: text
+        text: |
+          Bei Termen gehst du in drei Schritten vor: zuerst das Vorzeichen, dann die Zahlen malnehmen, dann die
+          Variablen alphabetisch dahinter schreiben. Für $3x \cdot (-2y)$ heißt das: plus mal minus ergibt minus,
+          $3 \cdot 2 = 6$, $x \cdot y = xy$.
+      - type: formula
+        formula: '3x \cdot (-2y) = -6xy'
+      - type: text
+        text: Kommt dieselbe Variable zweimal vor, schreibst du ein Quadrat.
+      - type: formula
+        formula: '2a \cdot 4a = 8a^2'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Drei Faktoren
+        blocks:
+          - type: text
+            text: |
+              Berechne $(-2a) \cdot 3b \cdot (-5c)$. Der Haken: Hier sind es drei Faktoren. Zähle die Minuszeichen.
+              Zwei Minuszeichen ergeben plus, denn minus mal minus ist plus. Dann $2 \cdot 3 \cdot 5 = 30$, dazu
+              $abc$.
+          - type: formula
+            formula: '(-2a) \cdot 3b \cdot (-5c) = 30abc'
+          - type: text
+            text: Antwort – Das Produkt ist $30abc$. Bei einer ungeraden Anzahl von Minuszeichen wäre es negativ.
+  - type: section
+    id: merke
+    title: Plus und mal nicht verwechseln
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Minus mal minus ergibt plus. Beim Malnehmen werden die Zahlen multipliziert, nicht addiert:
+              $3x \cdot (-2y) = -6xy$. Vergleiche mit der vorigen Seite – $3a + 5a = 8a$, aber $3a \cdot 5a = 15a^2$.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: produkte-term
+        text: Berechne 4x · (−3y).
+        options:
+          - text: −12xy
+            correct: true
+            info: Minus, 12, dann xy.
+          - text: 12xy
+            correct: false
+            info: Das Minus fehlt.
+          - text: −7xy
+            correct: false
+            info: Hier wurde 4 + 3 gerechnet statt 4 · 3.
+          - text: x − 3y
+            correct: false
+            info: Hier fehlt die 4, und es wird gar nicht malgenommen.
+        explanation: "Vorzeichen minus, 4 · 3 = 12, x · y = xy: −12xy."
+        links:
+          - title: Rechnen mit ganzen Zahlen (Serlo)
+            url: https://de.serlo.org/mathe/62045/rechnen-mit-ganzen-zahlen
+      - type: number
+        id: produkte-vier-faktoren
+        text: Berechne (−2) · 3 · (−5) · (−1).
+        answer: -30
+        tolerance: 0
+        mistakes:
+          - answer: 30
+            message: "Zähle die Minuszeichen noch einmal."
+          - answer: -5
+            message: "Du hast die Zahlen addiert. Gefragt ist das Produkt."
+        hint: Wie viele Minuszeichen stehen in der Aufgabe?
+        explanation: "Drei Minuszeichen, also negativ. 2 · 3 · 5 · 1 = 30, also −30."
+        links:
+          - title: Rechnen mit ganzen Zahlen (Serlo)
+            url: https://de.serlo.org/mathe/62045/rechnen-mit-ganzen-zahlen
+      - type: generated
+        id: produkte-koeffizient
+        given:
+          a: { int: [2, 12] }
+          b: { int: [2, 9] }
+        where: ["a * b != a + b"]
+        task:
+          text: "{{a}}x · (−{{b}}y) = □xy. Welche Zahl gehört in das Kästchen?"
+        answer:
+          value: "-(a * b)"
+          compare: { choice: "[-(a * b), a * b, -(a + b), a + b]" }
+        mistakes:
+          - value: "a * b"
+            message: "Prüfe das Vorzeichen. Ein Faktor ist negativ."
+          - value: "-(a + b)"
+            message: "Du hast {{a}} + {{b}} gerechnet statt mal."
+          - value: "a + b"
+            message: "Addiert statt malgenommen, und das Vorzeichen fehlt."
+        hint: Bestimme zuerst das Vorzeichen. Dann nimm die Zahlen mal.
+        steps:
+          - "Ein Faktor ist negativ, also ist das Produkt negativ."
+          - "{{a}} · {{b}} mit Minus davor. Ins Kästchen gehört {{answer}}."
+      - type: generated
+        id: produkte-minus-minus
+        given:
+          a: { int: [2, 12] }
+          b: { int: [2, 9] }
+        where: ["a * b != a + b"]
+        task:
+          text: "(−{{a}}a) · (−{{b}}b) = □ab. Welche Zahl gehört in das Kästchen? Gib auch das Vorzeichen an."
+        answer: { value: "a * b", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "-(a * b)"
+            message: "Minus mal minus ergibt plus, nicht minus."
+          - value: "-(a + b)"
+            message: "Addiert statt malgenommen, und das Vorzeichen stimmt nicht."
+          - value: "a + b"
+            message: "Du hast {{a}} + {{b}} gerechnet. Gefragt ist ein Produkt."
+        hint: Wie viele Minuszeichen gibt es? Was ergibt minus mal minus?
+        steps:
+          - "Zwei Minuszeichen ergeben plus."
+          - "{{a}} · {{b}} = {{answer}}"
+      - type: single-choice
+        id: produkte-quadrat
+        text: Berechne 2a · (−4a).
+        options:
+          - text: −8a²
+            correct: true
+            info: "Minus, 2 · 4 = 8 und a · a = a²."
+          - text: −8a
+            correct: false
+            info: a · a ist a², nicht a.
+          - text: 8a²
+            correct: false
+            info: Das Minus fehlt.
+          - text: −2a
+            correct: false
+            info: Hier wurde addiert statt malgenommen.
+        explanation: Ein Faktor ist negativ, also ist auch das Ergebnis negativ.
+        links:
+          - title: Rechnen mit ganzen Zahlen (Serlo)
+            url: https://de.serlo.org/mathe/62045/rechnen-mit-ganzen-zahlen
+      - type: single-choice
+        id: produkte-figur
+        text: Welcher Term gibt den Flächeninhalt der Figur an, so kurz wie möglich?
+        material:
+          - type: figure
+            image: images/terme-flaeche-zusammengesetzt.svg
+            alt: "Eine blaue Figur aus zwei Rechtecken. Das linke ist unten mit 5x und links mit 2y beschriftet. Das rechte, niedrigere ist unten mit 3x und rechts mit y beschriftet."
+            caption: Die gestrichelte Linie trennt die zwei Rechtecke. Die Skizze ist nicht maßstabsgetreu.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 13xy
+            correct: true
+            info: 10xy plus 3xy.
+          - text: 24xy
+            correct: false
+            info: Das rechte Rechteck ist nur y hoch, nicht 3y.
+          - text: 13x²y²
+            correct: false
+            info: Beim Addieren bleibt xy, wie es ist.
+          - text: 8x + 3y
+            correct: false
+            info: Hier wurden Seiten addiert, das ist keine Fläche.
+        explanation: "Zerlegen, malnehmen, zusammenfassen: 5x · 2y + 3x · y = 10xy + 3xy = 13xy."
+        links:
+          - title: Flächenformeln ebener Figuren (Serlo)
+            url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+      - type: text
+        text: Damit kannst du Terme aufstellen, berechnen, zusammenfassen und malnehmen. Im nächsten Kapitel geht es um Wahrscheinlichkeit – dort rechnest du mit Brüchen statt mit Buchstaben.

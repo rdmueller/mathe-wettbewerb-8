@@ -1,0 +1,177 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Werte von Termen berechnen
+description: "Eine Zahl für x einsetzen, Punkt vor Strich beachten und eine Wertetabelle füllen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann den Wert eines Terms berechnen, wenn ich eine Zahl für x einsetze. Auf der vorigen Seite
+      hast du Terme [aufgestellt](/terme/aufstellen/). Jetzt rechnest du mit ihnen.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: werte-berechnen-start
+        text: Oben steht eine Zahl für x, darunter das Ergebnis des Terms 3x + 2. Welche Zahl gehört an die Stelle des Fragezeichens?
+        material:
+          - type: figure
+            image: images/terme-wertetabelle.svg
+            alt: "Eine Tabelle mit zwei Zeilen. Oben x mit den Zahlen 1, 2 und 4. Unten 3x + 2 mit den Zahlen 5, 8 und einem Fragezeichen unter der 4."
+            caption: Schau dir an, wie aus x = 1 die 5 und aus x = 2 die 8 wird.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 14
+        tolerance: 0
+        mistakes:
+          - answer: 36
+            message: "Du hast 3x als 34 gelesen. 3x heißt 3 · x."
+          - answer: 20
+            message: "Du hast zuerst 3 + 2 gerechnet. Punkt vor Strich!"
+          - answer: 9
+            message: "Du hast 3 + 4 + 2 gerechnet. 3x heißt 3 mal x, nicht 3 plus x."
+        hint: Prüfe an den ersten zwei Spalten, wie aus x das Ergebnis wird.
+        explanation: "Für x = 4 rechnest du 3 · 4 + 2 = 12 + 2 = 14."
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+  - type: section
+    id: regel
+    title: Einsetzen
+    blocks:
+      - type: text
+        text: |
+          Unter jeder Zahl für x steht der **Wert des Terms** für diese Zahl. Für x = 1 ist das 3 · 1 + 2 = 5. Genauso
+          hast du die letzte Zahl gefunden: Du hast 4 für x **eingesetzt**, also überall, wo x steht, 4 geschrieben.
+      - type: figure
+        image: images/terme-einsetzen.svg
+        alt: "Drei Zeilen untereinander. Oben 3x + 2. Darunter gleich 3 · x + 2, das x steht in einem blauen Kasten. Unten, mit einem Pfeil und dem Hinweis für x = 4, steht 3 · 4 + 2, die 4 in einem orangen Kasten an derselben Stelle."
+        caption: "Erst den Malpunkt sichtbar machen, dann die Zahl genau an die Stelle von x schreiben."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          Dabei zählen zwei Dinge. Erstens ist $3x$ kurz für $3 \cdot x$: Beim Einsetzen kommt der Malpunkt zurück.
+          Zweitens gilt Punkt vor Strich: erst $3 \cdot 4$, dann $+ 2$.
+      - type: formula
+        formula: '3 \cdot 4 + 2 = 12 + 2 = 14'
+      - type: text
+        text: |
+          Setzt du nacheinander mehrere Zahlen ein, entsteht eine **Wertetabelle** wie oben. Steht eine Klammer im
+          Term, rechnest du sie zuerst: $2 \cdot (x + 1)$ hat für $x = 4$ den Wert $2 \cdot 5 = 10$.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Was kostet das Taxi?
+        blocks:
+          - type: text
+            text: |
+              Ein Taxi kostet 4 € Grundpreis und 2 € für jeden Kilometer. Für $x$ Kilometer zahlst du $4 + 2x$ Euro.
+              Die Wertetabelle zeigt drei Fahrten.
+          - type: table
+            caption: Preis für x Kilometer
+            header: [x in km, Rechnung, Preis in €]
+            rows:
+              - ["5", "4 + 2 · 5", "14"]
+              - ["10", "4 + 2 · 10", "24"]
+              - ["15", "4 + 2 · 15", "34"]
+          - type: text
+            text: |
+              Der Haken – 10 km kosten nicht doppelt so viel wie 5 km, denn der Grundpreis kommt nur einmal dazu.
+              Antwort – Die Fahrten kosten 14 €, 24 € und 34 €.
+  - type: section
+    id: merke
+    title: Der versteckte Malpunkt
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              $3x$ mit $x = 4$ ist $3 \cdot 4 = 12$, nicht 34. Und $2 + 3x$ mit $x = 4$ ist $2 + 12 = 14$, nicht
+              $5 \cdot 4 = 20$. Schreib beim Einsetzen den Malpunkt immer hin.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: true-false
+        id: werte-berechnen-52
+        text: Für x = 2 hat der Term 5x den Wert 52.
+        answer: false
+        explanation: "5x heißt 5 · x. Für x = 2 ist der Wert 5 · 2 = 10."
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+      - type: generated
+        id: werte-berechnen-einsetzen
+        given:
+          a: { int: [2, 9] }
+          b: { int: [1, 20] }
+          x: { int: [2, 9] }
+        where: ["not (a == 2 and x == 2)"]
+        task:
+          text: "Berechne den Wert des Terms {{a}}x + {{b}} für x = {{x}}."
+        answer: { value: "a * x + b", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "(a + b) * x"
+            message: "Du hast zuerst {{a}} + {{b}} gerechnet. Es gilt Punkt vor Strich."
+          - value: "10 * a + x + b"
+            message: "Du hast {{a}}x als zweistellige Zahl gelesen. {{a}}x heißt {{a}} · x."
+          - value: "a + x + b"
+            message: "Du hast {{a}} + {{x}} gerechnet. {{a}}x heißt mal."
+        hint: "Schreib den Malpunkt hin: {{a}} · x + {{b}}. Dann setze ein."
+        steps:
+          - "Mit x = {{x}}: {{a}} · {{x}} + {{b}}"
+          - "Erst mal, dann plus. Der Wert ist {{answer}}."
+      - type: generated
+        id: werte-berechnen-klammer
+        given:
+          a: { int: [2, 6] }
+          b: { int: [1, 9] }
+          x: { int: [2, 9] }
+        task:
+          text: "In einer Wertetabelle zum Term {{a}} · (x + {{b}}) fehlt der Wert für x = {{x}}. Welche Zahl gehört hinein?"
+        answer: { value: "a * (x + b)", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "a * x + b"
+            message: "Du hast die Klammer übersehen. Sie kommt zuerst."
+          - value: "a + x + b"
+            message: "Du hast alles addiert. Vor der Klammer steht ein Malpunkt."
+        hint: Was rechnest du zuerst, wenn eine Klammer im Term steht?
+        steps:
+          - "Mit x = {{x}}: {{a}} · ({{x}} + {{b}})"
+          - "Erst die Klammer, dann mal {{a}}. Der Wert ist {{answer}}."
+      - type: number
+        id: werte-berechnen-rueckwaerts
+        text: Für welche Zahl x hat der Term 4x + 3 den Wert 31?
+        answer: 7
+        tolerance: 0
+        mistakes:
+          - answer: 8.5
+            message: "Du hast 3 addiert. Rückwärts musst du die 3 abziehen."
+          - answer: 7.75
+            message: "Du hast nur 31 : 4 gerechnet. Die 3 fehlt."
+        hint: Probiere Zahlen aus, oder rechne rückwärts. Was war vor dem + 3?
+        explanation: "4 · 7 + 3 = 28 + 3 = 31. Rückwärts – 31 − 3 = 28, dann 28 : 4 = 7."
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+      - type: number
+        id: werte-berechnen-tarife
+        text: Ein Fahrradverleih hat zwei Tarife. Für x Stunden kostet Tarif A 10 + 2x Euro, Tarif B 5x Euro. Ab wie vielen ganzen Stunden ist Tarif B teurer?
+        answer: 4
+        tolerance: 0
+        unit: Stunden
+        mistakes:
+          - answer: 3
+            message: "Prüfe 3 Stunden genau. Welcher Tarif ist da teurer?"
+          - answer: 2
+            message: "Bei 2 Stunden ist Tarif B noch billiger."
+        hint: Lege eine Wertetabelle für beide Tarife an, mit x = 1, 2, 3, …
+        explanation: "3 Stunden – A 16 €, B 15 €. 4 Stunden – A 18 €, B 20 €. Ab 4 Stunden ist B teurer."
+        links:
+          - title: Belegung von Variablen (Serlo)
+            url: https://de.serlo.org/mathe/117669/belegung-von-variablen
+      - type: text
+        text: Damit kannst du jede Wertetabelle füllen. Als Nächstes machst du lange Terme kürzer, indem du gleichartige Glieder zusammenfasst.

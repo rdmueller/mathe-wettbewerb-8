@@ -1,0 +1,219 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Gleichartige Glieder zusammenfassen
+description: "Glieder mit derselben Variablen sortieren und zusammenfassen – und die typischen Fallen 13n und 8a²b² vermeiden."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann gleichartige Glieder zusammenfassen und so einen langen Term kürzer schreiben. Mit dem
+      [Einsetzen](/terme/werte-berechnen/) von der vorigen Seite prüfst du, ob der kurze Term noch stimmt.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: zusammenfassen-start
+        text: Jeder blaue Stab ist n cm lang, das graue Stück 3 cm. Die Strecke ist 4n + 6n + 3 cm lang. Wie viele blaue Stäbe sind es?
+        material:
+          - type: figure
+            image: images/terme-staebe.svg
+            alt: "Eine Strecke aus Stäben: 4 blaue Stäbe mit n beschriftet, dann 6 blaue Stäbe mit n beschriftet, am Ende ein kurzes graues Stück mit 3 beschriftet. Über den Gruppen steht 4n, 6n und 3."
+            caption: Alle blauen Stäbe sind gleich lang. Das graue Stück ist anders lang.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 10
+        tolerance: 0
+        mistakes:
+          - answer: 13
+            message: "Du hast das graue Stück mitgezählt. Es ist kein Stab der Länge n."
+          - answer: 24
+            message: "Du hast 4 · 6 gerechnet. Die Stäbe liegen hintereinander, du zählst sie also zusammen."
+        hint: Zähle nur die blauen Stäbe.
+        explanation: "4 Stäbe und 6 Stäbe sind 10 Stäbe der Länge n. Die Strecke ist 10n + 3 cm lang."
+        links:
+          - title: Zusammenfassen von Termen (Serlo)
+            url: https://de.serlo.org/mathe/135559/zusammenfassen-von-termen
+  - type: section
+    id: regel
+    title: Gleiches zu Gleichem
+    blocks:
+      - type: text
+        text: |
+          Die Teile eines Terms zwischen den Plus- und Minuszeichen heißen **Glieder**. $4n$ und $6n$ sind
+          **gleichartig**: Sie haben genau dieselbe Variable. Wie bei den Stäben zählst du nur die Zahlen davor
+          zusammen, die Variable bleibt. Die Zahl vor der Variablen heißt **Koeffizient**. Die 3 hat keine Variable und
+          bleibt allein stehen.
+      - type: formula
+        formula: "4n + 6n + 3 = 10n + 3"
+      - type: text
+        text: |
+          Bei längeren Termen sortierst du zuerst: gleiche Variablen nebeneinander, die Zahlen ohne Variable ans Ende.
+          Das Rechenzeichen vor einem Glied wandert mit. Ein einzelnes $b$ zählt als $1b$.
+      - type: figure
+        image: images/terme-sortieren.svg
+        alt: "Oben der Term 5a + 2b + 3a + 4 + b. Die Glieder 5a und 3a sind blau, 2b und b orange umrandet, die 4 grau gestrichelt. In der Zeile darunter sind sie sortiert: 5a + 3a + 2b + b + 4. Unten steht gleich 8a + 3b + 4."
+        caption: Gleiche Farbe heißt gleichartig. Nur Glieder einer Farbe werden zusammengefasst.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: "5a + 2b + 3a + 4 + b = 8a + 3b + 4"
+      - type: text
+        text: |
+          Probe mit $a = 1$ und $b = 1$: Links ergibt $5 + 2 + 3 + 4 + 1 = 15$, rechts $8 + 3 + 4 = 15$. Beim Minus
+          gilt dasselbe: $7x - 2x = 5x$.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Der Umfang eines Dreiecks
+        blocks:
+          - type: text
+            text: |
+              Ein Dreieck hat die Seiten $x$, $x + 2$ und $2x$. Gesucht ist ein kurzer Term für den Umfang. Der Haken:
+              Die Seite $x + 2$ hat ein Glied ohne Variable.
+          - type: formula
+            formula: "u = x + x + 2 + 2x = 4x + 2"
+          - type: text
+            text: "Probe mit x = 3 – die Seiten sind 3, 5 und 6, zusammen 14. Und 4 · 3 + 2 = 14. Antwort – Der Umfang ist 4x + 2."
+  - type: section
+    id: merke
+    title: Nur Gleichartiges zusammenfassen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              $4n + 6n + 3$ ist $10n + 3$, nicht $13n$: Die 3 hat kein $n$. Und $3ab + 5ab$ ist $8ab$, nicht
+              $8a^2b^2$. Du zählst nur, wie oft $ab$ vorkommt – 3-mal und 5-mal sind 8-mal. Die Variable selbst
+              ändert sich beim Addieren nicht.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: multiple-choice
+        id: zusammenfassen-gleichartig
+        text: Welche Glieder sind gleichartig zu 4x? Wähle alle passenden.
+        options:
+          - text: 7x
+            correct: true
+            info: Gleiche Variable x, anderer Koeffizient.
+          - text: x
+            correct: true
+            info: x ist 1x, also gleiche Variable.
+          - text: 4y
+            correct: false
+            info: 4y hat die Variable y. Der gleiche Koeffizient zählt nicht.
+          - text: "4"
+            correct: false
+            info: 4 ist eine Zahl ohne Variable.
+          - text: 4xy
+            correct: false
+            info: 4xy hat zwei Variablen, x und y.
+        explanation: Gleichartig heißt genau dieselbe Variable.
+        links:
+          - title: Zusammenfassen von Termen (Serlo)
+            url: https://de.serlo.org/mathe/135559/zusammenfassen-von-termen
+      - type: generated
+        id: zusammenfassen-koeffizient
+        given:
+          a: { int: [2, 12] }
+          b: { int: [2, 12] }
+          c: { int: [1, 9] }
+        where: ["a * b != a + b"]
+        task:
+          text: "Fasse zusammen: {{a}}n + {{b}}n + {{c}} = □n + {{c}}. Welche Zahl gehört in das Kästchen?"
+        answer: { value: "a + b", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "a + b + c"
+            message: "Du hast die {{c}} mitgezählt. Sie hat kein n."
+          - value: "a * b"
+            message: "Du hast {{a}} · {{b}} gerechnet. Hier wird addiert."
+        hint: Welche Glieder haben ein n?
+        steps:
+          - "Gleichartig sind {{a}}n und {{b}}n. Die {{c}} hat kein n."
+          - "{{a}} + {{b}} = {{answer}}, also {{answer}}n + {{c}}."
+      - type: single-choice
+        id: zusammenfassen-xy
+        text: Fasse zusammen – 2xy + 6xy
+        options:
+          - text: 8xy
+            correct: true
+            info: 2-mal xy und 6-mal xy sind 8-mal xy.
+          - text: 8x²y²
+            correct: false
+            info: Beim Addieren ändert sich die Variable nicht.
+          - text: 12xy
+            correct: false
+            info: Hier wurde 2 · 6 gerechnet statt 2 + 6.
+          - text: 8 + xy
+            correct: false
+            info: Die Variable gehört zum Koeffizienten.
+        explanation: "Gleichartig, also 2 + 6 = 8: 8xy."
+        links:
+          - title: Zusammenfassen von Termen (Serlo)
+            url: https://de.serlo.org/mathe/135559/zusammenfassen-von-termen
+      - type: generated
+        id: zusammenfassen-sortieren
+        given:
+          a: { int: [2, 9] }
+          b: { int: [2, 9] }
+          c: { int: [2, 9] }
+          d: { int: [2, 9] }
+        where: ["b != c"]
+        task:
+          text: "Fasse zusammen: {{a}}x + {{b}}y + {{c}}x + {{d}}y. Welche Zahl steht im Ergebnis vor dem x?"
+        answer: { value: "a + c", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "a + b + c + d"
+            message: "Du hast alles addiert. x und y sind nicht gleichartig."
+          - value: "a + b"
+            message: "Du hast die zwei vorderen Glieder addiert. Welche haben ein x?"
+        hint: Sortiere zuerst – alle Glieder mit x nach vorn.
+        steps:
+          - "Sortiert: {{a}}x + {{c}}x + {{b}}y + {{d}}y"
+          - "{{a}} + {{c}} = {{answer}}, vor dem x steht also {{answer}}."
+      - type: number
+        id: zusammenfassen-minus
+        text: "Fasse zusammen: 9x + 4 − 2x + 6 = □x + 10. Welche Zahl gehört in das Kästchen?"
+        answer: 7
+        tolerance: 0
+        mistakes:
+          - answer: 11
+            message: "Vor 2x steht ein Minus. Es wandert mit."
+          - answer: 17
+            message: "Die Zahlen ohne x gehören zur 10."
+        hint: Welches Rechenzeichen steht direkt vor 2x?
+        explanation: "Sortiert: 9x − 2x + 4 + 6. Das ergibt 7x + 10."
+        links:
+          - title: Zusammenfassen von Termen (Serlo)
+            url: https://de.serlo.org/mathe/135559/zusammenfassen-von-termen
+      - type: single-choice
+        id: zusammenfassen-l-figur
+        text: Welcher Term gibt den Umfang der Figur an, so kurz wie möglich?
+        material:
+          - type: figure
+            image: images/terme-l-figur.svg
+            alt: "Eine blaue L-förmige Figur mit sechs Seiten. Beschriftet sind unten 2x, rechts 3, die Stufe nach links x, nach oben x, oben x und links x + 3."
+            caption: Alle Ecken sind rechte Winkel. Die Skizze ist nicht maßstabsgetreu.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 6x + 6
+            correct: true
+            info: Sechs x und zweimal die 3.
+          - text: 5x + 6
+            correct: false
+            info: Eine Seite x fehlt.
+          - text: 6x + 3
+            correct: false
+            info: Die 3 der linken Seite x + 3 fehlt.
+          - text: 12x
+            correct: false
+            info: 6x und 6 sind nicht gleichartig.
+        explanation: "u = 2x + 3 + x + x + x + x + 3 = 6x + 6"
+        links:
+          - title: Zusammenfassen von Termen (Serlo)
+            url: https://de.serlo.org/mathe/135559/zusammenfassen-von-termen
+      - type: text
+        text: Lange Terme kürzt du jetzt sicher. Als Nächstes nimmst du Terme mal – und lernst dabei, wie man mit Minuszahlen rechnet.
