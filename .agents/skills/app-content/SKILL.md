@@ -68,6 +68,51 @@ Ordner `src/<kapitel>/`, Seite `src/<kapitel>/<seite>.yaml`. Übungs-Ids: `<seit
   `ereignisse-pfade` Ich kann „genau einmal“ und „mindestens einmal“ den Pfaden zuordnen · `gegenereignis` Ich kann
   eine Wahrscheinlichkeit über das Gegenereignis berechnen.
 
+**Übungen je Seite** (Stand wie gebaut; `*` = `generated`):
+
+- `zuordnungen/tabelle-koordinaten`: `tabelle-koordinaten-start`, `tabelle-koordinaten-welcher`, `tabelle-koordinaten-ablesen`, `tabelle-koordinaten-achse`, `tabelle-koordinaten-taxi*`, `tabelle-koordinaten-rechteck*`
+- `zuordnungen/proportional`: `proportional-start`, `proportional-alter`, `proportional-tabelle`, `proportional-preis*`, `proportional-welche`, `proportional-rezept*`
+- `zuordnungen/antiproportional`: `antiproportional-start`, `antiproportional-geld`, `antiproportional-tabelle`, `antiproportional-zuordnen`, `antiproportional-helfer*`, `antiproportional-vorrat*`
+- `zuordnungen/graphen`: `graphen-start`, `graphen-zuordnen`, `graphen-gerade*`, `graphen-hyperbel*`, `graphen-gleichung`, `graphen-punkt`
+- `prozent/prozentwert`: `prozentwert-start`, `prozentwert-grundwert`, `prozentwert-anteile`, `prozentwert-verein*`, `prozentwert-rabatt*`, `prozentwert-tauschen`, `prozentwert-schulweg`
+- `prozent/prozentsatz-grundwert`: `prozentsatz-grundwert-start`, `prozentsatz-grundwert-gesucht`, `prozentsatz-grundwert-umfrage*`, `prozentsatz-grundwert-sparen*`, `prozentsatz-grundwert-rechnung`, `prozentsatz-grundwert-test`
+- `prozent/sachaufgaben`: `sachaufgaben-start`, `sachaufgaben-was-fehlt`, `sachaufgaben-teurer-als`, `sachaufgaben-teurer*`, `sachaufgaben-vorher*`, `sachaufgaben-wahl`
+- `flaechen/quadrat-rechteck`: `quadrat-rechteck-start`, `quadrat-rechteck-einheit`, `quadrat-rechteck-flaeche*`, `quadrat-rechteck-umfang*`, `quadrat-rechteck-quadrat*`, `quadrat-rechteck-gleicher-umfang`, `quadrat-rechteck-garten`
+- `flaechen/dreieck`: `dreieck-start`, `dreieck-welche-hoehe`, `dreieck-drei-hoehen`, `dreieck-flaeche*`, `dreieck-hoehe-aussen*`, `dreieck-umfang*`, `dreieck-rest*`, `dreieck-rueckwaerts*`
+- `flaechen/parallelogramm-trapez`: `parallelogramm-trapez-start`, `parallelogramm-trapez-ablesen`, `parallelogramm-trapez-parallelogramm*`, `parallelogramm-trapez-trapez*`, `parallelogramm-trapez-umfang*`, `parallelogramm-trapez-hoehe`
+- `flaechen/quader-wuerfel`: `quader-wuerfel-start`, `quader-wuerfel-einheit`, `quader-wuerfel-volumen*`, `quader-wuerfel-wuerfel*`, `quader-wuerfel-liter*`, `quader-wuerfel-bauen`
+- `flaechen/netz-oberflaeche`: `netz-oberflaeche-start`, `netz-oberflaeche-sechs-quadrate`, `netz-oberflaeche-quader*`, `netz-oberflaeche-wuerfel*`, `netz-oberflaeche-ohne-deckel*`, `netz-oberflaeche-rueckwaerts`
+- `flaechen/formeln-umstellen`: `formeln-umstellen-start`, `formeln-umstellen-schritte`, `formeln-umstellen-rechteck*`, `formeln-umstellen-dreieck*`, `formeln-umstellen-quader*`, `formeln-umstellen-trapez`, `formeln-umstellen-wuerfel`
+- `terme/aufstellen`: `aufstellen-start`, `aufstellen-dreifache-summe`, `aufstellen-woerter`, `aufstellen-schritte`, `aufstellen-umfang*`, `aufstellen-popcorn*`, `aufstellen-figur`
+- `terme/werte-berechnen`: `werte-berechnen-start`, `werte-berechnen-52`, `werte-berechnen-einsetzen*`, `werte-berechnen-klammer*`, `werte-berechnen-rueckwaerts`, `werte-berechnen-tarife`
+- `terme/zusammenfassen`: `zusammenfassen-start`, `zusammenfassen-gleichartig`, `zusammenfassen-koeffizient*`, `zusammenfassen-xy`, `zusammenfassen-sortieren*`, `zusammenfassen-minus`, `zusammenfassen-l-figur`
+- `terme/produkte`: `produkte-start`, `produkte-term`, `produkte-vier-faktoren`, `produkte-koeffizient*`, `produkte-minus-minus*`, `produkte-quadrat`, `produkte-figur`
+- `wahrscheinlichkeit/laplace`: `laplace-start`, `laplace-urne`, `laplace-ueben*`, `laplace-augensumme`, `laplace-anzahl*`, `laplace-vergleich`
+- `wahrscheinlichkeit/baumdiagramm`: `baumdiagramm-start`, `baumdiagramm-ablesen`, `baumdiagramm-ergaenzen*`, `baumdiagramm-summe`, `baumdiagramm-pfade*`, `baumdiagramm-gluecksrad`
+- `wahrscheinlichkeit/pfadregeln`: `pfadregeln-start`, `pfadregeln-rechnung`, `pfadregeln-pfad*`, `pfadregeln-gleiche-farbe*`, `pfadregeln-muenze-wuerfel`, `pfadregeln-oder`, `pfadregeln-rueckwaerts`
+- `symmetrie/symmetrie-erkennen`: `symmetrie-erkennen-start`, `symmetrie-erkennen-nur-punkt`, `symmetrie-erkennen-art*`, `symmetrie-erkennen-achsen*`, `symmetrie-erkennen-vierecke`, `symmetrie-erkennen-quadrat`, `symmetrie-erkennen-woerter`
+- `symmetrie/spiegeln-drehen`: `spiegeln-drehen-start`, `spiegeln-drehen-schraeg`, `spiegeln-drehen-achse*`, `spiegeln-drehen-halbe*`, `spiegeln-drehen-viertel*`, `spiegeln-drehen-zwei-achsen`, `spiegeln-drehen-richtung`
+- `winkel/winkelsumme`: `winkelsumme-start`, `winkelsumme-dreieck*`, `winkelsumme-viereck*`, `winkelsumme-zwei-stumpfe`, `winkelsumme-basiswinkel*`, `winkelsumme-doppelt`, `winkelsumme-viereck-teile`
+- `winkel/geradenkreuzungen`: `geradenkreuzungen-start`, `geradenkreuzungen-paare`, `geradenkreuzungen-nebenwinkel*`, `geradenkreuzungen-zwei-schritte*`, `geradenkreuzungen-nicht-parallel`, `geradenkreuzungen-halbierende`, `geradenkreuzungen-scheitel`
+- `brueche/plus-minus`: `plus-minus-start`, `plus-minus-addieren*`, `plus-minus-subtrahieren*`, `plus-minus-dezimal*`, `plus-minus-luecke`, `plus-minus-gemischt`, `plus-minus-taschengeld`
+- `brueche/mal-geteilt`: `mal-geteilt-start`, `mal-geteilt-mal*`, `mal-geteilt-geteilt*`, `mal-geteilt-komma*`, `mal-geteilt-stuecke*`, `mal-geteilt-dezimal`, `mal-geteilt-band`
+- `brueche/rechenregeln`: `rechenregeln-start`, `rechenregeln-schritte`, `rechenregeln-punkt-vor-strich*`, `rechenregeln-klammer*`, `rechenregeln-links-rechts`, `rechenregeln-wettbewerb`
+- `w2-konstruktionen/planfigur`: `planfigur-start`, `planfigur-fehler`, `planfigur-richtung`, `planfigur-zuordnen`, `planfigur-gegenueber*`, `planfigur-winkel-b*`, `planfigur-wettbewerb`
+- `w2-konstruktionen/kongruenzsaetze`: `kongruenzsaetze-start`, `kongruenzsaetze-satz*`, `kongruenzsaetze-eindeutig*`, `kongruenzsaetze-ssw-richtig`, `kongruenzsaetze-welche`, `kongruenzsaetze-begruendung`
+- `w2-konstruktionen/konstruktion-schritte`: `konstruktion-schritte-start`, `konstruktion-schritte-zuerst*`, `konstruktion-schritte-sws`, `konstruktion-schritte-ssw`, `konstruktion-schritte-linien`, `konstruktion-schritte-seitenhalbierende`, `konstruktion-schritte-winkelhalbierende`, `konstruktion-schritte-flaeche*`
+- `w2-konstruktionen/winkel-pruefen`: `winkel-pruefen-start`, `winkel-pruefen-wsw*`, `winkel-pruefen-laengste`, `winkel-pruefen-messen`, `winkel-pruefen-hoehe*`, `winkel-pruefen-wettbewerb`
+- `w1-gleichungen/klammern`: `klammern-start`, `klammern-minus`, `klammern-zahl*`, `klammern-zwei*`, `klammern-zwei-minus*`, `klammern-term`, `klammern-wettbewerb`
+- `w1-gleichungen/gleichungen`: `gleichungen-start`, `gleichungen-schritte`, `gleichungen-einfach*`, `gleichungen-beide-seiten*`, `gleichungen-dezimal*`, `gleichungen-x-quadrat*`, `gleichungen-wettbewerb`
+- `w1-gleichungen/ungleichungen`: `ungleichungen-start`, `ungleichungen-wann`, `ungleichungen-teilen*`, `ungleichungen-zwei-seiten*`, `ungleichungen-gleich`, `ungleichungen-wettbewerb`
+- `w1-gleichungen/nullprodukt`: `nullprodukt-start`, `nullprodukt-loesungen`, `nullprodukt-x-faktor`, `nullprodukt-kleinere*`, `nullprodukt-groessere*`, `nullprodukt-nur-null`, `nullprodukt-wettbewerb`
+- `w1-gleichungen/loesungsmenge`: `loesungsmenge-start`, `loesungsmenge-leer`, `loesungsmenge-bereich`, `loesungsmenge-anzahl*`, `loesungsmenge-kleinste*`, `loesungsmenge-wettbewerb`
+- `w3-prozent/zu-abnahme`: `zu-abnahme-start`, `zu-abnahme-faktor`, `zu-abnahme-faktoren`, `zu-abnahme-zunahme*`, `zu-abnahme-abnahme*`, `zu-abnahme-rueckwaerts*`, `zu-abnahme-werbung`
+- `w3-prozent/vergleich`: `vergleich-start`, `vergleich-teilen`, `vergleich-mehr*`, `vergleich-weniger*`, `vergleich-wer-hat-recht`, `vergleich-ticket`
+- `w3-prozent/mehrere-aenderungen`: `mehrere-aenderungen-start`, `mehrere-aenderungen-rechnung`, `mehrere-aenderungen-reihenfolge`, `mehrere-aenderungen-preis*`, `mehrere-aenderungen-insgesamt*`, `mehrere-aenderungen-punkte`, `mehrere-aenderungen-wahl`
+- `w4-zufall/ohne-zuruecklegen`: `ohne-zuruecklegen-start`, `ohne-zuruecklegen-ast`, `ohne-zuruecklegen-zweimal-rot*`, `ohne-zuruecklegen-lose*`, `ohne-zuruecklegen-gummibaerchen`, `ohne-zuruecklegen-rueckwaerts`
+- `w4-zufall/ereignisse-pfade`: `ereignisse-pfade-start`, `ereignisse-pfade-zuordnen`, `ereignisse-pfade-hoechstens`, `ereignisse-pfade-genau*`, `ereignisse-pfade-hoechstens-rot*`, `ereignisse-pfade-gluecksrad`, `ereignisse-pfade-auslosen`
+- `w4-zufall/gegenereignis`: `gegenereignis-start`, `gegenereignis-zuordnen`, `gegenereignis-gluecksrad`, `gegenereignis-urne*`, `gegenereignis-gluecksrad-prozent*`, `gegenereignis-gerade`, `gegenereignis-rueckwaerts`
+
 ## Content structure
 
 - Startseite (`src/app.yaml`, `intro`): der Wettbewerb in drei Sätzen; Vorgehen für jede Aufgabe (ganz lesen – Thema
@@ -84,6 +129,9 @@ Ordner `src/<kapitel>/`, Seite `src/<kapitel>/<seite>.yaml`. Übungs-Ids: `<seit
 - Seitenbeginn: ein Satz „Ziel: Ich kann …“ und wie die Seite an die vorige anknüpft.
 - Höchstens 350 Wörter Text und 350 in Aufgaben je Seite; Abbildung, Tabelle oder Aufgabe in den ersten 4 Blöcken.
 - Selbsteinschätzung in jedem `chapter.yaml` (`selfAssessment`), 2 Aufgaben je Seite, bevorzugt `generated`.
+- Kapitel 9–12 heißen „Wahlaufgabe W2 …“, „W1 …“, „W3 …“, „W4 …“ wie im Wettbewerb; Reihenfolge wie die Checkliste.
+- Aufgaben- und Rückmeldungstext je Seite oft 350–450 Wörter (Hinweis `explainer-text-load`, akzeptiert: viele
+  Übungen sind der Zweck der App); Lesetext unter 350.
 - Keine Geschichte; Aufgaben in Alltagssituationen (Preise, Spiele, Sport, Basteln, Garten).
 
 ## Terminology
@@ -111,8 +159,23 @@ Ordner `src/<kapitel>/`, Seite `src/<kapitel>/<seite>.yaml`. Übungs-Ids: `<seit
 
 - Zahlenbereich: ganze Zahlen meist −20 … 20, Längen 1–20 cm (ganz oder ,5), Prozentsätze in 5er-Schritten (dazu 1 %,
   12,5 %), Nenner bis 12, Würfel/Münzen/Glücksräder bis 8 Felder, Urnen bis 10 Kugeln.
-- Daten: `src/data/zufallsversuche.yaml`, `src/data/figuren.yaml`, `src/data/kongruenzsaetze.yaml`.
+- Daten (je Datei ein Kommentar oben erklärt die Felder):
+  - `src/data/zufallsversuche.yaml` – Würfel, Glücksräder, Urnen mit einem Ereignis; richtiger Bruch und drei falsche
+    als Text (`wahrscheinlichkeit/laplace`).
+  - `src/data/bruchaufgaben.yaml` – Bruchaufgaben (Zahlen a, b, c, d, Ergebnis und drei typische Fehler als gekürzter
+    Text, Lösungsschritte) für `brueche/plus-minus` und `brueche/mal-geteilt`.
+  - `src/data/figuren.yaml` – Großbuchstaben mit Achsen und Punktsymmetrie (ohne O, X, K, Ziffern: schriftabhängig).
+  - `src/data/kongruenzsaetze.yaml` – gegebene Stücke → Kongruenzsatz, eindeutig ja/nein (sSW mit zwei Dreiecken
+    nachgeprüft).
+  - `src/data/urnen.yaml` – Urnen bis 10 Kugeln für `w4-zufall` (Brüche mit Python geprüft).
+- Brüche aus Datensätzen werden als Text gespeichert und als Auswahl gezeigt; LaTeX in einem Datenfeld erscheint roh –
+  den Bruch im Aufgabentext aus den Zahlen bauen.
 - Keine Komponenten: Brüche und Terme werden ausgewählt, nicht getippt (die Eingabe kennt nur Zahlen).
+- **Antwortpositionen:** Die Laufzeit mischt die Optionen nicht. In `single-choice`/`multiple-choice` steht die
+  richtige Option an wechselnden Stellen (natürliche Reihenfolgen wie „Strecke 1, 2, 3“ oder aufsteigende Zahlen
+  bleiben). In `generated` mit `choice` wird `r: { int: [0, N-1] }` gezogen und die Liste rotiert:
+  `choice: "[[e.p, e.f1, e.f2, e.f3], [e.f1, e.p, e.f2, e.f3], [e.f1, e.f2, e.p, e.f3], [e.f1, e.f2, e.f3, e.p]][r]"`.
+- Jede Seite hat mindestens eine Aufgabe auf Wettbewerbsniveau (Id oft `<seite>-wettbewerb`).
 
 ## Figures
 
@@ -146,4 +209,11 @@ Ordner `src/<kapitel>/`, Seite `src/<kapitel>/<seite>.yaml`. Übungs-Ids: `<seit
 
 ## Rules learned from mistakes
 
-None yet.
+- Optionen nicht immer richtig zuerst – die Laufzeit mischt nicht (46 von 57 Fragen hatten die Lösung oben).
+- Jeden Fachbegriff beim ersten Auftreten erklären („stumpf“, „Umfang“) – Lernenden-Test der Musterseite.
+- Keine Aufgabe, deren Bild die Lösung zeigt (Höhe in einem Dreieck mit waagerechter Seite war „senkrecht nach unten“
+  ablesbar) – schräge Lage wählen.
+- Kein Tipp, der verrät, welche Angabe man ignorieren soll; keine kindlichen Tipps („Fahre mit dem Finger …“).
+- Lange Formeln auf mehrere `formula`-Blöcke verteilen (bei 360 px sonst `accessible`-Fehler).
+- Kein geschütztes Leerzeichen in Überschriften (bricht einen e2e-Test).
+- `generated` hat kein `links`-Feld; Texte mit „: “ in Anführungszeichen.
