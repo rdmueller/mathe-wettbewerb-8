@@ -192,5 +192,5 @@ blocks:
       - type: text
         text: |
           Damit hast du das Kapitel zur Wahlaufgabe W1 geschafft: Du löst Gleichungen und Ungleichungen und gibst die
-          Lösungsmenge richtig an. Im nächsten Kapitel geht es um die Wahlaufgabe W3: Prozent-Sachaufgaben mit
-          mehreren Schritten.
+          Lösungsmenge richtig an. Im nächsten Kapitel geht es um die
+          [Wahlaufgabe W3: Prozent-Sachaufgaben mit mehreren Schritten](/w3-prozent/zu-abnahme/).

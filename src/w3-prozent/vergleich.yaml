@@ -1,0 +1,202 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Um wie viel Prozent mehr oder weniger?
+description: "Zwei Werte in Prozent vergleichen: den Unterschied durch den Vergleichswert teilen – und erkennen, welcher Wert das Ganze ist."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann angeben, um wie viel Prozent ein Wert größer oder kleiner ist als ein anderer. Du nutzt
+      $p\,\% = P : G$ aus dem Kapitel [Prozentrechnung](/prozent/prozentsatz-grundwert/) und den Faktor der
+      vorigen Seite.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: vergleich-start
+        text: Lea hat 40 Sticker, Tom hat 50 Sticker. Um wie viel Prozent hat Tom mehr Sticker als Lea?
+        answer: 25
+        tolerance: 0
+        unit: "%"
+        mistakes:
+          - answer: 20
+            message: "Du hast durch Toms 50 geteilt. Womit wird verglichen?"
+          - answer: 10
+            message: "10 Sticker sind nicht 10 %."
+          - answer: 125
+            message: "Tom hat 125 % von Leas Stickern. Wie viel ist das mehr?"
+        hint: Wie viele Sticker hat Tom mehr?
+        explanation: "Tom hat 10 Sticker mehr. 10 von 40 Stickern sind 10 : 40 = 0,25 = 25 %."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+  - type: section
+    id: regel
+    title: Der Wert nach „als“ ist das Ganze
+    blocks:
+      - type: text
+        text: |
+          Tom hat 10 Sticker mehr – das ist der **Unterschied**. „Mehr als Lea“ heißt: Leas 40 Sticker sind das
+          Ganze, also der Grundwert. Den Wert nach „als“ nennt man auch **Vergleichswert**.
+      - type: figure
+        image: images/w3-vergleich.svg
+        alt: "Zwei Streifen: Lea 40 Sticker in Blau, Tom 50 Sticker, gleich viel Blau und ein oranges Stück für den Unterschied von 10 Stickern."
+        caption: Das orange Stück ist der Unterschied. Womit du es vergleichst, entscheidet das Wort „als“.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'p\,\% = \text{Unterschied} : \text{Vergleichswert}'
+      - type: formula
+        formula: '10 : 40 = 0{,}25 = 25\,\%'
+      - type: text
+        text: |
+          Dreh die Frage um: Um wie viel Prozent hat Lea weniger Sticker als Tom? Jetzt steht Tom nach „als“. Seine
+          50 Sticker sind der Vergleichswert.
+      - type: formula
+        formula: '10 : 50 = 0{,}2 = 20\,\%'
+      - type: text
+        text: Derselbe Unterschied, aber ein anderes Ganzes – darum ein anderer Prozentsatz.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Stehplatz und Sitzplatz
+        blocks:
+          - type: text
+            text: |
+              Ein Stehplatz im Konzert kostet 30 €, ein Sitzplatz 40 €. Um wie viel Prozent ist der Sitzplatz teurer
+              als der Stehplatz – und um wie viel Prozent ist der Stehplatz billiger als der Sitzplatz? Der
+              Unterschied ist beide Male 10 €.
+          - type: formula
+            formula: '10 : 30 = \frac{1}{3} \approx 33{,}3\,\%'
+          - type: formula
+            formula: '10 : 40 = \frac{1}{4} = 25\,\%'
+          - type: text
+            text: |
+              Antwort – Der Sitzplatz ist um ein Drittel, also um 33⅓ % teurer als der Stehplatz. Der Stehplatz ist
+              um 25 % billiger als der Sitzplatz.
+  - type: section
+    id: merke
+    title: Mehr und weniger sind nicht dasselbe
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Teile den Unterschied immer durch den Wert nach „als“. Ist A um 25 % mehr als B, dann ist B nicht um
+              25 % weniger als A, sondern nur um 20 % – denn jetzt teilst du durch den größeren Wert A.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: vergleich-teilen
+        text: Ein Hund wiegt 30 kg, eine Katze 6 kg. Um wie viel Prozent ist der Hund schwerer als die Katze? Durch welchen Wert teilst du den Unterschied?
+        options:
+          - text: durch 30 kg
+            correct: false
+            info: "Verglichen wird mit der Katze, nicht mit dem Hund."
+          - text: durch 6 kg
+            correct: true
+            info: "Die Katze steht nach „als“."
+          - text: durch 24 kg
+            correct: false
+            info: "24 kg ist der Unterschied selbst."
+          - text: durch 36 kg
+            correct: false
+            info: "36 kg wiegen beide zusammen."
+        explanation: "24 : 6 = 4 = 400 %. Der Hund wiegt 5-mal so viel."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: generated
+        id: vergleich-mehr
+        given:
+          B: { oneOf: [20, 25, 50] }
+          A: { int: [21, 100] }
+        where:
+          - "A > B"
+          - "A <= 2 * B"
+          - "decimals((A - B) * 100 / B) == 0"
+          - "round((A - B) * 100 / A, 0) != (A - B) * 100 / B"
+        task:
+          text: "Bei einem Spiel hat Ben {{B}} Punkte, Ella hat {{A}} Punkte. Um wie viel Prozent hat Ella mehr Punkte als Ben?"
+        answer: { value: "(A - B) * 100 / B", compare: { number: { format: percent, decimals: 0 } } }
+        mistakes:
+          - value: "round((A - B) * 100 / A, 0)"
+            message: "Du hast durch Ellas Punkte geteilt. Wer steht nach „als“?"
+          - value: "A - B"
+            message: "Das ist der Unterschied in Punkten, nicht in Prozent."
+          - value: "A * 100 / B"
+            message: "So viel Prozent von Bens Punkten hat Ella."
+        hint: Rechne zuerst den Unterschied aus. Wer steht nach „als“?
+        steps:
+          - "Unterschied: {{A}} − {{B}} Punkte. Vergleichswert, der Wert nach „als“: Bens {{B}} Punkte."
+          - "Unterschied : Vergleichswert ergibt {{answer}} %."
+          - "Ella hat {{answer}} % mehr Punkte als Ben."
+      - type: generated
+        id: vergleich-weniger
+        given:
+          A: { oneOf: [20, 25, 50] }
+          B: { int: [5, 49] }
+        where:
+          - "B < A"
+          - "2 * B != A"
+          - "decimals((A - B) * 100 / A) == 0"
+          - "round((A - B) * 100 / B, 0) != (A - B) * 100 / A"
+        task:
+          text: "Ein Kiosk hat an einem Tag im Juli {{A}} Eis verkauft, an einem Tag im September {{B}} Eis. Um wie viel Prozent weniger Eis waren es im September als im Juli?"
+        answer: { value: "(A - B) * 100 / A", compare: { number: { format: percent, decimals: 0 } } }
+        mistakes:
+          - value: "round((A - B) * 100 / B, 0)"
+            message: "Du hast durch {{B}} geteilt. Was steht nach „als“?"
+          - value: "A - B"
+            message: "Das ist der Unterschied in Eis, nicht in Prozent."
+          - value: "B * 100 / A"
+            message: "So viel Prozent der Juli-Menge sind es im September."
+        hint: Rechne zuerst den Unterschied aus. Welcher Monat steht nach „als“?
+        steps:
+          - "Unterschied: {{A}} − {{B}} Eis. Vergleichswert, der Wert nach „als“: {{A}} Eis im Juli."
+          - "Unterschied : Vergleichswert ergibt {{answer}} %."
+          - "Im September waren es {{answer}} % weniger Eis als im Juli."
+      - type: single-choice
+        id: vergleich-wer-hat-recht
+        text: "In der Klasse 8a sind 12 Mädchen und 15 Jungen. Lisa sagt: „Es gibt 25 % mehr Jungen als Mädchen.“ Ben sagt: „Es gibt 20 % weniger Mädchen als Jungen.“ Wer hat recht?"
+        options:
+          - text: nur Lisa
+            correct: false
+            info: "3 : 12 = 25 % stimmt. Prüfe auch Ben."
+          - text: nur Ben
+            correct: false
+            info: "3 : 15 = 20 % stimmt. Prüfe auch Lisa."
+          - text: keiner von beiden
+            correct: false
+            info: "Rechne beide nach: Unterschied 3, verschiedene Vergleichswerte."
+          - text: beide
+            correct: true
+            info: "Lisa teilt durch 12, Ben durch 15."
+        explanation: "Der Unterschied ist 3. Mehr als die Mädchen: 3 : 12 = 25 %. Weniger als die Jungen: 3 : 15 = 20 %."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: number
+        id: vergleich-ticket
+        text: Ein Ticket für Erwachsene im Zoo kostet 25 % mehr als ein Kinderticket. Das Erwachsenenticket kostet 15 €. Was kostet ein Kinderticket?
+        answer: 12
+        tolerance: 0
+        unit: €
+        mistakes:
+          - answer: 11.25
+            message: "Die 25 % gehören zum Kinderticket, nicht zu 15 €."
+          - answer: 3.75
+            message: "Das sind 25 % von 15 €."
+          - answer: 18.75
+            message: "Das Kinderticket ist billiger, nicht teurer."
+        hint: Das Kinderticket ist das Ganze. Mit welchem Faktor wird daraus das Erwachsenenticket?
+        explanation: "Kinderticket · 1,25 = 15 €, also 15 € : 1,25 = 12 €. Probe: 12 € + 3 € = 15 €."
+        links:
+          - title: Einführung in den verminderten und vermehrten Grundwert (Serlo)
+            url: https://de.serlo.org/mathe/37829/zusammenfassung
+      - type: text
+        text: Als Nächstes ändert sich ein Wert mehrmals hintereinander – und du lernst den Unterschied zwischen Prozent und Prozentpunkten.

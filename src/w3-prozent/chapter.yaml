@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: "Wahlaufgabe W3: Prozent in mehreren Schritten"
+summary: Zu- und Abnahme mit dem Faktor, Vergleiche in Prozent und mehrere Änderungen nacheinander – mit Prozentpunkten und den typischen Fallen der Wahlaufgabe.
+pages: [zu-abnahme, vergleich, mehrere-aenderungen]

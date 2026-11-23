@@ -587,7 +587,7 @@ page, which a link. -->
 - [x] Kapitel brueche: 3 Seiten (plus-minus, mal-geteilt, rechenregeln), Brüche als Auswahl, Abschnitt Kürzen/Erweitern, Selbsteinschätzung
 - [x] Kapitel w2-konstruktionen: 4 Seiten (planfigur, kongruenzsaetze, konstruktion-schritte, winkel-pruefen) mit Planfiguren als SVG, Daten kongruenzsaetze.yaml, Abschnitt Grundkonstruktionen, Selbsteinschätzung
 - [x] Kapitel w1-gleichungen: 5 Seiten (klammern, gleichungen, ungleichungen, nullprodukt, loesungsmenge), Selbsteinschätzung
-- [ ] Kapitel w3-prozent: 3 Seiten (zu-abnahme, vergleich, mehrere-aenderungen), Selbsteinschätzung
+- [x] Kapitel w3-prozent: 3 Seiten (zu-abnahme, vergleich, mehrere-aenderungen), Selbsteinschätzung
 - [ ] Kapitel w4-zufall: 3 Seiten (ohne-zuruecklegen, ereignisse-pfade, gegenereignis) mit Urnen-SVGs, Selbsteinschätzung
 <!-- tasks: pages (13 added): the other pages or screens, after the pattern -->
 - [ ] Update the content guide so that it describes the app as built (`app-content-matches`).

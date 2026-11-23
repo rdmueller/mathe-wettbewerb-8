@@ -1,0 +1,222 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Zunahme und Abnahme mit dem Faktor
+description: "Den neuen Wert nach einer Zu- oder Abnahme in einem Schritt mit dem Faktor berechnen – und rückwärts den alten Wert finden."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann den neuen Wert nach einer Zu- oder Abnahme mit dem Faktor berechnen. Du brauchst dafür den
+      [Prozentwert](/prozent/prozentwert/) und den Grundwert aus dem Kapitel Prozentrechnung.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: zu-abnahme-start
+        text: Ein Fahrrad kostet 250 €. Der Preis steigt um 20 %. Wie viel kostet das Fahrrad jetzt?
+        material:
+          - type: figure
+            draw: { kind: hundred-grid, filled: 20 }
+            alt: Ein Hunderterfeld mit 100 Kästchen, 20 davon sind gefärbt.
+            caption: Das ganze Feld ist der alte Preis von 250 €. Die 20 gefärbten Kästchen sind die Erhöhung.
+        answer: 300
+        tolerance: 0
+        unit: €
+        mistakes:
+          - answer: 50
+            message: "50 € ist die Erhöhung. Gefragt ist der neue Preis."
+          - answer: 270
+            message: "20 % sind keine 20 €, sondern ein Anteil vom alten Preis."
+          - answer: 200
+            message: "Der Preis steigt, die Erhöhung kommt also dazu."
+        hint: Rechne zuerst aus, wie viel Euro 20 % von 250 € sind.
+        explanation: "10 % von 250 € sind 25 €, also sind 20 % 50 €. Der neue Preis ist 250 € + 50 € = 300 €."
+        links:
+          - title: Einführung in den verminderten und vermehrten Grundwert (Serlo)
+            url: https://de.serlo.org/mathe/37829/zusammenfassung
+  - type: section
+    id: regel
+    title: Ein Faktor statt zwei Schritte
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben hast du wohl erst die Erhöhung berechnet (50 €) und dann addiert. Es geht in einem
+          Schritt: Der alte Preis ist 100 %. Kommen 20 % dazu, sind es 100 % + 20 % = 120 % des alten Preises.
+          120 % ist als Dezimalzahl 1,2. Diese Zahl heißt **Faktor**: Du nimmst den alten Wert mit ihr mal.
+      - type: figure
+        image: images/w3-faktor.svg
+        alt: "Drei Streifen. Oben der alte Wert, 100 %. In der Mitte kommen 20 % als oranges Stück dazu: 120 %, Faktor 1,2. Unten fehlen 15 % als gestricheltes Stück: 85 %, Faktor 0,85."
+        caption: Der blaue Streifen ist immer der alte Wert. Achte darauf, wie lang der neue Streifen im Vergleich ist.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '250 \cdot 1{,}2 = 300'
+      - type: text
+        text: |
+          Bei einer Abnahme um 15 % bleiben 100 % − 15 % = 85 %, der Faktor ist 0,85. Den neuen Wert nennt man
+          auch **vermehrten** oder **verminderten Grundwert**.
+      - type: formula
+        formula: 'G \cdot (1 + p\,\%) \qquad G \cdot (1 - p\,\%)'
+      - type: text
+        text: |
+          Rückwärts teilst du durch den Faktor. Kostet das Rad nach der Erhöhung 300 €, war der alte Preis
+          300 € : 1,2 = 250 €.
+      - type: formula
+        formula: 'G = \text{neuer Wert} : \text{Faktor}'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Was kostete der Pullover vorher?
+        blocks:
+          - type: text
+            text: |
+              Ein Pullover ist um 20 % reduziert und kostet jetzt 48 €. Was hat er vorher gekostet? Der alte Preis
+              ist der Grundwert G, er fehlt. Nach der Abnahme bleiben 80 %, der Faktor ist 0,8.
+          - type: formula
+            formula: 'G \cdot 0{,}8 = 48 \qquad G = 48 : 0{,}8 = 60'
+          - type: text
+            text: |
+              Antwort – Der Pullover hat vorher 60 € gekostet. Probe: 20 % von 60 € sind 12 €, und 60 € − 12 € = 48 €.
+              Der Haken: 48 € plus 20 % von 48 € wären 57,60 € – falsch, denn die 20 % gehören zum alten Preis.
+  - type: section
+    id: merke
+    title: Der Faktor gehört zum alten Wert
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Neuer Wert = alter Wert · Faktor. Die Änderung allein ist noch nicht der neue Wert. Rückwärts teilst du
+              den neuen Wert durch den Faktor. Ziehst du p % vom neuen Wert ab oder zählst sie dazu, nimmst du den
+              falschen Grundwert.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: zu-abnahme-faktor
+        text: Ein Preis sinkt um 15 %. Mit welchem Faktor berechnest du den neuen Preis?
+        options:
+          - text: "· 0,15"
+            correct: false
+            info: "Mit 0,15 bekommst du nur die Abnahme."
+          - text: "· 1,15"
+            correct: false
+            info: "1,15 gehört zu einer Zunahme um 15 %."
+          - text: "· 0,85"
+            correct: true
+            info: "Es bleiben 100 % − 15 % = 85 %."
+          - text: "· 0,75"
+            correct: false
+            info: "0,75 gehört zu einer Abnahme um 25 %."
+        explanation: "Abnahme um p %: Faktor 1 − p %, hier 1 − 0,15 = 0,85."
+        links:
+          - title: Einführung in den verminderten und vermehrten Grundwert (Serlo)
+            url: https://de.serlo.org/mathe/37829/zusammenfassung
+      - type: matching
+        id: zu-abnahme-faktoren
+        text: Welcher Faktor gehört zu welcher Änderung?
+        pairs:
+          - left: Zunahme um 20 %
+            right: Faktor 1,2
+          - left: Abnahme um 20 %
+            right: Faktor 0,8
+          - left: Zunahme um 5 %
+            right: Faktor 1,05
+          - left: Abnahme um 5 %
+            right: Faktor 0,95
+        distractors:
+          - Faktor 0,2
+          - Faktor 1,5
+        explanation: "5 % sind 0,05, darum ist der Faktor 1,05 und nicht 1,5."
+        links:
+          - title: Einführung in den verminderten und vermehrten Grundwert (Serlo)
+            url: https://de.serlo.org/mathe/37829/zusammenfassung
+      - type: generated
+        id: zu-abnahme-zunahme
+        given:
+          G: { int: [20, 400], step: 20 }
+          p: { oneOf: [5, 10, 15, 20, 25, 30, 40, 50] }
+        where: ["G != 100"]
+        task:
+          text: "Eine Konzertkarte kostet {{G}} €. Der Preis steigt um {{p}} %. Wie viel kostet die Karte jetzt?"
+        answer: { value: "G * (100 + p) / 100", compare: { number: { format: money } } }
+        mistakes:
+          - value: "G * p / 100"
+            message: "Das ist nur die Erhöhung."
+          - value: "G + p"
+            message: "{{p}} % sind keine {{p}} €."
+          - value: "G * (100 - p) / 100"
+            message: "Der Preis steigt: Der Faktor ist größer als 1."
+        hint: "Wie viel Prozent des alten Preises kostet die Karte jetzt?"
+        steps:
+          - "Mit G = {{G}} € und einer Zunahme um {{p}} %: Der neue Preis ist (100 + {{p}}) % des alten."
+          - '$ {{G}} \cdot \frac{100 + {{p}}}{100} = {{answer}}$'
+          - "Die Karte kostet jetzt {{answer}} €."
+      - type: generated
+        id: zu-abnahme-abnahme
+        given:
+          G: { int: [40, 800], step: 20 }
+          p: { oneOf: [5, 10, 15, 20, 25, 30, 40] }
+        where: ["decimals(G * p / 100) == 0", "G != 100"]
+        task:
+          text: "Ein Sportverein hatte {{G}} Mitglieder. Im letzten Jahr ist die Zahl um {{p}} % gesunken. Wie viele Mitglieder hat der Verein jetzt?"
+        answer: { value: "G * (100 - p) / 100", compare: { number: { format: integer, unit: Mitglieder } } }
+        mistakes:
+          - value: "G * p / 100"
+            message: "So viele sind weg. Gefragt ist, wie viele bleiben."
+          - value: "G - p"
+            message: "{{p}} % sind keine {{p}} Mitglieder."
+          - value: "G * (100 + p) / 100"
+            message: "Die Zahl sinkt: Der Faktor ist kleiner als 1."
+        hint: Wie viel Prozent der Mitglieder bleiben?
+        steps:
+          - "Mit G = {{G}} Mitglieder und einer Abnahme um {{p}} %: Es bleiben (100 − {{p}}) % der Mitglieder."
+          - '$ {{G}} \cdot \frac{100 - {{p}}}{100} = {{answer}}$'
+          - "Der Verein hat jetzt {{answer}} Mitglieder."
+      - type: generated
+        id: zu-abnahme-rueckwaerts
+        given:
+          N: { int: [12, 300] }
+          p: { oneOf: [10, 20, 25, 40, 50] }
+        where:
+          - "decimals(N * 100 / (100 - p)) == 0"
+          - "decimals(N * (100 + p) / 100) <= 2"
+          - "N != 100 - p"
+        task:
+          text: "Ein Skateboard ist um {{p}} % reduziert und kostet jetzt {{N}} €. Wie viel hat es vorher gekostet?"
+        answer: { value: "N * 100 / (100 - p)", compare: { number: { format: integer, unit: € } } }
+        mistakes:
+          - value: "N * (100 + p) / 100"
+            message: "Die {{p}} % gehören zum alten Preis, nicht zum neuen. Teile durch den Faktor."
+          - value: "N + p"
+            message: "{{p}} % sind keine {{p}} €."
+          - value: "N * (100 - p) / 100"
+            message: "Du hast noch einmal reduziert. Gesucht ist der Preis vorher."
+        hint: Alter Preis mal Faktor ergibt {{N}} €.
+        steps:
+          - "Nach der Reduzierung um {{p}} % bleiben (100 − {{p}}) % des alten Preises: G · Faktor = {{N}} €."
+          - '$G = {{N}} : \frac{100 - {{p}}}{100} = {{answer}}$'
+          - "Das Skateboard hat vorher {{answer}} € gekostet."
+      - type: number
+        id: zu-abnahme-werbung
+        text: "Ein Laden wirbt: „Jetzt 30 % billiger – nur noch 56 €!“ Wie viel Euro sparst du gegenüber dem alten Preis?"
+        answer: 24
+        tolerance: 0
+        unit: €
+        mistakes:
+          - answer: 16.8
+            message: "Die 30 % gehören zum alten Preis, nicht zu 56 €."
+          - answer: 80
+            message: "80 € ist der alte Preis."
+          - answer: 30
+            message: "30 % sind keine 30 €."
+        hint: Wie viel Prozent des alten Preises sind 56 €?
+        explanation: "56 € sind 70 % des alten Preises, also 56 € : 0,7 = 80 €. Du sparst 80 € − 56 € = 24 €."
+        links:
+          - title: Einführung in den verminderten und vermehrten Grundwert (Serlo)
+            url: https://de.serlo.org/mathe/37829/zusammenfassung
+      - type: text
+        text: Als Nächstes vergleichst du zwei Werte miteinander – um wie viel Prozent ist der eine größer als der andere?
