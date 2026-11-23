@@ -572,10 +572,11 @@ page, which a link. -->
       `.agents/skills/lernapps-explainer/references/structure.md` says. Write the choice under "Key decisions".
 - [x] Musterseite flaechen/dreieck: Einstieg Rechteck halbieren, SVG mit Höhen innen und außen, Formel, Beispielbox, Merke schräge Seite, Übung mit generated (A, u, Höhe außen) und Fehlerdiagnose; zeigt das Abschnittsschema und die Farbregeln für alle Seiten
 <!-- tasks: pattern (1 added): the one page or screen that is the pattern for the others -->
-- [ ] **Checkpoint:** the pattern page. Load skill `lernapps-learner-check` and do its learner check on the page. Fix
+- [x] **Checkpoint:** the pattern page. Load skill `lernapps-learner-check` and do its learner check on the page. Fix
       what it finds. Then show the creator the page and ask whether the others may follow it. Stop and wait. A
       change: change the pattern first.
-- [ ] Startseite: Wettbewerb in drei Sätzen (8 Pflicht-, 2 von 4 Wahlaufgaben, ohne Taschenrechner), Vorgehen für jede Aufgabe, Link zur Selbsteinschätzung
+      Creator: ja
+- [x] Startseite: Wettbewerb in drei Sätzen (8 Pflicht-, 2 von 4 Wahlaufgaben, ohne Taschenrechner), Vorgehen für jede Aufgabe, Link zur Selbsteinschätzung
 - [ ] Kapitel zuordnungen: 4 Seiten (tabelle-koordinaten, proportional, antiproportional, graphen) mit SVG-Koordinatensystemen, Selbsteinschätzung
 - [ ] Kapitel prozent: 3 Seiten (prozentwert, prozentsatz-grundwert, sachaufgaben) mit Hunderterfeld, generated mit Fehlerdiagnose, Selbsteinschätzung
 - [ ] Kapitel flaechen, übrige 5 Seiten (quadrat-rechteck, parallelogramm-trapez, quader-wuerfel, netz-oberflaeche, formeln-umstellen) nach der Musterseite, Abschnitt Einheiten, Selbsteinschätzung
