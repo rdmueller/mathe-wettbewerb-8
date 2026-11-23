@@ -1,4 +1,4 @@
 # yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
 title: Flächeninhalt, Umfang und Volumen
 summary: Formeln für Rechteck, Dreieck, Parallelogramm, Trapez, Quader und Würfel – hergeleitet, damit du sie behältst.
-pages: [dreieck]
+pages: [quadrat-rechteck, dreieck, parallelogramm-trapez, quader-wuerfel, netz-oberflaeche, formeln-umstellen]

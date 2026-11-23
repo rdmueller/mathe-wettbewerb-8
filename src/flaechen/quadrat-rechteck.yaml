@@ -1,0 +1,205 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Flächeninhalt und Umfang von Rechteck und Quadrat
+description: "Vom Kästchenzählen zur Formel A = a · b – und Flächeninhalt und Umfang sicher unterscheiden."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Flächeninhalt und Umfang von Quadrat und Rechteck berechnen. Du brauchst dafür das
+      Einmaleins und die Einheiten, die gleich wiederholt werden.
+  - type: section
+    id: brauchst
+    title: Das brauchst du hier
+    blocks:
+      - type: text
+        text: |
+          Längen misst du in mm, cm, dm und m. Eine Fläche misst du in Quadraten: **1 cm²** ist ein Kästchen
+          1 cm × 1 cm. Ein Volumen misst du in Würfeln: **1 cm³** ist ein Würfel mit 1 cm Kantenlänge.
+      - type: table
+        caption: Von einer Einheit zur nächstkleineren
+        header: [Größe, Einheiten, Faktor]
+        rows:
+          - [Länge, "mm, cm, dm, m", "10"]
+          - [Fläche, "mm², cm², dm², m²", "100"]
+          - [Volumen, "mm³, cm³, dm³, m³", "1000"]
+      - type: text
+        text: |
+          Warum 100? Ein Quadrat 1 dm × 1 dm ist 10 cm × 10 cm groß, also 1 dm² = 100 cm². Beim Würfel kommt
+          noch die Höhe dazu: 1 dm³ = 10 · 10 · 10 cm³ = 1000 cm³.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: quadrat-rechteck-start
+        text: Jedes Kästchen ist 1 cm lang und 1 cm breit. Wie groß ist die Fläche des blauen Rechtecks?
+        material:
+          - type: figure
+            image: images/flaechen-kaestchen.svg
+            alt: Ein blaues Rechteck aus gleich großen Kästchen. Unter dem ersten Kästchen steht 1 cm.
+            caption: Jedes Kästchen ist 1 cm².
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 15
+        tolerance: 0
+        unit: cm²
+        mistakes:
+          - answer: 16
+            message: "Du hast die Kanten am Rand gezählt, also den Umfang. Gefragt sind die Kästchen."
+          - answer: 8
+            message: "Du hast 5 + 3 gerechnet. Zähle die Kästchen in einer Reihe und die Zahl der Reihen."
+        hint: Wie viele Kästchen liegen in einer Reihe, und wie viele Reihen gibt es?
+        explanation: "Es sind 3 Reihen mit je 5 Kästchen, also 3 · 5 = 15 Kästchen. Das sind 15 cm²."
+        links:
+          - title: Rechteck (Serlo)
+            url: https://de.serlo.org/mathe/1697/rechteck
+  - type: section
+    id: regel
+    title: Reihen mal Kästchen
+    blocks:
+      - type: text
+        text: |
+          Oben liegen 3 Reihen mit je 5 Kästchen: 3 · 5 = 15. Das klappt bei jedem Rechteck mit der Länge $a$ und
+          der Breite $b$. Der **Flächeninhalt** $A$ sagt, wie viele Einheitsquadrate hineinpassen. Der
+          **Umfang** $u$ ist die Länge des Randes, einmal ganz herum: zwei Längen und zwei Breiten.
+      - type: figure
+        image: images/flaechen-flaeche-umfang.svg
+        alt: Links ein blau gefülltes Rechteck mit den Seiten a und b. Rechts dasselbe Rechteck, nur sein Rand ist orange, an den vier Seiten steht a, b, a, b.
+        caption: "Links zählt, was innen liegt: der Flächeninhalt. Rechts zählt der Rand: der Umfang."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'A = a \cdot b \qquad u = 2 \cdot a + 2 \cdot b'
+      - type: text
+        text: Ein **Quadrat** ist ein Rechteck mit vier gleich langen Seiten $a$.
+      - type: formula
+        formula: 'A = a \cdot a \qquad u = 4 \cdot a'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Ein Zimmer mit Tür
+        blocks:
+          - type: text
+            text: |
+              Ein Zimmer ist 5 m lang und 3,5 m breit. Wie viel Boden brauchst du? Und wie viel Fußleiste, wenn die
+              Tür 1 m breit ist? Der Boden ist eine Fläche, die Fußleiste läuft am Rand entlang.
+          - type: formula
+            formula: 'A = 5 \cdot 3{,}5 = 17{,}5'
+          - type: formula
+            formula: 'u = 2 \cdot 5 + 2 \cdot 3{,}5 = 17'
+          - type: text
+            text: Antwort – Du brauchst 17,5 m² Boden und 17 m − 1 m = 16 m Fußleiste, denn an der Tür gibt es keine.
+  - type: section
+    id: merke
+    title: Fläche oder Rand?
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Der Flächeninhalt zählt Quadrate, darum hat er die Einheit cm² oder m². Der Umfang ist eine Länge,
+              darum cm oder m. Frag dich bei jeder Aufgabe: Geht es um das, was innen liegt, oder um den Rand?
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: quadrat-rechteck-einheit
+        text: Ein Beet ist 4 m lang und 2 m breit. Welche Angabe ist sein Flächeninhalt?
+        options:
+          - text: 8 m²
+            correct: true
+            info: "4 · 2 = 8, gemessen in Quadratmetern."
+          - text: 8 m
+            correct: false
+            info: Die Zahl stimmt, aber m ist eine Einheit für Längen.
+          - text: 12 m
+            correct: false
+            info: "12 m ist der Umfang, also der Rand: 2 · 4 + 2 · 2."
+        explanation: Fläche heißt Länge mal Breite, in m².
+        links:
+          - title: Rechteck (Serlo)
+            url: https://de.serlo.org/mathe/1697/rechteck
+      - type: generated
+        id: quadrat-rechteck-flaeche
+        given:
+          a: { int: [2, 20] }
+          b: { int: [2, 12] }
+        where: ["a * b != 2 * a + 2 * b", "a * b != a + b"]
+        task:
+          text: "Ein Rechteck ist {{a}} cm lang und {{b}} cm breit. Wie groß ist sein Flächeninhalt?"
+        answer: { value: "a * b", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "2 * a + 2 * b"
+            message: "Das ist der Umfang, also der Rand. Gefragt ist die Fläche."
+          - value: "a + b"
+            message: "Du hast addiert. Für die Fläche multiplizierst du Länge und Breite."
+        hint: Wie viele Reihen mit wie vielen Kästchen passen hinein?
+        steps:
+          - "Mit a = {{a}} cm und b = {{b}} cm: $A = a \\cdot b$"
+          - '$A = {{a}} \cdot {{b}}$ – das Rechteck hat {{answer}} cm².'
+      - type: generated
+        id: quadrat-rechteck-umfang
+        given:
+          a: { int: [2, 20] }
+          b: { int: [2, 15] }
+        where: ["a * b != 2 * a + 2 * b"]
+        task:
+          text: "Um ein rechteckiges Beet, {{a}} m lang und {{b}} m breit, soll ein Zaun. Wie lang wird der Zaun?"
+        answer: { value: "2 * a + 2 * b", compare: { number: { format: integer, unit: m } } }
+        mistakes:
+          - value: "a + b"
+            message: "Das ist nur eine Länge und eine Breite. Der Zaun läuft einmal ganz herum."
+          - value: "a * b"
+            message: "Das ist die Fläche des Beets. Der Zaun steht am Rand."
+        hint: Geh in Gedanken einmal um das Beet herum. Welche Seiten kommen vor?
+        steps:
+          - "Mit a = {{a}} m und b = {{b}} m: $u = 2 \\cdot a + 2 \\cdot b$"
+          - '$u = 2 \cdot {{a}} + 2 \cdot {{b}}$ – der Zaun wird {{answer}} m lang.'
+      - type: generated
+        id: quadrat-rechteck-quadrat
+        given:
+          u: { int: [8, 60], step: 4 }
+        where: ["u != 16"]
+        task:
+          text: "Ein Quadrat hat den Umfang u = {{u}} cm. Wie groß ist sein Flächeninhalt?"
+        answer: { value: "(u / 4) * (u / 4)", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "u / 4"
+            message: "Das ist die Seitenlänge. Nimm sie noch mit sich selbst mal."
+          - value: "u"
+            message: "Das ist der Umfang selbst. Rechne zuerst die Seitenlänge aus."
+        hint: Ein Quadrat hat vier gleich lange Seiten. Wie lang ist eine?
+        steps:
+          - "Mit u = {{u}} cm: Jede der 4 Seiten ist u : 4 lang."
+          - "Seite mal Seite ergibt den Flächeninhalt: {{answer}} cm²."
+      - type: true-false
+        id: quadrat-rechteck-gleicher-umfang
+        text: Zwei Rechtecke mit demselben Umfang haben auch denselben Flächeninhalt.
+        answer: false
+        explanation: "1 cm × 5 cm und 3 cm × 3 cm haben beide 12 cm Umfang, aber 5 cm² und 9 cm² Fläche."
+        links:
+          - title: Rechteck (Serlo)
+            url: https://de.serlo.org/mathe/1697/rechteck
+      - type: number
+        id: quadrat-rechteck-garten
+        text: Ein rechteckiger Garten ist 12 m lang. Sein Umfang ist 40 m. Wie groß ist seine Fläche?
+        answer: 96
+        tolerance: 0
+        unit: m²
+        mistakes:
+          - answer: 336
+            message: "Du hast 40 − 12 = 28 als Breite genommen. Im Umfang steckt die Länge aber zweimal."
+          - answer: 480
+            message: "Du hast Länge mal Umfang gerechnet. Du brauchst die Breite."
+          - answer: 8
+            message: "8 m ist die Breite. Gefragt ist die Fläche."
+        hint: Rechne zuerst die Breite aus. Wie oft stecken Länge und Breite im Umfang?
+        explanation: "Für zwei Breiten bleiben 40 − 24 = 16 m, eine ist 8 m. Fläche – 12 · 8 = 96 m²."
+        links:
+          - title: Rechteck (Serlo)
+            url: https://de.serlo.org/mathe/1697/rechteck
+      - type: text
+        text: Als Nächstes halbierst du ein Rechteck – und bekommst so die Formel für das Dreieck.

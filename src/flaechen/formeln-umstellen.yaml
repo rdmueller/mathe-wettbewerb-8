@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Formeln umstellen
+description: "Eine Flächen- oder Volumenformel wie eine Gleichung umstellen – und so eine fehlende Länge berechnen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann eine Flächen- oder Volumenformel nach einer fehlenden Länge umstellen. Du brauchst die
+      Formeln der vorigen Seiten. Beim [Dreieck](/flaechen/dreieck/) hast du das schon einmal gemacht.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: formeln-umstellen-start
+        text: Ein rechteckiges Beet hat den Flächeninhalt 24 m² und ist 6 m lang. Wie breit ist es?
+        material:
+          - type: figure
+            image: images/flaechen-rechteck-breite.svg
+            alt: Ein Rechteck mit dem Flächeninhalt 24 m² und der Länge 6 m. Die rechte Seite ist orange und mit b = ? beschriftet.
+            caption: Eine Skizze, nicht maßstabsgetreu. Gesucht ist die orange Seite.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 4
+        tolerance: 0
+        unit: m
+        mistakes:
+          - answer: 144
+            message: "Du hast 24 · 6 gerechnet. Gesucht ist die Zahl, die mal 6 genau 24 ergibt."
+          - answer: 18
+            message: "Du hast 24 − 6 gerechnet. In der Formel wird aber malgenommen, nicht addiert."
+        hint: "6 mal wie viel ergibt 24?"
+        explanation: "Es gilt 6 · b = 24. Die Umkehrung von „mal 6“ ist „geteilt durch 6“: b = 24 : 6 = 4 m."
+        links:
+          - title: Äquivalenzumformungen (Serlo)
+            url: https://de.serlo.org/mathe/1847/aequivalenzumformungen
+  - type: section
+    id: regel
+    title: Rückwärts rechnen wie bei einer Gleichung
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben stand eine Gleichung: 6 · b = 24. Du hast die Umkehraufgabe gerechnet:
+          24 : 6 = 4. Mit Buchstaben heißt das: Was beim Gesuchten malgenommen wird, teilst du auf beiden Seiten weg.
+      - type: formula
+        formula: 'A = a \cdot b \quad \Rightarrow \quad b = A : a'
+      - type: text
+        text: |
+          Steht mehr als eine Rechnung in der Formel, machst du sie rückwärts in umgekehrter Reihenfolge. Beim
+          Dreieck rechnest du vorwärts erst „mal h“, dann „: 2“. Rückwärts also erst „mal 2“, dann „: g“.
+      - type: figure
+        image: images/flaechen-umkehren.svg
+        alt: "Oben vorwärts: g, Pfeil mal h, g · h, Pfeil geteilt durch 2, A. Unten rückwärts: A, Pfeil mal 2, 2 · A, Pfeil geteilt durch g, h."
+        caption: "Rückwärts kehrt sich jede Rechnung um: mal wird geteilt, geteilt wird mal."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'h = 2 \cdot A : g'
+      - type: text
+        text: Beim Quader teilst du das Volumen durch die Grundfläche, beim Trapez nimmst du erst mal 2 und teilst dann durch $a + c$.
+      - type: formula
+        formula: 'c = V : (a \cdot b)'
+      - type: formula
+        formula: 'h = 2 \cdot A : (a + c)'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Wie hoch liegt der Sand?
+        blocks:
+          - type: text
+            text: |
+              Ein Sandkasten ist 2 m lang und 1,5 m breit. Es kommen 600 Liter Sand hinein. Wie hoch liegt der Sand?
+              Liter sind dm³, darum rechnest du in dm: 20 dm lang, 15 dm breit.
+          - type: formula
+            formula: 'c = 600 : (20 \cdot 15) = 600 : 300 = 2'
+          - type: text
+            text: Antwort – Der Sand liegt 2 dm hoch, also 20 cm.
+  - type: section
+    id: merke
+    title: Die richtige Umkehrung
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Die Umkehrung von „mal“ ist „geteilt“, die von „: 2“ ist „· 2“. Prüfe dein Ergebnis mit einer Probe:
+              Setze es in die ursprüngliche Formel ein. Kommt der gegebene Wert heraus, stimmt es.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: ordering
+        id: formeln-umstellen-schritte
+        text: "Ein Dreieck hat A = 30 cm² und g = 12 cm. Bring die Schritte zur Höhe h in die richtige Reihenfolge."
+        items:
+          - "Formel aufschreiben: 30 = 12 · h : 2"
+          - "Beide Seiten mal 2: 60 = 12 · h"
+          - "Beide Seiten durch 12: h = 5"
+          - "Probe: 12 · 5 : 2 = 30"
+        explanation: "Erst die Formel, dann rückwärts: „: 2“ umkehren, dann „· 12“, am Ende die Probe."
+        links:
+          - title: Äquivalenzumformungen (Serlo)
+            url: https://de.serlo.org/mathe/1847/aequivalenzumformungen
+      - type: generated
+        id: formeln-umstellen-rechteck
+        given:
+          A: { int: [12, 120] }
+          a: { oneOf: [3, 4, 5, 6, 8, 10, 12] }
+        where: ["decimals(A / a) == 0", "A / a <= 20", "A / a != A - a"]
+        task:
+          text: "Ein Rechteck hat den Flächeninhalt A = {{A}} cm². Eine Seite ist a = {{a}} cm lang. Wie lang ist die andere Seite b?"
+        answer: { value: "A / a", compare: { number: { format: integer, unit: cm } } }
+        mistakes:
+          - value: "A * a"
+            message: "Du hast malgenommen. Die Umkehrung von „mal a“ ist „geteilt durch a“."
+          - value: "A - a"
+            message: "Du hast subtrahiert. In der Formel wird malgenommen, also teilst du."
+        hint: "{{a}} mal wie viel ergibt {{A}}?"
+        steps:
+          - "Mit A = {{A}} cm² und a = {{a}} cm: $b = A : a$"
+          - "b = {{A}} : {{a}} = {{answer}} cm. Probe – {{a}} · {{answer}} = {{A}}."
+      - type: generated
+        id: formeln-umstellen-dreieck
+        given:
+          A: { int: [6, 80] }
+          h: { oneOf: [2, 3, 4, 5, 6, 8, 10] }
+        where: ["decimals(2 * A / h) == 0", "2 * A / h <= 20"]
+        task:
+          text: "Ein dreieckiges Segel hat den Flächeninhalt A = {{A}} dm². Die Höhe ist h = {{h}} dm. Wie lang ist die Grundseite g?"
+        answer: { value: "2 * A / h", compare: { number: { format: integer, unit: dm } } }
+        mistakes:
+          - value: "A / h"
+            message: "Du hast das „: 2“ der Formel vergessen. Nimm A zuerst mal 2, dann teile durch h."
+          - value: "A / h / 2"
+            message: "Du hast noch einmal durch 2 geteilt. Die Umkehrung von „: 2“ ist „· 2“."
+        hint: "In der Formel steht A = g · h : 2. Welche Rechnung machst du rückwärts zuerst?"
+        steps:
+          - "Mit A = {{A}} dm² und h = {{h}} dm: $g = 2 \\cdot A : h$"
+          - "g = 2 · {{A}} : {{h}} = {{answer}} dm"
+      - type: generated
+        id: formeln-umstellen-quader
+        given:
+          a: { oneOf: [2, 4, 5] }
+          b: { oneOf: [2, 3, 5, 10] }
+          V: { int: [40, 400], step: 20 }
+        where: ["decimals(V / (a * b)) == 0", "V / (a * b) <= 20", "V / (a * b) != V - a * b"]
+        task:
+          text: "Ein Quader hat das Volumen V = {{V}} cm³. Seine Grundfläche ist {{a}} cm lang und {{b}} cm breit. Wie hoch ist der Quader?"
+        answer: { value: "V / (a * b)", compare: { number: { format: integer, unit: cm } } }
+        mistakes:
+          - value: "V / a"
+            message: "Du hast nur durch a geteilt. Teile durch die ganze Grundfläche a · b."
+          - value: "V - a * b"
+            message: "Du hast die Grundfläche abgezogen. Im Volumen wird sie malgenommen, also teilst du."
+        hint: Wie viele Würfelchen liegen in einer Schicht? Wie viele Schichten ergeben das Volumen?
+        steps:
+          - "Mit V = {{V}} cm³, a = {{a}} cm und b = {{b}} cm: $c = V : (a \\cdot b)$"
+          - "c = {{V}} : ({{a}} · {{b}}) = {{answer}} cm"
+      - type: number
+        id: formeln-umstellen-trapez
+        text: Ein Trapez hat den Flächeninhalt 36 cm² und die Höhe 4 cm. Eine der parallelen Seiten ist 11 cm lang. Wie lang ist die andere?
+        answer: 7
+        tolerance: 0
+        unit: cm
+        mistakes:
+          - answer: 18
+            message: "18 cm sind beide parallelen Seiten zusammen. Ziehe noch die 11 cm ab."
+          - answer: -2
+            message: "Du hast das „: 2“ der Formel vergessen."
+        hint: Wie lang sind die zwei parallelen Seiten zusammen?
+        explanation: "a + c = 2 · 36 : 4 = 18 cm, also 18 − 11 = 7 cm."
+        links:
+          - title: Flächenformeln ebener Figuren (Serlo)
+            url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+      - type: number
+        id: formeln-umstellen-wuerfel
+        text: Ein Würfel hat das Volumen 64 cm³. Wie lang ist eine Kante?
+        answer: 4
+        tolerance: 0
+        unit: cm
+        mistakes:
+          - answer: 8
+            message: "8 · 8 = 64, aber ein Würfel hat drei Kanten im Produkt: a · a · a."
+          - answer: 16
+            message: "Du hast 64 : 4 gerechnet. Gesucht ist a mit a · a · a = 64."
+        hint: Welche Zahl ergibt mal sich selbst und noch einmal mal sich selbst 64?
+        explanation: "4 · 4 · 4 = 64, also ist die Kante 4 cm lang."
+        links:
+          - title: Rauminhalt von Würfel und Quader (Serlo)
+            url: https://de.serlo.org/mathe/131901/rauminhalt-von-wuerfel-und-quader
+      - type: text
+        text: Damit kennst du alle Formeln dieses Kapitels – vorwärts und rückwärts. Im nächsten Kapitel rechnest du mit Termen, also mit Buchstaben statt Zahlen, wie in diesen Formeln.

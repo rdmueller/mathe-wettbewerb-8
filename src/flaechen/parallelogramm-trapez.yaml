@@ -1,0 +1,205 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Flächeninhalt und Umfang von Parallelogramm und Trapez
+description: "Parallelogramm und Trapez zerschneiden, umlegen und verdoppeln – so entstehen A = g · h und A = (a + c) · h : 2."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Flächeninhalt und Umfang von Parallelogramm und Trapez berechnen. Du baust auf dem
+      Rechteck und dem [Dreieck](/flaechen/dreieck/) auf: Wieder zerlegst du eine Figur, bis du sie kennst.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: parallelogramm-trapez-start
+        text: "Ein **Parallelogramm** ist ein Viereck, in dem gegenüberliegende Seiten parallel sind. Schneide in Gedanken links das Dreieck ab und lege es rechts an. Wie groß ist die Fläche?"
+        material:
+          - type: figure
+            image: images/flaechen-parallelogramm-kaestchen.svg
+            alt: Ein blaues Parallelogramm auf Kästchenpapier, jedes Kästchen 1 cm mal 1 cm. Eine orange gestrichelte Linie schneidet links ein Dreieck ab. Ein Pfeil zeigt nach rechts.
+            caption: Das abgeschnittene Dreieck passt rechts in die Lücke.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 18
+        tolerance: 0
+        unit: cm²
+        mistakes:
+          - answer: 24
+            message: "Du hast die zwei Ecken außen mitgezählt. Sie gehören nicht dazu."
+          - answer: 9
+            message: "Du hast durch 2 geteilt. Nach dem Umlegen ist es ein ganzes Rechteck."
+        hint: Welche Figur entsteht nach dem Umlegen? Zähle dann ihre Kästchen.
+        explanation: "Nach dem Umlegen ist es ein Rechteck mit 3 Reihen zu je 6 Kästchen."
+        links:
+          - title: Flächenformeln ebener Figuren (Serlo)
+            url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+  - type: section
+    id: regel
+    title: Zerschneiden, umlegen, verdoppeln
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben wird aus dem Parallelogramm ein Rechteck mit derselben Grundseite $g$ und derselben
+          Höhe $h$. Die Höhe ist wieder der Abstand der zwei parallelen Seiten, im rechten Winkel gemessen – hier
+          genau die Schnittlinie.
+      - type: figure
+        image: images/flaechen-parallelogramm-umlegen.svg
+        alt: Links ein Parallelogramm mit Grundseite g und gestrichelter Höhe h, links davon ein orange Dreieck. Rechts ist das orange Dreieck an der anderen Seite angelegt, es entsteht ein Rechteck mit g und h.
+        caption: Das orange Dreieck wandert nach rechts. Die Fläche bleibt gleich.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'A = g \cdot h'
+      - type: text
+        text: |
+          Ein **Trapez** hat nur zwei parallele Seiten, $a$ und $c$. Leg ein zweites, gleiches Trapez auf den
+          Kopf daneben. Zusammen bilden sie ein Parallelogramm mit der Grundseite $a + c$ und der Höhe $h$. Das
+          Trapez ist die Hälfte davon.
+      - type: figure
+        image: images/flaechen-trapez-verdoppelt.svg
+        alt: Ein blaues Trapez mit den parallelen Seiten a unten und c oben und der Höhe h. Daneben dasselbe Trapez grau, auf den Kopf gestellt. Zusammen bilden sie ein Parallelogramm mit der Grundseite a + c.
+        caption: Unten liegen a und c nebeneinander. Das blaue Trapez ist die Hälfte des Parallelogramms.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'A = \frac{(a + c) \cdot h}{2}'
+      - type: text
+        text: |
+          Der Umfang ist bei beiden Figuren die Summe der vier Seiten. Im Parallelogramm sind gegenüberliegende
+          Seiten gleich lang, darum gilt dort $u = 2 \cdot a + 2 \cdot b$.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Ein Beet mit einer geraden Kante
+        blocks:
+          - type: text
+            text: |
+              Ein Beet ist ein Trapez. Die parallelen Seiten sind 9 m und 6 m lang. Die dritte Seite ist 4 m lang
+              und steht im rechten Winkel auf beiden – sie ist also selbst die Höhe. Die vierte Seite ist schräg und
+              5 m lang. Sie zählt nur beim Umfang.
+          - type: formula
+            formula: 'A = \frac{(9 + 6) \cdot 4}{2} = 30'
+          - type: formula
+            formula: "u = 9 + 4 + 6 + 5 = 24"
+          - type: text
+            text: Antwort – Das Beet hat 30 m² Fläche und 24 m Umfang.
+  - type: section
+    id: merke
+    title: Höhe und Hälfte
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Die Höhe steht im rechten Winkel auf der Grundseite. Eine schräge Seite ist nie die Höhe, auch wenn ihre
+              Länge dasteht. Beim Trapez gehört das „: 2“ dazu, denn zwei Trapeze ergeben erst das Parallelogramm.
+              Beim Parallelogramm gibt es kein „: 2“.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: number
+        id: parallelogramm-trapez-ablesen
+        text: Wie groß ist der Flächeninhalt dieses Parallelogramms?
+        material:
+          - type: figure
+            image: images/flaechen-parallelogramm-aufgabe.svg
+            alt: Ein Parallelogramm. Unten eine Seite mit 8 cm, links eine Seite mit 5 cm. Innen eine gestrichelte Strecke mit 4 cm, die im rechten Winkel auf der unteren Seite steht.
+            caption: Achte darauf, welche Strecke im rechten Winkel auf der unteren Seite steht.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 32
+        tolerance: 0
+        unit: cm²
+        mistakes:
+          - answer: 40
+            message: "Du hast 8 · 5 gerechnet. Die 5 cm stehen nicht im rechten Winkel auf der Grundseite."
+          - answer: 16
+            message: "Du hast durch 2 geteilt. Beim Parallelogramm gibt es kein „: 2“."
+          - answer: 26
+            message: "Das ist der Umfang. Gefragt ist die Fläche."
+        hint: Welche der drei Längen ist der Abstand zwischen der oberen und der unteren Seite?
+        explanation: "Grundseite 8 cm mal Höhe 4 cm ergibt 32 cm²."
+        links:
+          - title: Flächenformeln ebener Figuren (Serlo)
+            url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+      - type: generated
+        id: parallelogramm-trapez-parallelogramm
+        given:
+          g: { int: [3, 20] }
+          h: { int: [2, 12] }
+          b: { int: [3, 15] }
+        where: ["b > h"]
+        task:
+          text: "Ein Parallelogramm hat die Grundseite g = {{g}} cm und die Seite b = {{b}} cm. Die Höhe zu g ist h = {{h}} cm. Wie groß ist der Flächeninhalt?"
+        answer: { value: "g * h", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "g * b"
+            message: "Die Seite b steht nicht im rechten Winkel auf g."
+          - value: "g * h / 2"
+            message: "Beim Parallelogramm gibt es kein „: 2“."
+        hint: Welche Länge steht im rechten Winkel auf der Grundseite?
+        steps:
+          - "Mit g = {{g}} cm und h = {{h}} cm: $A = g \\cdot h$ – die Seite b brauchst du nicht."
+          - '$A = {{g}} \cdot {{h}}$ = {{answer}} cm²'
+      - type: generated
+        id: parallelogramm-trapez-trapez
+        given:
+          a: { int: [4, 20] }
+          c: { int: [2, 16] }
+          h: { int: [2, 12] }
+        where: ["a > c", "decimals((a + c) * h / 2) == 0"]
+        task:
+          text: "Ein Trapez hat die parallelen Seiten a = {{a}} cm und c = {{c}} cm. Die Höhe ist h = {{h}} cm. Wie groß ist der Flächeninhalt?"
+        answer: { value: "(a + c) * h / 2", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "(a + c) * h"
+            message: "Das ist das ganze Parallelogramm aus zwei Trapezen. Teile noch durch 2."
+          - value: "a * h"
+            message: "Du hast nur die längere Seite genommen. Beide parallelen Seiten zählen: a + c."
+        hint: Zwei solche Trapeze bilden ein Parallelogramm. Wie lang ist dessen Grundseite?
+        steps:
+          - "Mit a = {{a}} cm, c = {{c}} cm und h = {{h}} cm: $A = \\frac{(a + c) \\cdot h}{2}$"
+          - '$A = \frac{({{a}} + {{c}}) \cdot {{h}}}{2}$ = {{answer}} cm²'
+      - type: generated
+        id: parallelogramm-trapez-umfang
+        given:
+          a: { int: [3, 20] }
+          b: { int: [3, 15] }
+          h: { int: [2, 12] }
+        where: ["h < b", "a * h != 2 * a + 2 * b"]
+        task:
+          text: "Ein Parallelogramm hat die Seiten a = {{a}} cm und b = {{b}} cm. Die Höhe zu a ist {{h}} cm. Wie groß ist sein Umfang?"
+        answer: { value: "2 * a + 2 * b", compare: { number: { format: integer, unit: cm } } }
+        mistakes:
+          - value: "a + b"
+            message: "Das sind nur zwei der vier Seiten."
+          - value: "a * h"
+            message: "Das ist der Flächeninhalt."
+          - value: "2 * a + 2 * h"
+            message: "Die Höhe ist keine Seite. Der Umfang läuft an den Seiten entlang."
+        hint: Der Umfang ist der Weg einmal um die Figur. Welche Längen liegen auf diesem Weg?
+        steps:
+          - "Mit a = {{a}} cm und b = {{b}} cm: $u = 2 \\cdot a + 2 \\cdot b$ – die Höhe zählt nicht."
+          - '$u = 2 \cdot {{a}} + 2 \cdot {{b}}$ = {{answer}} cm'
+      - type: number
+        id: parallelogramm-trapez-hoehe
+        text: Ein Trapez hat den Flächeninhalt 42 cm². Seine parallelen Seiten sind 9 cm und 5 cm lang. Wie hoch ist das Trapez?
+        answer: 6
+        tolerance: 0
+        unit: cm
+        mistakes:
+          - answer: 3
+            message: "Du hast 42 : 14 gerechnet und das „: 2“ der Formel vergessen. Zwei Trapeze haben 84 cm²."
+          - answer: 21
+            message: "Du hast 9 − 5 gerechnet. In der Formel steht a + c."
+        hint: "Zwei solche Trapeze bilden ein Parallelogramm. Wie groß ist es, und wie lang ist seine Grundseite?"
+        explanation: "Zwei Trapeze ergeben 84 cm² mit der Grundseite 14 cm, also h = 84 : 14 = 6 cm."
+        links:
+          - title: Flächenformeln ebener Figuren (Serlo)
+            url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+      - type: text
+        text: Als Nächstes gehst du von der Fläche in den Raum und berechnest das Volumen von Quader und Würfel.

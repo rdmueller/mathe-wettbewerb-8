@@ -1,0 +1,173 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Netz und Oberfläche von Quader und Würfel
+description: "Würfel und Quader aufklappen, Netze erkennen und die Oberfläche aus drei Paaren gleicher Rechtecke berechnen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Netze von Quader und Würfel erkennen und ihre Oberfläche berechnen. Du baust auf dem
+      [Quader](/flaechen/quader-wuerfel/) und der Rechteckfläche $a \cdot b$ auf.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: netz-oberflaeche-start
+        text: "Schneidest du eine Würfelschachtel an einigen Kanten auf und klappst sie flach, entsteht ein **Netz**. Welche Figur lässt sich zu einem Würfel falten?"
+        material:
+          - type: figure
+            image: images/flaechen-wuerfelnetze.svg
+            alt: Drei Figuren A, B und C aus je 6 gleichen Quadraten. A hat eine Reihe aus 4 Quadraten und darüber zwei Quadrate nebeneinander. B hat eine Reihe aus 4 Quadraten, ein Quadrat darüber und eines darunter. C hat eine Reihe aus 5 Quadraten und eines darüber.
+            caption: Falte in Gedanken – wo landet jedes Quadrat?
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: Figur A
+            correct: false
+            info: "Beide Quadrate über der Reihe klappen nach oben und landen aufeinander. Unten bleibt ein Loch."
+          - text: Figur B
+            correct: true
+            info: "Die Reihe aus 4 wird zu den Seitenwänden, die anderen zwei zu Deckel und Boden."
+          - text: Figur C
+            correct: false
+            info: "In einer Reihe aus 5 landet das fünfte Quadrat auf dem ersten."
+        explanation: "In einem Netz wird jedes Quadrat genau eine der 6 Würfelflächen."
+        links:
+          - title: Körpernetze (Serlo)
+            url: https://de.serlo.org/mathe/35621/koerpernetze
+  - type: section
+    id: regel
+    title: Aufklappen und Paare finden
+    blocks:
+      - type: text
+        text: |
+          Bei Figur B wird jedes Quadrat genau eine Würfelfläche. So ist es bei jedem Netz. Beim Quader liegen sich
+          je zwei gleiche Rechtecke gegenüber: Boden und Deckel, vorne und hinten, links und rechts. Die
+          **Oberfläche** $O$ ist die Fläche aller sechs Rechtecke zusammen – so viel Papier brauchst du zum Bekleben.
+      - type: figure
+        image: images/flaechen-quader-netz.svg
+        alt: Das Netz eines Quaders mit den Kanten a, b und c. Zwei blaue Rechtecke a · b, zwei orange Rechtecke a · c, zwei graue Rechtecke b · c.
+        caption: Jede Farbe kommt zweimal vor. Zähle die Rechtecke jeder Farbe.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'O = 2 \cdot a \cdot b + 2 \cdot a \cdot c + 2 \cdot b \cdot c'
+      - type: text
+        text: Beim Würfel sind alle sechs Flächen gleiche Quadrate mit der Seite $a$.
+      - type: formula
+        formula: 'O = 6 \cdot a \cdot a'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Geschenkpapier für einen Karton
+        blocks:
+          - type: text
+            text: |
+              Ein Karton ist 30 cm lang, 20 cm breit und 10 cm hoch. Wie viel Geschenkpapier brauchst du mindestens?
+              Rechne jedes Paar einzeln.
+          - type: formula
+            formula: '2 \cdot 30 \cdot 20 = 1200 \qquad 2 \cdot 30 \cdot 10 = 600'
+          - type: formula
+            formula: '2 \cdot 20 \cdot 10 = 400'
+          - type: formula
+            formula: "O = 1200 + 600 + 400 = 2200"
+          - type: text
+            text: Antwort – Du brauchst mindestens 2200 cm² Papier, das sind 22 dm².
+  - type: section
+    id: merke
+    title: Sechs Flächen, nicht drei
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Wer nur $a \cdot b + a \cdot c + b \cdot c$ rechnet, hat nur die halbe Oberfläche: Jede Fläche hat ein
+              Gegenüber. Und nicht jede Figur aus 6 Quadraten ist ein Würfelnetz – falte in Gedanken nach.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: true-false
+        id: netz-oberflaeche-sechs-quadrate
+        text: Jede Figur aus 6 zusammenhängenden gleichen Quadraten lässt sich zu einem Würfel falten.
+        answer: false
+        explanation: "Bei sechs Quadraten in einer Reihe landen beim Falten zwei Quadrate aufeinander."
+        links:
+          - title: Körpernetze (Serlo)
+            url: https://de.serlo.org/mathe/35621/koerpernetze
+      - type: generated
+        id: netz-oberflaeche-quader
+        given:
+          a: { int: [2, 12] }
+          b: { int: [2, 10] }
+          c: { int: [2, 10] }
+        where: ["a * b * c != 2 * a * b + 2 * a * c + 2 * b * c"]
+        task:
+          text: "Ein Quader ist {{a}} cm lang, {{b}} cm breit und {{c}} cm hoch. Wie groß ist seine Oberfläche?"
+        answer: { value: "2 * a * b + 2 * a * c + 2 * b * c", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "a * b + a * c + b * c"
+            message: "Das sind nur drei Flächen. Jede hat ein gleiches Gegenüber: Nimm alles mal 2."
+          - value: "a * b * c"
+            message: "Das ist das Volumen, nicht die Fläche außen."
+        hint: Welche drei verschiedenen Rechtecke gibt es, und wie oft kommt jedes vor?
+        steps:
+          - "Mit a = {{a}} cm, b = {{b}} cm und c = {{c}} cm: Boden und Deckel sind je {{a}} · {{b}}, vorne und hinten je {{a}} · {{c}}, links und rechts je {{b}} · {{c}}."
+          - "Alle sechs zusammen: O = {{answer}} cm²."
+      - type: generated
+        id: netz-oberflaeche-wuerfel
+        given:
+          a: { int: [2, 12] }
+        where: ["a != 6"]
+        task:
+          text: "Ein Würfel hat die Kantenlänge {{a}} cm. Wie groß ist seine Oberfläche?"
+        answer: { value: "6 * a * a", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "a * a * a"
+            message: "Das ist das Volumen. Gefragt sind die Quadrate außen."
+          - value: "4 * a * a"
+            message: "Das sind nur die vier Seitenwände. Boden und Deckel gehören auch dazu."
+          - value: "a * a"
+            message: "Das ist ein Quadrat. Der Würfel hat sechs davon."
+        hint: Aus wie vielen Quadraten besteht ein Würfelnetz?
+        steps:
+          - "Mit a = {{a}} cm: Ein Quadrat hat {{a}} · {{a}} cm²."
+          - "Sechs Quadrate: O = 6 · {{a}} · {{a}} = {{answer}} cm²."
+      - type: generated
+        id: netz-oberflaeche-ohne-deckel
+        given:
+          a: { int: [10, 40], step: 5 }
+          b: { int: [10, 30], step: 5 }
+          c: { int: [5, 20], step: 5 }
+        task:
+          text: "Eine Schachtel ohne Deckel soll von außen beklebt werden. Sie ist {{a}} cm lang, {{b}} cm breit und {{c}} cm hoch. Wie viel cm² Papier brauchst du?"
+        answer: { value: "a * b + 2 * a * c + 2 * b * c", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "2 * a * b + 2 * a * c + 2 * b * c"
+            message: "Du hast den Deckel mitgezählt. Die Schachtel hat keinen."
+          - value: "a * b + a * c + b * c"
+            message: "Du hast die Seitenwände nur einmal gezählt. Vorne und hinten, links und rechts sind je zwei."
+        hint: Welche Flächen hat die Schachtel? Zähle sie einzeln auf.
+        steps:
+          - "Die Schachtel ist {{a}} cm lang, {{b}} cm breit, {{c}} cm hoch. Sie hat 1 Boden ({{a}} · {{b}}), 2 Wände {{a}} · {{c}} und 2 Wände {{b}} · {{c}}."
+          - "Fünf Flächen zusammen: {{answer}} cm²."
+      - type: number
+        id: netz-oberflaeche-rueckwaerts
+        text: Ein Würfel hat die Oberfläche 150 cm². Wie groß ist sein Volumen?
+        answer: 125
+        tolerance: 0
+        unit: cm³
+        mistakes:
+          - answer: 25
+            message: "25 cm² ist die Fläche eines Quadrats. Bestimme daraus die Kantenlänge."
+          - answer: 5
+            message: "5 cm ist die Kantenlänge. Gefragt ist das Volumen."
+        hint: "Wie groß ist eine der sechs Flächen? Welche Zahl mal sich selbst ergibt das?"
+        explanation: "Eine Fläche hat 150 : 6 = 25 cm², die Kante 5 cm, das Volumen 5 · 5 · 5 = 125 cm³."
+        links:
+          - title: Quader (Serlo)
+            url: https://de.serlo.org/mathe/1699/quader
+      - type: text
+        text: Als Nächstes drehst du die Formeln um und berechnest eine fehlende Länge, wenn Fläche oder Volumen bekannt sind.

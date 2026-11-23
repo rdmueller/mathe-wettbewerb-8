@@ -1,0 +1,194 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Volumen von Quader und Würfel
+description: "Würfelchen in Schichten stapeln: So entsteht V = a · b · c – und das Volumen in cm³ und Litern."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann das Volumen von Quader und Würfel berechnen. Du baust auf der Rechteckfläche
+      $A = a \cdot b$ von der [ersten Seite](/flaechen/quadrat-rechteck/) auf – jetzt kommt die Höhe dazu.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: quader-wuerfel-start
+        text: Die Schachtel ist ganz mit Würfelchen gefüllt, jedes hat 1 cm Kantenlänge. Wie viele Würfelchen sind darin – auch die, die du nicht siehst?
+        material:
+          - type: figure
+            image: images/flaechen-quader-wuerfelchen.svg
+            alt: Eine Schachtel voller Würfelchen. Vorne liegen 4 nebeneinander und 2 übereinander, nach hinten 3.
+            caption: Vorne, oben und rechts siehst du nur die äußeren Würfelchen.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 24
+        tolerance: 0
+        unit: Würfelchen
+        mistakes:
+          - answer: 12
+            message: "Das ist nur die unterste Schicht."
+          - answer: 26
+            message: "Du hast die sichtbaren Quadrate gezählt. Gefragt sind alle Würfelchen."
+          - answer: 9
+            message: "Du hast 4 + 3 + 2 gerechnet. Zähle Schicht für Schicht."
+        hint: Wie viele Würfelchen liegen ganz unten in einer Schicht? Wie viele Schichten gibt es?
+        explanation: "Eine Schicht hat 4 · 3 = 12 Würfelchen, zwei Schichten 24."
+        links:
+          - title: Rauminhalt von Würfel und Quader (Serlo)
+            url: https://de.serlo.org/mathe/131901/rauminhalt-von-wuerfel-und-quader
+  - type: section
+    id: regel
+    title: Schicht auf Schicht
+    blocks:
+      - type: text
+        text: |
+          Die Schachtel oben ist ein **Quader**: ein Körper aus sechs Rechtecken. Sein **Volumen** $V$ (der
+          Rauminhalt) sagt, wie viele Würfelchen hineinpassen. In der Aufgabe lagen am Boden 4 · 3 = 12, das ist
+          die Grundfläche. Zwei solche Schichten ergeben 24.
+      - type: figure
+        image: images/flaechen-quader-schichten.svg
+        alt: Ein Quader mit den Kanten a, b und c, auseinandergezogen. Unten orange eine Schicht Würfelchen, darüber blau die weiteren Schichten. Die ganze Höhe ist c.
+        caption: "Eine Schicht hat a · b Würfelchen. Bei der Höhe c liegen c Schichten übereinander."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'V = a \cdot b \cdot c'
+      - type: text
+        text: Ein **Würfel** ist ein Quader, dessen Kanten alle gleich lang sind.
+      - type: formula
+        formula: 'V = a \cdot a \cdot a'
+      - type: text
+        text: |
+          Weil du drei Längen malnimmst, hat das Volumen die Einheit cm³ (Kubikzentimeter) oder m³. Für
+          Flüssigkeiten gilt: 1 dm³ = 1 Liter, also 1 Liter = 1000 cm³.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Ein Aquarium, nicht ganz voll
+        blocks:
+          - type: text
+            text: |
+              Ein Aquarium ist 50 cm lang, 30 cm breit und 40 cm hoch. Das Wasser soll 5 cm unter dem Rand bleiben.
+              Wie viele Liter Wasser passen hinein? Die Wasserhöhe ist also nicht 40 cm, sondern 35 cm.
+          - type: formula
+            formula: 'V = 50 \cdot 30 \cdot 35 = 1500 \cdot 35 = 52\,500'
+          - type: text
+            text: "Antwort – 52 500 cm³ sind 52 500 : 1000 = 52,5 Liter Wasser."
+  - type: section
+    id: merke
+    title: Innen, nicht außen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Das Volumen zählt die Würfelchen im Inneren, darum hat es die Einheit cm³. Wer nur die Quadrate
+              außen zählt, berechnet etwas anderes: die Oberfläche in cm². Mit ihr geht es auf der nächsten Seite
+              weiter.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: quader-wuerfel-einheit
+        text: Ein Würfel hat die Kantenlänge 3 cm. Welche Angabe ist sein Volumen?
+        options:
+          - text: 27 cm³
+            correct: true
+            info: "3 · 3 · 3 = 27, gemessen in cm³."
+          - text: 27 cm²
+            correct: false
+            info: Die Zahl stimmt, aber cm² ist eine Einheit für Flächen.
+          - text: 9 cm³
+            correct: false
+            info: "3 · 3 = 9 ist nur eine Schicht."
+          - text: 54 cm²
+            correct: false
+            info: "54 cm² sind alle 6 Seitenflächen zusammen, 6 · 9."
+        explanation: Volumen des Würfels – die Kantenlänge dreimal malgenommen, in cm³.
+        links:
+          - title: Rauminhalt von Würfel und Quader (Serlo)
+            url: https://de.serlo.org/mathe/131901/rauminhalt-von-wuerfel-und-quader
+      - type: generated
+        id: quader-wuerfel-volumen
+        given:
+          a: { int: [2, 12] }
+          b: { int: [2, 10] }
+          c: { int: [2, 10] }
+        where:
+          - "a * b * c <= 600"
+          - "a * b * c != 2 * a * b + 2 * a * c + 2 * b * c"
+          - "a * b * c != a + b + c"
+        task:
+          text: "Ein Quader ist {{a}} cm lang, {{b}} cm breit und {{c}} cm hoch. Wie groß ist sein Volumen?"
+        answer: { value: "a * b * c", compare: { number: { format: integer, unit: cm³ } } }
+        mistakes:
+          - value: "a * b"
+            message: "Das ist nur eine Schicht. Nimm sie noch mal die Höhe."
+          - value: "2 * a * b + 2 * a * c + 2 * b * c"
+            message: "Du hast die Flächen außen addiert. Gefragt ist, was hineinpasst."
+          - value: "a + b + c"
+            message: "Du hast addiert statt malgenommen."
+        hint: Wie viele Würfelchen passen in eine Schicht am Boden, und wie viele Schichten gibt es?
+        steps:
+          - "Mit a = {{a}} cm, b = {{b}} cm und c = {{c}} cm: $V = a \\cdot b \\cdot c$"
+          - '$V = {{a}} \cdot {{b}} \cdot {{c}}$ = {{answer}} cm³'
+      - type: generated
+        id: quader-wuerfel-wuerfel
+        given:
+          a: { int: [2, 10] }
+        where: ["a != 6"]
+        task:
+          text: "Ein Würfel hat die Kantenlänge a = {{a}} cm. Wie groß ist sein Volumen?"
+        answer: { value: "a * a * a", compare: { number: { format: integer, unit: cm³ } } }
+        mistakes:
+          - value: "a * a"
+            message: "Das ist eine Schicht. Es liegen {{a}} Schichten übereinander."
+          - value: "3 * a"
+            message: "Du hast a · 3 gerechnet statt a · a · a."
+          - value: "6 * a * a"
+            message: "Das sind die sechs Flächen außen. Gefragt ist das Volumen."
+        hint: Ein Würfel ist ein Quader mit Länge, Breite und Höhe gleich a.
+        steps:
+          - "Mit a = {{a}} cm: $V = a \\cdot a \\cdot a$"
+          - '$V = {{a}} \cdot {{a}} \cdot {{a}}$ = {{answer}} cm³'
+      - type: generated
+        id: quader-wuerfel-liter
+        given:
+          a: { int: [30, 80], step: 10 }
+          b: { int: [20, 50], step: 10 }
+          c: { int: [20, 50], step: 10 }
+        task:
+          text: "Ein Aquarium ist innen {{a}} cm lang, {{b}} cm breit und {{c}} cm hoch. Wie viele Liter passen hinein?"
+        answer: { value: "a * b * c / 1000", compare: { number: { format: integer, unit: Liter } } }
+        mistakes:
+          - value: "a * b * c"
+            message: "Das sind cm³. 1 Liter sind 1000 cm³."
+          - value: "a * b * c / 100"
+            message: "Zwischen cm³ und dm³ ist der Faktor 1000, nicht 100."
+        hint: "Rechne die Längen zuerst in dm um: 10 cm = 1 dm. Dann ist 1 dm³ = 1 Liter."
+        steps:
+          - "Mit a = {{a}} cm, b = {{b}} cm und c = {{c}} cm: Rechne in dm um, 10 cm sind 1 dm."
+          - "Länge mal Breite mal Höhe in dm ergibt dm³, also Liter: {{answer}} Liter."
+      - type: number
+        id: quader-wuerfel-bauen
+        text: Aus wie vielen Würfeln mit 2 cm Kantenlänge kannst du einen Würfel mit 6 cm Kantenlänge bauen?
+        answer: 27
+        tolerance: 0
+        unit: Würfel
+        mistakes:
+          - answer: 3
+            message: "Das ist nur eine Kante entlang."
+          - answer: 9
+            message: "Das ist nur eine Schicht."
+          - answer: 108
+            message: "Du hast 216 cm³ durch 2 geteilt. Ein kleiner Würfel hat aber mehr als 2 cm³."
+        hint: Wie viele kleine Würfel passen entlang einer Kante des großen?
+        explanation: "Entlang jeder Kante passen 6 : 2 = 3 kleine Würfel, also 3 · 3 · 3 = 27."
+        links:
+          - title: Rauminhalt von Würfel und Quader (Serlo)
+            url: https://de.serlo.org/mathe/131901/rauminhalt-von-wuerfel-und-quader
+      - type: text
+        text: Als Nächstes klappst du einen Quader auf und berechnest, wie viel Fläche seine sechs Seiten haben.
