@@ -1,0 +1,211 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Achsen- und Punktsymmetrie erkennen
+description: "Mit Falten und einer halben Drehung prüfen, ob eine Figur achsensymmetrisch oder punktsymmetrisch ist, und alle Symmetrieachsen finden."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Achsen- und Punktsymmetrie erkennen und alle Symmetrieachsen einer Figur finden. Du brauchst
+      dafür nur zwei Handgriffe, die du von einem Blatt Papier kennst: falten und drehen.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: multiple-choice
+        id: symmetrie-erkennen-start
+        text: Bei welchen Großbuchstaben kannst du das Blatt so falten, dass die beiden Hälften des Buchstabens genau aufeinanderliegen?
+        options:
+          - text: A
+            correct: true
+            info: Beim A faltest du senkrecht durch die Spitze.
+          - text: B
+            correct: true
+            info: Beim B faltest du quer durch die Mitte.
+          - text: F
+            correct: false
+            info: Beim F passt keine Faltlinie, unten fehlt ein Querstrich.
+          - text: S
+            correct: false
+            info: Beim S passt keine Faltlinie. Es hat eine andere Symmetrie – mehr dazu gleich.
+        explanation: A lässt sich senkrecht falten, B waagerecht.
+        links:
+          - title: Achsensymmetrie (Serlo)
+            url: https://de.serlo.org/mathe/35620/achsensymmetrie
+  - type: section
+    id: regel
+    title: Falten oder halb drehen
+    blocks:
+      - type: text
+        text: |
+          Das A aus der Aufgabe faltest du senkrecht, das B waagerecht. Die Faltlinie heißt **Symmetrieachse**. Eine
+          Figur ist **achsensymmetrisch**, wenn sie mindestens eine Symmetrieachse hat: Die beiden Hälften sind
+          Spiegelbilder voneinander. Eine Achse kann senkrecht, waagerecht oder schräg liegen, und eine Figur kann
+          mehrere haben.
+      - type: figure
+        image: images/symmetrie-achsen.svg
+        alt: Die Buchstaben A, B und H. Durch A geht eine senkrechte orange Symmetrieachse, durch B eine waagerechte, durch H beide.
+        caption: Das H hat zwei Symmetrieachsen – du findest die zweite nur, wenn du auch waagerecht suchst.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          Das S kannst du nicht falten. Drehst du das Blatt aber eine halbe Drehung (180°) um die Mitte, steht wieder
+          genau dasselbe S da. So eine Figur heißt **punktsymmetrisch**. Der Punkt, um den du drehst, heißt
+          **Symmetriezentrum** Z. Beim N siehst du: Zu jedem Punkt P gehört ein Punkt P' auf der anderen Seite von Z,
+          gleich weit von Z entfernt, auf einer Geraden durch Z.
+      - type: figure
+        image: images/symmetrie-punkt.svg
+        alt: Der Buchstabe N mit seinem Mittelpunkt Z. Ein oranger Pfeil zeigt eine halbe Drehung um Z. Die Ecke P oben rechts und die Ecke P' unten links liegen auf einer gestrichelten Geraden durch Z.
+        caption: Nach der halben Drehung landet P genau auf P' – und das ganze N wieder auf sich selbst.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: table
+        caption: Zwei Symmetrien, zwei Tests
+        header: [Symmetrie, So prüfst du]
+        rows:
+          - [achsensymmetrisch, "falten: Die Hälften liegen genau aufeinander."]
+          - [punktsymmetrisch, "halb drehen (180°) um Z: Die Figur sieht gleich aus."]
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: H und Z genau geprüft
+        blocks:
+          - type: text
+            text: |
+              **H:** Senkrecht falten passt, waagerecht falten passt auch – das H hat 2 Symmetrieachsen. Nach einer
+              halben Drehung steht es wieder genauso da: Es ist auch punktsymmetrisch.
+
+              **Z:** Senkrecht, waagerecht und schräg falten passt nicht – das Z hat keine Symmetrieachse. Nach einer
+              halben Drehung steht aber wieder ein Z da.
+          - type: text
+            text: Antwort – H ist achsen- und punktsymmetrisch, Z ist nur punktsymmetrisch.
+  - type: section
+    id: merke
+    title: Zwei verschiedene Tests
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Achsensymmetrisch heißt falten, punktsymmetrisch heißt halb drehen. Eine Figur kann das eine, beides
+              oder keins davon sein. Suche Achsen nicht nur senkrecht, sondern auch waagerecht und schräg.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: symmetrie-erkennen-nur-punkt
+        text: Welcher Großbuchstabe ist punktsymmetrisch, hat aber keine Symmetrieachse?
+        options:
+          - text: N
+            correct: true
+            info: Das N lässt sich nicht falten, sieht aber nach einer halben Drehung gleich aus.
+          - text: A
+            correct: false
+            info: Das A hat eine senkrechte Achse und steht nach einer halben Drehung auf dem Kopf.
+          - text: H
+            correct: false
+            info: Das H ist punktsymmetrisch, hat aber auch zwei Symmetrieachsen.
+          - text: E
+            correct: false
+            info: Das E hat eine waagerechte Achse. Gedreht zeigen seine Querstriche nach links.
+        explanation: Punktsymmetrisch ohne Achse sind zum Beispiel N, S und Z.
+        links:
+          - title: Punktsymmetrie (Serlo)
+            url: https://de.serlo.org/mathe/35721/punktsymmetrie
+      - type: generated
+        id: symmetrie-erkennen-art
+        given:
+          e: { pick: 1, from: { data: figuren } }
+        where: ["e.art != e.artVerwechselt"]
+        task:
+          text: "Welche Symmetrie hat der Großbuchstabe {{e.zeichen}} in Druckschrift?"
+        answer:
+          value: "e.art"
+          compare:
+            choice: "['achsen- und punktsymmetrisch', 'nur achsensymmetrisch', 'nur punktsymmetrisch', 'weder noch']"
+        mistakes:
+          - value: "e.artVerwechselt"
+            message: "Du hast Falten und Drehen verwechselt: achsensymmetrisch heißt falten, punktsymmetrisch halb drehen."
+        hint: Mach beide Tests – falten und halb drehen.
+        steps:
+          - "Falten und halb drehen beim {{e.zeichen}}: Er hat {{e.achsen}} Symmetrieachse(n)."
+          - "Zusammen mit dem Drehtest: Der Buchstabe {{e.zeichen}} ist {{answer}}."
+      - type: generated
+        id: symmetrie-erkennen-achsen
+        given:
+          e: { pick: 1, from: { data: figuren } }
+        where: ["e.achsen != e.senkrecht"]
+        task:
+          text: "Wie viele Symmetrieachsen hat der Großbuchstabe {{e.zeichen}} in Druckschrift?"
+        answer: { value: "e.achsen", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "e.senkrecht"
+            message: Du hast nur senkrecht gefaltet. Probiere auch, quer durch die Mitte zu falten.
+        hint: Falte gedanklich in alle Richtungen.
+        steps:
+          - "Beim {{e.zeichen}} passt die waagerechte Faltlinie durch die Mitte."
+          - "Mit allen Richtungen geprüft: {{e.zeichen}} hat {{answer}} Symmetrieachse(n)."
+      - type: matching
+        id: symmetrie-erkennen-vierecke
+        text: Welche Symmetrie hat welches Viereck?
+        material:
+          - type: figure
+            image: images/symmetrie-figuren.svg
+            alt: "Drei blaue Vierecke: 1 ein schiefes Viereck mit zwei Paaren paralleler Seiten, 2 ein Viereck mit zwei parallelen Seiten verschiedener Länge und gleich langen Schrägseiten, 3 ein Rechteck."
+            caption: Prüfe jedes Viereck mit beiden Tests.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        pairs:
+          - left: Viereck 1
+            right: nur punktsymmetrisch
+          - left: Viereck 2
+            right: nur achsensymmetrisch
+          - left: Viereck 3
+            right: achsen- und punktsymmetrisch
+        distractors: [weder noch]
+        explanation: "Das Parallelogramm 1 hat keine Achse – auch die Diagonalen sind keine –, passt aber nach einer halben Drehung. Das Trapez 2 hat eine senkrechte Achse. Das Rechteck 3 hat zwei Achsen und ist punktsymmetrisch."
+        links:
+          - title: Punktsymmetrie (Serlo)
+            url: https://de.serlo.org/mathe/35721/punktsymmetrie
+          - title: Achsensymmetrie (Serlo)
+            url: https://de.serlo.org/mathe/35620/achsensymmetrie
+      - type: number
+        id: symmetrie-erkennen-quadrat
+        text: Wie viele Symmetrieachsen hat ein Quadrat?
+        answer: 4
+        tolerance: 0
+        mistakes:
+          - answer: 2
+            message: Senkrecht und waagerecht stimmen. Probiere auch, über Eck zu falten.
+          - answer: 1
+            message: Probiere alle Richtungen.
+        hint: Falte gedanklich auch schräg.
+        explanation: "4 Achsen: zwei Mittellinien und zwei Diagonalen."
+        links:
+          - title: Achsensymmetrie (Serlo)
+            url: https://de.serlo.org/mathe/35620/achsensymmetrie
+      - type: multiple-choice
+        id: symmetrie-erkennen-woerter
+        text: Welche Schriftzüge sehen nach einer halben Drehung um ihre Mitte wieder genauso aus?
+        options:
+          - text: SOS
+            correct: true
+            info: S und O sind punktsymmetrisch, und SOS ist rückwärts gleich.
+          - text: XIX
+            correct: true
+            info: X und I sind punktsymmetrisch, und XIX (die römische 19) ist rückwärts gleich.
+          - text: MOM
+            correct: false
+            info: Gedreht steht WOW da. MOM ist achsensymmetrisch, mit einer senkrechten Achse durch das O.
+          - text: NUN
+            correct: false
+            info: Die N passen, aber das U steht dann auf dem Kopf.
+        explanation: Bei einer halben Drehung wird jeder Buchstabe gedreht, und die Reihenfolge kehrt sich um.
+        links:
+          - title: Punktsymmetrie (Serlo)
+            url: https://de.serlo.org/mathe/35721/punktsymmetrie
+      - type: text
+        text: Als Nächstes erzeugst du selbst Bilder einer Figur – du spiegelst sie an einer Achse und drehst sie um einen Punkt.

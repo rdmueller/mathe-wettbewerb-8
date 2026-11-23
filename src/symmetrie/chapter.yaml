@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Symmetrie und Abbildungen
+summary: Achsen- und Punktsymmetrie erkennen, Figuren an einer Achse spiegeln und um einen Punkt drehen – mit Koordinaten im Gitter.
+pages: [symmetrie-erkennen, spiegeln-drehen]

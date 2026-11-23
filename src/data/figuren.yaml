@@ -1,0 +1,126 @@
+# Großbuchstaben in einfacher Blockschrift (Druckschrift ohne Serifen). Nur Buchstaben, deren Symmetrie nicht von der
+# Schrift abhängt; ohne O, X, K und Ziffern.
+# achsen = Anzahl der Symmetrieachsen, senkrecht = Anzahl der senkrechten Achsen (0 oder 1),
+# punktsymmetrisch = gleich nach einer halben Drehung (180°) um die Mitte.
+# art fasst achsen und punktsymmetrisch für die Auswahl zusammen; artVerwechselt = die Art, die herauskommt, wenn man
+# Achsen- und Punktsymmetrie verwechselt (bei „beides“ und „weder noch“ dieselbe wie art).
+- zeichen: A
+  achsen: 1
+  senkrecht: 1
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: M
+  achsen: 1
+  senkrecht: 1
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: T
+  achsen: 1
+  senkrecht: 1
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: U
+  achsen: 1
+  senkrecht: 1
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: V
+  achsen: 1
+  senkrecht: 1
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: W
+  achsen: 1
+  senkrecht: 1
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: Y
+  achsen: 1
+  senkrecht: 1
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: B
+  achsen: 1
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: C
+  achsen: 1
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: D
+  achsen: 1
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: E
+  achsen: 1
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: nur achsensymmetrisch
+  artVerwechselt: nur punktsymmetrisch
+- zeichen: H
+  achsen: 2
+  senkrecht: 1
+  punktsymmetrisch: true
+  art: achsen- und punktsymmetrisch
+  artVerwechselt: achsen- und punktsymmetrisch
+- zeichen: I
+  achsen: 2
+  senkrecht: 1
+  punktsymmetrisch: true
+  art: achsen- und punktsymmetrisch
+  artVerwechselt: achsen- und punktsymmetrisch
+- zeichen: N
+  achsen: 0
+  senkrecht: 0
+  punktsymmetrisch: true
+  art: nur punktsymmetrisch
+  artVerwechselt: nur achsensymmetrisch
+- zeichen: S
+  achsen: 0
+  senkrecht: 0
+  punktsymmetrisch: true
+  art: nur punktsymmetrisch
+  artVerwechselt: nur achsensymmetrisch
+- zeichen: Z
+  achsen: 0
+  senkrecht: 0
+  punktsymmetrisch: true
+  art: nur punktsymmetrisch
+  artVerwechselt: nur achsensymmetrisch
+- zeichen: F
+  achsen: 0
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: weder noch
+  artVerwechselt: weder noch
+- zeichen: L
+  achsen: 0
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: weder noch
+  artVerwechselt: weder noch
+- zeichen: P
+  achsen: 0
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: weder noch
+  artVerwechselt: weder noch
+- zeichen: R
+  achsen: 0
+  senkrecht: 0
+  punktsymmetrisch: false
+  art: weder noch
+  artVerwechselt: weder noch
