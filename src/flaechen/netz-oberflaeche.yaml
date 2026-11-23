@@ -12,7 +12,7 @@ blocks:
     blocks:
       - type: single-choice
         id: netz-oberflaeche-start
-        text: "Schneidest du eine Würfelschachtel an einigen Kanten auf und klappst sie flach, entsteht ein **Netz**. Welche Figur lässt sich zu einem Würfel falten?"
+        text: "Schneidest du eine Würfelschachtel an einigen Kanten auf und klappst sie flach, entsteht ein Netz. Welche Figur lässt sich zu einem Würfel falten?"
         material:
           - type: figure
             image: images/flaechen-wuerfelnetze.svg

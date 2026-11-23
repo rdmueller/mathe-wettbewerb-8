@@ -180,7 +180,7 @@ Ordner `src/<kapitel>/`, Seite `src/<kapitel>/<seite>.yaml`. Übungs-Ids: `<seit
 ## Figures
 
 - Eigene SVGs in `src/images/<kapitel>-<name>.svg`, von Hand geschrieben, Lizenz CC BY 4.0 wie der Inhalt.
-- Farben überall gleich: gegeben blau `#2563eb`, gesucht orange `#ea580c`, Hilfslinie/Höhe gestrichelt; Text in
+- Farben überall gleich: gegeben blau `#2563eb`, gesucht oder hervorgehoben orange `#ea580c`, zweite Gruppe lila `#7c3aed`, Hilfslinie/Höhe gestrichelt; Text in
   `currentColor`-freundlichen Kontrasten, weißer Hintergrund mit Rand, damit Dark Mode lesbar bleibt.
 - Dreiecke mit der Grundseite unten; Bäume von oben nach unten, an jedem Ast die Wahrscheinlichkeit; Koordinatensysteme
   mit Achsenbeschriftung und Einheit.

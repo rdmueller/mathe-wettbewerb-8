@@ -12,7 +12,7 @@ blocks:
     blocks:
       - type: number
         id: parallelogramm-trapez-start
-        text: "Ein **Parallelogramm** ist ein Viereck, in dem gegenüberliegende Seiten parallel sind. Schneide in Gedanken links das Dreieck ab und lege es rechts an. Wie groß ist die Fläche?"
+        text: "Ein Parallelogramm ist ein Viereck, in dem gegenüberliegende Seiten parallel sind. Schneide in Gedanken links das Dreieck ab und lege es rechts an. Wie groß ist die Fläche?"
         material:
           - type: figure
             image: images/flaechen-parallelogramm-kaestchen.svg
