@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: failed pre-push runs, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
-failedChecks: { accessible: 5, checks-pass: 2 }
+failedChecks: { accessible: 7, checks-pass: 2 }
 ---
 
 # Plan: meine-lernapp, first version
@@ -581,7 +581,7 @@ page, which a link. -->
 - [x] Kapitel prozent: 3 Seiten (prozentwert, prozentsatz-grundwert, sachaufgaben) mit Hunderterfeld, generated mit Fehlerdiagnose, Selbsteinschätzung
 - [x] Kapitel flaechen, übrige 5 Seiten (quadrat-rechteck, parallelogramm-trapez, quader-wuerfel, netz-oberflaeche, formeln-umstellen) nach der Musterseite, Abschnitt Einheiten, Selbsteinschätzung
 - [x] Kapitel terme: 4 Seiten (aufstellen, werte-berechnen, zusammenfassen, produkte), Terme als Auswahl, Selbsteinschätzung
-- [ ] Kapitel wahrscheinlichkeit: 3 Seiten (laplace, baumdiagramm, pfadregeln) mit Daten zufallsversuche.yaml und SVG-Bäumen, Selbsteinschätzung
+- [x] Kapitel wahrscheinlichkeit: 3 Seiten (laplace, baumdiagramm, pfadregeln) mit Daten zufallsversuche.yaml und SVG-Bäumen, Selbsteinschätzung
 - [ ] Kapitel symmetrie: 2 Seiten (symmetrie-erkennen, spiegeln-drehen) mit Daten figuren.yaml, Selbsteinschätzung
 - [ ] Kapitel winkel: 2 Seiten (winkelsumme, geradenkreuzungen) mit SVG-Winkelpaaren, Selbsteinschätzung
 - [ ] Kapitel brueche: 3 Seiten (plus-minus, mal-geteilt, rechenregeln), Brüche als Auswahl, Abschnitt Kürzen/Erweitern, Selbsteinschätzung

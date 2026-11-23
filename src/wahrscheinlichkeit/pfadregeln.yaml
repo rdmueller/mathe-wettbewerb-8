@@ -1,0 +1,205 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Pfadregeln
+description: "Im Baumdiagramm entlang eines Pfades multiplizieren und die Pfade eines Ereignisses addieren – und die zwei häufigsten Fehler vermeiden."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann mit den Pfadregeln Wahrscheinlichkeiten berechnen. Du brauchst dafür ein Baumdiagramm mit
+      allen Wahrscheinlichkeiten, wie auf der vorigen Seite.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: pfadregeln-start
+        text: Du wirfst eine Münze zweimal. Wie groß ist die Wahrscheinlichkeit, zweimal Kopf (KK) zu werfen?
+        options:
+          - text: 1/4
+            correct: true
+            info: "KK ist eines von 4 gleich wahrscheinlichen Ergebnissen."
+          - text: 1/3
+            correct: false
+            info: KZ und ZK sind zwei verschiedene Ergebnisse, nicht eines.
+          - text: 1/2
+            correct: false
+            info: 1/2 gilt für einmal Kopf. Hier muss zweimal Kopf fallen.
+          - text: "1"
+            correct: false
+            info: "1 hieße: KK fällt sicher. Das ist 1/2 + 1/2."
+        explanation: "Von KK, KZ, ZK und ZZ ist eines günstig: P(KK) = 1/4."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+  - type: section
+    id: regel
+    title: Mal entlang, plus über Pfade
+    blocks:
+      - type: text
+        text: |
+          Im Baum der Münze steht an beiden Ästen des Pfades KK je 1/2. Beim 1. Wurf fällt in der Hälfte der Fälle
+          K. Von diesen Fällen fällt wieder in der Hälfte K – die Hälfte der Hälfte. Das ist dein Ergebnis von oben:
+      - type: formula
+        formula: 'P(KK) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}'
+      - type: text
+        text: |
+          **1. Pfadregel:** Die Wahrscheinlichkeit eines Pfades ist das Produkt der Wahrscheinlichkeiten entlang des
+          Pfades. Bei der Urne mit 3 roten und 2 blauen Kugeln (mit Zurücklegen) ist der linke orange Pfad rr:
+      - type: figure
+        image: images/wahrscheinlichkeit-pfad-urne.svg
+        alt: "Das Baumdiagramm der Urne: an jedem Ast r steht 3/5, an jedem Ast b steht 2/5. Die Pfade rr links und bb rechts sind orange."
+        caption: "Die zwei orangen Pfade rr und bb gehören zum Ereignis „zweimal dieselbe Farbe“."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'P(rr) = \frac{3}{5} \cdot \frac{3}{5} = \frac{9}{25}'
+      - type: text
+        text: |
+          **2. Pfadregel:** Gehören zu einem Ereignis mehrere Pfade, addierst du ihre Wahrscheinlichkeiten. Für
+          „zweimal dieselbe Farbe“ sind das beide orangen Pfade:
+      - type: formula
+        formula: 'P(bb) = \frac{2}{5} \cdot \frac{2}{5} = \frac{4}{25}'
+      - type: formula
+        formula: 'P(rr) + P(bb) = \frac{9}{25} + \frac{4}{25} = \frac{13}{25}'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Münze und Würfel
+        blocks:
+          - type: text
+            text: |
+              Du wirfst eine Münze und würfelst. Du gewinnst bei Kopf und einer Zahl größer als 4. Für den Würfel
+              brauchst du keine 6 Äste: Zwei reichen, „größer als 4“ mit $\frac{2}{6} = \frac{1}{3}$ und „nicht
+              größer als 4“ mit $\frac{2}{3}$.
+          - type: formula
+            formula: 'P(\text{Gewinn}) = \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}'
+          - type: text
+            text: Antwort – Du gewinnst mit der Wahrscheinlichkeit 1/6, also etwa in jedem sechsten Spiel.
+  - type: section
+    id: merke
+    title: Nicht verwechseln
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Entlang eines Pfades wird multipliziert, nie addiert: $\frac{1}{2} + \frac{1}{2} = 1$ hieße, KK fällt
+              sicher. Mehrere Pfade werden addiert, nie multipliziert. Prüfe so: Ein Pfad ist nie wahrscheinlicher
+              als einer seiner Äste. Ein Ereignis aus mehreren Pfaden ist nie unwahrscheinlicher als einer dieser
+              Pfade.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: pfadregeln-rechnung
+        text: Ein Glücksrad mit 4 gleich großen Feldern (ein Gewinnfeld G, drei Nieten N) wird zweimal gedreht. Welche Rechnung gehört zum orangen Pfad?
+        material:
+          - type: figure
+            image: images/wahrscheinlichkeit-baum-gluecksrad.svg
+            alt: "Ein Baumdiagramm mit zwei Stufen G und N. An jedem Ast G steht 1/4, an jedem Ast N steht 3/4. Der Pfad zuerst G, dann N ist orange."
+            caption: Der orange Pfad führt zuerst zu G, dann zu N.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: "1/4 · 3/4"
+            correct: true
+            info: Entlang des Pfades stehen 1/4 und 3/4, und sie werden multipliziert.
+          - text: "1/4 + 3/4"
+            correct: false
+            info: Das ergibt 1, also sicher. Entlang eines Pfades wird nicht addiert.
+          - text: "1/4 · 1/4"
+            correct: false
+            info: Das ist der Pfad GG.
+          - text: "3/4 · 3/4"
+            correct: false
+            info: Das ist der Pfad NN.
+        explanation: "P(GN) = 1/4 · 3/4 = 3/16."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: generated
+        id: pfadregeln-pfad
+        given:
+          r: { int: [1, 9] }
+        where: ["r != 5"]
+        task:
+          text: "Von 10 Kugeln in einer Urne sind {{r}} rot, die übrigen blau. Du ziehst zweimal mit Zurücklegen. Wie wahrscheinlich ist zuerst rot, dann blau? Gib die Antwort in Prozent an."
+        answer: { value: "r * (10 - r)", compare: { number: { format: percent, decimals: 0 } } }
+        mistakes:
+          - value: "100"
+            message: Du hast entlang des Pfades addiert. Multipliziere die beiden Äste.
+          - value: "r * r"
+            message: Das ist der Pfad rot–rot.
+          - value: "2 * r * (10 - r)"
+            message: Du hast den Pfad blau–rot mitgezählt. Gefragt ist nur rot–blau.
+        hint: Welche Wahrscheinlichkeiten stehen an den zwei Ästen des Pfades rot–blau?
+        steps:
+          - "Ast rot: $\\frac{ {{r}} }{10}$. Ast blau: $\\frac{10 - {{r}} }{10}$."
+          - "Multiplizieren: $\\frac{ {{r}} }{10} \\cdot \\frac{10 - {{r}} }{10} = \\frac{ {{answer}} }{100}$, also {{answer}} %."
+      - type: generated
+        id: pfadregeln-gleiche-farbe
+        given:
+          r: { int: [1, 9] }
+        where: ["r != 5"]
+        task:
+          text: "Von 10 Kugeln in einer Urne sind {{r}} rot, die übrigen blau. Du ziehst zweimal mit Zurücklegen. Wie wahrscheinlich ist zweimal dieselbe Farbe? Gib die Antwort in Prozent an."
+        answer: { value: "r * r + (10 - r) * (10 - r)", compare: { number: { format: percent, decimals: 0 } } }
+        mistakes:
+          - value: "r * r"
+            message: Zweimal blau ist auch dieselbe Farbe.
+          - value: "r * r * (10 - r) * (10 - r) / 100"
+            message: Mehrere Pfade werden addiert, nicht multipliziert.
+          - value: "2 * r * (10 - r)"
+            message: Das sind die Pfade mit zwei verschiedenen Farben.
+        hint: Welche zwei Pfade gehören zu „dieselbe Farbe“?
+        steps:
+          - "Pfad rot–rot: $\\frac{ {{r}} }{10} \\cdot \\frac{ {{r}} }{10}$. Pfad blau–blau: $\\frac{10 - {{r}} }{10} \\cdot \\frac{10 - {{r}} }{10}$."
+          - "Beide Pfade addieren ergibt {{answer}} Hundertstel, also {{answer}} %."
+      - type: single-choice
+        id: pfadregeln-muenze-wuerfel
+        text: Du wirfst eine Münze und würfelst. Wie wahrscheinlich ist Zahl und eine 1 oder 2?
+        options:
+          - text: 1/6
+            correct: true
+            info: "Zahl hat 1/2, eine 1 oder 2 hat 2/6 = 1/3."
+          - text: 5/6
+            correct: false
+            info: Das ist 1/2 + 1/3. Entlang eines Pfades wird multipliziert.
+          - text: 1/3
+            correct: false
+            info: 1/3 gilt nur für den Würfel.
+          - text: 1/12
+            correct: false
+            info: 1/12 gilt für Zahl und eine 1.
+        explanation: "P = 1/2 · 1/3 = 1/6."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: true-false
+        id: pfadregeln-oder
+        text: "Beim zweimaligen Münzwurf ist P(KK oder ZZ) = 1/4 · 1/4 = 1/16."
+        answer: false
+        explanation: "Zu „KK oder ZZ“ gehören zwei Pfade, also addierst du: 1/4 + 1/4 = 1/2."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: number
+        id: pfadregeln-rueckwaerts
+        text: "Ein Glücksrad mit 8 gleich großen Feldern wird zweimal gedreht. Die Wahrscheinlichkeit, zweimal ein Gewinnfeld zu treffen, ist 1/16. Wie viele der 8 Felder sind Gewinnfelder?"
+        answer: 2
+        tolerance: 0
+        mistakes:
+          - answer: 1
+            message: "Mit einem Gewinnfeld wäre P = 1/8 · 1/8 = 1/64, zu klein."
+          - answer: 4
+            message: "Mit vier Gewinnfeldern wäre P = 4/8 · 4/8 = 1/4, zu groß."
+        hint: Welcher Bruch ergibt mit sich selbst malgenommen 1/16?
+        explanation: "1/4 · 1/4 = 1/16, also ist P(Gewinn) bei einem Dreh 1/4 = 2/8: 2 Gewinnfelder."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: text
+        text: Damit kannst du Ergebnisräume aufschreiben, Baumdiagramme zeichnen und mit den Pfadregeln rechnen. Im nächsten Kapitel geht es um Symmetrie – um Figuren, die du falten und drehen kannst.

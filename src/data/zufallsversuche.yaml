@@ -1,0 +1,90 @@
+# Einstufige Laplace-Versuche mit je einem Ereignis. Alle Brüche gekürzt, als Text (die Auswahl zeigt sie so).
+# p = günstige : alle (richtig), fUngunstig = günstige : ungünstige, fRest = ungünstige : alle, fEins = 1 : alle.
+- name: Würfel
+  versuch: Du wirfst einen normalen Spielwürfel.
+  ereignis: eine Zahl größer als 4
+  omega: "Ω = {1; 2; 3; 4; 5; 6}"
+  anzahl: 6
+  guenstigListe: "{5; 6}"
+  guenstig: 2
+  p: 1/3
+  fUngunstig: 1/2
+  fRest: 2/3
+  fEins: 1/6
+- name: Würfel
+  versuch: Du wirfst einen normalen Spielwürfel.
+  ereignis: eine Zahl, die durch 3 teilbar ist
+  omega: "Ω = {1; 2; 3; 4; 5; 6}"
+  anzahl: 6
+  guenstigListe: "{3; 6}"
+  guenstig: 2
+  p: 1/3
+  fUngunstig: 1/2
+  fRest: 2/3
+  fEins: 1/6
+- name: Glücksrad
+  versuch: Du drehst ein Glücksrad mit 8 gleich großen Feldern, beschriftet mit 1 bis 8.
+  ereignis: eine Zahl, die durch 3 teilbar ist
+  omega: "Ω = {1; 2; 3; 4; 5; 6; 7; 8}"
+  anzahl: 8
+  guenstigListe: "{3; 6}"
+  guenstig: 2
+  p: 1/4
+  fUngunstig: 1/3
+  fRest: 3/4
+  fEins: 1/8
+- name: Glücksrad
+  versuch: Du drehst ein Glücksrad mit 8 gleich großen Feldern, beschriftet mit 1 bis 8.
+  ereignis: eine Zahl größer als 5
+  omega: "Ω = {1; 2; 3; 4; 5; 6; 7; 8}"
+  anzahl: 8
+  guenstigListe: "{6; 7; 8}"
+  guenstig: 3
+  p: 3/8
+  fUngunstig: 3/5
+  fRest: 5/8
+  fEins: 1/8
+- name: Glücksrad
+  versuch: Du drehst ein Glücksrad mit 7 gleich großen Feldern, beschriftet mit 1 bis 7.
+  ereignis: eine gerade Zahl
+  omega: "Ω = {1; 2; 3; 4; 5; 6; 7}"
+  anzahl: 7
+  guenstigListe: "{2; 4; 6}"
+  guenstig: 3
+  p: 3/7
+  fUngunstig: 3/4
+  fRest: 4/7
+  fEins: 1/7
+- name: Glücksrad
+  versuch: Du drehst ein Glücksrad mit 5 gleich großen Feldern, beschriftet mit A, B, C, D und E.
+  ereignis: ein Vokal (A, E, I, O oder U)
+  omega: "Ω = {A; B; C; D; E}"
+  anzahl: 5
+  guenstigListe: "{A; E}"
+  guenstig: 2
+  p: 2/5
+  fUngunstig: 2/3
+  fRest: 3/5
+  fEins: 1/5
+- name: Urne
+  versuch: In einer Urne liegen 3 rote und 7 blaue Kugeln, sonst gleich. Du ziehst ohne hinzusehen eine Kugel.
+  ereignis: eine rote Kugel
+  omega: jede der 10 Kugeln
+  anzahl: 10
+  guenstigListe: die 3 roten Kugeln
+  guenstig: 3
+  p: 3/10
+  fUngunstig: 3/7
+  fRest: 7/10
+  fEins: 1/10
+- name: Urne
+  versuch: In einer Urne liegen 4 rote und 6 blaue Kugeln, sonst gleich. Du ziehst ohne hinzusehen eine Kugel.
+  ereignis: eine rote Kugel
+  omega: jede der 10 Kugeln
+  anzahl: 10
+  guenstigListe: die 4 roten Kugeln
+  guenstig: 4
+  p: 2/5
+  fUngunstig: 2/3
+  fRest: 3/5
+  fEins: 1/10

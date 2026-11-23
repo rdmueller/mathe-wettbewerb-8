@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Wahrscheinlichkeit
+summary: Ergebnisraum, Laplace-Wahrscheinlichkeit, Baumdiagramm und Pfadregeln – Gewinnchancen bei Würfel, Münze, Glücksrad und Urne berechnen.
+pages: [laplace, baumdiagramm, pfadregeln]
