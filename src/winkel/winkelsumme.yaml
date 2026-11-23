@@ -1,0 +1,200 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Winkelsumme in Dreieck und Viereck
+description: "Herleiten, warum die Winkel im Dreieck zusammen 180° und im Viereck 360° ergeben, und fehlende Winkel berechnen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann fehlende Winkel mit der Winkelsumme im Dreieck und im Viereck berechnen. Winkel misst du im
+      Heft mit dem Geodreieck in Grad (°); hier rechnest du sie aus. Du brauchst nur zwei Winkel, die du kennst: Eine
+      Gerade bildet einen **gestreckten Winkel** von 180°, eine volle Drehung sind 360°.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: winkelsumme-start
+        text: Du reißt die drei Ecken eines Papierdreiecks ab und legst sie wie im Bild aneinander. Wie groß sind die drei Winkel zusammen?
+        material:
+          - type: figure
+            image: images/winkel-ecken.svg
+            alt: "Links ein Dreieck ABC mit den Winkeln α bei A (blau), β bei B (lila) und γ bei C (grün). Rechts die drei abgerissenen Ecken, mit den Spitzen an einem Punkt aneinandergelegt, auf einer gestrichelten Geraden."
+            caption: Achte darauf, wo die äußeren Kanten der drei Ecken liegen.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 90°
+            correct: false
+            info: 90° ist ein rechter Winkel, wie die Ecke eines Blattes.
+          - text: 180°
+            correct: true
+            info: Die äußeren Kanten liegen auf einer Geraden. Das ist ein gestreckter Winkel.
+          - text: 360°
+            correct: false
+            info: 360° wären eine volle Drehung. Die Ecken füllen nur die obere Hälfte.
+          - text: Das hängt vom Dreieck ab.
+            correct: false
+            info: Probiere es mit einem anderen Dreieck – es bleibt eine Gerade.
+        explanation: α, β und γ bilden zusammen einen gestreckten Winkel.
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+  - type: section
+    id: regel
+    title: Warum es immer 180° sind
+    blocks:
+      - type: text
+        text: |
+          Das Abreißen geht auch ohne Schere. Zeichne durch C die Parallele zur Seite AB – eine Gerade, die überall
+          gleich weit von AB entfernt ist. Links neben γ entsteht ein Winkel, der so groß ist wie α, rechts einer so
+          groß wie β. Das sind die abgerissenen Ecken aus der Aufgabe, nur ohne Papier. Warum sie gleich groß sind,
+          lernst du auf der nächsten Seite.
+      - type: figure
+        image: images/winkel-parallele.svg
+        alt: "Ein Dreieck ABC. Durch C geht eine gestrichelte Parallele zu AB. Bei C liegen links ein blauer Winkel α, in der Mitte der grüne Winkel γ und rechts ein lila Winkel β nebeneinander auf der Parallelen."
+        caption: Bei C liegen α, γ und β nebeneinander auf einer Geraden – in denselben Farben wie unten im Dreieck.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '\alpha + \beta + \gamma = 180^\circ'
+      - type: text
+        text: Ein Viereck teilt die Diagonale AC in zwei Dreiecke. Jedes hat 180°, zusammen sind es 360°.
+      - type: figure
+        image: images/winkel-viereck.svg
+        alt: "Ein Viereck ABCD mit den Winkeln α, β, γ und δ. Die gestrichelte Diagonale AC teilt es in ein blaues und ein lila Dreieck."
+        caption: Die Diagonale teilt α und γ, aber alle Teile gehören zu genau einem der zwei Dreiecke.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '\alpha + \beta + \gamma + \delta = 2 \cdot 180^\circ = 360^\circ'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Ein gleichschenkliges Dreieck
+        blocks:
+          - type: text
+            text: |
+              Ein Dreieck ist **gleichschenklig**, wenn zwei Seiten gleich lang sind. Dann sind auch die zwei Winkel
+              an der dritten Seite, der Basis, gleich groß. Ein Giebel hat oben an der Spitze γ = 40°. Wie groß sind
+              die zwei Basiswinkel α und β?
+          - type: formula
+            formula: '\alpha + \beta = 180^\circ - 40^\circ = 140^\circ'
+          - type: formula
+            formula: '\alpha = \beta = 140^\circ : 2 = 70^\circ'
+          - type: text
+            text: Antwort – Beide Basiswinkel sind 70° groß. Probe – 70° + 70° + 40° = 180°.
+  - type: section
+    id: merke
+    title: Dreieck 180°, Viereck 360°
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Nur das Viereck hat 360°, das Dreieck hat 180°. Prüfe dein Ergebnis: Ein Winkel im Dreieck ist immer
+              kleiner als 180°, und alle drei zusammen müssen genau 180° ergeben.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: generated
+        id: winkelsumme-dreieck
+        given:
+          a: { int: [20, 110], step: 5 }
+          b: { int: [20, 110], step: 5 }
+        where: ["a + b <= 160", "a + b != 90"]
+        task:
+          text: "In einem Dreieck ist α = {{a}}° und β = {{b}}°. Wie groß ist γ?"
+        answer: { value: "180 - a - b", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "360 - a - b"
+            message: Du hast mit 360° gerechnet. Die Winkel im Dreieck ergeben zusammen 180°.
+          - value: "a + b"
+            message: Das sind α und β zusammen.
+        hint: Alle drei Winkel zusammen ergeben 180°.
+        steps:
+          - "Mit α = {{a}}° und β = {{b}}°: γ = 180° − {{a}}° − {{b}}°"
+          - "γ ist {{answer}}° groß."
+      - type: generated
+        id: winkelsumme-viereck
+        given:
+          a: { int: [50, 140], step: 5 }
+          b: { int: [50, 140], step: 5 }
+          c: { int: [50, 140], step: 5 }
+        where: ["a + b + c >= 210", "a + b + c <= 320"]
+        task:
+          text: "In einem Viereck ist α = {{a}}°, β = {{b}}° und γ = {{c}}°. Wie groß ist δ?"
+        answer: { value: "360 - a - b - c", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "180 - a - b - c"
+            message: Du hast mit 180° gerechnet. Ein Viereck hat 360°.
+          - value: "360 - a - b"
+            message: Du hast einen der drei Winkel vergessen.
+        hint: Alle vier Winkel zusammen ergeben 360°.
+        steps:
+          - "Mit α = {{a}}°, β = {{b}}° und γ = {{c}}°: δ = 360° − {{a}}° − {{b}}° − {{c}}°"
+          - "δ ist {{answer}}° groß."
+      - type: true-false
+        id: winkelsumme-zwei-stumpfe
+        text: Ein Dreieck kann zwei stumpfe Winkel haben, also zwei Winkel größer als 90°.
+        answer: false
+        explanation: Zwei Winkel über 90° ergeben schon mehr als 180°.
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+      - type: generated
+        id: winkelsumme-basiswinkel
+        given:
+          g: { int: [20, 140], step: 10 }
+        task:
+          text: "In einem gleichschenkligen Dreieck ist der Winkel an der Spitze {{g}}° groß. Wie groß ist jeder der beiden Basiswinkel?"
+        answer: { value: "(180 - g) / 2", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "180 - g"
+            message: Das sind beide Basiswinkel zusammen. Teile noch durch 2.
+          - value: "(360 - g) / 2"
+            message: Du hast mit 360° gerechnet. Die Winkel im Dreieck ergeben 180°.
+        hint: Ziehe erst die Spitze von 180° ab.
+        steps:
+          - "Mit der Spitze {{g}}°: Für die zwei Basiswinkel bleiben 180° − {{g}}°."
+          - "Geteilt durch 2: Jeder Basiswinkel ist {{answer}}° groß."
+      - type: number
+        id: winkelsumme-doppelt
+        text: In einem gleichschenkligen Dreieck ist jeder Basiswinkel doppelt so groß wie der Winkel an der Spitze. Wie groß ist der Winkel an der Spitze?
+        answer: 36
+        tolerance: 0
+        unit: °
+        mistakes:
+          - answer: 72
+            message: Das ist ein Basiswinkel. Gefragt ist der Winkel an der Spitze.
+          - answer: 60
+            message: Bei 60° wären alle drei Winkel gleich groß.
+          - answer: 45
+            message: Zähle die Teile noch einmal.
+        hint: Nenne die Spitze einen Teil. Wie viele Teile sind alle drei Winkel?
+        explanation: "1 + 2 + 2 = 5 Teile = 180°, ein Teil ist 36°. Probe – 36° + 72° + 72° = 180°."
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+      - type: number
+        id: winkelsumme-viereck-teile
+        text: "In einem Viereck ist α = 80° und β = 100°. Der Winkel γ ist doppelt so groß wie δ. Wie groß ist γ?"
+        answer: 120
+        tolerance: 0
+        unit: °
+        mistakes:
+          - answer: 60
+            message: Das ist δ. Gefragt ist γ, der doppelt so große Winkel.
+          - answer: 90
+            message: γ ist doppelt so groß wie δ, nicht gleich groß.
+          - answer: 0
+            message: Du hast mit 180° gerechnet. Ein Viereck hat 360°.
+        hint: Wie viel bleibt für γ und δ zusammen?
+        explanation: "γ + δ = 360° − 80° − 100° = 180° = 3 Teile, also δ = 60° und γ = 120°."
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+      - type: text
+        text: Als Nächstes schaust du dir an, welche Winkel an zwei sich kreuzenden Geraden gleich groß sind – und warum die Parallele durch C oben funktioniert.

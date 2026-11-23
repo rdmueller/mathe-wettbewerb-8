@@ -1,0 +1,218 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Winkel an Geradenkreuzungen
+description: "Neben- und Scheitelwinkel an einer Kreuzung, Stufen- und Wechselwinkel an parallelen Geraden erkennen und berechnen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Neben-, Scheitel-, Stufen- und Wechselwinkel erkennen und berechnen. Du brauchst den
+      gestreckten Winkel von 180° von der vorigen Seite.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: geradenkreuzungen-start
+        text: "Zwei Geraden schneiden sich. Der Winkel α ist 40° groß. Wie groß ist der Winkel β daneben?"
+        material:
+          - type: figure
+            image: images/winkel-nebenwinkel.svg
+            alt: Zwei Geraden schneiden sich. Rechts oben liegt der blaue Winkel α, links daneben der orange Winkel β. Beide liegen über derselben waagerechten Geraden.
+            caption: α und β liegen nebeneinander über der waagerechten Geraden.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 140
+        tolerance: 0
+        unit: °
+        mistakes:
+          - answer: 40
+            message: β ist sichtbar größer als α.
+          - answer: 320
+            message: "Du hast mit 360° gerechnet. α und β liegen nur über der Geraden."
+        hint: α und β liegen zusammen auf einer Geraden.
+        explanation: "α und β bilden zusammen einen gestreckten Winkel: β = 180° − 40° = 140°."
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+  - type: section
+    id: regel
+    title: Gleich groß oder zusammen 180°
+    blocks:
+      - type: text
+        text: |
+          α und β aus der Aufgabe heißen **Nebenwinkel**: Sie liegen nebeneinander an einer Geraden und ergeben
+          zusammen 180°. An einer Kreuzung entstehen vier Winkel. Gegenüberliegende Winkel heißen
+          **Scheitelwinkel**, sie sind gleich groß: α und γ sind beide Nebenwinkel von β, also bleibt für beide
+          derselbe Rest bis 180°.
+      - type: figure
+        image: images/winkel-kreuzung.svg
+        alt: Zwei Geraden schneiden sich. Vier Winkel – α rechts und γ links sind blau, β oben und δ unten sind lila.
+        caption: Gleiche Farbe heißt gleich groß. Je ein blauer und ein lila Winkel ergeben zusammen 180°.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '\alpha + \beta = 180^\circ \qquad \alpha = \gamma'
+      - type: text
+        text: |
+          Jetzt schneidet eine Gerade s zwei **parallele** Geraden g und h. Verschiebst du die Kreuzung an g entlang
+          von s nach unten, passt sie genau auf die Kreuzung an h. Darum ist β so groß wie α: **Stufenwinkel**
+          liegen an beiden Kreuzungen an derselben Stelle. γ ist Scheitelwinkel von β, also auch so groß wie α:
+          **Wechselwinkel** liegen auf verschiedenen Seiten von s, einer an g, einer an h – wie die Ecken eines Z.
+      - type: figure
+        image: images/winkel-parallelen.svg
+        alt: "Zwei parallele Geraden g und h, geschnitten von der Geraden s. Blau markiert: α an g links unterhalb von g, β an h an derselben Stelle und γ an h rechts oberhalb von h."
+        caption: "Die Pfeilspitzen auf g und h zeigen: Die beiden Geraden sind parallel. α und β sind Stufenwinkel, α und γ Wechselwinkel."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: '\alpha = \beta = \gamma \quad \text{(nur wenn g und h parallel sind)}'
+      - type: text
+        text: "Das erklärt auch die Parallele durch C auf der vorigen Seite: Die Winkel neben γ sind Wechselwinkel zu α und β."
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Zwei Schritte über die Parallele
+        blocks:
+          - type: text
+            text: |
+              Angenommen, im Bild oben ist α = 65°. Gesucht ist der Winkel an h links oberhalb von h, also der Nebenwinkel von
+              β. Für ihn gibt es keine Regel in einem Schritt, aber zwei Schritte gehen:
+          - type: formula
+            formula: '\beta = \alpha = 65^\circ \quad \text{(Stufenwinkel)}'
+          - type: formula
+            formula: '180^\circ - 65^\circ = 115^\circ \quad \text{(Nebenwinkel)}'
+          - type: text
+            text: Antwort – Der Winkel links oberhalb von h ist 115° groß.
+  - type: section
+    id: merke
+    title: Erst prüfen, dann rechnen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Stufen- und Wechselwinkel sind nur an **parallelen** Geraden gleich groß. Steht nicht da, dass die
+              Geraden parallel sind, darfst du sie nicht benutzen. Nebenwinkel liegen nebeneinander und ergeben
+              180°, Scheitelwinkel liegen sich gegenüber und sind gleich groß.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: matching
+        id: geradenkreuzungen-paare
+        text: Die Geraden g und h sind parallel. Wie heißt jedes Winkelpaar?
+        material:
+          - type: figure
+            image: images/winkel-paare.svg
+            alt: "Zwei parallele Geraden g und h, geschnitten von der Geraden s. An g liegen die Winkel α rechts oberhalb, β links oberhalb und γ links unterhalb von g. An h liegt δ rechts oberhalb von h."
+            caption: Alle vier Winkel sind gleich markiert. Achte darauf, wo jeder Winkel liegt.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        pairs:
+          - left: α und β
+            right: Nebenwinkel
+          - left: α und γ
+            right: Scheitelwinkel
+          - left: α und δ
+            right: Stufenwinkel
+          - left: γ und δ
+            right: Wechselwinkel
+        explanation: "δ liegt an h an derselben Stelle wie α an g. γ und δ liegen auf verschiedenen Seiten von s."
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+      - type: generated
+        id: geradenkreuzungen-nebenwinkel
+        given:
+          a: { int: [20, 160], step: 5 }
+        where: ["a != 90"]
+        task:
+          text: "Zwei Geraden schneiden sich. Einer der vier Winkel ist {{a}}° groß. Wie groß ist sein Nebenwinkel?"
+        answer: { value: "180 - a", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "a"
+            message: So groß ist der Scheitelwinkel.
+          - value: "360 - a"
+            message: Du hast mit 360° gerechnet.
+        hint: Nebenwinkel liegen zusammen auf einer Geraden.
+        steps:
+          - "Nebenwinkel ergeben zusammen 180°: 180° − {{a}}°"
+          - "Der Nebenwinkel ist {{answer}}° groß."
+      - type: generated
+        id: geradenkreuzungen-zwei-schritte
+        given:
+          a: { int: [25, 155], step: 5 }
+        where: ["a != 90"]
+        task:
+          text: "Die Geraden g und h sind parallel, die Gerade s schneidet beide. An g ist α = {{a}}°. An h ist β der Stufenwinkel von α und γ der Nebenwinkel von β. Wie groß ist γ?"
+        answer: { value: "180 - a", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "a"
+            message: So groß ist β. γ ist der Nebenwinkel von β.
+          - value: "360 - a"
+            message: Nebenwinkel ergeben 180°, nicht 360°.
+        hint: Rechne in zwei Schritten – erst β, dann γ.
+        steps:
+          - "β ist Stufenwinkel von α an parallelen Geraden, also β = {{a}}°."
+          - "γ ist Nebenwinkel von β: 180° − {{a}}° = {{answer}}°."
+      - type: single-choice
+        id: geradenkreuzungen-nicht-parallel
+        text: "Die Geraden g und h sind nicht parallel. Die Gerade s schneidet beide. Es ist α = 50°. Was weißt du über β?"
+        material:
+          - type: figure
+            image: images/winkel-nicht-parallel.svg
+            alt: "Zwei Geraden g und h, die nach rechts aufeinander zulaufen. Die Gerade s schneidet beide. An g ist der blaue Winkel α markiert, an h an derselben Stelle der orange Winkel β."
+            caption: β liegt an h an derselben Stelle wie α an g.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: β = 50°
+            correct: false
+            info: Das gälte nur an parallelen Geraden.
+          - text: β = 130°
+            correct: false
+            info: 130° ist der Nebenwinkel von α, aber β liegt an h.
+          - text: β lässt sich aus α nicht berechnen.
+            correct: true
+            info: Ohne Parallelen verbindet keine Regel α und β.
+        explanation: Hier müsste man β messen.
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+      - type: number
+        id: geradenkreuzungen-halbierende
+        text: "Die Geraden g und h sind parallel, die Gerade s schneidet beide. An g ist α = 64°. Die Gerade w ist die Winkelhalbierende des lila Winkels an h: Sie teilt ihn in zwei gleich große Hälften. Wie groß ist der Winkel ε zwischen w und g?"
+        material:
+          - type: figure
+            image: images/winkel-halbierende.svg
+            alt: "Zwei parallele Geraden g oben und h unten, geschnitten von der Geraden s. An g ist rechts oberhalb von g der blaue Winkel α markiert. An h ist der lila Winkel zwischen h nach links und s nach oben von der Geraden w in zwei gleiche Hälften geteilt. w trifft g. Dort ist der orange Winkel ε zwischen g nach rechts und w markiert."
+            caption: Die zwei Striche im lila Winkel zeigen, dass seine Hälften gleich groß sind.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 58
+        tolerance: 0
+        unit: °
+        mistakes:
+          - answer: 32
+            message: Du hast α halbiert. Halbiert wird der lila Winkel an h. Wie groß ist er?
+          - answer: 116
+            message: "Das ist der ganze lila Winkel. w teilt ihn in zwei Hälften."
+          - answer: 64
+            message: 64° ist α selbst.
+        hint: "Welcher Winkel an h ist so groß wie α? Wie hängt der lila Winkel mit ihm zusammen?"
+        explanation: "Der Stufenwinkel von α an h ist 64°, sein Nebenwinkel, der lila Winkel, 180° − 64° = 116°. Jede Hälfte ist 58°. ε und die Hälfte zwischen w und h sind Wechselwinkel an den Parallelen, also ε = 58°."
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+      - type: true-false
+        id: geradenkreuzungen-scheitel
+        text: Scheitelwinkel ergeben zusammen immer 180°.
+        answer: false
+        explanation: Scheitelwinkel sind gleich groß. Zusammen 180° ergeben Nebenwinkel.
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+      - type: text
+        text: Damit kannst du jeden fehlenden Winkel an Dreiecken, Vierecken und Geradenkreuzungen berechnen. Im nächsten Kapitel geht es um Bruchrechnung.
