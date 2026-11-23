@@ -64,9 +64,9 @@ blocks:
         source: eigene Zeichnung
         licence: CC-BY-4.0
       - type: formula
-        formula: '\alpha = \beta = \gamma \quad \text{(nur wenn g und h parallel sind)}'
+        formula: '\alpha = \beta = \gamma'
       - type: text
-        text: "Das erklärt auch die Parallele durch C auf der vorigen Seite: Die Winkel neben γ sind Wechselwinkel zu α und β."
+        text: "Das gilt nur, wenn g und h parallel sind. Es erklärt auch die Parallele durch C auf der vorigen Seite: Die Winkel neben γ sind Wechselwinkel zu α und β."
   - type: section
     id: beispiel
     title: Ein Beispiel
