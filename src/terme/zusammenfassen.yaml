@@ -95,18 +95,18 @@ blocks:
         id: zusammenfassen-gleichartig
         text: Welche Glieder sind gleichartig zu 4x? Wähle alle passenden.
         options:
-          - text: 7x
-            correct: true
-            info: Gleiche Variable x, anderer Koeffizient.
-          - text: x
-            correct: true
-            info: x ist 1x, also gleiche Variable.
           - text: 4y
             correct: false
             info: 4y hat die Variable y. Der gleiche Koeffizient zählt nicht.
+          - text: 7x
+            correct: true
+            info: Gleiche Variable x, anderer Koeffizient.
           - text: "4"
             correct: false
             info: 4 ist eine Zahl ohne Variable.
+          - text: x
+            correct: true
+            info: x ist 1x, also gleiche Variable.
           - text: 4xy
             correct: false
             info: 4xy hat zwei Variablen, x und y.
@@ -137,15 +137,15 @@ blocks:
         id: zusammenfassen-xy
         text: Fasse zusammen – 2xy + 6xy
         options:
-          - text: 8xy
-            correct: true
-            info: 2-mal xy und 6-mal xy sind 8-mal xy.
           - text: 8x²y²
             correct: false
             info: Beim Addieren ändert sich die Variable nicht.
           - text: 12xy
             correct: false
             info: Hier wurde 2 · 6 gerechnet statt 2 + 6.
+          - text: 8xy
+            correct: true
+            info: 2-mal xy und 6-mal xy sind 8-mal xy.
           - text: 8 + xy
             correct: false
             info: Die Variable gehört zum Koeffizienten.

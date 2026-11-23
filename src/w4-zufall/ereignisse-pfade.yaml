@@ -127,15 +127,15 @@ blocks:
         id: ereignisse-pfade-hoechstens
         text: Was bedeutet „höchstens einmal blau“ beim zweimaligen Ziehen?
         options:
-          - text: kein- oder einmal blau
-            correct: true
-            info: "Nicht öfter als einmal – keinmal gehört dazu."
           - text: genau einmal blau
             correct: false
             info: "Das ist nur ein Teil. Keinmal blau gehört auch dazu."
           - text: ein- oder zweimal blau
             correct: false
             info: "Das ist „mindestens einmal blau“."
+          - text: kein- oder einmal blau
+            correct: true
+            info: "Nicht öfter als einmal – keinmal gehört dazu."
           - text: zweimal blau
             correct: false
             info: Zweimal blau ist gerade ausgeschlossen.

@@ -14,18 +14,18 @@ blocks:
         id: symmetrie-erkennen-start
         text: Bei welchen Großbuchstaben kannst du das Blatt so falten, dass die beiden Hälften des Buchstabens genau aufeinanderliegen?
         options:
-          - text: A
-            correct: true
-            info: Beim A faltest du senkrecht durch die Spitze.
-          - text: B
-            correct: true
-            info: Beim B faltest du quer durch die Mitte.
           - text: F
             correct: false
             info: Beim F passt keine Faltlinie, unten fehlt ein Querstrich.
+          - text: A
+            correct: true
+            info: Beim A faltest du senkrecht durch die Spitze.
           - text: S
             correct: false
             info: Beim S passt keine Faltlinie. Es hat eine andere Symmetrie – mehr dazu gleich.
+          - text: B
+            correct: true
+            info: Beim B faltest du quer durch die Mitte.
         explanation: A lässt sich senkrecht falten, B waagerecht.
         links:
           - title: Achsensymmetrie (Serlo)
@@ -99,9 +99,6 @@ blocks:
         id: symmetrie-erkennen-nur-punkt
         text: Welcher Großbuchstabe ist punktsymmetrisch, hat aber keine Symmetrieachse?
         options:
-          - text: N
-            correct: true
-            info: Das N lässt sich nicht falten, sieht aber nach einer halben Drehung gleich aus.
           - text: A
             correct: false
             info: Das A hat eine senkrechte Achse und steht nach einer halben Drehung auf dem Kopf.
@@ -111,6 +108,9 @@ blocks:
           - text: E
             correct: false
             info: Das E hat eine waagerechte Achse. Gedreht zeigen seine Querstriche nach links.
+          - text: N
+            correct: true
+            info: Das N lässt sich nicht falten, sieht aber nach einer halben Drehung gleich aus.
         explanation: Punktsymmetrisch ohne Achse sind zum Beispiel N, S und Z.
         links:
           - title: Punktsymmetrie (Serlo)
@@ -191,18 +191,18 @@ blocks:
         id: symmetrie-erkennen-woerter
         text: Welche Schriftzüge sehen nach einer halben Drehung um ihre Mitte wieder genauso aus?
         options:
-          - text: SOS
-            correct: true
-            info: S und O sind punktsymmetrisch, und SOS ist rückwärts gleich.
-          - text: XIX
-            correct: true
-            info: X und I sind punktsymmetrisch, und XIX (die römische 19) ist rückwärts gleich.
           - text: MOM
             correct: false
             info: Gedreht steht WOW da. MOM ist achsensymmetrisch, mit einer senkrechten Achse durch das O.
           - text: NUN
             correct: false
             info: Die N passen, aber das U steht dann auf dem Kopf.
+          - text: SOS
+            correct: true
+            info: S und O sind punktsymmetrisch, und SOS ist rückwärts gleich.
+          - text: XIX
+            correct: true
+            info: X und I sind punktsymmetrisch, und XIX (die römische 19) ist rückwärts gleich.
         explanation: Bei einer halben Drehung wird jeder Buchstabe gedreht, und die Reihenfolge kehrt sich um.
         links:
           - title: Punktsymmetrie (Serlo)

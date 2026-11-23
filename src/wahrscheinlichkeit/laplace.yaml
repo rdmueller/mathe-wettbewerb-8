@@ -127,11 +127,15 @@ blocks:
         id: laplace-ueben
         given:
           e: { pick: 1, from: { data: zufallsversuche } }
+          r: { int: [0, 3] }
         task:
           text: "{{e.versuch}} Wie groß ist die Wahrscheinlichkeit für das Ereignis „{{e.ereignis}}“?"
         answer:
           value: "e.p"
-          compare: { choice: "[e.p, e.fUngunstig, e.fRest, e.fEins]" }
+          compare:
+            {
+              choice: "[[e.p, e.fUngunstig, e.fRest, e.fEins], [e.fUngunstig, e.p, e.fRest, e.fEins], [e.fUngunstig, e.fRest, e.p, e.fEins], [e.fUngunstig, e.fRest, e.fEins, e.p]][r]",
+            }
         mistakes:
           - value: "e.fUngunstig"
             message: Das ist günstige durch ungünstige. Im Nenner stehen alle Ergebnisse.

@@ -123,15 +123,15 @@ blocks:
             source: eigene Zeichnung
             licence: CC-BY-4.0
         options:
-          - text: Die Seiten a und b sind vertauscht.
-            correct: true
-            info: Die linke Seite berührt A, kann also nicht a sein.
           - text: Die Winkel α und β sind vertauscht.
             correct: false
             info: α bei A, β bei B – das stimmt.
           - text: Die Ecken laufen im Uhrzeigersinn.
             correct: false
             info: A links unten, B rechts unten, C oben ist linksherum.
+          - text: Die Seiten a und b sind vertauscht.
+            correct: true
+            info: Die linke Seite berührt A, kann also nicht a sein.
           - text: Die Seite c müsste oben liegen.
             correct: false
             info: C ist oben, also liegt c unten. Das stimmt.

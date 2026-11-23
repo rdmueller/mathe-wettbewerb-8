@@ -14,15 +14,15 @@ blocks:
         id: graphen-start
         text: Ein Heft kostet 2 €. Trage die Punkte (1 | 2), (2 | 4), (3 | 6) und (4 | 8) in ein Koordinatensystem ein, im Heft oder im Kopf. Was entsteht, wenn du sie verbindest und die Linie nach links verlängerst?
         options:
-          - text: Eine gerade Linie, die durch den Ursprung (0 | 0) geht
-            correct: true
-            info: "Jeder Schritt um 1 nach rechts bringt 2 nach oben. Nach links verlängert, landest du bei (0 | 0)."
           - text: Eine gerade Linie, die die y-Achse oberhalb von 0 trifft
             correct: false
             info: "Gehst du von (1 | 2) einen Schritt nach links, gehst du auch 2 nach unten – genau auf (0 | 0)."
           - text: Eine gebogene Linie
             correct: false
             info: "Von Punkt zu Punkt geht es immer gleich viel nach oben: 2 für jedes Heft. Darum ist die Linie nicht gebogen."
+          - text: Eine gerade Linie, die durch den Ursprung (0 | 0) geht
+            correct: true
+            info: "Jeder Schritt um 1 nach rechts bringt 2 nach oben. Nach links verlängert, landest du bei (0 | 0)."
         explanation: "Die Punkte liegen auf einer geraden Linie durch den Ursprung. Das passt: 0 Hefte kosten 0 €."
         links:
           - title: Direkte Proportionalität (Serlo)

@@ -22,15 +22,15 @@ blocks:
             source: eigene Zeichnung
             licence: CC-BY-4.0
         options:
-          - text: 1/6
-            correct: true
-            info: Halbierst du jedes Drittel, hat das Blech 6 gleiche Stücke.
           - text: 1/5
             correct: false
             info: "Das wäre 1/(2 + 3). Nenner werden nicht addiert."
           - text: 2/3
             correct: false
             info: Das ist das Doppelte des Drittels, nicht die Hälfte.
+          - text: 1/6
+            correct: true
+            info: Halbierst du jedes Drittel, hat das Blech 6 gleiche Stücke.
           - text: 1/2
             correct: false
             info: Das wäre die Hälfte des ganzen Blechs.
@@ -111,12 +111,16 @@ blocks:
         id: mal-geteilt-mal
         given:
           e: { pick: 1, from: { data: bruchaufgaben } }
+          r: { int: [0, 3] }
         where: ["e.art == 'mal'"]
         task:
           text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } \\cdot \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
         answer:
           value: "e.ergebnis"
-          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+          compare:
+            {
+              choice: "[[e.ergebnis, e.fehler1, e.fehler2, e.fehler3], [e.fehler1, e.ergebnis, e.fehler2, e.fehler3], [e.fehler1, e.fehler2, e.ergebnis, e.fehler3], [e.fehler1, e.fehler2, e.fehler3, e.ergebnis]][r]",
+            }
         mistakes:
           - value: "e.fehler1"
             message: Umgedreht wird nur beim Teilen.
@@ -132,12 +136,16 @@ blocks:
         id: mal-geteilt-geteilt
         given:
           e: { pick: 1, from: { data: bruchaufgaben } }
+          r: { int: [0, 3] }
         where: ["e.art == 'geteilt'"]
         task:
           text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } : \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
         answer:
           value: "e.ergebnis"
-          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+          compare:
+            {
+              choice: "[[e.ergebnis, e.fehler1, e.fehler2, e.fehler3], [e.fehler1, e.ergebnis, e.fehler2, e.fehler3], [e.fehler1, e.fehler2, e.ergebnis, e.fehler3], [e.fehler1, e.fehler2, e.fehler3, e.ergebnis]][r]",
+            }
         mistakes:
           - value: "e.fehler1"
             message: Umgedreht wird der zweite Bruch, nicht der erste.

@@ -122,12 +122,16 @@ blocks:
         id: plus-minus-addieren
         given:
           e: { pick: 1, from: { data: bruchaufgaben } }
+          r: { int: [0, 3] }
         where: ["e.art == 'plus'"]
         task:
           text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } + \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
         answer:
           value: "e.ergebnis"
-          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+          compare:
+            {
+              choice: "[[e.ergebnis, e.fehler1, e.fehler2, e.fehler3], [e.fehler1, e.ergebnis, e.fehler2, e.fehler3], [e.fehler1, e.fehler2, e.ergebnis, e.fehler3], [e.fehler1, e.fehler2, e.fehler3, e.ergebnis]][r]",
+            }
         mistakes:
           - value: "e.fehler1"
             message: Nenner werden nicht addiert. Erweitere erst auf den Hauptnenner.
@@ -143,12 +147,16 @@ blocks:
         id: plus-minus-subtrahieren
         given:
           e: { pick: 1, from: { data: bruchaufgaben } }
+          r: { int: [0, 3] }
         where: ["e.art == 'minus'"]
         task:
           text: "Berechne $\\frac{ {{e.a}} }{ {{e.b}} } - \\frac{ {{e.c}} }{ {{e.d}} }$ und kürze das Ergebnis."
         answer:
           value: "e.ergebnis"
-          compare: { choice: "[e.ergebnis, e.fehler1, e.fehler2, e.fehler3]" }
+          compare:
+            {
+              choice: "[[e.ergebnis, e.fehler1, e.fehler2, e.fehler3], [e.fehler1, e.ergebnis, e.fehler2, e.fehler3], [e.fehler1, e.fehler2, e.ergebnis, e.fehler3], [e.fehler1, e.fehler2, e.fehler3, e.ergebnis]][r]",
+            }
         mistakes:
           - value: "e.fehler1"
             message: Nenner werden nicht subtrahiert. Erst gleiche Nenner.
@@ -182,9 +190,6 @@ blocks:
         id: plus-minus-luecke
         text: 'Welcher Bruch gehört in die Lücke? $\frac{1}{4} + \text{?} = \frac{5}{6}$'
         options:
-          - text: 7/12
-            correct: true
-            info: "1/4 + 7/12 = 3/12 + 7/12 = 10/12 = 5/6."
           - text: 1/3
             correct: false
             info: "1/3 = 4/12, also 5 − 1 ohne Erweitern."
@@ -194,6 +199,9 @@ blocks:
           - text: 13/12
             correct: false
             info: Das ist 5/6 + 1/4. Gesucht ist der Unterschied.
+          - text: 7/12
+            correct: true
+            info: "1/4 + 7/12 = 3/12 + 7/12 = 10/12 = 5/6."
         explanation: "Rückwärts: 5/6 − 1/4 = 10/12 − 3/12 = 7/12."
         links:
           - title: Rechnen mit Brüchen – Überblick (Serlo)

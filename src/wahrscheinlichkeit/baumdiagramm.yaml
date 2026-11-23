@@ -97,15 +97,15 @@ blocks:
             source: eigene Zeichnung
             licence: CC-BY-4.0
         options:
-          - text: 3/5
-            correct: true
-            info: Die Kugel wurde zurückgelegt, also sind wieder 3 von 5 Kugeln blau.
           - text: 2/5
             correct: false
             info: 2/5 gehört zu Rot. Der Ast führt aber zu b.
           - text: 1/2
             correct: false
             info: Es gibt mehr blaue als rote Kugeln, die Farben sind nicht gleich wahrscheinlich.
+          - text: 3/5
+            correct: true
+            info: Die Kugel wurde zurückgelegt, also sind wieder 3 von 5 Kugeln blau.
         explanation: "Mit Zurücklegen ist die Urne bei jedem Zug gleich, und 2/5 + 3/5 = 1."
         links:
           - title: Mehrstufige Zufallsexperimente (Serlo)

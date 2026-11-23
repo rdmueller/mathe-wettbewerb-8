@@ -14,18 +14,18 @@ blocks:
         id: konstruktion-schritte-start
         text: "Du sollst ein Dreieck mit c = 6 cm, α = 40° und β = 60° konstruieren. Was zeichnest du zuerst?"
         options:
-          - text: die Seite c
-            correct: true
-            info: α liegt bei A und β bei B – beide an c.
+          - text: die Seite a
+            correct: false
+            info: Die Länge von a ist nicht gegeben.
           - text: den Winkel α
             correct: false
             info: Einen Winkel trägst du an einer Strecke an, die fehlt noch.
           - text: den Punkt C
             correct: false
             info: C ist das Ergebnis der Konstruktion.
-          - text: die Seite a
-            correct: false
-            info: Die Länge von a ist nicht gegeben.
+          - text: die Seite c
+            correct: true
+            info: α liegt bei A und β bei B – beide an c.
         explanation: Fang mit der Seite an, an der die gegebenen Winkel liegen. Das ist hier c.
         links:
           - title: Dreiecke konstruieren (Serlo)
@@ -112,12 +112,16 @@ blocks:
         id: konstruktion-schritte-zuerst
         given:
           e: { pick: 1, from: { data: kongruenzsaetze } }
+          r: { int: [0, 2] }
         where: ["e.zuerst != '–'"]
         task:
           text: "Gegeben sind {{e.stuecke}}. Womit beginnst du die Konstruktion?"
         answer:
           value: "e.zuerst"
-          compare: { choice: "[e.zuerst, e.zuerstFalsch1, e.zuerstFalsch2]" }
+          compare:
+            {
+              choice: "[[e.zuerst, e.zuerstFalsch1, e.zuerstFalsch2], [e.zuerstFalsch1, e.zuerst, e.zuerstFalsch2], [e.zuerstFalsch1, e.zuerstFalsch2, e.zuerst]][r]",
+            }
         mistakes:
           - value: "e.zuerstFalsch1"
             message: Einen Winkel trägst du an einer Strecke an. Fang mit einer Seite an.

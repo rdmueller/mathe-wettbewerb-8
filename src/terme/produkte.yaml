@@ -141,12 +141,16 @@ blocks:
         given:
           a: { int: [2, 12] }
           b: { int: [2, 9] }
+          r: { int: [0, 3] }
         where: ["a * b != a + b"]
         task:
           text: "{{a}}x · (−{{b}}y) = □xy. Welche Zahl gehört in das Kästchen?"
         answer:
           value: "-(a * b)"
-          compare: { choice: "[-(a * b), a * b, -(a + b), a + b]" }
+          compare:
+            {
+              choice: "[[-(a * b), a * b, -(a + b), a + b], [a * b, -(a * b), -(a + b), a + b], [a * b, -(a + b), -(a * b), a + b], [a * b, -(a + b), a + b, -(a * b)]][r]",
+            }
         mistakes:
           - value: "a * b"
             message: "Prüfe das Vorzeichen. Ein Faktor ist negativ."
@@ -182,18 +186,18 @@ blocks:
         id: produkte-quadrat
         text: Berechne 2a · (−4a).
         options:
-          - text: −8a²
-            correct: true
-            info: "Minus, 2 · 4 = 8 und a · a = a²."
           - text: −8a
             correct: false
             info: a · a ist a², nicht a.
-          - text: 8a²
-            correct: false
-            info: Das Minus fehlt.
           - text: −2a
             correct: false
             info: Hier wurde addiert statt malgenommen.
+          - text: −8a²
+            correct: true
+            info: "Minus, 2 · 4 = 8 und a · a = a²."
+          - text: 8a²
+            correct: false
+            info: Das Minus fehlt.
         explanation: Ein Faktor ist negativ, also ist auch das Ergebnis negativ.
         links:
           - title: Rechnen mit ganzen Zahlen (Serlo)
@@ -209,18 +213,18 @@ blocks:
             source: eigene Zeichnung
             licence: CC-BY-4.0
         options:
-          - text: 13xy
-            correct: true
-            info: 10xy plus 3xy.
           - text: 24xy
             correct: false
             info: Das rechte Rechteck ist nur y hoch, nicht 3y.
-          - text: 13x²y²
-            correct: false
-            info: Beim Addieren bleibt xy, wie es ist.
           - text: 8x + 3y
             correct: false
             info: Hier wurden Seiten addiert, das ist keine Fläche.
+          - text: 13x²y²
+            correct: false
+            info: Beim Addieren bleibt xy, wie es ist.
+          - text: 13xy
+            correct: true
+            info: 10xy plus 3xy.
         explanation: "Zerlegen, malnehmen, zusammenfassen: 5x · 2y + 3x · y = 10xy + 3xy = 13xy."
         links:
           - title: Flächenformeln ebener Figuren (Serlo)

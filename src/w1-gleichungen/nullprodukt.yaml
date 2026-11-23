@@ -87,18 +87,18 @@ blocks:
         id: nullprodukt-loesungen
         text: Welche Zahlen sind Lösungen von (x + 4) · (x − 3) = 0? Wähle alle passenden.
         options:
-          - text: "−4"
-            correct: true
-            info: "Probe: 0 · (−7) = 0."
-          - text: "3"
-            correct: true
-            info: "Probe: 7 · 0 = 0."
           - text: "4"
             correct: false
             info: "Probe: 8 · 1 = 8."
+          - text: "−4"
+            correct: true
+            info: "Probe: 0 · (−7) = 0."
           - text: "−3"
             correct: false
             info: "Probe: 1 · (−6) = −6."
+          - text: "3"
+            correct: true
+            info: "Probe: 7 · 0 = 0."
         explanation: "Jeder Faktor kann 0 sein: x + 4 = 0 oder x − 3 = 0. Also x = −4 oder x = 3."
         links:
           - title: Lösung von quadratischen Gleichungen (Serlo)
@@ -107,18 +107,18 @@ blocks:
         id: nullprodukt-x-faktor
         text: Welche Zahlen sind Lösungen von x · (x − 7) = 0? Wähle alle passenden.
         options:
-          - text: "0"
-            correct: true
-            info: "Der Faktor x selbst ist 0: 0 · (−7) = 0."
-          - text: "7"
-            correct: true
-            info: "Für x = 7 wird der zweite Faktor 0."
           - text: "−7"
             correct: false
             info: "Für x = −7 ist kein Faktor 0, das Produkt ist 98."
           - text: "1"
             correct: false
             info: "Für x = 1 ist kein Faktor 0."
+          - text: "0"
+            correct: true
+            info: "Der Faktor x selbst ist 0: 0 · (−7) = 0."
+          - text: "7"
+            correct: true
+            info: "Für x = 7 wird der zweite Faktor 0."
         explanation: "x = 0 oder x − 7 = 0, also x = 0 oder x = 7."
         links:
           - title: Lösung von quadratischen Gleichungen (Serlo)

@@ -165,9 +165,6 @@ blocks:
         id: klammern-term
         text: Multipliziere aus und fasse zusammen – (2x − 3) · (x + 4)
         options:
-          - text: 2x² + 5x − 12
-            correct: true
-            info: "2x² + 8x − 3x − 12, dann 8x − 3x = 5x."
           - text: 2x² − 12
             correct: false
             info: "Hier fehlen die Produkte 2x · 4 und −3 · x."
@@ -177,6 +174,9 @@ blocks:
           - text: 2x² + 5x + 12
             correct: false
             info: "−3 · 4 ist −12, nicht +12."
+          - text: 2x² + 5x − 12
+            correct: true
+            info: "2x² + 8x − 3x − 12, dann 8x − 3x = 5x."
         explanation: Vier Produkte, dann gleichartige Glieder zusammenfassen.
         links:
           - title: Distributivgesetz (Serlo)

@@ -15,15 +15,15 @@ blocks:
         id: loesungsmenge-start
         text: "Die ganzen Zahlen sind …, −2, −1, 0, 1, 2, … – ohne Kommazahlen dazwischen. Die Gleichung 2x = 5 hat die Lösung x = 2,5. Ist 2,5 eine ganze Zahl?"
         options:
-          - text: Nein, 2,5 liegt zwischen den ganzen Zahlen 2 und 3.
-            correct: true
-            info: "2,5 liegt genau in der Mitte zwischen 2 und 3."
           - text: Ja, weil 2 und 5 ganze Zahlen sind.
             correct: false
             info: "Die Lösung selbst ist 2,5, nicht 2 oder 5."
           - text: Ja, weil 2,5 positiv ist.
             correct: false
             info: "Auch 0,1 ist positiv und keine ganze Zahl."
+          - text: Nein, 2,5 liegt zwischen den ganzen Zahlen 2 und 3.
+            correct: true
+            info: "2,5 liegt genau in der Mitte zwischen 2 und 3."
         hint: Liegt 2,5 in der Liste …, −1, 0, 1, 2, 3, …?
         explanation: "Sind nur ganze Zahlen erlaubt, hat 2x = 5 keine Lösung."
         links:
@@ -113,21 +113,21 @@ blocks:
         id: loesungsmenge-bereich
         text: "Welche Zahlen gehören zur Lösungsmenge von −2 ≤ x < 3, Grundmenge G = ℤ? Wähle alle passenden."
         options:
+          - text: "3"
+            correct: false
+            info: "Das Zeichen < schließt 3 aus."
           - text: "−2"
             correct: true
             info: "Das Zeichen ≤ schließt −2 ein."
+          - text: "2,5"
+            correct: false
+            info: "2,5 liegt im Bereich, ist aber keine ganze Zahl."
           - text: "0"
             correct: true
             info: "0 ist eine ganze Zahl zwischen −2 und 3."
           - text: "2"
             correct: true
             info: "2 ist kleiner als 3."
-          - text: "3"
-            correct: false
-            info: "Das Zeichen < schließt 3 aus."
-          - text: "2,5"
-            correct: false
-            info: "2,5 liegt im Bereich, ist aber keine ganze Zahl."
         explanation: "L = {−2; −1; 0; 1; 2}."
         links:
           - title: Lösungsmenge einer Gleichung (Serlo)

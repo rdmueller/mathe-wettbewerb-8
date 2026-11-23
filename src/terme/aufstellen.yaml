@@ -194,9 +194,6 @@ blocks:
             source: eigene Zeichnung
             licence: CC-BY-4.0
         options:
-          - text: 5 · x + 3 · 2
-            correct: true
-            info: Linkes Rechteck 5 · x plus rechtes Rechteck 3 · 2.
           - text: 5 · (x + 3)
             correct: false
             info: Das rechte Rechteck ist nur 2 hoch, nicht 5.
@@ -206,6 +203,9 @@ blocks:
           - text: x + 5 + 3 + 2
             correct: false
             info: Das ist ein Teil des Umfangs. Fläche heißt Länge mal Breite.
+          - text: 5 · x + 3 · 2
+            correct: true
+            info: Linkes Rechteck 5 · x plus rechtes Rechteck 3 · 2.
         explanation: "Zerlege die Figur an der gestrichelten Linie: 5 · x + 3 · 2 = 5x + 6."
         links:
           - title: Flächenformeln ebener Figuren (Serlo)

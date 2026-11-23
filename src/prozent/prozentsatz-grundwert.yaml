@@ -150,15 +150,15 @@ blocks:
         id: prozentsatz-grundwert-rechnung
         text: "Von 60 Äpfeln in einer Kiste sind 9 faul. Mit welcher Rechnung bekommst du den Prozentsatz der faulen Äpfel?"
         options:
-          - text: "9 : 60 · 100"
-            correct: true
-            info: "Teil durch Ganzes ergibt den Anteil 0,15. Mal 100 sind das 15 %."
           - text: "60 : 9 · 100"
             correct: false
             info: "Hier wird das Ganze durch den Teil geteilt. Es kämen über 600 % heraus."
           - text: "60 · 9 : 100"
             correct: false
             info: "So rechnest du 9 % von 60 aus, also einen Prozentwert. Es kommt 5,4 heraus."
+          - text: "9 : 60 · 100"
+            correct: true
+            info: "Teil durch Ganzes ergibt den Anteil 0,15. Mal 100 sind das 15 %."
         explanation: "Teil durch Ganzes, mal 100: 9 : 60 · 100 = 15, also 15 %."
         links:
           - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)

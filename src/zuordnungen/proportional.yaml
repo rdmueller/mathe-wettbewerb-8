@@ -97,15 +97,15 @@ blocks:
         id: proportional-tabelle
         text: Welche Tabelle gehört zu einer proportionalen Zuordnung?
         options:
-          - text: "1 → 3, 2 → 6, 5 → 15"
-            correct: true
-            info: "In jeder Zeile ist y : x = 3. Der Quotient bleibt gleich."
           - text: "1 → 4, 2 → 6, 5 → 12"
             correct: false
             info: "y wird zwar größer, aber die Quotienten sind 4, 3 und 2,4. Sie sind verschieden."
           - text: "1 → 3, 2 → 6, 5 → 12"
             correct: false
             info: "Die ersten zwei Zeilen passen zum Faktor 3, die letzte nicht: 12 : 5 = 2,4. Prüfe immer alle Zeilen."
+          - text: "1 → 3, 2 → 6, 5 → 15"
+            correct: true
+            info: "In jeder Zeile ist y : x = 3. Der Quotient bleibt gleich."
         explanation: "Proportional ist eine Tabelle nur, wenn der Quotient y : x in allen Zeilen derselbe ist."
         links:
           - title: Direkte Proportionalität (Serlo)

@@ -109,15 +109,15 @@ blocks:
         id: quadrat-rechteck-einheit
         text: Ein Beet ist 4 m lang und 2 m breit. Welche Angabe ist sein Flächeninhalt?
         options:
-          - text: 8 m²
-            correct: true
-            info: "4 · 2 = 8, gemessen in Quadratmetern."
           - text: 8 m
             correct: false
             info: Die Zahl stimmt, aber m ist eine Einheit für Längen.
           - text: 12 m
             correct: false
             info: "12 m ist der Umfang, also der Rand: 2 · 4 + 2 · 2."
+          - text: 8 m²
+            correct: true
+            info: "4 · 2 = 8, gemessen in Quadratmetern."
         explanation: Fläche heißt Länge mal Breite, in m².
         links:
           - title: Rechteck (Serlo)

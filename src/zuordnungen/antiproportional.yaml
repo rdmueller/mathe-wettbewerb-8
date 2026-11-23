@@ -99,9 +99,6 @@ blocks:
         id: antiproportional-tabelle
         text: Welche Tabelle gehört zu einer antiproportionalen Zuordnung?
         options:
-          - text: "2 → 12, 3 → 8, 4 → 6"
-            correct: true
-            info: "In jeder Zeile ist x · y = 24. Das Produkt bleibt gleich."
           - text: "2 → 12, 3 → 11, 4 → 10"
             correct: false
             info: "y wird kleiner, aber die Produkte sind 24, 33 und 40. Sie sind verschieden."
@@ -111,6 +108,9 @@ blocks:
           - text: "2 → 4, 3 → 6, 4 → 8"
             correct: false
             info: "Hier ist der Quotient y : x immer 2. Die Zuordnung ist proportional."
+          - text: "2 → 12, 3 → 8, 4 → 6"
+            correct: true
+            info: "In jeder Zeile ist x · y = 24. Das Produkt bleibt gleich."
         explanation: Antiproportional ist eine Tabelle nur, wenn das Produkt x · y in allen Zeilen gleich ist.
         links:
           - title: Direkte und indirekte Proportionalität (Serlo)
