@@ -1,0 +1,227 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Das Gegenereignis
+description: "Eine Wahrscheinlichkeit über das Gegenereignis mit 1 − P berechnen – vor allem bei „mindestens einmal“."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann eine Wahrscheinlichkeit über das Gegenereignis berechnen. Du brauchst die Ereignisse als
+      Pfade von der [vorigen Seite](/w4-zufall/ereignisse-pfade/).
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: gegenereignis-start
+        text: Aus der Urne mit 3 roten und 2 blauen Kugeln ziehst du zweimal ohne Zurücklegen. Welcher Pfad fehlt beim Ereignis „mindestens einmal rot“?
+        material:
+          - type: figure
+            image: images/w4-baum-ohne.svg
+            alt: "Baumdiagramm: 1. Stufe r 3/5 und b 2/5. Nach r: r 2/4 und b 2/4. Nach b: r 3/4 und b 1/4. Unten stehen rr, rb, br und bb."
+            caption: Vier Pfade, vier Ergebnisse.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: rr
+            correct: false
+            info: "Zweimal rot ist auch mindestens einmal."
+          - text: rb
+            correct: false
+            info: Die erste Kugel ist rot.
+          - text: br
+            correct: false
+            info: Die zweite Kugel ist rot.
+          - text: bb
+            correct: true
+            info: Bei bb ist keine Kugel rot.
+        explanation: "Zu mindestens einmal rot gehören rr, rb und br. Es fehlt bb."
+        links:
+          - title: Aufgaben zum Thema Ereignisse (Serlo)
+            url: https://de.serlo.org/mathe/25615/aufgaben-zum-thema-ereignisse
+  - type: section
+    id: regel
+    title: Den einen fehlenden Pfad rechnen
+    blocks:
+      - type: text
+        text: |
+          Zu „mindestens einmal rot“ gehören drei Pfade, es fehlt nur bb. Statt drei Pfade zu addieren, rechnest du
+          den einen fehlenden aus. Alle Pfade zusammen ergeben 1, denn irgendein Ergebnis kommt sicher heraus.
+      - type: figure
+        image: images/w4-gegenereignis.svg
+        alt: "Der Baum der Urne mit 3 roten und 2 blauen Kugeln. Unter rr, rb und br steht „mindestens einmal rot“, unter dem orangen bb „keinmal rot“."
+        caption: Die beiden Klammern teilen alle vier Pfade auf. Kein Pfad gehört zu beiden.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          Das **Gegenereignis** von E, kurz „nicht E“, sind alle Ergebnisse, die nicht zu E gehören. E und nicht E
+          ergeben zusammen 1:
+      - type: formula
+        formula: 'P(E) = 1 - P(\text{nicht } E)'
+      - type: formula
+        formula: 'P(bb) = \frac{2}{5} \cdot \frac{1}{4} = \frac{1}{10}'
+      - type: formula
+        formula: 'P(\text{mindestens einmal rot}) = 1 - \frac{1}{10} = \frac{9}{10}'
+      - type: table
+        caption: Ereignisse und ihre Gegenereignisse beim zweimaligen Ziehen
+        header: [Ereignis E, Gegenereignis nicht E]
+        rows:
+          - [mindestens einmal rot, keinmal rot (bb)]
+          - [höchstens einmal rot, zweimal rot (rr)]
+          - [genau einmal rot, "zweimal dieselbe Farbe (rr, bb)"]
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Mindestens eine Sechs
+        blocks:
+          - type: text
+            text: |
+              Du würfelst zweimal. Wie wahrscheinlich ist mindestens eine 6? Dazu gehören drei Pfade. Das
+              Gegenereignis „keine 6“ hat nur einen: zweimal keine 6, je mit 5/6.
+          - type: formula
+            formula: 'P(\text{keine } 6) = \frac{5}{6} \cdot \frac{5}{6} = \frac{25}{36}'
+          - type: formula
+            formula: 'P(\text{mindestens eine } 6) = 1 - \frac{25}{36} = \frac{11}{36}'
+          - type: text
+            text: |
+              Antwort – Mit der Wahrscheinlichkeit 11/36 fällt mindestens eine 6. Probe über die drei Pfade:
+              1/36 + 5/36 + 5/36 = 11/36. Beim Würfel ändert sich vom 1. zum 2. Wurf nichts, darum bleibt es bei 5/6.
+  - type: section
+    id: merke
+    title: Das Gegenteil von „mindestens einmal“
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Das Gegenereignis von „mindestens einmal rot“ ist „keinmal rot“ – nicht „höchstens einmal rot“.
+              Höchstens einmal rot enthält rb und br, und die gehören auch zu mindestens einmal rot. Prüfe: E und
+              nicht E haben keinen Pfad gemeinsam und zusammen alle Pfade.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: matching
+        id: gegenereignis-zuordnen
+        text: Du wirfst eine Münze zweimal (K Kopf, Z Zahl). Welches Gegenereignis gehört zu welchem Ereignis?
+        pairs:
+          - left: mindestens einmal Kopf
+            right: keinmal Kopf (ZZ)
+          - left: höchstens einmal Kopf
+            right: zweimal Kopf (KK)
+          - left: genau einmal Kopf
+            right: "zweimal dasselbe (KK, ZZ)"
+        distractors:
+          - "genau einmal Zahl (KZ, ZK)"
+        explanation: "Ereignis und Gegenereignis teilen KK, KZ, ZK und ZZ ohne Rest auf."
+        links:
+          - title: Aufgaben zum Thema Ereignisse (Serlo)
+            url: https://de.serlo.org/mathe/25615/aufgaben-zum-thema-ereignisse
+      - type: single-choice
+        id: gegenereignis-gluecksrad
+        text: Du drehst ein Glücksrad mit Gewinn- und Nietenfeldern zweimal. Was ist das Gegenereignis von „mindestens ein Gewinn“?
+        options:
+          - text: höchstens ein Gewinn
+            correct: false
+            info: "Das enthält „genau ein Gewinn“, und der gehört zu beiden."
+          - text: genau ein Gewinn
+            correct: false
+            info: "Das gehört zu „mindestens ein Gewinn“."
+          - text: kein Gewinn
+            correct: true
+            info: "Nur zweimal Niete fehlt bei „mindestens ein Gewinn“."
+          - text: zwei Gewinne
+            correct: false
+            info: "Das ist auch mindestens ein Gewinn."
+        explanation: "Alle Pfade außer Niete – Niete gehören dazu."
+        links:
+          - title: Aufgaben zum Thema Ereignisse (Serlo)
+            url: https://de.serlo.org/mathe/25615/aufgaben-zum-thema-ereignisse
+      - type: generated
+        id: gegenereignis-urne
+        given:
+          e: { pick: 1, from: { data: urnen } }
+          r: { int: [0, 3] }
+        task:
+          text: "In einer Urne liegen {{e.rot}} rote und {{e.blau}} blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Wie wahrscheinlich ist mindestens eine rote Kugel?"
+        answer:
+          value: "e.pMind"
+          compare:
+            {
+              choice: "[[e.pMind, e.pKein, e.pHoechstens, e.pMindMit], [e.pKein, e.pMind, e.pHoechstens, e.pMindMit], [e.pKein, e.pHoechstens, e.pMind, e.pMindMit], [e.pKein, e.pHoechstens, e.pMindMit, e.pMind]][r]",
+            }
+        mistakes:
+          - value: "e.pKein"
+            message: "Das ist P(keinmal rot). Ziehe es noch von 1 ab."
+          - value: "e.pHoechstens"
+            message: "Du hast 1 − P(rr) gerechnet. Das Gegenereignis ist aber keinmal rot."
+          - value: "e.pMindMit"
+            message: "So wäre es mit Zurücklegen."
+        hint: Welcher Pfad gehört nicht zu „mindestens einmal rot“?
+        steps:
+          - "Gegenereignis keinmal rot, Pfad bb: {{e.blau}}/{{e.n}} · {{e.blau1}}/{{e.n1}} = {{e.zBB}}/{{e.nn}}."
+          - "1 − {{e.zBB}}/{{e.nn}} = {{answer}}."
+      - type: generated
+        id: gegenereignis-gluecksrad-prozent
+        given:
+          n: { oneOf: [4, 5, 10] }
+          g: { int: [1, 9] }
+        where: ["g < n", "2 * g != n"]
+        task:
+          text: "Ein Glücksrad hat {{n}} gleich große Felder, {{g}} davon gewinnen. Du drehst zweimal. Wie wahrscheinlich ist mindestens ein Gewinn? Gib die Antwort in Prozent an, sie geht auf."
+        answer:
+          { value: "100 - 100 * (n - g) * (n - g) / (n * n)", compare: { number: { format: percent, decimals: 2 } } }
+        mistakes:
+          - value: "100 * (n - g) * (n - g) / (n * n)"
+            message: "Das ist P(kein Gewinn). Ziehe es noch von 100 % ab."
+          - value: "100 - 100 * g * g / (n * n)"
+            message: "Du hast 1 − P(zwei Gewinne) gerechnet. Das Gegenereignis ist kein Gewinn."
+          - value: "200 * g * (n - g) / (n * n)"
+            message: "Das ist „genau ein Gewinn“."
+        hint: Was ist das Gegenereignis? Wie wahrscheinlich ist eine Niete bei einem Dreh?
+        steps:
+          - 'Gegenereignis kein Gewinn, also zweimal Niete: $\frac{ {{n}} - {{g}} }{ {{n}} } \cdot \frac{ {{n}} - {{g}} }{ {{n}} }$.'
+          - "Das von 1, also von 100 %, abziehen: P(mindestens ein Gewinn) = {{answer}} %."
+      - type: single-choice
+        id: gegenereignis-gerade
+        text: Du würfelst zweimal. Wie wahrscheinlich ist es, dass mindestens einmal eine gerade Zahl fällt?
+        options:
+          - text: 1/4
+            correct: false
+            info: "1/4 gehört zu zweimal ungerade, dem Gegenereignis."
+          - text: 1/2
+            correct: false
+            info: "1/2 gilt für einen Wurf."
+          - text: "1"
+            correct: false
+            info: "1/2 + 1/2 – aber zweimal ungerade ist möglich."
+          - text: 3/4
+            correct: true
+            info: "1 − 1/4 = 3/4."
+        explanation: "Keinmal gerade: 1/2 · 1/2 = 1/4. Also 1 − 1/4 = 3/4."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: number
+        id: gegenereignis-rueckwaerts
+        text: In einer Urne liegen 5 rote und blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Die Wahrscheinlichkeit für mindestens eine rote Kugel ist 9/10. Wie viele Kugeln sind rot?
+        answer: 3
+        tolerance: 0
+        unit: Kugeln
+        mistakes:
+          - answer: 2
+            message: "Dann wäre P(keinmal rot) = 3/5 · 2/4 = 3/10, zu groß."
+          - answer: 4
+            message: "Dann ist nur 1 blau, und eine rote kommt sicher."
+        hint: "Rechne mit dem Gegenereignis: P(keinmal rot) = 1/10. Wie viele blaue Kugeln passen dazu?"
+        explanation: "P(bb) = 1/10, und 2/5 · 1/4 = 1/10. Also 2 blaue und 3 rote Kugeln."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: text
+        text: |
+          Damit bist du am Ende der App: Du hast alle acht Pflichtthemen und die vier Wahlaufgaben wiederholt. Viel
+          Erfolg im Wettbewerb! Ein Tipp für die letzten Tage: Wo du dich bei der Selbsteinschätzung eines Kapitels
+          noch unsicher fühlst, rechne seine Aufgaben noch einmal – viele bekommen jedes Mal neue Zahlen.

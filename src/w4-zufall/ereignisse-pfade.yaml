@@ -1,0 +1,231 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Ereignisse als Pfade
+description: "„Genau einmal“, „mindestens einmal“ und „höchstens einmal“ in Pfade des Baumdiagramms übersetzen und ihre Wahrscheinlichkeiten addieren."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann „genau einmal“, „mindestens einmal“ und „höchstens einmal“ den Pfaden zuordnen. Du nutzt
+      den Baum der [vorigen Seite](/w4-zufall/ohne-zuruecklegen/) und die 2. Pfadregel: Pfade eines Ereignisses
+      werden addiert.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: multiple-choice
+        id: ereignisse-pfade-start
+        text: Aus der Urne mit 3 roten und 2 blauen Kugeln ziehst du zweimal ohne Zurücklegen. Welche Pfade gehören zum Ereignis „genau einmal rot“?
+        material:
+          - type: figure
+            image: images/w4-baum-ohne.svg
+            alt: "Baumdiagramm: 1. Stufe r 3/5 und b 2/5. Nach r: r 2/4 und b 2/4. Nach b: r 3/4 und b 1/4. Unten stehen rr, rb, br und bb."
+            caption: Jeder Pfad endet unten bei einem Ergebnis aus zwei Buchstaben.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: rr
+            correct: false
+            info: Bei rr ist zweimal rot.
+          - text: rb
+            correct: true
+            info: Erst rot, dann blau.
+          - text: br
+            correct: true
+            info: Erst blau, dann rot.
+          - text: bb
+            correct: false
+            info: Bei bb ist keine rot.
+        explanation: "Die rote Kugel kommt im 1. oder im 2. Zug: rb und br."
+        links:
+          - title: Aufgaben zum Thema Ereignisse (Serlo)
+            url: https://de.serlo.org/mathe/25615/aufgaben-zum-thema-ereignisse
+  - type: section
+    id: regel
+    title: Wörter in Pfade übersetzen
+    blocks:
+      - type: text
+        text: |
+          „Genau einmal rot“ heißt: eine Kugel rot, die andere nicht. Die rote kann zuerst oder als zweite kommen –
+          darum gehören zwei Pfade dazu, rb und br. So übersetzt du auch die anderen Wörter. „Mindestens einmal“
+          heißt „einmal oder öfter“, „höchstens einmal“ heißt „einmal oder gar nicht“.
+      - type: table
+        caption: Ereignisse beim zweimaligen Ziehen und ihre Pfade
+        header: [Ereignis, Pfade, kurz]
+        rows:
+          - [genau einmal rot, "rb, br", eine rot und eine blau]
+          - [mindestens einmal rot, "rr, rb, br", alle außer bb]
+          - [höchstens einmal rot, "rb, br, bb", alle außer rr]
+          - [keinmal rot, bb, zweimal blau]
+      - type: text
+        text: |
+          Die Wahrscheinlichkeit eines Ereignisses ist die Summe seiner Pfade. Für „genau einmal rot“ mit dem Baum
+          oben:
+      - type: formula
+        formula: 'P(rb) = \frac{3}{5} \cdot \frac{2}{4} = \frac{6}{20}'
+      - type: formula
+        formula: 'P(br) = \frac{2}{5} \cdot \frac{3}{4} = \frac{6}{20}'
+      - type: formula
+        formula: 'P(rb) + P(br) = \frac{12}{20} = \frac{3}{5}'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Mindestens ein Erdbeerbonbon
+        blocks:
+          - type: text
+            text: |
+              In einer Tüte sind 4 Schokobonbons (s) und 2 Erdbeerbonbons (e). Du nimmst ohne hinzusehen zwei. Wie
+              wahrscheinlich ist mindestens ein Erdbeerbonbon? Dazu gehören drei Pfade: se, es und ee.
+          - type: formula
+            formula: 'P(se) = \frac{4}{6} \cdot \frac{2}{5} = \frac{8}{30}'
+          - type: formula
+            formula: 'P(es) = \frac{2}{6} \cdot \frac{4}{5} = \frac{8}{30}'
+          - type: formula
+            formula: 'P(ee) = \frac{2}{6} \cdot \frac{1}{5} = \frac{2}{30}'
+          - type: formula
+            formula: '\frac{8}{30} + \frac{8}{30} + \frac{2}{30} = \frac{18}{30} = \frac{3}{5}'
+          - type: text
+            text: |
+              Antwort – Mit der Wahrscheinlichkeit 3/5 ist mindestens ein Erdbeerbonbon dabei. Der Haken: ee gehört
+              auch dazu, denn zwei sind mindestens eins. Drei Pfade sind mühsam – auf der nächsten Seite geht es
+              schneller.
+  - type: section
+    id: merke
+    title: Genau einmal hat zwei Pfade
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Bei zwei Zügen hat „genau einmal“ immer zwei Pfade: Das Gesuchte kommt im 1. oder im 2. Zug. Wer nur
+              rb zählt, bekommt die halbe Wahrscheinlichkeit. „Mindestens einmal“ schließt „zweimal“ ein,
+              „höchstens einmal“ schließt „keinmal“ ein.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: matching
+        id: ereignisse-pfade-zuordnen
+        text: Du ziehst zweimal aus einer Urne mit roten und blauen Kugeln. Welche Pfade gehören zu welchem Ereignis?
+        pairs:
+          - left: genau einmal rot
+            right: Pfade rb und br
+          - left: mindestens einmal rot
+            right: Pfade rr, rb und br
+          - left: höchstens einmal rot
+            right: Pfade rb, br und bb
+          - left: zweimal dieselbe Farbe
+            right: Pfade rr und bb
+        distractors:
+          - nur der Pfad rb
+        explanation: "„Mindestens einmal“ nimmt rr dazu, „höchstens einmal“ nimmt bb dazu."
+        links:
+          - title: Aufgaben zum Thema Ereignisse (Serlo)
+            url: https://de.serlo.org/mathe/25615/aufgaben-zum-thema-ereignisse
+      - type: single-choice
+        id: ereignisse-pfade-hoechstens
+        text: Was bedeutet „höchstens einmal blau“ beim zweimaligen Ziehen?
+        options:
+          - text: kein- oder einmal blau
+            correct: true
+            info: "Nicht öfter als einmal – keinmal gehört dazu."
+          - text: genau einmal blau
+            correct: false
+            info: "Das ist nur ein Teil. Keinmal blau gehört auch dazu."
+          - text: ein- oder zweimal blau
+            correct: false
+            info: "Das ist „mindestens einmal blau“."
+          - text: zweimal blau
+            correct: false
+            info: Zweimal blau ist gerade ausgeschlossen.
+        explanation: "Dazu gehören rr, rb und br – alle Pfade außer bb."
+        links:
+          - title: Aufgaben zum Thema Ereignisse (Serlo)
+            url: https://de.serlo.org/mathe/25615/aufgaben-zum-thema-ereignisse
+      - type: generated
+        id: ereignisse-pfade-genau
+        given:
+          e: { pick: 1, from: { data: urnen } }
+          r: { int: [0, 3] }
+        task:
+          text: "In einer Urne liegen {{e.rot}} rote und {{e.blau}} blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Wie wahrscheinlich ist genau eine rote Kugel?"
+        answer:
+          value: "e.pGenau"
+          compare:
+            {
+              choice: "[[e.pGenau, e.pEinPfad, e.pGenauMit, e.pMind], [e.pEinPfad, e.pGenau, e.pGenauMit, e.pMind], [e.pEinPfad, e.pGenauMit, e.pGenau, e.pMind], [e.pEinPfad, e.pGenauMit, e.pMind, e.pGenau]][r]",
+            }
+        mistakes:
+          - value: "e.pEinPfad"
+            message: "Du hast nur rb gezählt. Auch br gehört dazu."
+          - value: "e.pGenauMit"
+            message: "So wäre es mit Zurücklegen."
+          - value: "e.pMind"
+            message: "Das ist „mindestens einmal rot“, mit rr."
+        hint: Welche zwei Pfade gehören zu „genau einmal rot“?
+        steps:
+          - "Pfad rb: {{e.rot}}/{{e.n}} · {{e.blau}}/{{e.n1}} = {{e.zRB}}/{{e.nn}}. Pfad br: {{e.blau}}/{{e.n}} · {{e.rot}}/{{e.n1}} = {{e.zRB}}/{{e.nn}}."
+          - "Beide Pfade addieren: {{e.zGenau}}/{{e.nn}}, gekürzt {{answer}}."
+      - type: generated
+        id: ereignisse-pfade-hoechstens-rot
+        given:
+          e: { pick: 1, from: { data: urnen } }
+          r: { int: [0, 3] }
+        task:
+          text: "In einer Urne liegen {{e.rot}} rote und {{e.blau}} blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Wie wahrscheinlich ist höchstens eine rote Kugel?"
+        answer:
+          value: "e.pHoechstens"
+          compare:
+            {
+              choice: "[[e.pHoechstens, e.pGenau, e.pMind, e.pHoechstensMit], [e.pGenau, e.pHoechstens, e.pMind, e.pHoechstensMit], [e.pGenau, e.pMind, e.pHoechstens, e.pHoechstensMit], [e.pGenau, e.pMind, e.pHoechstensMit, e.pHoechstens]][r]",
+            }
+        mistakes:
+          - value: "e.pGenau"
+            message: "Du hast bb vergessen. Keinmal rot gehört auch dazu."
+          - value: "e.pMind"
+            message: "Das ist „mindestens einmal rot“."
+          - value: "e.pHoechstensMit"
+            message: "So wäre es mit Zurücklegen."
+        hint: Welche drei Pfade gehören zu „höchstens einmal rot“?
+        steps:
+          - "Pfade rb und br: je {{e.zRB}}/{{e.nn}}. Pfad bb: {{e.blau}}/{{e.n}} · {{e.blau1}}/{{e.n1}} = {{e.zBB}}/{{e.nn}}."
+          - "Die drei Pfade addieren und kürzen: {{answer}}."
+      - type: single-choice
+        id: ereignisse-pfade-gluecksrad
+        text: Ein Glücksrad hat 4 gleich große Felder, eines davon gewinnt. Du drehst zweimal. Wie wahrscheinlich ist genau ein Gewinn?
+        options:
+          - text: 3/16
+            correct: false
+            info: "Das ist nur der Pfad Gewinn – Niete."
+          - text: 3/8
+            correct: true
+            info: "Zwei Pfade mit je 3/16."
+          - text: 7/16
+            correct: false
+            info: "Das ist „mindestens ein Gewinn“."
+          - text: 1/2
+            correct: false
+            info: "1/4 + 1/4: Entlang eines Pfades wird multipliziert."
+        explanation: "1/4 · 3/4 + 3/4 · 1/4 = 6/16 = 3/8. Beim Glücksrad bleibt jeder Dreh gleich."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: number
+        id: ereignisse-pfade-auslosen
+        text: "Aus 3 Mädchen und 2 Jungen werden zwei Kinder für den Tafeldienst ausgelost. Wie wahrscheinlich sind ein Mädchen und ein Junge? Gib die Antwort in Prozent an, sie geht auf."
+        answer: 60
+        tolerance: 0
+        unit: "%"
+        mistakes:
+          - answer: 30
+            message: "Du hast nur einen Pfad gezählt. Es geht auch umgekehrt."
+          - answer: 48
+            message: "So wäre es mit Zurücklegen. Danach sind nur noch 4 Kinder übrig."
+        hint: Zeichne den Baum mit M und J. Welche Pfade passen?
+        explanation: "MJ: 3/5 · 2/4 = 6/20, JM: 2/5 · 3/4 = 6/20. Zusammen 12/20 = 60 %."
+        links:
+          - title: Mehrstufige Zufallsexperimente (Serlo)
+            url: https://de.serlo.org/mathe/156048/mehrstufige-zufallsexperimente
+      - type: text
+        text: Als Nächstes lernst du einen kürzeren Weg für „mindestens einmal“ kennen – über das Gegenereignis.

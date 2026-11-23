@@ -1,0 +1,218 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Ziehen ohne Zurücklegen
+description: "Beim Ziehen ohne Zurücklegen die Wahrscheinlichkeiten der 2. Stufe anpassen – an der Urne vorher und nachher und im Baumdiagramm."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann beim Ziehen ohne Zurücklegen die Wahrscheinlichkeiten anpassen. Du brauchst dafür das
+      Baumdiagramm und die [Pfadregeln](/wahrscheinlichkeit/pfadregeln/) aus dem Kapitel Wahrscheinlichkeit. Dort
+      wurde jede Kugel zurückgelegt.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: ohne-zuruecklegen-start
+        text: Du ziehst aus dieser Urne eine rote Kugel und legst sie nicht zurück. Wie wahrscheinlich ist die zweite Kugel auch rot?
+        material:
+          - type: figure
+            image: images/w4-urne-start.svg
+            alt: Eine Urne mit 3 roten Kugeln (r) und 2 blauen Kugeln (b).
+            caption: So sieht die Urne vor dem 1. Zug aus.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 3/5
+            correct: false
+            info: Die rote Kugel fehlt jetzt in der Urne.
+          - text: 2/5
+            correct: false
+            info: "2 rote stimmt, aber es sind nur noch 4 Kugeln da."
+          - text: 1/2
+            correct: true
+            info: "Noch 4 Kugeln, 2 davon rot: 2/4 = 1/2."
+          - text: 3/4
+            correct: false
+            info: "3/4 passt, wenn zuerst eine blaue Kugel kam."
+        explanation: "Übrig sind 2 rote und 2 blaue Kugeln: P(rot) = 2/4 = 1/2."
+        links:
+          - title: Mehrstufige Zufallsexperimente (Serlo)
+            url: https://de.serlo.org/mathe/156048/mehrstufige-zufallsexperimente
+  - type: section
+    id: regel
+    title: Die Urne verändert sich
+    blocks:
+      - type: text
+        text: |
+          Nach dem 1. Zug fehlt eine Kugel: Es sind nur noch 4 Kugeln in der Urne, und eine rote weniger. Darum ist
+          die Wahrscheinlichkeit für Rot im 2. Zug 2/4 = 1/2 – wie in der Aufgabe oben.
+      - type: figure
+        image: images/w4-urne-vorher-nachher.svg
+        alt: "Links die Urne vor dem 1. Zug: 3 rote und 2 blaue Kugeln. In der Mitte die gezogene rote Kugel. Rechts die Urne vor dem 2. Zug: 2 rote und 2 blaue Kugeln."
+        caption: Vergleiche die beiden Urnen. Was ist im 2. Zug anders – die Zahl aller Kugeln und die Zahl der roten?
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          War die erste Kugel blau, sind danach 3 rote und 1 blaue Kugel übrig. Die 2. Stufe des Baums hängt also
+          vom 1. Zug ab: Der Nenner ist überall um 1 kleiner. Der Zähler ist nur bei der Farbe kleiner, die schon
+          gezogen wurde.
+      - type: figure
+        image: images/w4-baum-ohne.svg
+        alt: "Baumdiagramm: 1. Stufe r 3/5 und b 2/5. Nach r: r 2/4 und b 2/4. Nach b: r 3/4 und b 1/4. Unten stehen rr, rb, br und bb."
+        caption: Unter r und unter b stehen verschiedene Brüche. An jedem Knoten ergeben die Äste zusammen 1.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'P(rr) = \frac{3}{5} \cdot \frac{2}{4} = \frac{6}{20} = \frac{3}{10}'
+      - type: text
+        text: |
+          Mit Zurücklegen wäre $P(rr) = \frac{3}{5} \cdot \frac{3}{5} = \frac{9}{25}$. Die Pfadregeln bleiben
+          gleich, nur die Brüche der 2. Stufe ändern sich.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Zwei Gewinne aus der Lostrommel
+        blocks:
+          - type: text
+            text: |
+              In einer Lostrommel sind 10 Lose, 2 davon Gewinne. Du ziehst nacheinander zwei Lose. Wie
+              wahrscheinlich sind zwei Gewinne? Nach dem ersten Gewinn sind noch 9 Lose da, aber nur 1 Gewinn.
+          - type: formula
+            formula: 'P(GG) = \frac{2}{10} \cdot \frac{1}{9} = \frac{2}{90} = \frac{1}{45}'
+          - type: text
+            text: |
+              Antwort – Die Wahrscheinlichkeit ist 1/45. Der Haken: Mit 2/10 · 2/10 = 1/25 wäre sie fast doppelt
+              so groß. Ein gezogenes Los kommt aber nicht zurück in die Trommel.
+  - type: section
+    id: merke
+    title: Der Nenner wird kleiner
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Ohne Zurücklegen ist im 2. Zug der Nenner um 1 kleiner – und der Zähler der Farbe, die schon gezogen
+              wurde, auch. Wer den alten Nenner behält, rechnet so, als läge die Kugel noch in der Urne. Prüfe an
+              jedem Knoten: Die Äste ergeben zusammen 1.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: ohne-zuruecklegen-ast
+        text: Aus einer Urne mit 4 roten und 3 blauen Kugeln ziehst du zweimal ohne Zurücklegen. Was gehört an den Ast mit dem Fragezeichen?
+        material:
+          - type: figure
+            image: images/w4-baum-frage.svg
+            alt: "Baumdiagramm: 1. Stufe r 4/7 und b 3/7. Nach r: r 3/6 und b 3/6. Nach b steht am Ast r nichts, am Ast b ein Fragezeichen."
+            caption: Der Ast mit dem Fragezeichen gehört zum Pfad bb.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: 3/7
+            correct: false
+            info: Es fehlt eine Kugel.
+          - text: 2/7
+            correct: false
+            info: "2 blaue stimmt, aber der Nenner ist auch kleiner."
+          - text: 1/2
+            correct: false
+            info: "3/6 hieße: noch 3 blaue. Eine ist aber gezogen."
+          - text: 1/3
+            correct: true
+            info: "Noch 2 blaue unter 6 Kugeln: 2/6 = 1/3."
+        explanation: "Nach blau sind 4 rote und 2 blaue übrig: P(blau) = 2/6 = 1/3."
+        links:
+          - title: Mehrstufige Zufallsexperimente (Serlo)
+            url: https://de.serlo.org/mathe/156048/mehrstufige-zufallsexperimente
+      - type: generated
+        id: ohne-zuruecklegen-zweimal-rot
+        given:
+          e: { pick: 1, from: { data: urnen } }
+          r: { int: [0, 3] }
+        task:
+          text: "In einer Urne liegen {{e.rot}} rote und {{e.blau}} blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Wie wahrscheinlich ist zweimal rot?"
+        answer:
+          value: "e.prr"
+          compare:
+            {
+              choice: "[[e.prr, e.prrMit, e.prrAlterNenner, e.prrZaehler], [e.prrMit, e.prr, e.prrAlterNenner, e.prrZaehler], [e.prrMit, e.prrAlterNenner, e.prr, e.prrZaehler], [e.prrMit, e.prrAlterNenner, e.prrZaehler, e.prr]][r]",
+            }
+        mistakes:
+          - value: "e.prrMit"
+            message: "Die erste rote Kugel liegt nicht mehr in der Urne."
+          - value: "e.prrAlterNenner"
+            message: "Du hast den alten Nenner behalten. Es liegt eine Kugel weniger in der Urne."
+          - value: "e.prrZaehler"
+            message: "Auch eine rote Kugel fehlt: Der Zähler wird kleiner."
+        hint: Wie viele Kugeln, wie viele rote sind nach dem 1. Zug noch da?
+        steps:
+          - "1. Zug rot: {{e.rot}}/{{e.n}}. Danach liegen noch {{e.n1}} Kugeln in der Urne, {{e.rot1}} davon rot: {{e.rot1}}/{{e.n1}}."
+          - "Entlang des Pfades multiplizieren: {{e.zRR}}/{{e.nn}}, gekürzt {{answer}}."
+      - type: generated
+        id: ohne-zuruecklegen-lose
+        given:
+          n: { oneOf: [4, 5, 10] }
+          g: { int: [2, 9] }
+        where:
+          - "g < n"
+          - "decimals(100 * g * (g - 1) / (n * (n - 1))) == 0"
+          - "decimals(100 * g * g / (n * n)) <= 2"
+          - "decimals(100 * g * (g - 1) / (n * n)) <= 2"
+          - "decimals(100 * g * g / (n * (n - 1))) <= 2"
+        task:
+          text: "In einer Schachtel liegen {{n}} Lose, {{g}} davon sind Gewinne. Du ziehst nacheinander 2 Lose ohne Zurücklegen. Wie wahrscheinlich sind zwei Gewinne? Gib die Antwort in Prozent an, sie geht auf."
+        answer: { value: "100 * g * (g - 1) / (n * (n - 1))", compare: { number: { format: percent, decimals: 2 } } }
+        mistakes:
+          - value: "100 * g * g / (n * n)"
+            message: "Das erste Los kommt nicht zurück."
+          - value: "100 * g * (g - 1) / (n * n)"
+            message: "Du hast den alten Nenner behalten. Es ist ein Los weniger da."
+          - value: "100 * g * g / (n * (n - 1))"
+            message: "Auch ein Gewinn fehlt: Der Zähler wird kleiner."
+        hint: Wie viele Lose und Gewinne sind nach dem ersten Gewinn noch da?
+        steps:
+          - "1. Los Gewinn: {{g}} von {{n}}. Danach sind noch {{n}} − 1 Lose da, davon {{g}} − 1 Gewinne."
+          - '$\frac{ {{g}} }{ {{n}} } \cdot \frac{ {{g}} - 1}{ {{n}} - 1}$ ergibt {{answer}} %.'
+      - type: single-choice
+        id: ohne-zuruecklegen-gummibaerchen
+        text: In einer Tüte sind 4 rote und 6 grüne Gummibärchen. Du nimmst ohne hinzusehen nacheinander zwei heraus und isst sie. Wie wahrscheinlich sind beide grün?
+        options:
+          - text: 9/25
+            correct: false
+            info: "6/10 · 6/10 – als käme das erste zurück."
+          - text: 1/3
+            correct: true
+            info: "Erst 6 von 10, dann 5 von 9."
+          - text: 3/10
+            correct: false
+            info: "6/10 · 5/10 – es sind aber nur noch 9 in der Tüte."
+          - text: 2/5
+            correct: false
+            info: "6/10 · 6/9 – es sind aber nur noch 5 grüne da."
+        explanation: "6/10 · 5/9 = 30/90 = 1/3."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: number
+        id: ohne-zuruecklegen-rueckwaerts
+        text: In einer Urne liegen 6 rote und blaue Kugeln. Du ziehst zweimal ohne Zurücklegen. Die Wahrscheinlichkeit für zweimal rot ist 1/5. Wie viele Kugeln sind rot?
+        answer: 3
+        tolerance: 0
+        unit: Kugeln
+        mistakes:
+          - answer: 2
+            message: "Dann wäre P(rr) = 2/6 · 1/5 = 1/15, zu klein."
+          - answer: 4
+            message: "Dann wäre P(rr) = 4/6 · 3/5 = 2/5, zu groß."
+        hint: "Probiere aus: Bei r roten Kugeln ist P(rr) = r/6 · (r − 1)/5."
+        explanation: "3/6 · 2/5 = 6/30 = 1/5."
+        links:
+          - title: Pfadregeln (Serlo)
+            url: https://de.serlo.org/mathe/189811/pfadregeln
+      - type: text
+        text: Als Nächstes übersetzt du Ereignisse wie „genau einmal rot“ oder „mindestens einmal rot“ in Pfade des Baums.
