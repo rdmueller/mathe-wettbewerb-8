@@ -1,0 +1,282 @@
+# Gegebene Stücke eines Dreiecks ABC (gegen den Uhrzeigersinn, Seite a gegenüber A, α bei A) und welcher
+# Kongruenzsatz passt. Jeder Datensatz von Hand geprüft: SSS mit Dreiecksungleichung; SsW mit dem Winkel gegenüber der
+# längeren Seite; sSW so gewählt, dass es wirklich zwei Dreiecke gibt (Höhe zur freien Ecke < kürzere Seite < längere
+# Seite); bei zwei Winkeln, die nicht beide an der Seite liegen (SWW), wird mit der Winkelsumme WSW daraus.
+# Felder:
+# stuecke = die Angabe der Aufgabe; satz = der passende Satz; lage = warum (für die Lösungsschritte);
+# verwechselt = der Satz, der bei einem typischen Fehler herauskommt, warum = Rückmeldung dazu (sagt nicht die Lösung);
+# eindeutig/gegenteil = "eindeutig" oder "nicht eindeutig" und das Gegenteil, begruendung = Rückmeldung, wenn jemand
+# das Gegenteil wählt;
+# winkel, ecke, gegenueber, anliegend = ein gegebener Winkel, seine Ecke, die Seite gegenüber, eine Seite an der Ecke
+# ("–" bei SSS);
+# zuerst = was man zuerst zeichnet, zuerstFalsch1/2 = zwei falsche Wahlen ("–" bei sSW und WWW).
+- stuecke: "a = 5 cm, b = 7 cm, γ = 40°"
+  satz: SWS
+  lage: "γ liegt bei C. Dort treffen sich a und b: Der Winkel liegt zwischen den beiden Seiten."
+  verwechselt: SsW
+  warum: "Prüfe, wo γ liegt: an der Ecke C. Welche Seiten treffen sich dort?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Zwei Seiten und der Winkel zwischen ihnen legen das Dreieck fest. Es gibt nur eine Möglichkeit."
+  winkel: γ
+  ecke: C
+  gegenueber: c
+  anliegend: a
+  zuerst: die Seite a
+  zuerstFalsch1: den Winkel γ
+  zuerstFalsch2: die Seite c
+- stuecke: "b = 6 cm, c = 4 cm, α = 55°"
+  satz: SWS
+  lage: "α liegt bei A. Dort treffen sich b und c: Der Winkel liegt zwischen den beiden Seiten."
+  verwechselt: SsW
+  warum: "Prüfe, wo α liegt: an der Ecke A. Welche Seiten treffen sich dort?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Zwei Seiten und der Winkel zwischen ihnen legen das Dreieck fest. Es gibt nur eine Möglichkeit."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: b
+  zuerst: die Seite c
+  zuerstFalsch1: den Winkel α
+  zuerstFalsch2: die Seite a
+- stuecke: "a = 6 cm, c = 8 cm, β = 70°"
+  satz: SWS
+  lage: "β liegt bei B. Dort treffen sich a und c: Der Winkel liegt zwischen den beiden Seiten."
+  verwechselt: SsW
+  warum: "Prüfe, wo β liegt: an der Ecke B. Welche Seiten treffen sich dort?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Zwei Seiten und der Winkel zwischen ihnen legen das Dreieck fest. Es gibt nur eine Möglichkeit."
+  winkel: β
+  ecke: B
+  gegenueber: b
+  anliegend: c
+  zuerst: die Seite c
+  zuerstFalsch1: den Winkel β
+  zuerstFalsch2: die Seite b
+- stuecke: "a = 4 cm, b = 5 cm, c = 6 cm"
+  satz: SSS
+  lage: "Gegeben sind drei Seiten. 4 cm + 5 cm sind länger als 6 cm, also gibt es das Dreieck."
+  verwechselt: SWS
+  warum: "Zähle nach: Ist überhaupt ein Winkel gegeben?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Drei Seiten legen das Dreieck fest: Die zwei Kreise um A und B schneiden sich oberhalb von c nur einmal."
+  winkel: "–"
+  ecke: "–"
+  gegenueber: "–"
+  anliegend: "–"
+  zuerst: die Seite c
+  zuerstFalsch1: den Winkel γ
+  zuerstFalsch2: den Punkt C
+- stuecke: "a = 7 cm, b = 3 cm, c = 5 cm"
+  satz: SSS
+  lage: "Gegeben sind drei Seiten. 3 cm + 5 cm sind länger als 7 cm, also gibt es das Dreieck."
+  verwechselt: SWS
+  warum: "Zähle nach: Ist überhaupt ein Winkel gegeben?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Drei Seiten legen das Dreieck fest: Die zwei Kreise um A und B schneiden sich oberhalb von c nur einmal."
+  winkel: "–"
+  ecke: "–"
+  gegenueber: "–"
+  anliegend: "–"
+  zuerst: die Seite c
+  zuerstFalsch1: den Winkel α
+  zuerstFalsch2: den Punkt C
+- stuecke: "c = 6 cm, α = 40°, β = 75°"
+  satz: WSW
+  lage: "α liegt bei A, β bei B. Beide liegen an der Seite c = AB."
+  verwechselt: SWS
+  warum: "Zähle nach: Wie viele Seiten und wie viele Winkel sind gegeben?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Eine Seite und die zwei Winkel an ihr legen das Dreieck fest: Die freien Schenkel schneiden sich nur einmal."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: c
+  zuerst: die Seite c
+  zuerstFalsch1: den Winkel α
+  zuerstFalsch2: die Seite a
+- stuecke: "b = 5 cm, α = 50°, γ = 60°"
+  satz: WSW
+  lage: "α liegt bei A, γ bei C. Beide liegen an der Seite b = CA."
+  verwechselt: SWS
+  warum: "Zähle nach: Wie viele Seiten und wie viele Winkel sind gegeben?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Eine Seite und die zwei Winkel an ihr legen das Dreieck fest: Die freien Schenkel schneiden sich nur einmal."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: b
+  zuerst: die Seite b
+  zuerstFalsch1: den Winkel α
+  zuerstFalsch2: die Seite c
+- stuecke: "a = 6 cm, β = 45°, γ = 80°"
+  satz: WSW
+  lage: "β liegt bei B, γ bei C. Beide liegen an der Seite a = BC."
+  verwechselt: SWS
+  warum: "Zähle nach: Wie viele Seiten und wie viele Winkel sind gegeben?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Eine Seite und die zwei Winkel an ihr legen das Dreieck fest: Die freien Schenkel schneiden sich nur einmal."
+  winkel: β
+  ecke: B
+  gegenueber: b
+  anliegend: a
+  zuerst: die Seite a
+  zuerstFalsch1: den Winkel γ
+  zuerstFalsch2: die Seite b
+- stuecke: "c = 7 cm, α = 50°, γ = 70°"
+  satz: WSW
+  lage: "γ liegt nicht an c. Mit der Winkelsumme ist β = 180° − 50° − 70° = 60°. Dann liegen α und β an c."
+  verwechselt: SWS
+  warum: "Rechne mit der Winkelsumme den dritten Winkel aus. Liegen dann zwei Winkel an der gegebenen Seite?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Mit der Winkelsumme kennst du alle drei Winkel, also auch die zwei an c. Das legt das Dreieck fest."
+  winkel: γ
+  ecke: C
+  gegenueber: c
+  anliegend: a
+  zuerst: die Seite c
+  zuerstFalsch1: den Winkel γ
+  zuerstFalsch2: die Seite a
+- stuecke: "a = 5 cm, α = 65°, β = 45°"
+  satz: WSW
+  lage: "α liegt nicht an a. Mit der Winkelsumme ist γ = 180° − 65° − 45° = 70°. Dann liegen β und γ an a."
+  verwechselt: SWS
+  warum: "Rechne mit der Winkelsumme den dritten Winkel aus. Liegen dann zwei Winkel an der gegebenen Seite?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Mit der Winkelsumme kennst du alle drei Winkel, also auch die zwei an a. Das legt das Dreieck fest."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: b
+  zuerst: die Seite a
+  zuerstFalsch1: den Winkel α
+  zuerstFalsch2: die Seite c
+- stuecke: "a = 7 cm, b = 5 cm, α = 60°"
+  satz: SsW
+  lage: "α liegt a gegenüber, und a ist die längere der beiden Seiten."
+  verwechselt: sSW
+  warum: "Prüfe, welcher Seite der Winkel gegenüberliegt: der längeren oder der kürzeren?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Der Winkel liegt der längeren Seite gegenüber. Dann schneidet der Kreis den freien Schenkel nur einmal."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: b
+  zuerst: die Seite b
+  zuerstFalsch1: den Winkel α
+  zuerstFalsch2: die Seite a
+- stuecke: "b = 8 cm, c = 6 cm, β = 50°"
+  satz: SsW
+  lage: "β liegt b gegenüber, und b ist die längere der beiden Seiten."
+  verwechselt: sSW
+  warum: "Prüfe, welcher Seite der Winkel gegenüberliegt: der längeren oder der kürzeren?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Der Winkel liegt der längeren Seite gegenüber. Dann schneidet der Kreis den freien Schenkel nur einmal."
+  winkel: β
+  ecke: B
+  gegenueber: b
+  anliegend: c
+  zuerst: die Seite c
+  zuerstFalsch1: den Winkel β
+  zuerstFalsch2: die Seite b
+- stuecke: "a = 4 cm, c = 6 cm, γ = 70°"
+  satz: SsW
+  lage: "γ liegt c gegenüber, und c ist die längere der beiden Seiten."
+  verwechselt: sSW
+  warum: "Prüfe, welcher Seite der Winkel gegenüberliegt: der längeren oder der kürzeren?"
+  eindeutig: eindeutig
+  gegenteil: nicht eindeutig
+  begruendung: "Der Winkel liegt der längeren Seite gegenüber. Dann schneidet der Kreis den freien Schenkel nur einmal."
+  winkel: γ
+  ecke: C
+  gegenueber: c
+  anliegend: a
+  zuerst: die Seite a
+  zuerstFalsch1: den Winkel γ
+  zuerstFalsch2: die Seite c
+- stuecke: "a = 4 cm, b = 6 cm, α = 30°"
+  satz: sSW
+  lage: "α liegt a gegenüber, und a ist die kürzere der beiden Seiten."
+  verwechselt: SsW
+  warum: "Prüfe, welcher Seite der Winkel gegenüberliegt: der längeren oder der kürzeren?"
+  eindeutig: nicht eindeutig
+  gegenteil: eindeutig
+  begruendung: "Der Winkel liegt der kürzeren Seite gegenüber. Der Kreis um C kann den freien Schenkel zweimal schneiden."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: b
+  zuerst: "–"
+  zuerstFalsch1: "–"
+  zuerstFalsch2: "–"
+- stuecke: "b = 5 cm, c = 7 cm, β = 40°"
+  satz: sSW
+  lage: "β liegt b gegenüber, und b ist die kürzere der beiden Seiten."
+  verwechselt: SsW
+  warum: "Prüfe, welcher Seite der Winkel gegenüberliegt: der längeren oder der kürzeren?"
+  eindeutig: nicht eindeutig
+  gegenteil: eindeutig
+  begruendung: "Der Winkel liegt der kürzeren Seite gegenüber. Der Kreis um A kann den freien Schenkel zweimal schneiden."
+  winkel: β
+  ecke: B
+  gegenueber: b
+  anliegend: c
+  zuerst: "–"
+  zuerstFalsch1: "–"
+  zuerstFalsch2: "–"
+- stuecke: "a = 5 cm, c = 8 cm, α = 35°"
+  satz: sSW
+  lage: "α liegt a gegenüber, und a ist die kürzere der beiden Seiten."
+  verwechselt: SsW
+  warum: "Prüfe, welcher Seite der Winkel gegenüberliegt: der längeren oder der kürzeren?"
+  eindeutig: nicht eindeutig
+  gegenteil: eindeutig
+  begruendung: "Der Winkel liegt der kürzeren Seite gegenüber. Der Kreis um B kann den freien Schenkel zweimal schneiden."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: c
+  zuerst: "–"
+  zuerstFalsch1: "–"
+  zuerstFalsch2: "–"
+- stuecke: "α = 50°, β = 60°, γ = 70°"
+  satz: WWW
+  lage: "Gegeben sind nur Winkel, keine Seite."
+  verwechselt: WSW
+  warum: "Zähle nach: Ist überhaupt eine Seite gegeben?"
+  eindeutig: nicht eindeutig
+  gegenteil: eindeutig
+  begruendung: "Ohne eine Länge kann das Dreieck jede Größe haben. Die Form steht fest, die Größe nicht."
+  winkel: α
+  ecke: A
+  gegenueber: a
+  anliegend: b
+  zuerst: "–"
+  zuerstFalsch1: "–"
+  zuerstFalsch2: "–"
+- stuecke: "α = 30°, β = 60°, γ = 90°"
+  satz: WWW
+  lage: "Gegeben sind nur Winkel, keine Seite."
+  verwechselt: WSW
+  warum: "Zähle nach: Ist überhaupt eine Seite gegeben?"
+  eindeutig: nicht eindeutig
+  gegenteil: eindeutig
+  begruendung: "Ohne eine Länge kann das Dreieck jede Größe haben. Die Form steht fest, die Größe nicht."
+  winkel: γ
+  ecke: C
+  gegenueber: c
+  anliegend: b
+  zuerst: "–"
+  zuerstFalsch1: "–"
+  zuerstFalsch2: "–"

@@ -1,0 +1,238 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Die Planfigur
+description: "Vor jeder Dreieckskonstruktion eine Planfigur skizzieren: Ecken, Seiten und Winkel richtig beschriften und die gegebenen Stücke färben."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann eine Planfigur zeichnen und Ecken, Seiten und Winkel richtig bezeichnen. Sie ist der erste
+      Schritt jeder Aufgabe in der Wahlaufgabe W2. Du brauchst die Winkelsumme aus dem Kapitel
+      [Winkel](/winkel/winkelsumme/).
+  - type: section
+    id: brauchst
+    title: Das brauchst du hier
+    blocks:
+      - type: text
+        text: |
+          **Konstruieren** heißt: genau zeichnen mit Zirkel und Geodreieck. Das machst du im Heft – die App prüft
+          keine Zeichnung, sie übt das Denken davor und danach. Diese Grundkonstruktionen brauchst du:
+
+          - **Kreis um M:** Alle Punkte darauf sind r von M entfernt. So trägst du eine Länge ab.
+          - **Mittelsenkrechte von AB:** Gleich große Bögen um A und B; die Gerade durch ihre Schnittpunkte steht
+            senkrecht auf AB und halbiert die Strecke.
+          - **Winkelhalbierende:** Ein Bogen um den Scheitel S (die Ecke des Winkels) schneidet beide Schenkel (die zwei Linien des Winkels); um
+            diese Punkte gleich große Bögen; die Gerade von S durch deren Schnittpunkt halbiert den Winkel.
+          - **Parallele im Abstand h:** An zwei Stellen senkrecht zu g die Länge h abmessen, Punkte verbinden.
+      - type: figure
+        image: images/w2-grundkonstruktionen.svg
+        alt: "Vier Bilder: ein Kreis um M mit Radius r; eine Strecke AB mit zwei Kreisbögen und der orangen Mittelsenkrechten; ein Winkel mit Scheitel S, grauen Bögen und der orangen Winkelhalbierenden; eine Gerade g mit der orangen Parallelen im Abstand h."
+        caption: Grau sind die Hilfslinien und Zirkelbögen, orange ist das Ergebnis.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: planfigur-start
+        text: Welche Seite liegt der Ecke C gegenüber?
+        material:
+          - type: figure
+            image: images/w2-planfigur-start.svg
+            alt: Ein Dreieck mit A links unten, B rechts unten und C oben. Die Seite unten hat die Nummer 1, die rechte die 2, die linke die 3.
+            caption: Gegenüber heißt auf der anderen Seite des Dreiecks.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: Seite 1
+            correct: true
+            info: Seite 1 verbindet A und B. Sie berührt C nicht.
+          - text: Seite 2
+            correct: false
+            info: Seite 2 geht von B nach C, sie berührt C.
+          - text: Seite 3
+            correct: false
+            info: Seite 3 geht von C nach A, sie berührt C.
+        explanation: Gegenüber liegt die Seite, die die Ecke nicht berührt.
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+  - type: section
+    id: regel
+    title: So beschriftest du ein Dreieck
+    blocks:
+      - type: text
+        text: |
+          Seite 1 aus der Aufgabe heißt **c**: Jede Seite bekommt den kleinen Buchstaben der Ecke, der sie
+          gegenüberliegt. Die Ecken A, B, C laufen **gegen den Uhrzeigersinn**, also linksherum. Jeder Winkel bekommt
+          den griechischen Buchstaben seiner Ecke: α (alpha) bei A, β (beta) bei B, γ (gamma) bei C.
+      - type: figure
+        image: images/w2-planfigur.svg
+        alt: "Ein Dreieck mit A links unten, B rechts unten, C oben. Seite c unten, a rechts, b links. α bei A, β bei B, γ bei C. Ein oranger Pfeil dreht sich linksherum."
+        caption: "Der orange Pfeil zeigt die Richtung A → B → C. Prüfe – a berührt A nicht, b berührt B nicht, c berührt C nicht."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'a = BC \qquad b = CA \qquad c = AB'
+      - type: text
+        text: |
+          Eine **Planfigur** ist eine Skizze aus freier Hand, nicht maßstäblich. Du zeichnest irgendein Dreieck,
+          beschriftest es so und färbst die **gegebenen Stücke** – die Seiten und Winkel, die in der Aufgabe stehen.
+          Dann siehst du, was du schon hast und wo du anfängst.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Planfigur zu b = 4 cm, c = 6 cm, α = 50°
+        blocks:
+          - type: text
+            text: |
+              Skizziere ein Dreieck mit der Grundseite unten. A kommt links unten hin, B rechts unten, C oben. Die
+              Seite c = AB liegt unten, b = CA links. Den Winkel α zeichnest du bei A ein. Dann färbst du b, c und α.
+          - type: figure
+            image: images/w2-planfigur-beispiel.svg
+            alt: Die Planfigur mit den blauen Stücken b = 4 cm links, c = 6 cm unten und α = 50° bei A. Seite a und die Winkel β und γ sind grau.
+            caption: Die blauen Stücke treffen sich alle bei A – dort fängst du später mit der Konstruktion an.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+          - type: text
+            text: Die Skizze muss nicht maßstäblich sein, im Bild ist b etwas zu lang. Wichtig sind nur die Namen und die Farben.
+  - type: section
+    id: merke
+    title: Die zwei häufigsten Fehler
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Die Seite a liegt **gegenüber** von A, nicht an A. Und A → B → C geht linksherum. Im Uhrzeigersinn
+              beschriftet passt nichts mehr zu den Angaben der Aufgabe.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: planfigur-fehler
+        text: Lena hat ihre Planfigur beschriftet. Was ist falsch?
+        material:
+          - type: figure
+            image: images/w2-planfigur-fehler.svg
+            alt: Ein Dreieck mit A links unten, B rechts unten, C oben. Unten steht c, links a, rechts b. α bei A, β bei B, γ bei C.
+            caption: Prüfe jede Seite und jeden Winkel einzeln.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: Die Seiten a und b sind vertauscht.
+            correct: true
+            info: Die linke Seite berührt A, kann also nicht a sein.
+          - text: Die Winkel α und β sind vertauscht.
+            correct: false
+            info: α bei A, β bei B – das stimmt.
+          - text: Die Ecken laufen im Uhrzeigersinn.
+            correct: false
+            info: A links unten, B rechts unten, C oben ist linksherum.
+          - text: Die Seite c müsste oben liegen.
+            correct: false
+            info: C ist oben, also liegt c unten. Das stimmt.
+        explanation: Die rechte Seite BC liegt A gegenüber und heißt a, die linke Seite CA heißt b.
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+      - type: single-choice
+        id: planfigur-richtung
+        text: Welches Dreieck ist richtig beschriftet, also gegen den Uhrzeigersinn?
+        material:
+          - type: figure
+            image: images/w2-planfigur-richtung.svg
+            alt: "Dreieck 1: A links unten, B oben, C rechts unten. Dreieck 2: A oben, B links unten, C rechts unten."
+            caption: Fahre in Gedanken von A über B nach C.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: Dreieck 1
+            correct: false
+            info: Von A über B oben nach C rechts unten geht es rechtsherum.
+          - text: Dreieck 2
+            correct: true
+            info: Von A oben über B links unten nach C geht es linksherum.
+          - text: Beide Dreiecke
+            correct: false
+            info: Die zwei Dreiecke laufen in verschiedene Richtungen.
+        explanation: A muss nicht links unten liegen – nur die Richtung zählt.
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+      - type: matching
+        id: planfigur-zuordnen
+        text: Wo liegt was im Dreieck ABC?
+        pairs:
+          - left: Seite a
+            right: Strecke von B nach C
+          - left: Seite b
+            right: Strecke von C nach A
+          - left: Seite c
+            right: Strecke von A nach B
+          - left: Winkel γ
+            right: Winkel an der Ecke C
+        distractors:
+          - Winkel an der Ecke A
+        explanation: Eine Seite heißt wie die Ecke, die sie nicht berührt, ein Winkel wie seine Ecke.
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+      - type: generated
+        id: planfigur-gegenueber
+        given:
+          e: { pick: 1, from: { data: kongruenzsaetze } }
+        where: ["e.winkel != '–'"]
+        task:
+          text: "In einer Aufgabe stehen die Stücke {{e.stuecke}}. Welche Seite liegt dem Winkel {{e.winkel}} gegenüber?"
+        answer:
+          value: "e.gegenueber"
+          compare: { choice: "['a', 'b', 'c']" }
+        mistakes:
+          - value: "e.anliegend"
+            message: "Die Seite {{e.anliegend}} berührt die Ecke {{e.ecke}}, liegt ihr also nicht gegenüber."
+        hint: An welcher Ecke liegt der Winkel? Welche Seite berührt diese Ecke nicht?
+        steps:
+          - "{{e.winkel}} liegt an der Ecke {{e.ecke}}."
+          - "Die Seite, die {{e.ecke}} nicht berührt, heißt {{answer}}."
+      - type: generated
+        id: planfigur-winkel-b
+        given:
+          a: { int: [20, 100], step: 5 }
+          g: { int: [20, 100], step: 5 }
+        where: ["a + g <= 160", "180 - a - g != g"]
+        task:
+          text: "In einem Dreieck ABC ist α = {{a}}° und γ = {{g}}°. Wie groß ist der Winkel an der Ecke B?"
+        answer: { value: "180 - a - g", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "g"
+            message: γ liegt bei C. An der Ecke B liegt β.
+          - value: "360 - a - g"
+            message: Im Dreieck sind es 180°, nicht 360°.
+        hint: Welcher Winkel liegt bei B? Alle drei Winkel ergeben zusammen 180°.
+        steps:
+          - "Bei B liegt β. Mit α = {{a}}° und γ = {{g}}°: β = 180° − {{a}}° − {{g}}°"
+          - "Der Winkel an der Ecke B ist β = {{answer}}°."
+      - type: number
+        id: planfigur-wettbewerb
+        text: "In einem Dreieck ABC ist der Winkel bei C doppelt so groß wie α. Der Winkel bei B ist 20° größer als α. Wie groß ist γ?"
+        answer: 80
+        tolerance: 0
+        unit: °
+        mistakes:
+          - answer: 40
+            message: Das ist α. Gefragt ist der Winkel bei C.
+          - answer: 60
+            message: Das ist der Winkel bei B, also β.
+          - answer: 100
+            message: Die 20° ziehst du von 180° ab. Sie gehören schon zu β.
+        hint: Skizziere eine Planfigur und schreibe alle drei Winkel mit α.
+        explanation: "α + (α + 20°) + 2α = 180°, also 4α = 160°, α = 40° und γ = 80°."
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+      - type: text
+        text: Als Nächstes siehst du an den gefärbten Stücken, ob das Dreieck eindeutig festliegt – mit den Kongruenzsätzen.

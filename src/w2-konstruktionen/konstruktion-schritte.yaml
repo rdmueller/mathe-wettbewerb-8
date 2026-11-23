@@ -1,0 +1,218 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Schritte einer Konstruktion
+description: "Eine Dreieckskonstruktion planen: womit du anfängst, wie du die dritte Ecke findest und was Höhe, Seitenhalbierende und Winkelhalbierende dabei tun."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann die Schritte einer Konstruktion ordnen, auch mit Höhe, Seiten- oder Winkelhalbierender.
+      Der [Kongruenzsatz](/w2-konstruktionen/kongruenzsaetze/) sagt dir, ob es klappt – hier planst du, wie.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: konstruktion-schritte-start
+        text: "Du sollst ein Dreieck mit c = 6 cm, α = 40° und β = 60° konstruieren. Was zeichnest du zuerst?"
+        options:
+          - text: die Seite c
+            correct: true
+            info: α liegt bei A und β bei B – beide an c.
+          - text: den Winkel α
+            correct: false
+            info: Einen Winkel trägst du an einer Strecke an, die fehlt noch.
+          - text: den Punkt C
+            correct: false
+            info: C ist das Ergebnis der Konstruktion.
+          - text: die Seite a
+            correct: false
+            info: Die Länge von a ist nicht gegeben.
+        explanation: Fang mit der Seite an, an der die gegebenen Winkel liegen. Das ist hier c.
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+  - type: section
+    id: regel
+    title: Erst planen, dann zeichnen
+    blocks:
+      - type: text
+        text: |
+          Die dritte Ecke findest du immer als **Schnittpunkt**: von zwei Kreisen, von zwei Schenkeln oder von einem
+          Kreis und einem Schenkel. Darum zeichnest du zuerst eine gegebene Seite, an der möglichst viele gegebene
+          Stücke liegen – wie c in der Aufgabe oben. An ihren Enden trägst du ab, was gegeben ist.
+      - type: figure
+        image: images/w2-konstruktion-sws.svg
+        alt: "Konstruktion nach SWS: die blaue Seite c = 6 cm, bei A der blaue Winkel α = 50° mit gestricheltem freien Schenkel. Ein grauer Kreisbogen um A mit Radius 5 cm schneidet den Schenkel im orangen Punkt C."
+        caption: "SWS mit b = 5 cm, c = 6 cm, α = 50°: C ist der Schnittpunkt von Kreisbogen und Schenkel."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: table
+        caption: Womit du anfängst und wo die dritte Ecke liegt
+        header: [Satz, zuerst, dritte Ecke als Schnittpunkt von]
+        rows:
+          - [SSS, eine Seite, zwei Kreisen]
+          - [SWS, eine Seite am Winkel, Kreis und Schenkel]
+          - [WSW, die Seite zwischen den Winkeln, zwei Schenkeln]
+          - [SsW, die Seite am Winkel, Kreis und Schenkel]
+      - type: text
+        text: |
+          Im Wettbewerb sind oft Linien gegeben, die keine Seite sind. Von C zur Seite c gehen drei: die **Höhe**
+          $h_c$, die **Seitenhalbierende** $s_c$ und die **Winkelhalbierende** $w_\gamma$.
+      - type: figure
+        image: images/w2-linien.svg
+        alt: "Ein Dreieck ABC. Von C gehen drei Linien zur Seite c: die orange Höhe h_c im rechten Winkel, die lila Winkelhalbierende w_γ, die γ in zwei gleiche Teile teilt, und die graue Seitenhalbierende s_c zur Mitte M von c."
+        caption: "Die Höhe trifft c im rechten Winkel, die Seitenhalbierende in der Mitte M. Die Winkelhalbierende teilt γ in zwei gleiche Winkel."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          So helfen sie dir, C zu finden:
+
+          - $h_c$ gegeben: C ist $h_c$ von c entfernt, liegt also auf der **Parallelen zu c im Abstand** $h_c$.
+          - $s_c$ gegeben: Konstruiere die Mitte M von c (Mittelsenkrechte). C liegt auf dem **Kreis um M** mit
+            Radius $s_c$.
+          - $w_\gamma$ gegeben: Halbiere γ und trage $w_\gamma$ auf der Winkelhalbierenden ab. Ihr Endpunkt liegt
+            auf c.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: "Konstruktion mit c = 6 cm, α = 50° und der Höhe 4 cm"
+        blocks:
+          - type: text
+            text: |
+              1. Planfigur skizzieren, c, α und $h_c$ färben.
+              2. c = 6 cm zeichnen, Endpunkte A und B.
+              3. An A den Winkel α = 50° antragen.
+              4. Die Parallele zu c im Abstand 4 cm zeichnen.
+              5. Wo sie den freien Schenkel von α schneidet, liegt C. C mit B verbinden.
+          - type: figure
+            image: images/w2-hoehe-konstruktion.svg
+            alt: "Die blaue Seite c = 6 cm, bei A der blaue Winkel α = 50°. Eine graue gestrichelte Parallele zu c liegt 4 cm darüber. Sie schneidet den freien Schenkel von α im orangen Punkt C. Die blaue gestrichelte Höhe h_c (4 cm) geht von C senkrecht auf c."
+            caption: Die Höhe selbst musst du nicht zeichnen – die Parallele zeigt dir, wo C liegen kann.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+  - type: section
+    id: merke
+    title: Drei Linien, drei Bedeutungen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Höhe, Seitenhalbierende und Winkelhalbierende gehen alle von C zur Seite c, aber an verschiedene Stellen.
+              Die **Höhe** trifft c im rechten Winkel, die **Seitenhalbierende** in der Mitte, die
+              **Winkelhalbierende** teilt γ. Nur wenn a und b gleich lang sind, fallen alle drei zusammen.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: generated
+        id: konstruktion-schritte-zuerst
+        given:
+          e: { pick: 1, from: { data: kongruenzsaetze } }
+        where: ["e.zuerst != '–'"]
+        task:
+          text: "Gegeben sind {{e.stuecke}}. Womit beginnst du die Konstruktion?"
+        answer:
+          value: "e.zuerst"
+          compare: { choice: "[e.zuerst, e.zuerstFalsch1, e.zuerstFalsch2]" }
+        mistakes:
+          - value: "e.zuerstFalsch1"
+            message: Einen Winkel trägst du an einer Strecke an. Fang mit einer Seite an.
+          - value: "e.zuerstFalsch2"
+            message: Damit kannst du nicht anfangen. Nimm eine gegebene Seite, an der möglichst viele gegebene Stücke liegen.
+        hint: Skizziere die Planfigur. An welcher gegebenen Seite liegen die gegebenen Winkel?
+        steps:
+          - "{{e.lage}}"
+          - "Du beginnst mit {{answer}}."
+      - type: ordering
+        id: konstruktion-schritte-sws
+        text: "Konstruiere das Dreieck mit b = 5 cm, c = 6 cm und α = 50° (SWS). Bring die Schritte in die richtige Reihenfolge."
+        items:
+          - "Planfigur skizzieren, b, c und α färben"
+          - "c = 6 cm zeichnen, Endpunkte A und B"
+          - "an A den Winkel α = 50° antragen"
+          - "Kreis um A mit r = 5 cm: Er schneidet den freien Schenkel in C."
+          - "C mit B verbinden"
+        explanation: α liegt zwischen b und c. Nach c kommt α, dann trägst du b mit dem Zirkel auf dem freien Schenkel ab.
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+      - type: ordering
+        id: konstruktion-schritte-ssw
+        text: "Konstruiere das Dreieck mit a = 7 cm, b = 5 cm und α = 60° (SsW). Bring die Schritte in die richtige Reihenfolge."
+        items:
+          - "Planfigur skizzieren, a, b und α färben"
+          - "b = 5 cm zeichnen, Endpunkte A und C"
+          - "an A den Winkel α = 60° antragen"
+          - "Kreis um C mit r = 7 cm: Er schneidet den freien Schenkel in B."
+          - "B mit C verbinden"
+        explanation: "α liegt an b, also fängst du mit b an. a = BC beginnt bei C – darum der Kreis um C."
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+      - type: matching
+        id: konstruktion-schritte-linien
+        text: Was gilt für welche Linie von C zur Seite c?
+        pairs:
+          - left: Höhe
+            right: trifft c im rechten Winkel
+          - left: Seitenhalbierende
+            right: trifft c in der Mitte
+          - left: Winkelhalbierende
+            right: teilt γ in zwei gleiche Winkel
+        distractors:
+          - verläuft parallel zu c
+        explanation: Alle drei beginnen bei C. Sie unterscheiden sich darin, wo und wie sie c treffen.
+        links:
+          - title: Seitenhalbierende (Serlo)
+            url: https://de.serlo.org/mathe/1913/seitenhalbierende
+      - type: ordering
+        id: konstruktion-schritte-seitenhalbierende
+        text: "Konstruiere das Dreieck mit c = 6 cm, b = 5 cm und der Seitenhalbierenden $s_c = 4$ cm. Bring die Schritte in die richtige Reihenfolge."
+        items:
+          - "Planfigur skizzieren, c, b und die Seitenhalbierende färben"
+          - "c = 6 cm zeichnen, Endpunkte A und B"
+          - "die Mitte M von c mit der Mittelsenkrechten konstruieren"
+          - "Kreis um M mit r = 4 cm und Kreis um A mit r = 5 cm zeichnen"
+          - "Schnittpunkt der Kreise oberhalb von c ist C; C mit A und B verbinden"
+        explanation: Die Seitenhalbierende endet in der Mitte von c. Darum brauchst du M, bevor du den Kreis mit r = 4 cm zeichnen kannst.
+        links:
+          - title: Seitenhalbierende (Serlo)
+            url: https://de.serlo.org/mathe/1913/seitenhalbierende
+      - type: ordering
+        id: konstruktion-schritte-winkelhalbierende
+        text: "Wettbewerbsaufgabe: Konstruiere das Dreieck mit b = 5 cm, γ = 80° und der Winkelhalbierenden $w_\\gamma = 4$ cm. Bring die Schritte in die richtige Reihenfolge."
+        items:
+          - "Planfigur skizzieren, b, γ und die Winkelhalbierende färben"
+          - "b = 5 cm zeichnen, Endpunkte C und A"
+          - "an C den Winkel γ = 80° antragen"
+          - "γ halbieren und auf der Winkelhalbierenden von C aus 4 cm abtragen: Punkt D"
+          - "Gerade von A durch D zeichnen: Sie schneidet den freien Schenkel von γ in B."
+        explanation: Der Endpunkt D der Winkelhalbierenden liegt auf c = AB. Darum liegt B auf der Geraden durch A und D.
+        links:
+          - title: Winkelhalbierende (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Winkelhalbierende
+      - type: generated
+        id: konstruktion-schritte-flaeche
+        given:
+          c: { int: [4, 16] }
+          h: { int: [2, 10] }
+          s: { int: [3, 12] }
+        where: ["s > h"]
+        task:
+          text: "Du hast ein Dreieck mit c = {{c}} cm konstruiert. Die Höhe $h_c$ ist {{h}} cm lang, die Seitenhalbierende $s_c$ ist {{s}} cm lang. Zur Probe berechnest du den Flächeninhalt. Wie groß ist er?"
+        answer: { value: "c * h / 2", compare: { number: { format: decimal, decimals: 1, unit: cm² } } }
+        mistakes:
+          - value: "c * s / 2"
+            message: "Du hast die Seitenhalbierende genommen. Für den Flächeninhalt brauchst du die Höhe: Sie steht im rechten Winkel auf c."
+          - value: "c * h"
+            message: Das ist das Rechteck um das Dreieck. Teile noch durch 2.
+        hint: Welche der beiden Linien steht im rechten Winkel auf c?
+        steps:
+          - '$A = \frac{c \cdot h_c}{2} = \frac{{{c}} \cdot {{h}}}{2}$ – die Seitenhalbierende ist keine Höhe.'
+          - "Der Flächeninhalt ist {{answer}} cm²."
+      - type: text
+        text: Als Nächstes prüfst du eine fertige Konstruktion – mit Rechnen und Nachmessen.

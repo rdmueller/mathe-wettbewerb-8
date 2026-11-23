@@ -168,5 +168,5 @@ blocks:
       - type: text
         text: |
           Damit hast du das Kapitel Bruchrechnung geschafft: Du rechnest mit Brüchen und Dezimalbrüchen in allen vier
-          Rechenarten und in der richtigen Reihenfolge. Im nächsten Kapitel geht es um die Wahlaufgabe W2:
-          Dreiecke konstruieren.
+          Rechenarten und in der richtigen Reihenfolge. Im nächsten Kapitel geht es um die
+          [Wahlaufgabe W2: Dreiecke konstruieren](/w2-konstruktionen/planfigur/).

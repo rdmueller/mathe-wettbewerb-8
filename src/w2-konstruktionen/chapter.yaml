@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: "Wahlaufgabe W2: Dreieckskonstruktionen und Kongruenzsätze"
+summary: Planfigur, Kongruenzsätze, die Schritte einer Konstruktion und das Prüfen – alles, was du im Heft mit Zirkel und Geodreieck brauchst.
+pages: [planfigur, kongruenzsaetze, konstruktion-schritte, winkel-pruefen]

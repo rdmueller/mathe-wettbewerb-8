@@ -1,0 +1,181 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Winkel berechnen und Konstruktion prüfen
+description: "Den fehlenden Winkel mit 180° berechnen, mit der größten Seite gegenüber dem größten Winkel prüfen und eine fertige Konstruktion nachmessen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann einen fehlenden Winkel berechnen und eine Konstruktion durch Nachmessen prüfen. Im
+      Wettbewerb heißt es oft: „Konstruiere … und miss die fehlenden Stücke.“ Mit den
+      [Schritten](/w2-konstruktionen/konstruktion-schritte/) hast du das Dreieck – jetzt prüfst du es.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: winkel-pruefen-start
+        text: "Du hast ein Dreieck mit c = 7 cm, α = 40° und β = 65° konstruiert. Gleich misst du γ nach. Welcher Wert müsste herauskommen?"
+        answer: 75
+        tolerance: 0
+        unit: °
+        mistakes:
+          - answer: 255
+            message: Du hast mit 360° gerechnet. Die Winkel im Dreieck ergeben zusammen 180°.
+          - answer: 105
+            message: Das sind α und β zusammen. Gefragt ist der dritte Winkel.
+        hint: Alle drei Winkel zusammen ergeben 180°.
+        explanation: "γ = 180° − 40° − 65° = 75°."
+        links:
+          - title: Winkel (Serlo)
+            url: https://de.serlo.org/mathe/1707/winkel
+  - type: section
+    id: regel
+    title: Erst rechnen, dann messen
+    blocks:
+      - type: text
+        text: |
+          Wie in der Aufgabe oben weißt du schon **vor** dem Messen, was herauskommen muss. Den dritten Winkel
+          rechnest du mit der Winkelsumme aus:
+      - type: formula
+        formula: '\gamma = 180^\circ - \alpha - \beta'
+      - type: text
+        text: |
+          Für die Seiten gibt es eine Faustregel: **Die längste Seite liegt dem größten Winkel gegenüber**, die
+          kürzeste dem kleinsten. So prüfst du ohne Rechnung, ob deine Zeichnung passen kann.
+      - type: figure
+        image: images/w2-groesste-seite.svg
+        alt: Ein Dreieck ABC. Der Winkel γ bei C ist der größte und orange markiert. Die Seite c gegenüber ist orange und die längste.
+        caption: Der größte Winkel γ und die längste Seite c liegen einander gegenüber.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          **Nachmessen** heißt: Du misst an deiner fertigen Zeichnung mit dem Geodreieck die Stücke, die nicht
+          gegeben waren. Weicht ein Winkel um 1° bis 2° oder eine Seite um 1 mm bis 2 mm von der Rechnung ab, ist
+          das Zeichenungenauigkeit. Bei mehr hast du dich vertan.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Lea misst nach
+        blocks:
+          - type: text
+            text: |
+              Lea hat ein Dreieck mit c = 6 cm, α = 30° und β = 110° konstruiert. Erwartet:
+          - type: formula
+            formula: '\gamma = 180^\circ - 30^\circ - 110^\circ = 40^\circ'
+          - type: text
+            text: |
+              β ist der größte Winkel, also muss b die längste Seite sein. Lea misst b = 8,8 cm und a = 4,7 cm –
+              das passt. Für γ misst sie aber 140°. Das kann nicht sein, denn 30° + 110° + 140° sind mehr als 180°.
+              Sie hat auf der falschen Skala des Geodreiecks abgelesen: Die zweite Skala zeigt 180° − 40° = 140°.
+  - type: section
+    id: merke
+    title: Messen und Rechnen müssen zusammenpassen
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Im Dreieck sind es 180°, nicht 360°. Passt ein gemessener Winkel nicht zur Rechnung, prüfe zuerst die
+              Skala: Das Geodreieck hat zwei, und sie ergeben zusammen immer 180°.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: generated
+        id: winkel-pruefen-wsw
+        given:
+          a: { int: [20, 110], step: 5 }
+          g: { int: [20, 110], step: 5 }
+        where: ["a + g <= 160", "a + g != 90"]
+        task:
+          text: "Gegeben sind c = 6 cm, α = {{a}}° und γ = {{g}}°. Für WSW brauchst du den zweiten Winkel an c. Wie groß ist β?"
+        answer: { value: "180 - a - g", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "360 - a - g"
+            message: Du hast mit 360° gerechnet. Die Winkel im Dreieck ergeben zusammen 180°.
+          - value: "a + g"
+            message: Das sind α und γ zusammen. Gefragt ist der dritte Winkel.
+        hint: Alle drei Winkel zusammen ergeben 180°.
+        steps:
+          - "Mit α = {{a}}° und γ = {{g}}°: β = 180° − {{a}}° − {{g}}°"
+          - "β ist {{answer}}° groß. Jetzt liegen α und β an c."
+      - type: single-choice
+        id: winkel-pruefen-laengste
+        text: "Ein Dreieck hat α = 35°, β = 80° und γ = 65°. Welche Seite ist am längsten?"
+        options:
+          - text: a
+            correct: false
+            info: a liegt α gegenüber, dem kleinsten Winkel.
+          - text: b
+            correct: true
+            info: b liegt β gegenüber, dem größten Winkel.
+          - text: c
+            correct: false
+            info: c liegt γ gegenüber, dem mittleren Winkel.
+        explanation: Der größte Winkel ist β = 80°, also ist b am längsten.
+        links:
+          - title: Konstruierbare Dreiecke (Serlo)
+            url: https://de.serlo.org/mathe/78680/konstruierbare-dreiecke
+      - type: true-false
+        id: winkel-pruefen-messen
+        text: "Tim berechnet γ = 50°. In seiner Zeichnung misst er 51°. Also ist seine Konstruktion falsch."
+        answer: false
+        explanation: 1° Abweichung ist Zeichenungenauigkeit, die Konstruktion passt.
+        links:
+          - title: Dreiecke konstruieren (Serlo)
+            url: https://de.serlo.org/mathe/1957/dreiecke-konstruieren
+      - type: figure
+        image: images/w2-hoehe-winkel.svg
+        alt: "Ein Dreieck ABC mit dem blauen Winkel α bei A und der grauen gestrichelten Höhe h_c von C senkrecht auf c. Bei C ist zwischen der Seite b und der Höhe ein oranger Winkel x markiert."
+        caption: "Zur nächsten Aufgabe: Die Höhe teilt das Dreieck. Links entsteht das Dreieck aus A, C und dem Fußpunkt der Höhe – dem Punkt, wo sie auf c trifft."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: generated
+        id: winkel-pruefen-hoehe
+        given:
+          a: { int: [20, 80], step: 5 }
+        where: ["a != 45"]
+        task:
+          text: "Im Dreieck ist α = {{a}}°. Die Höhe $h_c$ steht senkrecht auf c. Wie groß ist der Winkel x zwischen der Seite b und der Höhe?"
+        answer: { value: "90 - a", compare: { number: { format: integer, unit: ° } } }
+        mistakes:
+          - value: "180 - a"
+            message: Du hast den rechten Winkel am Fußpunkt der Höhe vergessen. Das linke Teildreieck hat bei A, unten und bei C drei Winkel.
+          - value: "a"
+            message: "x ist nicht so groß wie α. Rechne im linken Teildreieck: Zusammen sind es 180°."
+        hint: Im linken Teildreieck kennst du zwei Winkel. Wie groß ist der Winkel am Fußpunkt der Höhe?
+        steps:
+          - "Im linken Teildreieck: α = {{a}}°, am Fußpunkt 90°. x = 180° − 90° − {{a}}°"
+          - "Der Winkel x ist {{answer}}° groß."
+      - type: number
+        id: winkel-pruefen-wettbewerb
+        text: "In einem Dreieck ABC ist α = 70° und β = 50°. Die Winkelhalbierende von γ trifft die Seite c im Punkt D. Wie groß ist der Winkel bei D zwischen DA und DC?"
+        material:
+          - type: figure
+            image: images/w2-winkelhalbierende-aufgabe.svg
+            alt: "Ein Dreieck ABC mit den blauen Winkeln α bei A und β bei B. Die lila Winkelhalbierende geht von C zum Punkt D auf c. Bei D ist zwischen DA und DC ein oranger Winkel mit Fragezeichen markiert."
+            caption: Die Winkelhalbierende teilt γ in zwei gleiche Winkel. Das Bild ist nicht maßstäblich.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 80
+        tolerance: 0
+        unit: °
+        mistakes:
+          - answer: 60
+            message: Das ist γ. Gefragt ist der Winkel bei D.
+          - answer: 90
+            message: Die Winkelhalbierende steht nur dann senkrecht auf c, wenn a und b gleich lang sind.
+          - answer: 30
+            message: Das ist die Hälfte von γ. Sie gehört zum Dreieck ADC – rechne dort weiter.
+        hint: Berechne zuerst γ. Dann schau dir das Dreieck aus A, D und C an.
+        explanation: "γ = 180° − 70° − 50° = 60°, die Hälfte ist 30°. Im Dreieck ADC gilt: Winkel bei D = 180° − 70° − 30° = 80°."
+        links:
+          - title: Winkelhalbierende (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Winkelhalbierende
+      - type: text
+        text: |
+          Damit hast du das Kapitel zur Wahlaufgabe W2 geschafft: Du planst, prüfst und begründest Konstruktionen.
+          Im nächsten Kapitel geht es um die Wahlaufgabe W1: Terme und Gleichungen.
