@@ -1,0 +1,172 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Sachaufgaben zur Prozentrechnung
+description: "Sachaufgaben in vier Schritten lösen: gegeben und gesucht, Formel, Rechnung, Antwortsatz – und dabei das Ganze richtig erkennen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Sachaufgaben mit gegeben/gesucht, Formel, Rechnung und Antwort lösen. Du nutzt die drei
+      Formen von G · p % = P aus den [vorigen Seiten](/prozent/prozentsatz-grundwert/).
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: ordering
+        id: sachaufgaben-start
+        text: "Ben löst diese Aufgabe: „In einem Kino sind 160 von 200 Plätzen besetzt. Wie viel Prozent der Plätze sind besetzt?“ Bring seine Notizen in die richtige Reihenfolge."
+        items:
+          - "G = 200 Plätze, P = 160 Plätze, p % gesucht"
+          - "p % = P : G"
+          - "160 : 200 = 0,8 = 80 %"
+          - "Im Kino sind 80 % der Plätze besetzt."
+        explanation: "Zuerst schreibt Ben auf, was gegeben und was gesucht ist. Dann wählt er die Formel, rechnet und schreibt einen Antwortsatz."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+  - type: section
+    id: regel
+    title: Vier Schritte für jede Aufgabe
+    blocks:
+      - type: text
+        text: |
+          Bens Notizen zeigen die vier Schritte. Der wichtigste ist der erste: Bevor du rechnest, entscheidest du,
+          welche der drei Größen fehlt. Erst dann weißt du, welche Formel passt.
+      - type: figure
+        image: images/prozent-vier-schritte.svg
+        alt: "Vier Kästen untereinander: 1 Gegeben und gesucht, 2 Formel, 3 Rechnung, 4 Antwortsatz. Der erste Kasten ist orange umrandet."
+        caption: Der orange Schritt entscheidet, welche Formel du brauchst.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'P = G \cdot p\,\% \qquad G = P : p\,\%'
+      - type: formula
+        formula: 'p\,\% = P : G'
+      - type: text
+        text: |
+          Das Ganze findest du oft hinter „von“ oder „als“. „160 von 200 Plätzen“: Das Ganze sind 200 Plätze.
+          „Das E-Bike ist 40 % teurer als das Rad“: Die 40 % sind ein Anteil vom Preis des Rads, also ist der
+          Preis des Rads der Grundwert.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Was kostete die Jacke vorher?
+        blocks:
+          - type: text
+            text: Im Schlussverkauf ist eine Jacke um 30 % reduziert. Du sparst 24 €. Was hat die Jacke vorher gekostet, und was zahlst du jetzt?
+          - type: table
+            caption: Die vier Schritte
+            rowHeaders: true
+            rows:
+              - ["Gegeben, gesucht", "p % = 30 %, P = 24 € (der Rabatt); gesucht G, der alte Preis"]
+              - [Formel, "G = P : p %"]
+              - [Rechnung, "30 % sind 24 €, also 10 % = 8 € und 100 % = 80 €"]
+              - [Antwortsatz, "Die Jacke kostete 80 €. Du zahlst 80 € − 24 € = 56 €."]
+          - type: text
+            text: Der Haken – die Frage hat zwei Teile. Erst mit dem Grundwert kannst du den neuen Preis ausrechnen.
+  - type: section
+    id: merke
+    title: Das Ganze ist der alte Preis
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Bei Rabatt und „teurer als“ ist der Grundwert der Preis, von dem du ausgehst – nicht der neue. Und
+              Prozente ziehst du nie direkt von Euro ab: 300 € − 40 % sind nicht 260 €.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: matching
+        id: sachaufgaben-was-fehlt
+        text: Welche Größe ist in welcher Aufgabe gesucht?
+        pairs:
+          - left: "Ein Rad kostet 400 €, du bekommst 15 % Rabatt. Wie viel Euro sparst du?"
+            right: der Prozentwert P
+          - left: "9 Kinder sind 30 % der Klasse. Wie viele Kinder hat die Klasse?"
+            right: der Grundwert G
+          - left: "12 von 48 Äpfeln sind faul. Wie viel Prozent sind das?"
+            right: der Prozentsatz p %
+        explanation: "Beim Rabatt fehlt der Teil (P), bei der Klasse das Ganze (G), bei den Äpfeln der Anteil (p %)."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: single-choice
+        id: sachaufgaben-teurer-als
+        text: "Ein Rad kostet 300 €. Ein E-Bike ist 40 % teurer als das Rad. Von welchem Betrag nimmst du die 40 %?"
+        options:
+          - text: vom Preis des Rads
+            correct: true
+            info: "„Teurer als das Rad“: Der Preis des Rads ist das Ganze, also 100 %."
+          - text: vom Preis des E-Bikes
+            correct: false
+            info: "Den Preis des E-Bikes kennst du noch nicht. Die 40 % werden mit dem Rad verglichen."
+          - text: von 100 €
+            correct: false
+            info: "100 € kommen in der Aufgabe nicht vor. 100 % sind hier die 300 € des Rads."
+        explanation: "Das Wort „als“ zeigt, womit verglichen wird – mit dem Rad."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: generated
+        id: sachaufgaben-teurer
+        given:
+          G: { int: [100, 900], step: 20 }
+          p: { oneOf: [5, 10, 15, 20, 25, 30, 40, 45] }
+        where: ["decimals(G * p / 100) == 0", "G * p / 100 != p"]
+        task:
+          text: "Eine Spielkonsole kostet {{G}} €. Das neue Modell ist {{p}} % teurer als die alte Konsole. Um wie viel Euro ist das neue Modell teurer?"
+        answer: { value: "G * p / 100", compare: { number: { format: integer, unit: € } } }
+        mistakes:
+          - value: "G + G * p / 100"
+            message: "Das ist der Preis des neuen Modells. Gefragt ist nur, um wie viel Euro es teurer ist."
+          - value: "G * p"
+            message: "Du hast mit {{p}} malgenommen statt mit {{p}} %. Teile noch durch 100."
+          - value: "p"
+            message: "{{p}} % sind keine {{p}} €. Rechne {{p}} % vom Preis der alten Konsole aus."
+        hint: Welcher Preis ist das Ganze, also 100 %?
+        steps:
+          - "Gegeben: G = {{G}} € (alte Konsole), p % = {{p}} %. Gesucht: P."
+          - '$P = {{G}} \cdot \frac{{{p}}}{100} = {{answer}}$'
+          - "Das neue Modell ist {{answer}} € teurer."
+      - type: generated
+        id: sachaufgaben-vorher
+        given:
+          P: { int: [2, 60] }
+          p: { oneOf: [5, 10, 20, 25, 40, 50] }
+        where: ["decimals(P * 100 / p) == 0", "P * 100 / p <= 400"]
+        task:
+          text: "Ein Paar Schuhe ist um {{p}} % reduziert. Du sparst {{P}} €. Wie viel haben die Schuhe vorher gekostet?"
+        answer: { value: "P * 100 / p", compare: { number: { format: integer, unit: € } } }
+        mistakes:
+          - value: "P * 100 / p - P"
+            message: "Das ist der Preis nach dem Rabatt. Gefragt ist der Preis vorher – das Ganze."
+          - value: "P * p / 100"
+            message: "Du hast {{p}} % von {{P}} € gerechnet. Die {{P}} € sind aber der Teil."
+        hint: "Gegeben sind ein Prozentsatz und ein Teil. Was fehlt?"
+        steps:
+          - "Gegeben: p % = {{p}} %, P = {{P}} € (der Rabatt). Gesucht: G, der alte Preis."
+          - '$G = {{P}} : \frac{{{p}}}{100} = {{answer}}$'
+          - "Die Schuhe haben vorher {{answer}} € gekostet."
+      - type: number
+        id: sachaufgaben-wahl
+        text: "Bei der Wahl zur Schülervertretung bekommt Ella 35 % der Stimmen, Max 45 %, den Rest bekommt Sam. Sam hat 54 Stimmen. Wie viele Stimmen gab es insgesamt?"
+        answer: 270
+        tolerance: 0
+        unit: Stimmen
+        mistakes:
+          - answer: 10.8
+            message: "Du hast 20 % von 54 gerechnet. Die 54 Stimmen sind aber der Teil, gesucht ist das Ganze."
+          - answer: 120
+            message: "Du hast so gerechnet, als wären die 54 Stimmen 45 %. Wie viel Prozent bekommt Sam?"
+          - answer: 134
+            message: "Du hast 35 + 45 + 54 gerechnet. Die Prozente sind Anteile, keine Stimmen."
+        hint: Wie viel Prozent der Stimmen bekommt Sam?
+        explanation: "Sam bekommt 100 % − 35 % − 45 % = 20 %. 20 % sind 54 Stimmen, also 10 % = 27 und 100 % = 270 Stimmen."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: text
+        text: Damit kannst du alle drei Größen der Prozentrechnung berechnen. Als Nächstes geht es um Flächeninhalt, Umfang und Volumen.

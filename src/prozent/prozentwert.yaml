@@ -1,0 +1,212 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Den Prozentwert berechnen
+description: "Vom Hunderterfeld über 1 % zur Formel G · p % = P – und den Prozentwert ohne Taschenrechner berechnen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann den Prozentwert mit G · p % = P berechnen. Du rechnest wie bei
+      [proportionalen Zuordnungen](/zuordnungen/proportional/): erst auf 1 %, dann auf das, was gefragt ist.
+  - type: section
+    id: brauchst
+    title: Das brauchst du hier
+    blocks:
+      - type: text
+        text: |
+          „Prozent“ heißt „von Hundert“. **p % bedeutet p Hundertstel.** 25 % sind also 25 von 100 Teilen, als
+          Dezimalzahl 0,25. 100 % sind das Ganze.
+      - type: figure
+        draw: { kind: hundred-grid, filled: 25 }
+        alt: Ein Hunderterfeld mit 100 Kästchen, 25 davon sind gefärbt.
+        caption: Jedes Kästchen ist ein Hundertstel, also 1 %. Gefärbt sind 25 Kästchen.
+      - type: formula
+        formula: '1\,\% = \frac{1}{100} = 0{,}01 \qquad 25\,\% = \frac{25}{100} = 0{,}25'
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: prozentwert-start
+        text: Beim Schulfest gibt es 200 Lose. 15 % davon sind Gewinne. Wie viele Gewinnlose gibt es?
+        material:
+          - type: figure
+            draw: { kind: hundred-grid, filled: 15 }
+            alt: Ein Hunderterfeld mit 100 Kästchen, 15 davon sind gefärbt.
+            caption: "Die 200 Lose sind gleichmäßig auf die 100 Kästchen verteilt. Gefärbt sind 15 %."
+        answer: 30
+        tolerance: 0
+        unit: Lose
+        mistakes:
+          - answer: 15
+            message: "15 Lose wären 15 % von 100 Losen. Es gibt aber 200 Lose."
+          - answer: 185
+            message: "Du hast 200 − 15 gerechnet. 15 % sind aber keine 15 Lose, sondern 15 Hundertstel aller Lose."
+          - answer: 3000
+            message: "Du hast 200 · 15 gerechnet. 15 % sind aber 15 Hundertstel."
+        hint: Wie viele Lose liegen in einem Kästchen?
+        explanation: "200 Lose auf 100 Kästchen: In jedem Kästchen liegen 2 Lose. 15 Kästchen sind 15 · 2 = 30 Lose."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+  - type: section
+    id: regel
+    title: Erst 1 %, dann der Rest
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben stehen 200 Lose für das ganze Feld, also für 100 %. Ein Kästchen ist 1 %: 200 : 100 = 2
+          Lose. 15 Kästchen sind dann 15 · 2 = 30 Lose. Die drei Größen haben Namen:
+          - **Grundwert G** – das Ganze, also 100 % (200 Lose)
+          - **Prozentsatz p %** – der Anteil (15 %)
+          - **Prozentwert P** – der Teil, der zu p % gehört (30 Lose)
+      - type: figure
+        image: images/prozent-dreisatz.svg
+        alt: "Eine Tabelle mit den Spalten Prozent und Lose: 100 % sind 200 Lose, 1 % sind 2 Lose, 15 % sind 30 Lose. Links und rechts je ein Pfeil „: 100“ und ein Pfeil „· 15“."
+        caption: Links und rechts rechnest du dasselbe – wie bei einer proportionalen Zuordnung.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          „: 100“ und „· 15“ zusammen heißt: mal 15 Hundertstel, also mal 15 %. Das gilt für jede Zahl.
+      - type: formula
+        formula: 'G \cdot p\,\% = P \qquad 200 \cdot 0{,}15 = 30'
+      - type: text
+        text: |
+          Ohne Taschenrechner helfen dir Anteile, die du sofort siehst: 50 % ist die Hälfte, 25 % ein Viertel, 20 %
+          ein Fünftel, 12,5 % ein Achtel, 10 % ein Zehntel. Für 35 % rechnest du 10 % + 10 % + 10 % + 5 %.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Rabatt auf eine Jacke
+        blocks:
+          - type: text
+            text: |
+              Eine Jacke kostet 80 €, im Sale gibt es 35 % Rabatt. Wie viel sparst du, und was zahlst du? Der
+              Grundwert ist der alte Preis, G = 80 €, mit p % = 35 %. Der Rabatt ist der Prozentwert.
+          - type: formula
+            formula: '10\,\% = 8 \qquad 5\,\% = 4'
+          - type: formula
+            formula: '35\,\% = 3 \cdot 8 + 4 = 28'
+          - type: text
+            text: Antwort – Du sparst 28 € und zahlst 80 € − 28 € = 52 €.
+  - type: section
+    id: merke
+    title: Prozent sind keine Euro
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              35 % von 80 € sind weder 80 − 35 noch 80 · 35. Du rechnest mit 35 Hundertstel, also mit 0,35. Prüfe
+              am Ende: Ist p % kleiner als 100 %, muss der Prozentwert kleiner als der Grundwert sein.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: prozentwert-grundwert
+        text: "In einer Klasse mit 25 Kindern fahren 20 % mit dem Rad zur Schule, das sind 5 Kinder. Was ist hier der Grundwert?"
+        options:
+          - text: 25 Kinder
+            correct: true
+            info: Die ganze Klasse ist das Ganze, also 100 %.
+          - text: 20 %
+            correct: false
+            info: "20 % ist der Prozentsatz. Er sagt, welcher Anteil der Klasse gemeint ist."
+          - text: 5 Kinder
+            correct: false
+            info: Die 5 Kinder sind der Teil, der zu 20 % gehört – der Prozentwert.
+        explanation: Der Grundwert ist das Ganze – hier die ganze Klasse.
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: matching
+        id: prozentwert-anteile
+        text: Welcher Anteil gehört zu welchem Prozentsatz?
+        pairs:
+          - left: 50 %
+            right: die Hälfte
+          - left: 25 %
+            right: ein Viertel
+          - left: 20 %
+            right: ein Fünftel
+          - left: 12,5 %
+            right: ein Achtel
+        distractors:
+          - ein Zwölftel
+        explanation: "25 Hundertstel sind ein Viertel, denn 4 · 25 = 100. Ebenso 2 · 50, 5 · 20 und 8 · 12,5."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: generated
+        id: prozentwert-verein
+        given:
+          G: { int: [20, 800], step: 20 }
+          p: { oneOf: [1, 5, 10, 15, 20, 25, 30, 40, 45, 60, 75] }
+        where: ["decimals(G * p / 100) == 0", "G > p", "G - p != G * p / 100"]
+        task:
+          text: "Ein Sportverein hat {{G}} Mitglieder. {{p}} % davon sind Kinder. Wie viele Kinder sind im Verein?"
+        answer: { value: "G * p / 100", compare: { number: { format: integer, unit: Kinder } } }
+        mistakes:
+          - value: "G * p"
+            message: "Du hast mit {{p}} malgenommen statt mit {{p}} %. Teile noch durch 100."
+          - value: "G - p"
+            message: "Du hast {{p}} abgezogen. {{p}} % sind aber ein Anteil von {{G}}."
+          - value: "G * p / 10"
+            message: "Du hast nur durch 10 geteilt. 1 % ist ein Hundertstel: Teile durch 100."
+        hint: Wie viele Mitglieder sind 1 %?
+        steps:
+          - "Mit G = {{G}} Mitglieder und p % = {{p}} %: 1 % sind {{G}} : 100 Mitglieder."
+          - '$P = {{G}} \cdot \frac{{{p}}}{100} = {{answer}}$'
+          - "Im Verein sind {{answer}} Kinder."
+      - type: generated
+        id: prozentwert-rabatt
+        given:
+          G: { int: [12, 160], step: 4 }
+          p: { oneOf: [5, 10, 15, 20, 25, 30, 35, 40] }
+        where: ["G - p != G * p / 100"]
+        task:
+          text: "Ein Spiel kostet {{G}} €. Im Angebot gibt es {{p}} % Rabatt. Wie viel Euro sparst du?"
+        answer: { value: "G * p / 100", compare: { number: { format: money } } }
+        mistakes:
+          - value: "G - G * p / 100"
+            message: "Das ist der Preis nach dem Rabatt. Gefragt ist, wie viel du sparst."
+          - value: "G - p"
+            message: "Du hast {{p}} € abgezogen. {{p}} % Rabatt sind aber {{p}} Hundertstel des Preises."
+          - value: "G * p"
+            message: "Das ist mehr als der Preis. Teile noch durch 100."
+        hint: Rechne zuerst 10 % aus. Wie kommst du von dort zu {{p}} %?
+        steps:
+          - "Mit G = {{G}} € und p % = {{p}} %: 1 % sind {{G}} € : 100."
+          - '$P = {{G}} \cdot \frac{{{p}}}{100} = {{answer}}$'
+          - "Du sparst {{answer}} €."
+      - type: true-false
+        id: prozentwert-tauschen
+        text: 30 % von 70 € sind genauso viel wie 70 % von 30 €.
+        answer: true
+        explanation: "Beide Male rechnest du 70 · 30 : 100 = 21 – beim Malnehmen darfst du tauschen."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: number
+        id: prozentwert-schulweg
+        text: "Eine Schule hat 640 Kinder. 12,5 % kommen mit dem Bus, 35 % mit dem Rad, alle anderen zu Fuß. Wie viele Kinder kommen zu Fuß?"
+        answer: 336
+        tolerance: 0
+        unit: Kinder
+        mistakes:
+          - answer: 304
+            message: "So viele kommen mit Bus oder Rad. Gefragt sind die anderen."
+          - answer: 52.5
+            message: "52,5 % ist der Prozentsatz. Gefragt ist die Anzahl der Kinder."
+          - answer: 592.5
+            message: "Du hast 640 − 12,5 − 35 gerechnet. Die Prozente sind Anteile von 640, keine Kinder."
+        hint: 12,5 % ist ein Achtel. Rechne Bus und Rad einzeln aus.
+        explanation: "Bus: 640 : 8 = 80 Kinder. Rad: 10 % sind 64, also 35 % = 3 · 64 + 32 = 224 Kinder. Zu Fuß: 640 − 80 − 224 = 336 Kinder."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: text
+        text: Als Nächstes drehst du die Frage um – gegeben ist der Prozentwert, gesucht der Prozentsatz oder der Grundwert.

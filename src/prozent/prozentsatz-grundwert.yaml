@@ -1,0 +1,185 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Prozentsatz und Grundwert berechnen
+description: "Die Formel G · p % = P umstellen und so den Prozentsatz oder den Grundwert berechnen – rückwärts über 1 % oder 10 %."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann die Formel umstellen und den Prozentsatz oder den Grundwert berechnen. Du baust auf der
+      Formel G · p % = P der [vorigen Seite](/prozent/prozentwert/) auf.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: prozentsatz-grundwert-start
+        text: In einer Klasse fahren 6 Kinder mit dem Rad zur Schule. Das sind 20 % der Klasse. Wie viele Kinder hat die Klasse?
+        material:
+          - type: figure
+            draw: { kind: hundred-grid, filled: 20 }
+            alt: Ein Hunderterfeld mit 100 Kästchen, 20 davon sind gefärbt.
+            caption: Die 20 gefärbten Kästchen stehen für die 6 Kinder mit Rad. Das ganze Feld ist die Klasse.
+        answer: 30
+        tolerance: 0
+        unit: Kinder
+        mistakes:
+          - answer: 1.2
+            message: "Du hast 20 % von 6 gerechnet. Die 6 Kinder sind aber der Teil, gesucht ist das Ganze."
+          - answer: 120
+            message: "Du hast 6 · 20 gerechnet. Die 20 sind Prozent, keine Kinder."
+          - answer: 26
+            message: "Du hast 6 + 20 gerechnet. 20 % sind ein Anteil, keine Anzahl."
+        hint: Wie viele Kinder sind 10 %?
+        explanation: "20 % sind 6 Kinder, also sind 10 % 3 Kinder. Die ganze Klasse, 100 %, sind 10 · 3 = 30 Kinder."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+  - type: section
+    id: regel
+    title: Die Formel rückwärts
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben kennst du den Prozentwert P = 6 Kinder und den Prozentsatz p % = 20 %. Es fehlt der
+          Grundwert G. Du rechnest rückwärts: von 20 % auf 10 %, dann auf 100 %.
+      - type: figure
+        image: images/prozent-rueckwaerts.svg
+        alt: "Eine Tabelle mit den Spalten Prozent und Kinder: 20 % sind 6 Kinder, 10 % sind 3 Kinder, 100 % sind 30 Kinder. Links und rechts je ein Pfeil „: 2“ und ein Pfeil „· 10“."
+        caption: Oben steht, was gegeben ist. Unten steht das Ganze.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          Mit der Formel geht es in einem Schritt. Du stellst G · p % = P um wie eine Gleichung: Teile beide Seiten
+          durch das, was beim Gesuchten steht.
+      - type: formula
+        formula: 'G = P : p\,\% \qquad 6 : 0{,}2 = 30'
+      - type: formula
+        formula: 'p\,\% = P : G \qquad 6 : 30 = 0{,}2'
+      - type: text
+        text: |
+          P : G ergibt eine Dezimalzahl, den Anteil. Erst mal 100 wird daraus der Prozentsatz: 0,2 · 100 = 20, also
+          20 %.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Ein Achtel Rabatt
+        blocks:
+          - type: text
+            text: |
+              Ein Laden gibt 12,5 % Rabatt auf eine Jacke. Du sparst 15 €. Was kostete die Jacke vorher? Der Rabatt
+              ist der Prozentwert P = 15 €, der alte Preis ist der Grundwert G. Durch 0,125 teilen ist im Kopf
+              schwer – aber 12,5 % ist ein Achtel.
+          - type: formula
+            formula: 'G = 15 : \frac{1}{8} = 15 \cdot 8 = 120'
+          - type: text
+            text: Antwort – Die Jacke kostete vorher 120 €. Probe – ein Achtel von 120 € sind 15 €.
+  - type: section
+    id: merke
+    title: Was ist das Ganze?
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Der Grundwert ist immer das Ganze, auf das sich die Prozente beziehen – nicht einfach die Zahl, die im
+              Text steht. „6 Kinder sind 20 % der Klasse“: Die 6 Kinder sind der Teil, die Klasse ist das Ganze.
+              Wer hier 20 % von 6 rechnet, vertauscht Grundwert und Prozentwert.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: prozentsatz-grundwert-gesucht
+        text: "„In einem Bus sind 48 Plätze besetzt. Das sind 80 % aller Plätze.“ Welche Größe ist gesucht, wenn du die Anzahl aller Plätze wissen willst?"
+        options:
+          - text: der Grundwert
+            correct: true
+            info: "Alle Plätze sind das Ganze, also 100 %. Du rechnest G = 48 : 0,8."
+          - text: der Prozentwert
+            correct: false
+            info: "Der Prozentwert ist der Teil – die 48 besetzten Plätze. Er ist gegeben."
+          - text: der Prozentsatz
+            correct: false
+            info: "Der Prozentsatz ist der Anteil, hier 80 %. Er ist gegeben."
+        explanation: "Gegeben sind P = 48 Plätze und p % = 80 %. Gesucht ist das Ganze."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: generated
+        id: prozentsatz-grundwert-umfrage
+        given:
+          G: { oneOf: [20, 25, 40, 50, 80] }
+          P: { int: [1, 39] }
+        where: ["P < G", "decimals(P * 20 / G) == 0"]
+        task:
+          text: "Bei einer Umfrage antworten {{G}} Jugendliche. {{P}} davon spielen Handball. Wie viel Prozent sind das?"
+        answer: { value: "P * 100 / G", compare: { number: { format: percent, decimals: 0 } } }
+        mistakes:
+          - value: "P / G"
+            message: "Das ist der Anteil als Dezimalzahl. Nimm ihn noch mal 100, dann hast du den Prozentsatz."
+          - value: "P * G / 100"
+            message: "So rechnest du einen Prozentwert aus. Teile hier den Teil durch das Ganze."
+        hint: Welche Zahl ist das Ganze, welche der Teil?
+        steps:
+          - "Mit G = {{G}} Jugendliche und P = {{P}} Jugendliche: $p\\,\\% = P : G$"
+          - '$p\,\% = {{P}} : {{G}}$, mal 100 ergibt {{answer}}.'
+          - "{{answer}} % der Jugendlichen spielen Handball."
+      - type: generated
+        id: prozentsatz-grundwert-sparen
+        given:
+          P: { int: [6, 90] }
+          p: { oneOf: [5, 10, 20, 25, 40, 50] }
+        where: ["decimals(P * 100 / p) == 0", "P * 100 / p <= 1000"]
+        task:
+          text: "Lena hat schon {{P}} € für ein Fahrrad gespart. Das sind {{p}} % des Preises. Wie viel kostet das Fahrrad?"
+        answer: { value: "P * 100 / p", compare: { number: { format: integer, unit: € } } }
+        mistakes:
+          - value: "P * p / 100"
+            message: "Du hast {{p}} % von {{P}} € gerechnet. Die {{P}} € sind aber der Teil."
+          - value: "P / p"
+            message: "Du hast durch {{p}} geteilt statt durch {{p}} %. {{p}} % sind {{p}} Hundertstel."
+        hint: Wie viel Euro sind 1 %? Wie viel dann 100 %?
+        steps:
+          - "Mit P = {{P}} € und p % = {{p}} %: $G = P : p\\,\\%$"
+          - '$G = {{P}} : \frac{{{p}}}{100} = {{answer}}$'
+          - "Das Fahrrad kostet {{answer}} €."
+      - type: single-choice
+        id: prozentsatz-grundwert-rechnung
+        text: "Von 60 Äpfeln in einer Kiste sind 9 faul. Mit welcher Rechnung bekommst du den Prozentsatz der faulen Äpfel?"
+        options:
+          - text: "9 : 60 · 100"
+            correct: true
+            info: "Teil durch Ganzes ergibt den Anteil 0,15. Mal 100 sind das 15 %."
+          - text: "60 : 9 · 100"
+            correct: false
+            info: "Hier wird das Ganze durch den Teil geteilt. Es kämen über 600 % heraus."
+          - text: "60 · 9 : 100"
+            correct: false
+            info: "So rechnest du 9 % von 60 aus, also einen Prozentwert. Es kommt 5,4 heraus."
+        explanation: "Teil durch Ganzes, mal 100: 9 : 60 · 100 = 15, also 15 %."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: number
+        id: prozentsatz-grundwert-test
+        text: "Tom hat im Test 85 % der Punkte erreicht. Bis zur vollen Punktzahl fehlen ihm 6 Punkte. Wie viele Punkte gab es im Test?"
+        answer: 40
+        tolerance: 0
+        unit: Punkte
+        mistakes:
+          - answer: 0.9
+            message: "Du hast 15 % von 6 gerechnet. Die 6 Punkte sind aber der Teil."
+          - answer: 34
+            message: "34 Punkte hat Tom erreicht. Gefragt ist der ganze Test."
+          - answer: 91
+            message: "Du hast 85 + 6 gerechnet. Die 85 sind Prozent, keine Punkte."
+        hint: Wie viel Prozent der Punkte fehlen Tom?
+        explanation: "Tom fehlen 100 % − 85 % = 15 %. 15 % sind 6 Punkte, also 5 % = 2 Punkte und 100 % = 20 · 2 = 40 Punkte."
+        links:
+          - title: Einführung in Grundwert, Prozentwert und Prozentsatz (Serlo)
+            url: https://de.serlo.org/mathe/36750/einfuehrung-in-grundwert-prozentwert-und-prozentsatz
+      - type: text
+        text: Als Nächstes löst du Sachaufgaben, in denen du zuerst selbst herausfindest, welche Größe gesucht ist.

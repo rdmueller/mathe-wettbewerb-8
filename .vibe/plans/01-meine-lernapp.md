@@ -8,7 +8,7 @@ phase: code
 # prePushFailures: failed pre-push runs, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
-failedChecks: {}
+failedChecks: { accessible: 5, checks-pass: 2 }
 ---
 
 # Plan: meine-lernapp, first version
@@ -578,7 +578,7 @@ page, which a link. -->
       Creator: ja
 - [x] Startseite: Wettbewerb in drei Sätzen (8 Pflicht-, 2 von 4 Wahlaufgaben, ohne Taschenrechner), Vorgehen für jede Aufgabe, Link zur Selbsteinschätzung
 - [x] Kapitel zuordnungen: 4 Seiten (tabelle-koordinaten, proportional, antiproportional, graphen) mit SVG-Koordinatensystemen, Selbsteinschätzung
-- [ ] Kapitel prozent: 3 Seiten (prozentwert, prozentsatz-grundwert, sachaufgaben) mit Hunderterfeld, generated mit Fehlerdiagnose, Selbsteinschätzung
+- [x] Kapitel prozent: 3 Seiten (prozentwert, prozentsatz-grundwert, sachaufgaben) mit Hunderterfeld, generated mit Fehlerdiagnose, Selbsteinschätzung
 - [ ] Kapitel flaechen, übrige 5 Seiten (quadrat-rechteck, parallelogramm-trapez, quader-wuerfel, netz-oberflaeche, formeln-umstellen) nach der Musterseite, Abschnitt Einheiten, Selbsteinschätzung
 - [ ] Kapitel terme: 4 Seiten (aufstellen, werte-berechnen, zusammenfassen, produkte), Terme als Auswahl, Selbsteinschätzung
 - [ ] Kapitel wahrscheinlichkeit: 3 Seiten (laplace, baumdiagramm, pfadregeln) mit Daten zufallsversuche.yaml und SVG-Bäumen, Selbsteinschätzung

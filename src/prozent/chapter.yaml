@@ -1,0 +1,4 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Prozentrechnung
+summary: Grundwert, Prozentsatz und Prozentwert – vom Hunderterfeld zur Formel G · p % = P und zu Sachaufgaben in vier Schritten.
+pages: [prozentwert, prozentsatz-grundwert, sachaufgaben]
