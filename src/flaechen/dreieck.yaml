@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Flächeninhalt und Umfang des Dreiecks
+description: "Die Dreiecksformel aus dem Rechteck herleiten, die Höhe finden – auch außen – und Fläche und Umfang berechnen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann Flächeninhalt und Umfang von Dreiecken berechnen und zu jeder Seite die Höhe finden, auch
+      wenn sie außen liegt. Du brauchst dafür nur die Rechteckformel $A = a \cdot b$.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: dreieck-start
+        text: Ein Rechteck ist 6 cm lang und 4 cm breit. Eine Diagonale teilt es in zwei gleiche Dreiecke. Wie groß ist eines davon?
+        material:
+          - type: figure
+            image: images/flaechen-rechteck-halbiert.svg
+            alt: Ein Rechteck, 6 cm lang und 4 cm breit, durch eine Diagonale in zwei Dreiecke geteilt.
+            caption: Die orange Diagonale teilt das Rechteck in zwei Dreiecke, die genau aufeinander passen.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 12
+        tolerance: 0
+        unit: cm²
+        mistakes:
+          - answer: 24
+            message: "24 cm² ist das ganze Rechteck. Gefragt ist eines der zwei gleichen Dreiecke."
+          - answer: 10
+            message: "Du hast 6 + 4 gerechnet. Für eine Fläche multiplizierst du Länge und Breite."
+        hint: Rechne erst die Fläche des Rechtecks aus.
+        explanation: "Das Rechteck hat 6 · 4 = 24 cm². Die zwei Dreiecke sind gleich groß, also hat jedes 24 : 2 = 12 cm²."
+        links:
+          - title: Flächenformeln ebener Figuren (Serlo)
+            url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+  - type: section
+    id: regel
+    title: Jedes Dreieck ist ein halbes Rechteck
+    blocks:
+      - type: text
+        text: |
+          Das klappt nicht nur bei rechtwinkligen Dreiecken. Zeichne um ein Dreieck ein Rechteck mit derselben
+          Grundseite $g$. Seine Breite ist die **Höhe** $h$: der Abstand der Spitze von der Grundseite, senkrecht
+          gemessen. Die Höhe teilt das Rechteck in zwei Teile. In jedem Teil liegt genau die Hälfte im Dreieck.
+      - type: figure
+        image: images/flaechen-dreieck-im-rechteck.svg
+        alt: Ein blaues Dreieck in einem gestrichelten Rechteck. Die orange gestrichelte Höhe h steht senkrecht auf der Grundseite g und teilt das Rechteck in Teil 1 und Teil 2.
+        caption: "Die Höhe teilt das Rechteck in Teil 1 und Teil 2. In jedem Teil ist genau die Hälfte blau."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'A = \frac{g \cdot h}{2} \qquad u = a + b + c'
+      - type: text
+        text: |
+          Jede der drei Seiten kann die Grundseite sein. Darum hat jedes Dreieck **drei Höhen**. Bei einem stumpfen
+          Winkel liegen zwei davon außen: Du verlängerst die Grundseite und misst senkrecht bis zur Spitze.
+      - type: figure
+        image: images/flaechen-dreieck-hoehen.svg
+        alt: Links ein spitzwinkliges Dreieck, die Höhe h liegt innen. Rechts ein stumpfwinkliges Dreieck, die Grundseite g ist gestrichelt verlängert, die Höhe h liegt außen.
+        caption: Rechts liegt die Höhe außerhalb des Dreiecks. Die Formel bleibt dieselbe.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Ein Dreieck mit g = 8 cm und h = 5 cm
+        blocks:
+          - type: formula
+            formula: 'A = \frac{8\text{ cm} \cdot 5\text{ cm}}{2} = \frac{40\text{ cm}^2}{2} = 20\text{ cm}^2'
+          - type: text
+            text: Antwort – Das Dreieck hat einen Flächeninhalt von 20 cm².
+  - type: section
+    id: merke
+    title: Die Höhe ist keine Seite
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Die Höhe steht immer **senkrecht** auf der Grundseite. Eine schräge Seite ist nie die Höhe – auch wenn
+              ihre Länge in der Aufgabe steht. Der Flächeninhalt hat cm², der Umfang nur cm.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: dreieck-welche-hoehe
+        text: Welche Strecke ist die Höhe zur Seite c?
+        material:
+          - type: figure
+            image: images/flaechen-welche-hoehe.svg
+            alt: Ein Dreieck ABC mit der Seite c unten. Von C aus gehen drei gestrichelte Strecken 1, 2 und 3 zur Seite c.
+            caption: Alle drei Strecken beginnen bei C und enden auf der Seite c.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: Strecke 1
+            correct: false
+            info: Strecke 1 trifft die Seite c schräg. Eine Höhe bildet mit der Grundseite einen rechten Winkel.
+          - text: Strecke 2
+            correct: true
+            info: Strecke 2 trifft die Seite c im rechten Winkel. Sie ist der kürzeste Weg von C zur Seite c.
+          - text: Strecke 3
+            correct: false
+            info: Strecke 3 endet in der Mitte von c, sie heißt Seitenhalbierende. Sie trifft c schräg.
+        explanation: Die Höhe zur Seite c ist die Strecke von C, die senkrecht auf c steht.
+        links:
+          - title: Höhe (Geometrie) (Wikipedia)
+            url: https://de.wikipedia.org/wiki/H%C3%B6he_%28Geometrie%29
+      - type: true-false
+        id: dreieck-drei-hoehen
+        text: In einem stumpfwinkligen Dreieck liegen alle drei Höhen innen.
+        answer: false
+        explanation: Bei einem stumpfen Winkel liegen zwei Höhen außen. Dafür verlängert man die Grundseite.
+      - type: generated
+        id: dreieck-flaeche
+        given:
+          g: { int: [3, 20] }
+          h: { int: [3, 20] }
+        where: ["decimals(g * h / 2) == 0"]
+        task:
+          text: "Ein Dreieck hat die Grundseite g = {{g}} cm und die Höhe h = {{h}} cm. Wie groß ist sein Flächeninhalt?"
+        answer: { value: "g * h / 2", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "g * h"
+            message: "Das ist das Rechteck um das Dreieck. Das Dreieck ist nur die Hälfte davon: Teile noch durch 2."
+          - value: "(g + h) / 2"
+            message: "Du hast g und h addiert. Für eine Fläche multiplizierst du Grundseite und Höhe."
+        hint: Rechne erst g · h. Das ist das Rechteck um das Dreieck.
+        steps:
+          - '$A = \frac{{{g}} \cdot {{h}}}{2}$'
+          - "Das Dreieck hat einen Flächeninhalt von {{answer}} cm²."
+      - type: generated
+        id: dreieck-hoehe-aussen
+        given:
+          c: { int: [4, 16] }
+          h: { int: [2, 12] }
+          b: { int: [3, 15] }
+        where: ["decimals(c * h / 2) == 0", "b > h"]
+        task:
+          text: "Ein Dreieck hat einen stumpfen Winkel. Die Grundseite c ist {{c}} cm lang. Die Höhe zu c liegt außen und ist {{h}} cm lang. Die schräge Seite b ist {{b}} cm lang. Wie groß ist der Flächeninhalt?"
+        answer: { value: "c * h / 2", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "c * b / 2"
+            message: "Du hast die schräge Seite b genommen. Die Höhe steht senkrecht auf c – auch wenn sie außen liegt."
+          - value: "c * h"
+            message: "Das ist doppelt so viel. Teile noch durch 2."
+        hint: Die Länge von b brauchst du nicht. Nimm die Höhe.
+        steps:
+          - '$A = \frac{{{c}} \cdot {{h}}}{2}$ – die Seite b spielt keine Rolle.'
+          - "Der Flächeninhalt ist {{answer}} cm²."
+      - type: generated
+        id: dreieck-umfang
+        given:
+          a: { int: [3, 15] }
+          b: { int: [3, 15] }
+          c: { int: [3, 15] }
+        where:
+          - "a + b > c and a + c > b and b + c > a"
+          - "a * b / 2 != a + b + c"
+        task:
+          text: "Ein Dreieck hat die Seiten a = {{a}} cm, b = {{b}} cm und c = {{c}} cm. Wie groß ist sein Umfang?"
+        answer: { value: "a + b + c", compare: { number: { format: integer, unit: cm } } }
+        mistakes:
+          - value: "a + b"
+            message: "Du hast eine Seite vergessen. Der Umfang ist der Weg einmal ganz um das Dreieck herum."
+          - value: "a * b / 2"
+            message: "Das wäre ein Flächeninhalt. Für den Umfang addierst du alle drei Seiten."
+        hint: Fahre mit dem Finger einmal um das Dreieck und addiere jede Seite.
+        steps:
+          - "$u = {{a}} + {{b}} + {{c}}$"
+          - "Der Umfang ist {{answer}} cm."
+      - type: generated
+        id: dreieck-rueckwaerts
+        given:
+          A: { int: [6, 60] }
+          g: { oneOf: [2, 3, 4, 5, 6, 8, 10, 12] }
+        where: ["decimals(2 * A / g) == 0", "2 * A / g <= 20"]
+        task:
+          text: "Ein Dreieck hat den Flächeninhalt A = {{A}} cm². Die Grundseite ist g = {{g}} cm lang. Wie lang ist die Höhe h?"
+        answer: { value: "2 * A / g", compare: { number: { format: integer, unit: cm } } }
+        mistakes:
+          - value: "A / g"
+            message: "Du hast das „: 2“ der Formel vergessen. Nimm A erst mal 2, dann teile durch g."
+          - value: "2 * A"
+            message: "Das ist g · h. Teile noch durch die Grundseite g."
+        hint: "In der Formel steht A = g · h : 2. Rechne rückwärts: erst mal 2, dann durch g."
+        steps:
+          - "$g \\cdot h = 2 \\cdot {{A}}$"
+          - '$h = \frac{2 \cdot {{A}}}{{{g}}}$'
+          - "Die Höhe ist {{answer}} cm lang."
+      - type: text
+        text: Als Nächstes zerlegst du Parallelogramm und Trapez – mit demselben Trick.

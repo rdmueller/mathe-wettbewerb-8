@@ -1,10 +1,20 @@
 # yaml-language-server: $schema=../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
 format: 2
-# The strand of the learning map the app stays in, <subject>/<strand> (e.g. mathematik/stochastik); then each page
-# names its competencies. none: the app is on no strand, and no page names competencies. A unit app across the strands
-# of a subject whose map allows it names subject: <subject> (e.g. franzoesisch) instead of strand.
+# Die Themen des Wettbewerbs reichen über fünf Stränge der Lernlandkarte Mathematik: kein Strang.
 strand: none
-title: Platzhalter
-intro: Dieses Kapitel hält den Platz frei, bis der geplante Inhalt da ist.
+title: Fit für den Mathe-Wettbewerb
+intro: |
+  Für die 1. Runde des Mathematik-Wettbewerbs des Landes Hessen, Klasse 8, Gymnasium. Im Wettbewerb gibt es 8
+  Pflichtaufgaben und 4 Wahlaufgaben, von denen du 2 bearbeitest. Taschenrechner und Formelsammlung sind nicht
+  erlaubt: Formeln musst du auswendig können, und alle Zahlen hier gehen im Kopf oder schriftlich auf.
 languages: [de]
-chapters: [thema]
+chapters: [flaechen]
+sources:
+  - title: Mathematik-Wettbewerb des Landes Hessen
+    url: https://mathematik-wettbewerb.de/pages/index.xml
+  - title: Flächenformeln ebener Figuren (Serlo)
+    url: https://de.serlo.org/mathe/36520/flaechenformeln-ebener-figuren
+tutor:
+  rules: |
+    Im Wettbewerb sind Taschenrechner und Formelsammlung verboten. Rechne mit dem Kind im Kopf oder schriftlich, und
+    lass es die Formel selbst aufschreiben, bevor es rechnet. Rechenwege gehören aufs Papier, das Ergebnis in die App.

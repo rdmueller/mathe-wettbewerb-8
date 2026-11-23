@@ -39,6 +39,8 @@ Taschenrechner – alle 8 Pflichtthemen und die 4 Wahlaufgaben W1–W4.
   typischen Fehlern, Selbsteinschätzung pro Kapitel passt zur Checkliste. `quiz` scheidet aus (keine neuen Zahlen,
   keine Erklärseiten), `interactive` auch (kein Spiel, kein Trainer mit Timer nötig).
 - App zum Teilen mit `@lernapps/tooling`, nicht `@lernapps/practice`: der Wettbewerb betrifft alle 8. Klassen in Hessen. (guess)
+- Kein `scope`: keine `open-task`, und die App folgt nicht dem Material der Erstellerin/des Erstellers, sondern nur seiner
+  Themenliste; dafür `tutor.rules` in `src/app.yaml`: ohne Taschenrechner rechnen, Wettbewerbsniveau Klasse 8. (guess)
 
 ## Notes
 
@@ -561,14 +563,14 @@ page, which a link. -->
       `npx --no -- lernapps create --archetype explainer`.
 - [x] Fill the content guide `.agents/skills/app-content/SKILL.md` from "Notes" and "Content method": every heading,
       no "FILL IN" left. Commit it before any content.
-- [ ] Load skill `lernapps-explainer`.
-- [ ] Load skill `lernapps-content-questions`. Read whole, with your file tool:
+- [x] Load skill `lernapps-explainer`.
+- [x] Load skill `lernapps-content-questions`. Read whole, with your file tool:
       `.agents/skills/lernapps-explainer/references/blocks.md` and
       `.agents/skills/lernapps-explainer/references/exercises.md`. A foreign language: also
       `references/language-tasks.md` in the same folder. A component in the plan: also `references/components.md`.
-- [ ] Decide whether the app needs `scope`, as "`scope`" in
+- [x] Decide whether the app needs `scope`, as "`scope`" in
       `.agents/skills/lernapps-explainer/references/structure.md` says. Write the choice under "Key decisions".
-- [ ] Musterseite flaechen/dreieck: Einstieg Rechteck halbieren, SVG mit Höhen innen und außen, Formel, Beispielbox, Merke schräge Seite, Übung mit generated (A, u, Höhe außen) und Fehlerdiagnose; zeigt das Abschnittsschema und die Farbregeln für alle Seiten
+- [x] Musterseite flaechen/dreieck: Einstieg Rechteck halbieren, SVG mit Höhen innen und außen, Formel, Beispielbox, Merke schräge Seite, Übung mit generated (A, u, Höhe außen) und Fehlerdiagnose; zeigt das Abschnittsschema und die Farbregeln für alle Seiten
 <!-- tasks: pattern (1 added): the one page or screen that is the pattern for the others -->
 - [ ] **Checkpoint:** the pattern page. Load skill `lernapps-learner-check` and do its learner check on the page. Fix
       what it finds. Then show the creator the page and ask whether the others may follow it. Stop and wait. A
