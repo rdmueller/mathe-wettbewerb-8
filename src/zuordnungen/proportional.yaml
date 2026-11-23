@@ -1,0 +1,182 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Proportionale Zuordnungen
+description: "Proportionale Zuordnungen am gleichen Faktor und am gleichen Quotienten erkennen und Tabellen ergänzen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann proportionale Zuordnungen erkennen und Tabellen mit dem Faktor ergänzen. Du baust auf den
+      Tabellen und Wertepaaren der vorigen Seite auf.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: proportional-start
+        text: In der Eisdiele kosten 4 Kugeln Eis 6 €. Wie viel kosten 12 Kugeln?
+        answer: 18
+        tolerance: 0
+        unit: €
+        mistakes:
+          - answer: 14
+            message: "Du hast 8 € dazugezählt, weil 8 Kugeln dazukommen. Eine Kugel kostet aber mehr als 1 €."
+          - answer: 72
+            message: "Du hast 6 € mal 12 gerechnet. Die 6 € sind aber der Preis für 4 Kugeln, nicht für eine."
+        hint: Wie oft passen 4 Kugeln in 12 Kugeln?
+        explanation: "12 Kugeln sind dreimal so viele wie 4 Kugeln. Also kosten sie dreimal so viel: 6 € · 3 = 18 €."
+        links:
+          - title: Direkte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/1771/direkte-proportionalitaet
+  - type: section
+    id: regel
+    title: Dreimal so viel, dreimal so teuer
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben sind 12 Kugeln dreimal so viele wie 4 Kugeln, also kosten sie auch dreimal so viel.
+          Eine Zuordnung heißt **proportional**, wenn gilt: Nimmst du x mit einer Zahl mal, wird auch y mit
+          derselben Zahl malgenommen. Das gilt auch fürs Teilen: Halb so viele Kugeln kosten halb so viel.
+      - type: figure
+        image: images/zuordnungen-faktor.svg
+        alt: Eine Tabelle mit den Spalten Kugeln und Preis in Euro. 4 Kugeln kosten 6 Euro, 12 Kugeln kosten 18 Euro. Links und rechts führt je ein oranger Pfeil mit „mal 3“ von der oberen zur unteren Zeile.
+        caption: Links und rechts steht derselbe Faktor.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          Teilst du in jeder Zeile y durch x, kommt immer dasselbe heraus: 6 : 4 = 1,5 und 18 : 12 = 1,5. Das
+          Ergebnis einer Division heißt **Quotient**. Bei einer proportionalen Zuordnung ist der Quotient y : x in
+          jeder Zeile gleich. Er heißt **Proportionalitätsfaktor** $k$ – hier der Preis für eine Kugel, 1,50 €.
+          Mit ihm ergänzt du jede Tabelle.
+      - type: formula
+        formula: 'k = \frac{y}{x} = \frac{6}{4} = 1{,}5 \qquad y = k \cdot x'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Kerzen mit Mengenrabatt
+        blocks:
+          - type: text
+            text: Ein Laden verkauft Kerzen. Ist die Zuordnung Anzahl → Preis proportional? Prüfe den Quotienten in jeder Zeile.
+          - type: table
+            caption: Preise im Kerzenladen
+            header: [Anzahl, Preis in €, "Preis : Anzahl"]
+            rows:
+              - ["2", "5", "2,5"]
+              - ["6", "15", "2,5"]
+              - ["10", "24", "2,4"]
+          - type: text
+            text: |
+              In der letzten Zeile ist der Quotient kleiner: Wer 10 Kerzen kauft, bekommt Rabatt. Antwort – Die
+              Zuordnung ist nicht proportional, obwohl mehr Kerzen mehr kosten.
+  - type: section
+    id: merke
+    title: Je mehr, desto mehr – das reicht nicht
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Bei vielen Zuordnungen wird y größer, wenn x größer wird – beim Taxi mit Grundgebühr oder bei Alter
+              und Körpergröße. Proportional ist eine Zuordnung erst, wenn der Quotient y : x in jeder Zeile gleich
+              ist. Und eine Tabelle ergänzt du mit dem Faktor (mal), nie mit dem Unterschied (plus).
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: true-false
+        id: proportional-alter
+        text: Je älter ein Kind ist, desto größer ist es. Also ist die Zuordnung Alter → Körpergröße proportional.
+        answer: false
+        explanation: "Ein Kind mit 4 Jahren ist ungefähr 1 m groß. Mit 8 Jahren ist es aber nicht 2 m groß. Der Quotient Größe : Alter bleibt nicht gleich."
+        links:
+          - title: Direkte und indirekte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/196516/direkte-und-indirekte-proportionalitaet
+      - type: single-choice
+        id: proportional-tabelle
+        text: Welche Tabelle gehört zu einer proportionalen Zuordnung?
+        options:
+          - text: "1 → 3, 2 → 6, 5 → 15"
+            correct: true
+            info: "In jeder Zeile ist y : x = 3. Der Quotient bleibt gleich."
+          - text: "1 → 4, 2 → 6, 5 → 12"
+            correct: false
+            info: "y wird zwar größer, aber die Quotienten sind 4, 3 und 2,4. Sie sind verschieden."
+          - text: "1 → 3, 2 → 6, 5 → 12"
+            correct: false
+            info: "Die ersten zwei Zeilen passen zum Faktor 3, die letzte nicht: 12 : 5 = 2,4. Prüfe immer alle Zeilen."
+        explanation: "Proportional ist eine Tabelle nur, wenn der Quotient y : x in allen Zeilen derselbe ist."
+        links:
+          - title: Direkte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/1771/direkte-proportionalitaet
+      - type: generated
+        id: proportional-preis
+        given:
+          a: { int: [2, 5] }
+          b: { int: [10, 48] }
+          c: { int: [2, 12] }
+        where:
+          - "c != a"
+          - "b / a >= 5 and b / a <= 12"
+          - "decimals(2 * b / a) == 0"
+          - "decimals(b * c / a) <= 2"
+          - "b + c - a != b * c / a"
+        task:
+          text: "{{a}} Kinokarten kosten zusammen {{b}} €. Wie viel kosten {{c}} Kinokarten?"
+        answer: { value: "b * c / a", compare: { number: { format: money } } }
+        mistakes:
+          - value: "b + c - a"
+            message: "Du hast den Unterschied der Anzahlen zum Preis addiert. Bei einer proportionalen Zuordnung rechnest du mit einem Faktor, nicht mit plus."
+          - value: "b * c"
+            message: "{{b}} € ist der Preis für {{a}} Karten, nicht für eine. Teile zuerst durch {{a}}."
+        hint: Wie viel kostet eine Karte?
+        steps:
+          - "Mit {{a}} Karten für {{b}} €: Eine Karte kostet {{b}} € : {{a}}."
+          - "{{c}} Karten kosten {{c}}-mal so viel: {{answer}} €."
+      - type: multiple-choice
+        id: proportional-welche
+        text: Welche Zuordnungen sind proportional? Wähle alle passenden.
+        options:
+          - text: Anzahl Brötchen → Preis, jedes Brötchen kostet 40 ct
+            correct: true
+            info: "Doppelt so viele Brötchen kosten doppelt so viel. Der Quotient ist immer 40 ct."
+          - text: Strecke → Preis beim Taxi mit Grundgebühr
+            correct: false
+            info: "Die Grundgebühr kommt immer dazu. Doppelt so weit kostet darum weniger als doppelt so viel."
+          - text: Liter Benzin → Preis an der Tankstelle
+            correct: true
+            info: "Jeder Liter kostet gleich viel. Der Preis pro Liter ist der Proportionalitätsfaktor."
+          - text: Alter → Schuhgröße
+            correct: false
+            info: "Füße wachsen mit dem Alter, aber nicht im gleichen Verhältnis – und irgendwann gar nicht mehr."
+        explanation: "Proportional sind die Zuordnungen, bei denen jedes Stück oder jeder Liter gleich viel kostet: Der Quotient y : x bleibt gleich."
+        links:
+          - title: Direkte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/1771/direkte-proportionalitaet
+      - type: generated
+        id: proportional-rezept
+        given:
+          a: { oneOf: [4, 6, 8, 10, 12] }
+          m: { int: [100, 400], step: 50 }
+          h: { int: [150, 1000], step: 50 }
+        where:
+          - "h != m"
+          - "decimals(a * h / m) == 0"
+          - "decimals(h / m) <= 2"
+          - "decimals(a * m / h) <= 2"
+          - "h / m != a * h / m"
+        task:
+          text: "Für {{a}} Pfannkuchen brauchst du {{m}} g Mehl. Du hast {{h}} g Mehl und verwendest alles. Wie viele Pfannkuchen kannst du backen?"
+        answer: { value: "a * h / m", compare: { number: { format: integer, unit: Pfannkuchen } } }
+        mistakes:
+          - value: "h / m"
+            message: "Du hast ausgerechnet, wie oft {{m}} g in {{h}} g passen. Mit jeder Portion Mehl backst du aber {{a}} Pfannkuchen."
+          - value: "a * m / h"
+            message: "Du hast falsch herum geteilt. Mehr Mehl ergibt mehr Pfannkuchen, nicht weniger."
+        hint: Wie oft passen {{m}} g Mehl in {{h}} g Mehl?
+        steps:
+          - "{{m}} g Mehl reichen für {{a}} Pfannkuchen. {{h}} g sind {{h}} : {{m}}-mal so viel Mehl."
+          - "Also kannst du auch {{h}} : {{m}}-mal so viele Pfannkuchen backen: {{answer}} Stück."
+      - type: text
+        text: Als Nächstes lernst du Zuordnungen kennen, bei denen y kleiner wird, wenn x größer wird – antiproportionale Zuordnungen.

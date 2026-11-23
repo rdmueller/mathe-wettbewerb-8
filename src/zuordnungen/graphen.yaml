@@ -1,0 +1,190 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Graphen von Zuordnungen
+description: "Am Graphen erkennen, ob eine Zuordnung proportional (Gerade durch den Ursprung) oder antiproportional (Hyperbel) ist."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann am Graphen erkennen, ob eine Zuordnung proportional oder antiproportional ist. Du brauchst
+      das Koordinatensystem von der ersten Seite und die zwei Tests mit y : x und x · y.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: single-choice
+        id: graphen-start
+        text: Ein Heft kostet 2 €. Trage die Punkte (1 | 2), (2 | 4), (3 | 6) und (4 | 8) in ein Koordinatensystem ein, im Heft oder im Kopf. Was entsteht, wenn du sie verbindest und die Linie nach links verlängerst?
+        options:
+          - text: Eine gerade Linie, die durch den Ursprung (0 | 0) geht
+            correct: true
+            info: "Jeder Schritt um 1 nach rechts bringt 2 nach oben. Nach links verlängert, landest du bei (0 | 0)."
+          - text: Eine gerade Linie, die die y-Achse oberhalb von 0 trifft
+            correct: false
+            info: "Gehst du von (1 | 2) einen Schritt nach links, gehst du auch 2 nach unten – genau auf (0 | 0)."
+          - text: Eine gebogene Linie
+            correct: false
+            info: "Von Punkt zu Punkt geht es immer gleich viel nach oben: 2 für jedes Heft. Darum ist die Linie nicht gebogen."
+        explanation: "Die Punkte liegen auf einer geraden Linie durch den Ursprung. Das passt: 0 Hefte kosten 0 €."
+        links:
+          - title: Direkte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/1771/direkte-proportionalitaet
+  - type: section
+    id: regel
+    title: Gerade oder Hyperbel
+    blocks:
+      - type: text
+        text: |
+          Alle Punkte einer Zuordnung zusammen heißen ihr **Graph**. Bei den Heften liegen sie auf einer geraden
+          Linie, einer **Gerade**. Sie geht durch den Ursprung, denn 0 Hefte kosten 0 €. Das gilt für jede
+          proportionale Zuordnung: Wegen y = k · x gehört zu x = 0 immer y = 0, und jeder Schritt nach rechts bringt
+          gleich viel nach oben.
+      - type: figure
+        image: images/zuordnungen-graph-proportional.svg
+        alt: Ein Koordinatensystem, x-Achse Anzahl Hefte, y-Achse Preis in Euro. Vier blaue Punkte liegen auf einer blauen Geraden, die im orange markierten Ursprung beginnt.
+        caption: "Der orange Punkt ist der Ursprung. Je 1 Heft nach rechts geht es 2 € nach oben."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: text
+        text: |
+          Bei der Pizza von der vorigen Seite ist x · y = 12, allgemein x · y = c mit einer festen Zahl c. Ihre Punkte liegen auf einer gebogenen Linie, einer
+          **Hyperbel**. Sie fällt erst steil, dann flach. Sie kommt den Achsen immer näher, berührt sie aber nie:
+          Kein Produkt mit 0 ergibt 12.
+      - type: figure
+        image: images/zuordnungen-graph-hyperbel.svg
+        alt: Ein Koordinatensystem, x-Achse Personen, y-Achse Stücke je Person. Sechs blaue Punkte liegen auf einer gebogenen blauen Linie, die erst steil und dann flach fällt.
+        caption: "Von (2 | 6) zu (4 | 3): doppelt so viele Personen, halb so hoch. Personen gibt es nur ganz – die Linie zeigt, wie die Punkte liegen."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'y = k \cdot x \qquad x \cdot y = c'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Das Taxi – eine Gerade, aber nicht proportional
+        blocks:
+          - type: text
+            text: |
+              Ein Taxi kostet 4 € Grundgebühr und 2 € für jeden Kilometer. Der Graph Strecke → Preis ist eine Gerade.
+              Sie beginnt aber nicht im Ursprung, sondern bei (0 | 4): Für 0 km zahlst du schon 4 €.
+          - type: figure
+            image: images/zuordnungen-taxi.svg
+            alt: Ein Koordinatensystem, x-Achse Strecke in Kilometern, y-Achse Preis in Euro. Eine blaue Gerade beginnt beim orange markierten Punkt auf der y-Achse bei 4 Euro und steigt nach rechts.
+            caption: Der orange Punkt liegt auf der y-Achse, nicht im Ursprung.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+          - type: text
+            text: |
+              Prüfe mit dem Quotienten: Bei 1 km ist 6 : 1 = 6, bei 2 km ist 8 : 2 = 4. Antwort – Die Zuordnung ist
+              nicht proportional, weil die Gerade nicht durch den Ursprung geht.
+  - type: section
+    id: merke
+    title: Nicht jede Gerade ist proportional
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Eine Gerade gehört nur dann zu einer proportionalen Zuordnung, wenn sie durch den Ursprung geht. Und
+              eine fallende Gerade ist keine Hyperbel: Sie trifft die Achsen, eine Hyperbel nie. Dann ist die
+              Zuordnung auch nicht antiproportional.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: matching
+        id: graphen-zuordnen
+        text: Ordne jedem Graphen zu, was er zeigt.
+        material:
+          - type: figure
+            image: images/zuordnungen-vier-graphen.svg
+            alt: Vier Koordinatensysteme A, B, C und D mit je einem blauen Graphen. A und B sind steigende Geraden, C ist eine fallende Gerade, D ist eine fallende gebogene Linie.
+            caption: Achte darauf, wo jeder Graph die Achsen trifft – oder ob er sie nie trifft.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        pairs:
+          - left: Graph A
+            right: proportional
+          - left: Graph B
+            right: "nicht proportional: Gerade, die nicht durch den Ursprung geht"
+          - left: Graph C
+            right: "nicht antiproportional: fällt, trifft aber beide Achsen"
+          - left: Graph D
+            right: antiproportional
+        explanation: "A ist eine Gerade durch den Ursprung, D eine Hyperbel, die die Achsen nie berührt. B beginnt oberhalb des Ursprungs, C trifft beide Achsen."
+        links:
+          - title: Direkte und indirekte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/196516/direkte-und-indirekte-proportionalitaet
+      - type: generated
+        id: graphen-gerade
+        given:
+          a: { int: [2, 6] }
+          b: { int: [2, 20] }
+          c: { int: [2, 12] }
+        where:
+          - "c != a"
+          - "decimals(b * c / a) <= 1"
+          - "decimals(a * b / c) <= 2"
+          - "b + c - a != b * c / a"
+        task:
+          text: "Der Graph einer proportionalen Zuordnung geht durch den Punkt ({{a}} | {{b}}). Welchen y-Wert hat der Graph bei x = {{c}}?"
+        answer: { value: "b * c / a", compare: { number: { format: decimal, decimals: 1 } } }
+        mistakes:
+          - value: "b + c - a"
+            message: "Du bist so viel nach oben gegangen wie nach rechts. Auf einer Geraden durch den Ursprung wird y mit demselben Faktor malgenommen wie x."
+          - value: "a * b / c"
+            message: "Du hast antiproportional gerechnet. Der Graph ist eine Gerade durch den Ursprung: Größeres x heißt größeres y."
+        hint: "Bestimme den Proportionalitätsfaktor k = y : x aus dem Punkt ({{a}} | {{b}})."
+        steps:
+          - "Aus dem Punkt ({{a}} | {{b}}): k = {{b}} : {{a}}."
+          - "Bei x = {{c}}: y = k · {{c}} = {{answer}}."
+      - type: generated
+        id: graphen-hyperbel
+        given:
+          a: { int: [2, 8] }
+          b: { int: [2, 12] }
+          d: { int: [2, 12] }
+        where:
+          - "d != b"
+          - "decimals(a * b / d) == 0"
+          - "decimals(a * d / b) <= 2"
+        task:
+          text: "Der Graph einer antiproportionalen Zuordnung geht durch den Punkt ({{a}} | {{b}}). Bei welchem x-Wert hat er den y-Wert {{d}}?"
+        answer: { value: "a * b / d", compare: { number: { format: integer } } }
+        mistakes:
+          - value: "a * d / b"
+            message: "Du hast proportional gerechnet. Bei einer Hyperbel ist das Produkt x · y überall gleich."
+          - value: "a * b"
+            message: "Das ist das Produkt x · y. Teile es noch durch den y-Wert {{d}}."
+        hint: Rechne zuerst das Produkt x · y für den bekannten Punkt aus.
+        steps:
+          - "Aus dem Punkt ({{a}} | {{b}}): x · y = {{a}} · {{b}}."
+          - "Bei y = {{d}}: x = {{a}} · {{b}} : {{d}} = {{answer}}."
+      - type: single-choice
+        id: graphen-gleichung
+        text: Ein Graph geht durch den Punkt (2 | 6) und berührt die Achsen nie. Welche Gleichung passt zu ihm?
+        options:
+          - text: "x · y = 12"
+            correct: true
+            info: "2 · 6 = 12. Weil das Produkt gleich bleibt, ist der Graph eine Hyperbel und trifft die Achsen nie."
+          - text: "y = 3 · x"
+            correct: false
+            info: "Auch hier liegt (2 | 6) auf dem Graphen. Er ist aber eine Gerade durch den Ursprung und trifft damit beide Achsen."
+          - text: "y = x + 4"
+            correct: false
+            info: "Auch hier liegt (2 | 6) auf dem Graphen. Er ist eine Gerade und trifft die y-Achse bei 4."
+        explanation: Nur der Graph von x · y = 12 ist eine Hyperbel. Die anderen zwei Gleichungen ergeben Geraden, und die treffen die Achsen.
+        links:
+          - title: Direkte und indirekte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/196516/direkte-und-indirekte-proportionalitaet
+      - type: true-false
+        id: graphen-punkt
+        text: Eine Gerade durch den Ursprung geht durch den Punkt (4 | 6). Dann liegt auch der Punkt (10 | 14) auf dieser Gerade.
+        answer: false
+        explanation: "Der Faktor ist k = 6 : 4 = 1,5. Bei x = 10 ist y = 1,5 · 10 = 15. Der Punkt (10 | 15) liegt auf der Gerade, (10 | 14) knapp darunter."
+        links:
+          - title: Direkte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/1771/direkte-proportionalitaet
+      - type: text
+        text: Damit kennst du die Zuordnungen dieses Kapitels. Als Nächstes kommt die Prozentrechnung – auch dort rechnest du mit einem Faktor.

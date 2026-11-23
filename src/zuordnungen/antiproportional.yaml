@@ -1,0 +1,180 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Antiproportionale Zuordnungen
+description: "Antiproportionale Zuordnungen am gleichbleibenden Produkt x · y erkennen und von proportionalen unterscheiden."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann antiproportionale Zuordnungen erkennen und von proportionalen unterscheiden. Von der vorigen
+      Seite kennst du proportionale Zuordnungen: doppelt so viel x, doppelt so viel y.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: antiproportional-start
+        text: Eine Pizza ist in 12 gleiche Stücke geschnitten. Teilen sich 2 Personen die Pizza, bekommt jede 6 Stücke. Wie viele Stücke bekommt jede Person, wenn sich 4 Personen die Pizza teilen?
+        answer: 3
+        tolerance: 0
+        unit: Stücke
+        mistakes:
+          - answer: 12
+            message: "Du hast proportional gerechnet: doppelt so viele Personen, doppelt so viele Stücke. Es bleibt aber dieselbe Pizza."
+          - answer: 4
+            message: "Du hast 2 Stücke abgezogen, weil 2 Personen dazukommen. Verteile die 12 Stücke neu auf alle."
+        hint: Es sind immer 12 Stücke. Wie verteilst du sie auf 4 Personen?
+        explanation: "12 Stücke auf 4 Personen: 12 : 4 = 3 Stücke für jede Person."
+        links:
+          - title: Direkte und indirekte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/196516/direkte-und-indirekte-proportionalitaet
+  - type: section
+    id: regel
+    title: Doppelt so viele Personen, halb so viele Stücke
+    blocks:
+      - type: text
+        text: |
+          In der Aufgabe oben verdoppelt sich die Zahl der Personen von 2 auf 4. Dafür halbiert sich die Zahl der
+          Stücke je Person von 6 auf 3. Eine Zuordnung heißt **antiproportional**, wenn gilt: Nimmst du x mit einer
+          Zahl mal, wird y durch dieselbe Zahl geteilt.
+      - type: figure
+        image: images/zuordnungen-produkt.svg
+        alt: Eine Tabelle mit den Spalten Personen und Stücke je Person. 2 Personen bekommen je 6 Stücke, 4 Personen je 3 Stücke. Links ein oranger Pfeil „mal 2“, rechts ein oranger Pfeil „geteilt durch 2“.
+        caption: Links wird malgenommen, rechts durch dieselbe Zahl geteilt.
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: table
+        caption: Die Pizza, auf verschiedene Personen verteilt
+        header: [Personen x, Stücke je Person y, x · y]
+        rows:
+          - ["1", "12", "12"]
+          - ["2", "6", "12"]
+          - ["3", "4", "12"]
+          - ["4", "3", "12"]
+      - type: text
+        text: |
+          Das **Produkt** x · y, das Ergebnis der Malaufgabe, bleibt immer gleich: 12 Stücke, die ganze Pizza.
+          Daran erkennst du eine antiproportionale Zuordnung. Kennst du ein Wertepaar, rechnest du zuerst das
+          Produkt aus und teilst es dann durch das neue x.
+      - type: formula
+        formula: 'x \cdot y = 12 \qquad y = \frac{12}{x}'
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Pumpen leeren ein Becken
+        blocks:
+          - type: text
+            text: |
+              2 gleiche Pumpen leeren ein Becken in 6 Stunden. Wie lange brauchen 3 Pumpen? Von 2 auf 3 ist kein
+              ganzer Faktor. Darum gehst du über das Produkt: Eine Pumpe allein bräuchte 2 · 6 = 12 Stunden.
+          - type: formula
+            formula: '2 \cdot 6 = 12 \qquad y = 12 : 3 = 4'
+          - type: text
+            text: Antwort – 3 Pumpen brauchen 4 Stunden, nicht 9 Stunden, wie man mit proportionalem Rechnen bekäme.
+  - type: section
+    id: merke
+    title: Je mehr, desto weniger – das reicht nicht
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              Eine Kerze ist 20 cm hoch und brennt jede Stunde 2 cm ab: nach 1 Stunde 18 cm, nach 2 Stunden 16 cm.
+              Je länger sie brennt, desto kürzer ist sie. Aber 1 · 18 = 18 und 2 · 16 = 32: Das Produkt ändert sich.
+              Die Zuordnung ist also nicht antiproportional. Prüfe immer, ob x · y gleich bleibt.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: true-false
+        id: antiproportional-geld
+        text: Du hast 20 €. Je mehr du ausgibst, desto weniger bleibt übrig. Also ist die Zuordnung ausgegebenes Geld → Rest antiproportional.
+        answer: false
+        explanation: "Gibst du 5 € aus, bleiben 15 €. Gibst du 10 € aus, bleiben 10 €. Die Produkte 5 · 15 = 75 und 10 · 10 = 100 sind verschieden."
+        links:
+          - title: Direkte und indirekte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/196516/direkte-und-indirekte-proportionalitaet
+      - type: single-choice
+        id: antiproportional-tabelle
+        text: Welche Tabelle gehört zu einer antiproportionalen Zuordnung?
+        options:
+          - text: "2 → 12, 3 → 8, 4 → 6"
+            correct: true
+            info: "In jeder Zeile ist x · y = 24. Das Produkt bleibt gleich."
+          - text: "2 → 12, 3 → 11, 4 → 10"
+            correct: false
+            info: "y wird kleiner, aber die Produkte sind 24, 33 und 40. Sie sind verschieden."
+          - text: "2 → 12, 4 → 6, 6 → 3"
+            correct: false
+            info: "Die ersten zwei Zeilen passen, die letzte nicht: 6 · 3 = 18 statt 24. Prüfe immer alle Zeilen."
+          - text: "2 → 4, 3 → 6, 4 → 8"
+            correct: false
+            info: "Hier ist der Quotient y : x immer 2. Die Zuordnung ist proportional."
+        explanation: Antiproportional ist eine Tabelle nur, wenn das Produkt x · y in allen Zeilen gleich ist.
+        links:
+          - title: Direkte und indirekte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/196516/direkte-und-indirekte-proportionalitaet
+      - type: matching
+        id: antiproportional-zuordnen
+        text: Ordne jeder Zuordnung zu, welche Art sie ist.
+        pairs:
+          - left: Anzahl Personen → Betrag je Person, wenn alle zusammen ein Geschenk für 60 € kaufen
+            right: antiproportional
+          - left: Anzahl Kugeln Eis → Preis, jede Kugel kostet 1,50 €
+            right: proportional
+          - left: gefahrene Strecke → Benzin, das noch im Tank ist
+            right: weder proportional noch antiproportional
+        explanation: "Beim Geschenk ist Personen · Betrag immer 60 €. Beim Eis ist Preis : Kugeln immer 1,50 €. Beim Tank nimmt das Benzin ab, aber weder Produkt noch Quotient bleiben gleich."
+        links:
+          - title: Direkte und indirekte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/196516/direkte-und-indirekte-proportionalitaet
+      - type: generated
+        id: antiproportional-helfer
+        given:
+          a: { int: [2, 8] }
+          b: { int: [2, 12] }
+          c: { int: [2, 12] }
+        where:
+          - "c != a"
+          - "decimals(a * b / c) == 0"
+          - "decimals(b * c / a) <= 2"
+          - "b + a - c != a * b / c"
+        task:
+          text: "{{a}} Personen bauen eine Bühne in {{b}} Stunden auf. Alle arbeiten gleich schnell. Wie viele Stunden brauchen {{c}} Personen?"
+        answer: { value: "a * b / c", compare: { number: { format: integer, unit: Stunden } } }
+        mistakes:
+          - value: "b * c / a"
+            message: "Du hast proportional gerechnet. Mehr Personen brauchen aber weniger Zeit, nicht mehr."
+          - value: "b + a - c"
+            message: "Du hast den Unterschied der Personen abgezogen oder addiert. Rechne über das Produkt Personen · Stunden."
+        hint: Wie lange bräuchte eine Person allein?
+        steps:
+          - "Mit {{a}} Personen und {{b}} Stunden: Eine Person allein bräuchte {{a}} · {{b}} Stunden."
+          - "{{c}} Personen teilen sich die Arbeit: {{a}} · {{b}} : {{c}} = {{answer}} Stunden."
+      - type: generated
+        id: antiproportional-vorrat
+        given:
+          a: { int: [4, 12] }
+          b: { int: [5, 20] }
+          d: { int: [1, 10] }
+          e: { int: [1, 6] }
+        where:
+          - "d < b"
+          - "e < a"
+          - "decimals(a * (b - d) / (a - e)) == 0"
+          - "decimals(a * b / (a - e)) <= 2"
+        task:
+          text: "Die Vorräte eines Zeltlagers reichen für {{a}} Personen genau {{b}} Tage. Nach {{d}} Tagen fahren {{e}} Personen nach Hause. Wie viele Tage reichen die Vorräte jetzt noch für die übrigen Personen?"
+        answer: { value: "a * (b - d) / (a - e)", compare: { number: { format: integer, unit: Tage } } }
+        mistakes:
+          - value: "a * b / (a - e)"
+            message: "Du hast vergessen, dass in den ersten {{d}} Tagen schon Vorräte gegessen wurden."
+          - value: "b - d"
+            message: "So lange reichen die Vorräte für alle {{a}} Personen. Es essen aber weniger Personen mit, also reichen sie länger."
+        hint: "Rechne in Personentagen: Ein Personentag ist das Essen für eine Person an einem Tag. Wie viele sind nach {{d}} Tagen noch übrig?"
+        steps:
+          - "Am Anfang: {{a}} · {{b}} Personentage. Nach {{d}} Tagen bleiben {{a}} · ({{b}} − {{d}}) Personentage."
+          - "Jetzt essen nur noch {{a}} − {{e}} Personen. Rest geteilt durch diese Zahl: {{answer}} Tage."
+      - type: text
+        text: Als Nächstes siehst du, wie proportionale und antiproportionale Zuordnungen im Koordinatensystem aussehen.

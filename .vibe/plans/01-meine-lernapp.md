@@ -577,7 +577,7 @@ page, which a link. -->
       change: change the pattern first.
       Creator: ja
 - [x] Startseite: Wettbewerb in drei Sätzen (8 Pflicht-, 2 von 4 Wahlaufgaben, ohne Taschenrechner), Vorgehen für jede Aufgabe, Link zur Selbsteinschätzung
-- [ ] Kapitel zuordnungen: 4 Seiten (tabelle-koordinaten, proportional, antiproportional, graphen) mit SVG-Koordinatensystemen, Selbsteinschätzung
+- [x] Kapitel zuordnungen: 4 Seiten (tabelle-koordinaten, proportional, antiproportional, graphen) mit SVG-Koordinatensystemen, Selbsteinschätzung
 - [ ] Kapitel prozent: 3 Seiten (prozentwert, prozentsatz-grundwert, sachaufgaben) mit Hunderterfeld, generated mit Fehlerdiagnose, Selbsteinschätzung
 - [ ] Kapitel flaechen, übrige 5 Seiten (quadrat-rechteck, parallelogramm-trapez, quader-wuerfel, netz-oberflaeche, formeln-umstellen) nach der Musterseite, Abschnitt Einheiten, Selbsteinschätzung
 - [ ] Kapitel terme: 4 Seiten (aufstellen, werte-berechnen, zusammenfassen, produkte), Terme als Auswahl, Selbsteinschätzung

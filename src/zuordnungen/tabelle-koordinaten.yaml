@@ -1,0 +1,196 @@
+# yaml-language-server: $schema=../../node_modules/@lernapps/app-templates/runtime/explainer/explainer.v2.schema.json
+title: Tabelle und Koordinatensystem
+description: "Eine Zuordnung als Tabelle schreiben, Wertepaare als Punkte ins Koordinatensystem eintragen und Koordinaten ablesen."
+blocks:
+  - type: text
+    text: |
+      **Ziel:** Ich kann eine Zuordnung als Tabelle schreiben, Punkte ins Koordinatensystem eintragen und ihre
+      Koordinaten ablesen. Du brauchst dafür nur Mal- und Plusrechnen im Kopf.
+  - type: section
+    id: start
+    title: Probier zuerst
+    blocks:
+      - type: number
+        id: tabelle-koordinaten-start
+        text: Ein Heft kostet 2 €. Lea schreibt die Preise in eine Tabelle. Wie viel kosten 7 Hefte?
+        material:
+          - type: table
+            caption: Leas Tabelle
+            header: [Anzahl Hefte, Preis in €]
+            rows:
+              - ["1", "2"]
+              - ["2", "4"]
+              - ["4", "8"]
+        answer: 14
+        tolerance: 0
+        unit: €
+        mistakes:
+          - answer: 11
+            message: "Du hast zu den 8 € einfach 3 € dazugezählt, weil 3 Hefte dazukommen. Jedes Heft kostet aber 2 €."
+          - answer: 9
+            message: "Du hast 7 + 2 gerechnet. Jedes der 7 Hefte kostet 2 €: Nimm mal, nicht plus."
+        hint: Wie viel kostet ein Heft, und wie viele Hefte kauft Lea?
+        explanation: "Ein Heft kostet 2 €, also kosten 7 Hefte 7 · 2 € = 14 €."
+        links:
+          - title: Direkte Proportionalität (Serlo)
+            url: https://de.serlo.org/mathe/1771/direkte-proportionalitaet
+  - type: section
+    id: regel
+    title: Vom Wertepaar zum Punkt
+    blocks:
+      - type: text
+        text: |
+          In Leas Tabelle gehört zu jeder Anzahl Hefte genau ein Preis. So eine Vorschrift heißt **Zuordnung**:
+          Anzahl Hefte → Preis. Jede Zeile der Tabelle ist ein **Wertepaar**, zum Beispiel 3 Hefte und 6 €.
+      - type: text
+        text: |
+          Ein Wertepaar trägst du als Punkt in ein **Koordinatensystem** ein. Es hat zwei Zahlenstrahlen, die sich im
+          **Ursprung** treffen, dem Punkt (0 | 0): die waagrechte **x-Achse** und die senkrechte **y-Achse**. An jede
+          Achse schreibst du, was sie zeigt, und die Einheit.
+      - type: figure
+        image: images/zuordnungen-hefte-punkte.svg
+        alt: Ein Koordinatensystem, x-Achse Anzahl Hefte von 0 bis 6, y-Achse Preis in Euro von 0 bis 12 in Zweierschritten. Drei blaue Punkte und ein oranger Punkt P mit gestrichelten Hilfslinien zu beiden Achsen.
+        caption: "Der orange Punkt P steht für 3 Hefte und 6 €. Auf der y-Achse ist ein Kästchen 2 €."
+        source: eigene Zeichnung
+        licence: CC-BY-4.0
+      - type: formula
+        formula: 'P\,(3 \,|\, 6)'
+      - type: text
+        text: |
+          Die zwei Zahlen heißen **Koordinaten**. Zuerst kommt immer der x-Wert: so weit gehst du vom Ursprung nach
+          rechts. Dann der y-Wert: so weit gehst du nach oben. Ablesen geht rückwärts: vom Punkt senkrecht nach unten
+          zur x-Achse und waagrecht nach links zur y-Achse.
+  - type: section
+    id: beispiel
+    title: Ein Beispiel
+    blocks:
+      - type: example
+        title: Temperatur am Morgen
+        blocks:
+          - type: text
+            text: |
+              Ben misst jede zweite Stunde die Temperatur im Garten. Die Zuordnung ist Uhrzeit → Temperatur. Hier
+              gibt es keine Rechenregel – trotzdem gehört zu jeder Uhrzeit genau eine Temperatur.
+          - type: table
+            caption: Bens Messwerte
+            header: [Uhrzeit, Temperatur in °C]
+            rows:
+              - ["6 Uhr", "4"]
+              - ["8 Uhr", "7"]
+              - ["10 Uhr", "12"]
+          - type: text
+            text: |
+              Die Punkte sind (6 | 4), (8 | 7) und (10 | 12). Zeichnest du sie ein und ist auf der y-Achse ein Kästchen 2 °C, liegt 7 °C
+              zwischen zwei Linien: ein halbes Kästchen über 6 °C. Lies deshalb immer zuerst ab, wofür ein Kästchen
+              steht.
+  - type: section
+    id: merke
+    title: Erst x, dann y
+    blocks:
+      - type: note
+        title: Merke
+        blocks:
+          - type: text
+            text: |
+              (2 | 5) und (5 | 2) sind zwei verschiedene Punkte. Die Reihenfolge ist immer gleich: erst nach rechts,
+              dann nach oben – x kommt im Alphabet vor y.
+  - type: section
+    id: uebung
+    title: Jetzt du
+    blocks:
+      - type: single-choice
+        id: tabelle-koordinaten-welcher
+        text: Welcher Punkt hat die Koordinaten (2 | 5)?
+        material:
+          - type: figure
+            image: images/zuordnungen-punkte-ablesen.svg
+            alt: Ein Koordinatensystem mit x-Achse von 0 bis 8 und y-Achse von 0 bis 7, darin die Punkte A, B, C und D.
+            caption: Ein Kästchen ist eine Einheit.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        options:
+          - text: Punkt A
+            correct: false
+            info: "A hat die Koordinaten (5 | 2): 5 nach rechts, 2 nach oben. Du hast x und y vertauscht."
+          - text: Punkt B
+            correct: true
+            info: "B liegt 2 Kästchen rechts vom Ursprung und 5 Kästchen darüber."
+          - text: Punkt C
+            correct: false
+            info: "C hat die Koordinaten (3 | 6). Zähle die Kästchen vom Ursprung aus, die 0 ist kein Schritt."
+        explanation: "Bei (2 | 5) gehst du vom Ursprung 2 nach rechts und dann 5 nach oben. Dort liegt B."
+        links:
+          - title: Kartesisches Koordinatensystem (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Kartesisches_Koordinatensystem
+      - type: number
+        id: tabelle-koordinaten-ablesen
+        text: Lies im selben Koordinatensystem den Punkt D ab. Welche x-Koordinate hat D?
+        material:
+          - type: figure
+            image: images/zuordnungen-punkte-ablesen.svg
+            alt: Ein Koordinatensystem mit x-Achse von 0 bis 8 und y-Achse von 0 bis 7, darin die Punkte A, B, C und D.
+            caption: Ein Kästchen ist eine Einheit.
+            source: eigene Zeichnung
+            licence: CC-BY-4.0
+        answer: 6
+        tolerance: 0
+        mistakes:
+          - answer: 1
+            message: "Das ist die y-Koordinate, die Höhe über der x-Achse. Die x-Koordinate liest du unten auf der x-Achse ab."
+          - answer: 7
+            message: "Du hast eins zu viel gezählt. Beginne beim Ursprung mit 0."
+        hint: Gehe vom Punkt D senkrecht nach unten bis zur x-Achse.
+        explanation: "D liegt 6 Kästchen rechts vom Ursprung und 1 Kästchen hoch: D (6 | 1). Die x-Koordinate ist 6."
+        links:
+          - title: Kartesisches Koordinatensystem (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Kartesisches_Koordinatensystem
+      - type: true-false
+        id: tabelle-koordinaten-achse
+        text: Die Punkte (3 | 0) und (0 | 3) liegen beide auf der x-Achse.
+        answer: false
+        explanation: "Bei (3 | 0) ist der y-Wert 0: Der Punkt liegt auf der x-Achse. Bei (0 | 3) ist der x-Wert 0: Er liegt auf der y-Achse, 3 über dem Ursprung."
+        links:
+          - title: Kartesisches Koordinatensystem (Wikipedia)
+            url: https://de.wikipedia.org/wiki/Kartesisches_Koordinatensystem
+      - type: generated
+        id: tabelle-koordinaten-taxi
+        given:
+          g: { int: [3, 6] }
+          k: { oneOf: [1.5, 2, 2.5, 3] }
+          x: { int: [2, 12] }
+        task:
+          text: "Eine Taxifahrt kostet {{g}} € Grundgebühr und dazu {{k}} € für jeden Kilometer. Tom schreibt eine Tabelle Strecke in km → Preis in €. Welcher Preis steht in der Zeile für {{x}} km?"
+        answer: { value: "g + k * x", compare: { number: { format: money } } }
+        mistakes:
+          - value: "k * x"
+            message: "Du hast die Grundgebühr vergessen. Sie kommt bei jeder Fahrt einmal dazu."
+          - value: "(g + k) * x"
+            message: "Du hast die Grundgebühr für jeden Kilometer gezählt. Sie wird nur einmal bezahlt."
+        hint: Rechne erst den Preis für die Kilometer aus. Was kommt dann noch dazu?
+        steps:
+          - "Kilometer: {{x}} · {{k}} €. Dazu einmal die Grundgebühr von {{g}} €."
+          - "In der Zeile für {{x}} km steht {{answer}} €."
+      - type: generated
+        id: tabelle-koordinaten-rechteck
+        given:
+          a: { int: [0, 4] }
+          b: { int: [0, 3] }
+          c: { int: [5, 10] }
+          d: { int: [4, 9] }
+        where:
+          - "a + b > 0"
+          - "(c - a) * (d - b) != 2 * (c - a + d - b)"
+        task:
+          text: "Die Punkte A ({{a}} | {{b}}), B ({{c}} | {{b}}), C ({{c}} | {{d}}) und D ({{a}} | {{d}}) sind die Ecken eines Rechtecks. Eine Einheit im Koordinatensystem ist 1 cm. Wie groß ist der Flächeninhalt des Rechtecks?"
+        answer: { value: "(c - a) * (d - b)", compare: { number: { format: integer, unit: cm² } } }
+        mistakes:
+          - value: "c * d"
+            message: "Du hast vom Ursprung aus gerechnet. Das Rechteck beginnt aber bei A, nicht bei (0 | 0)."
+          - value: "2 * (c - a + d - b)"
+            message: "Das ist der Umfang. Für den Flächeninhalt nimmst du Länge mal Breite."
+        hint: Skizziere die vier Punkte. Wie lang ist die Seite von A nach B, wie lang die von B nach C?
+        steps:
+          - "A und B haben dieselbe y-Koordinate: Die Seite AB geht von x = {{a}} bis x = {{c}}. B und C haben dieselbe x-Koordinate: Die Seite BC geht von y = {{b}} bis y = {{d}}."
+          - "Flächeninhalt = AB · BC = {{answer}} cm²."
+      - type: text
+        text: Als Nächstes untersuchst du Zuordnungen wie Hefte → Preis genauer und lernst, wann sie proportional sind.
