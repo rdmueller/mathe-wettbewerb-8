@@ -131,7 +131,7 @@ blocks:
             message: "Du hast Falten und Drehen verwechselt: achsensymmetrisch heißt falten, punktsymmetrisch halb drehen."
         hint: Mach beide Tests – falten und halb drehen.
         steps:
-          - "Falten und halb drehen beim {{e.zeichen}}: Er hat {{e.achsen}} Symmetrieachse(n)."
+          - "Falten beim {{e.zeichen}} – Anzahl der Symmetrieachsen: {{e.achsen}}."
           - "Zusammen mit dem Drehtest: Der Buchstabe {{e.zeichen}} ist {{answer}}."
       - type: generated
         id: symmetrie-erkennen-achsen
@@ -147,7 +147,7 @@ blocks:
         hint: Falte gedanklich in alle Richtungen.
         steps:
           - "Beim {{e.zeichen}} passt die waagerechte Faltlinie durch die Mitte."
-          - "Mit allen Richtungen geprüft: {{e.zeichen}} hat {{answer}} Symmetrieachse(n)."
+          - "Mit allen Richtungen geprüft – Anzahl der Symmetrieachsen beim {{e.zeichen}}: {{answer}}."
       - type: matching
         id: symmetrie-erkennen-vierecke
         text: Welche Symmetrie hat welches Viereck?

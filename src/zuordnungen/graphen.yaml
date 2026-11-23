@@ -5,7 +5,7 @@ blocks:
   - type: text
     text: |
       **Ziel:** Ich kann am Graphen erkennen, ob eine Zuordnung proportional oder antiproportional ist. Du brauchst
-      das Koordinatensystem von der ersten Seite und die zwei Tests mit y : x und x · y.
+      das Koordinatensystem von der Seite [Tabelle und Koordinatensystem](/zuordnungen/tabelle-koordinaten/) und die zwei Tests mit y : x und x · y.
   - type: section
     id: start
     title: Probier zuerst
@@ -187,4 +187,4 @@ blocks:
           - title: Direkte Proportionalität (Serlo)
             url: https://de.serlo.org/mathe/1771/direkte-proportionalitaet
       - type: text
-        text: Damit kennst du die Zuordnungen dieses Kapitels. Als Nächstes kommt die Prozentrechnung – auch dort rechnest du mit einem Faktor.
+        text: Damit kennst du die Zuordnungen dieses Kapitels. Als Nächstes kommt die Prozentrechnung – dort rechnest du wie bei proportionalen Zuordnungen erst auf 1 % und dann auf das, was gefragt ist.

@@ -67,7 +67,7 @@ blocks:
         blocks:
           - type: text
             text: |
-              Ein Taxi kostet 4 € Grundpreis und 2 € für jeden Kilometer. Für $x$ Kilometer zahlst du $4 + 2x$ Euro.
+              Ein Taxi kostet 4 € Grundgebühr und 2 € für jeden Kilometer. Für $x$ Kilometer zahlst du $4 + 2x$ Euro.
               Die Wertetabelle zeigt drei Fahrten.
           - type: table
             caption: Preis für x Kilometer
@@ -78,7 +78,7 @@ blocks:
               - ["15", "4 + 2 · 15", "34"]
           - type: text
             text: |
-              Der Haken – 10 km kosten nicht doppelt so viel wie 5 km, denn der Grundpreis kommt nur einmal dazu.
+              Der Haken – 10 km kosten nicht doppelt so viel wie 5 km, denn die Grundgebühr kommt nur einmal dazu.
               Antwort – Die Fahrten kosten 14 €, 24 € und 34 €.
   - type: section
     id: merke

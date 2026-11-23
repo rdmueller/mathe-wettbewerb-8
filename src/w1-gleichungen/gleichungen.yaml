@@ -141,6 +141,7 @@ blocks:
           b: { int: [1, 15] }
           d: { int: [1, 30] }
         where:
+          - "c != 1"
           - "a - c == 2 or a - c == 4 or a - c == 5"
           - "decimals((d - b) / (a - c)) == 0"
           - "d != b"
@@ -165,6 +166,7 @@ blocks:
           d: { int: [1, 30] }
         where:
           - "p > q"
+          - "p != 1 and q != 1"
           - "p - q != 1"
           - "decimals((d - b) / (p - q)) == 0"
           - "decimals((d + b) / (p - q)) <= 2"

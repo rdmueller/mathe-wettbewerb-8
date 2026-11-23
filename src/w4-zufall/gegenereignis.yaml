@@ -170,7 +170,7 @@ blocks:
           g: { int: [1, 9] }
         where: ["g < n", "2 * g != n"]
         task:
-          text: "Ein Glücksrad hat {{n}} gleich große Felder, {{g}} davon gewinnen. Du drehst zweimal. Wie wahrscheinlich ist mindestens ein Gewinn? Gib die Antwort in Prozent an, sie geht auf."
+          text: "Ein Glücksrad hat {{n}} gleich große Felder. Gewinnfelder: {{g}}, die übrigen sind Nieten. Du drehst zweimal. Wie wahrscheinlich ist mindestens ein Gewinn? Gib die Antwort in Prozent an, sie geht auf."
         answer:
           { value: "100 - 100 * (n - g) * (n - g) / (n * n)", compare: { number: { format: percent, decimals: 2 } } }
         mistakes:

@@ -35,7 +35,8 @@ blocks:
     blocks:
       - type: text
         text: |
-          Die **Grundmenge** G sagt, welche Zahlen du einsetzen darfst. Im Wettbewerb ist sie oft $G = ℤ$, die
+          Die **Grundmenge** G (nicht zu verwechseln mit dem Grundwert G der Prozentrechnung) sagt, welche Zahlen
+          du einsetzen darfst. Im Wettbewerb ist sie oft $G = ℤ$, die
           ganzen Zahlen. Die **Lösungsmenge** L enthält alle Zahlen aus der Grundmenge, die die Gleichung oder
           Ungleichung erfüllen. Du schreibst sie in geschweifte Klammern und trennst die Zahlen mit Semikolon, zum
           Beispiel $L = \{4; 5\}$.
@@ -193,4 +194,4 @@ blocks:
         text: |
           Damit hast du das Kapitel zur Wahlaufgabe W1 geschafft: Du löst Gleichungen und Ungleichungen und gibst die
           Lösungsmenge richtig an. Im nächsten Kapitel geht es um die
-          [Wahlaufgabe W3: Prozent-Sachaufgaben mit mehreren Schritten](/w3-prozent/zu-abnahme/).
+          [Wahlaufgabe W3: Prozent in mehreren Schritten](/w3-prozent/zu-abnahme/).

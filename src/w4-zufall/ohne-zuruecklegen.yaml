@@ -79,9 +79,10 @@ blocks:
           - type: text
             text: |
               In einer Lostrommel sind 10 Lose, 2 davon Gewinne. Du ziehst nacheinander zwei Lose. Wie
-              wahrscheinlich sind zwei Gewinne? Nach dem ersten Gewinn sind noch 9 Lose da, aber nur 1 Gewinn.
+              wahrscheinlich sind zwei Gewinne? Nach dem ersten Gewinn sind noch 9 Lose da, aber nur 1 Gewinn. TT
+              heißt: zweimal ein Treffer (Gewinnlos).
           - type: formula
-            formula: 'P(GG) = \frac{2}{10} \cdot \frac{1}{9} = \frac{2}{90} = \frac{1}{45}'
+            formula: 'P(TT) = \frac{2}{10} \cdot \frac{1}{9} = \frac{2}{90} = \frac{1}{45}'
           - type: text
             text: |
               Antwort – Die Wahrscheinlichkeit ist 1/45. Der Haken: Mit 2/10 · 2/10 = 1/25 wäre sie fast doppelt

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="260" viewBox="0 0 320 260" font-family="sans-serif" font-size="13">
-  <title>Koordinatensystem mit der x-Achse Anzahl Hefte und der y-Achse Preis in Euro. Drei blaue Punkte und ein oranger Punkt P bei 3 Heften und 6 Euro, mit gestrichelten Hilfslinien zu den Achsen</title>
+  <title>Koordinatensystem mit der x-Achse Anzahl Hefte und der y-Achse Preis in Euro. Drei blaue Punkte und ein oranger Punkt Q bei 3 Heften und 6 Euro, mit gestrichelten Hilfslinien zu den Achsen</title>
   <rect width="320" height="260" fill="#ffffff"/>
   <g stroke="#e5e7eb" stroke-width="1">
     <line x1="100" y1="70" x2="100" y2="220"/><line x1="140" y1="70" x2="140" y2="220"/><line x1="180" y1="70" x2="180" y2="220"/>
@@ -27,5 +27,5 @@
   <circle cx="140" cy="170" r="5" fill="#2563eb"/>
   <circle cx="220" cy="120" r="5" fill="#2563eb"/>
   <circle cx="180" cy="145" r="6" fill="#ea580c"/>
-  <text x="188" y="138" fill="#9a3412" font-weight="bold">P</text>
+  <text x="188" y="138" fill="#9a3412" font-weight="bold">Q</text>
 </svg>

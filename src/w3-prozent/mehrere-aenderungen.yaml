@@ -92,7 +92,7 @@ blocks:
     blocks:
       - type: single-choice
         id: mehrere-aenderungen-rechnung
-        text: Ein Preis G steigt erst um 10 % und sinkt dann um 30 %. Mit welcher Rechnung bekommst du den neuen Preis?
+        text: Ein Preis (Grundwert G) steigt erst um 10 % und sinkt dann um 30 %. Mit welcher Rechnung bekommst du den neuen Preis?
         options:
           - text: "G · 0,8"
             correct: false
@@ -199,4 +199,4 @@ blocks:
         text: |
           Damit hast du das Kapitel zur Wahlaufgabe W3 geschafft: Du rechnest mit Faktoren vorwärts und rückwärts,
           vergleichst in Prozent und unterscheidest Prozent von Prozentpunkten. Im nächsten Kapitel geht es um die
-          [Wahlaufgabe W4: zweistufige Zufallsversuche](/w4-zufall/ohne-zuruecklegen/).
+          [Wahlaufgabe W4: Zweistufige Zufallsversuche](/w4-zufall/ohne-zuruecklegen/).

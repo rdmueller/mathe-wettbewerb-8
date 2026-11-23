@@ -5,7 +5,8 @@ blocks:
   - type: text
     text: |
       **Ziel:** Ich kann den Ergebnisraum aufschreiben und die Laplace-Wahrscheinlichkeit berechnen. Du brauchst
-      dafür nur Brüche und das Kürzen – mehr dazu im Kapitel [Bruchrechnung](/brueche/plus-minus/) weiter hinten.
+      dafür nur Brüche und das Kürzen – das kennst du aus Klasse 6; zum Wiederholen: Kapitel
+      [Bruchrechnung](/brueche/plus-minus/).
   - type: section
     id: start
     title: Probier zuerst
@@ -47,7 +48,8 @@ blocks:
         text: |
           Jede Seite des Würfels fällt gleich oft, wenn du sehr oft würfelst. Ist das bei allen Ergebnissen so,
           heißt der Versuch **Laplace-Versuch**. Dann ist die Wahrscheinlichkeit $P(E)$ der Anteil der günstigen an
-          allen Ergebnissen – in der Aufgabe oben 2 von 6:
+          allen Ergebnissen – in der Aufgabe oben 2 von 6. P steht hier für Wahrscheinlichkeit (englisch
+          probability), nicht für den Prozentwert aus dem Kapitel Prozentrechnung.
       - type: formula
         formula: 'P(E) = \frac{\text{günstige}}{\text{alle}}'
       - type: formula
@@ -171,7 +173,7 @@ blocks:
             message: "Der Bruch ist gekürzt. Eigentlich stehen im Nenner alle {{n}} Kugeln."
           - value: "n - z * n / d"
             message: Das sind die blauen Kugeln.
-        hint: "Erweitere den Bruch so, dass im Nenner {{n}} steht."
+        hint: "Erweitere den Bruch so, dass im Nenner {{n}} steht: Zähler und Nenner mit derselben Zahl malnehmen (kennst du aus Klasse 6)."
         steps:
           - "P(rot) = rote Kugeln : {{n}} Kugeln."
           - "Erweitere $\\frac{ {{z}} }{ {{d}} }$ auf den Nenner {{n}}: Zähler {{answer}}."

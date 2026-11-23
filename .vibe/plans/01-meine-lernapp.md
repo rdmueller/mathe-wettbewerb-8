@@ -4,7 +4,7 @@
 # Archetype, null until chosen in Explore. Allowed values: explainer, interactive, quiz.
 archetype: explainer
 # Current phase. Allowed values: explore, plan, code, commit.
-phase: code
+phase: commit
 # prePushFailures: failed pre-push runs, written by the hook.
 prePushFailures: 0
 # failedChecks: failed rules and runs, written by lernapps check and the hooks.
@@ -310,6 +310,20 @@ verlinken auf das Kapitel `brueche`. (guess)
 - **Keine Daten von Lernenden:** die Checkliste der Erstellerin/des Erstellers bleibt lokal, nur die abgeleiteten
   Kompetenzen kommen in die App.
 
+### Prüfungen in Code (was behoben wurde)
+
+- Lernenden-Test der Musterseite: Begriffe erklärt (stumpf, Umfang, senkrecht), Höhen-Aufgabe mit schräger Seite
+  (Lösung war ablesbar), verratender Tipp entfernt, Aufgabe auf Wettbewerbsniveau ergänzt.
+- Antwortpositionen: Laufzeit mischt nicht; 28 Fragen umsortiert (vorher 47/14/6/4, nachher 19/19/20/13), alle
+  `generated`-Auswahlen rotieren per r.
+- Durchsicht aller Seiten (360 px, 1280 px): Pizza-Bild verriet 3/4 (jetzt in Achteln), Markdown-Sternchen in zwei
+  Aufgabentexten.
+- Gesamt-Lernenden-Test (270 Aufgaben, alle Links): Vorgriffe auf Bruchrechnung/Gleichungen als Wiederholung aus
+  Klasse 5–7 formuliert, P = Wahrscheinlichkeit erklärt, Gewinn heißt T/N statt G, Punkt Q statt P, Grundmenge vs.
+  Grundwert, Wahrscheinlichkeit auch in Prozent erklärt, „Grundgebühr“ einheitlich, Kapitelnamen in Schlusssätzen,
+  Grammatik in generierten Aufgaben (1 Personen, 1x, Symmetrieachse(n), „mit die Seite“). Nicht behoben: Zahlen in
+  Auswahloptionen zeigt die Laufzeit mit Bindestrich-Minus („-30“).
+
 ### Quellen (alle selbst geöffnet; Fakten übernommen, keine Sätze)
 
 serlo.org (CC BY-SA 4.0), Wikipedia (CC BY-SA 4.0), je „verified“:
@@ -595,7 +609,7 @@ page, which a link. -->
 - [x] Run `npx --no -- lernapps check` until it passes.
 - [x] Look at every screen and state, at 360 px and on a desktop, as "Look at the app" of skill `lernapps-cli` says.
       Compare each with its sketch.
-- [ ] Do the whole-app check of skill `lernapps-learner-check`. Fix what it finds and write under "Notes" what you
+- [x] Do the whole-app check of skill `lernapps-learner-check`. Fix what it finds and write under "Notes" what you
       fixed.
 
 ## Commit

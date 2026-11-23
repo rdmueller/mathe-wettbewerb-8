@@ -5,7 +5,7 @@ blocks:
   - type: text
     text: |
       **Ziel:** Ich kann das Volumen von Quader und Würfel berechnen. Du baust auf der Rechteckfläche
-      $A = a \cdot b$ von der [ersten Seite](/flaechen/quadrat-rechteck/) auf – jetzt kommt die Höhe dazu.
+      $A = a \cdot b$ von der Seite [Quadrat und Rechteck](/flaechen/quadrat-rechteck/) auf – jetzt kommt die Höhe dazu.
   - type: section
     id: start
     title: Probier zuerst

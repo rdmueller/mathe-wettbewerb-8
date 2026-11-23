@@ -95,12 +95,12 @@ blocks:
     blocks:
       - type: single-choice
         id: pfadregeln-rechnung
-        text: Ein Glücksrad mit 4 gleich großen Feldern (ein Gewinnfeld G, drei Nieten N) wird zweimal gedreht. Welche Rechnung gehört zum orangen Pfad?
+        text: Ein Glücksrad mit 4 gleich großen Feldern (ein Gewinnfeld T für Treffer, drei Nieten N) wird zweimal gedreht. Welche Rechnung gehört zum orangen Pfad?
         material:
           - type: figure
             image: images/wahrscheinlichkeit-baum-gluecksrad.svg
-            alt: "Ein Baumdiagramm mit zwei Stufen G und N. An jedem Ast G steht 1/4, an jedem Ast N steht 3/4. Der Pfad zuerst G, dann N ist orange."
-            caption: Der orange Pfad führt zuerst zu G, dann zu N.
+            alt: "Ein Baumdiagramm mit zwei Stufen T und N. An jedem Ast T steht 1/4, an jedem Ast N steht 3/4. Der Pfad zuerst T, dann N ist orange."
+            caption: Der orange Pfad führt zuerst zu T, dann zu N.
             source: eigene Zeichnung
             licence: CC-BY-4.0
         options:
@@ -109,14 +109,14 @@ blocks:
             info: Das ergibt 1, also sicher. Entlang eines Pfades wird nicht addiert.
           - text: "1/4 · 1/4"
             correct: false
-            info: Das ist der Pfad GG.
+            info: Das ist der Pfad TT.
           - text: "3/4 · 3/4"
             correct: false
             info: Das ist der Pfad NN.
           - text: "1/4 · 3/4"
             correct: true
             info: Entlang des Pfades stehen 1/4 und 3/4, und sie werden multipliziert.
-        explanation: "P(GN) = 1/4 · 3/4 = 3/16."
+        explanation: "P(TN) = 1/4 · 3/4 = 3/16."
         links:
           - title: Pfadregeln (Serlo)
             url: https://de.serlo.org/mathe/189811/pfadregeln

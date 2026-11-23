@@ -130,7 +130,7 @@ blocks:
         hint: Skizziere die Planfigur. An welcher gegebenen Seite liegen die gegebenen Winkel?
         steps:
           - "{{e.lage}}"
-          - "Du beginnst mit {{answer}}."
+          - "Du zeichnest zuerst {{answer}}."
       - type: ordering
         id: konstruktion-schritte-sws
         text: "Konstruiere das Dreieck mit b = 5 cm, c = 6 cm und α = 50° (SWS). Bring die Schritte in die richtige Reihenfolge."

@@ -49,8 +49,8 @@ blocks:
         licence: CC-BY-4.0
       - type: text
         text: |
-          Mit der Formel geht es in einem Schritt. Du stellst G · p % = P um wie eine Gleichung: Teile beide Seiten
-          durch das, was beim Gesuchten steht.
+          Mit der Formel geht es in einem Schritt. Du stellst G · p % = P so um, wie du es aus Klasse 5 kennst: Das
+          Malnehmen machst du durch Teilen rückgängig, wie bei 3 · 4 = 12 und 12 : 4 = 3.
       - type: formula
         formula: 'G = P : p\,\% \qquad 6 : 0{,}2 = 30'
       - type: formula
@@ -70,9 +70,11 @@ blocks:
             text: |
               Ein Laden gibt 12,5 % Rabatt auf eine Jacke. Du sparst 15 €. Was kostete die Jacke vorher? Der Rabatt
               ist der Prozentwert P = 15 €, der alte Preis ist der Grundwert G. Durch 0,125 teilen ist im Kopf
-              schwer – aber 12,5 % ist ein Achtel.
+              schwer – aber 12,5 % ist ein Achtel. Ein Achtel des Preises sind 15 €, also ist der ganze Preis
+              8-mal so groß. (Das ist dasselbe wie 15 : 1/8 – durch einen Bruch teilen kennst du aus Klasse 6; zum
+              Wiederholen: [Brüche multiplizieren und dividieren](/brueche/mal-geteilt/).)
           - type: formula
-            formula: 'G = 15 : \frac{1}{8} = 15 \cdot 8 = 120'
+            formula: 'G = 15 \cdot 8 = 120'
           - type: text
             text: Antwort – Die Jacke kostete vorher 120 €. Probe – ein Achtel von 120 € sind 15 €.
   - type: section

@@ -49,12 +49,12 @@ blocks:
           Achse schreibst du, was sie zeigt, und die Einheit.
       - type: figure
         image: images/zuordnungen-hefte-punkte.svg
-        alt: Ein Koordinatensystem, x-Achse Anzahl Hefte von 0 bis 6, y-Achse Preis in Euro von 0 bis 12 in Zweierschritten. Drei blaue Punkte und ein oranger Punkt P mit gestrichelten Hilfslinien zu beiden Achsen.
-        caption: "Der orange Punkt P steht für 3 Hefte und 6 €. Auf der y-Achse ist ein Kästchen 2 €."
+        alt: Ein Koordinatensystem, x-Achse Anzahl Hefte von 0 bis 6, y-Achse Preis in Euro von 0 bis 12 in Zweierschritten. Drei blaue Punkte und ein oranger Punkt Q mit gestrichelten Hilfslinien zu beiden Achsen.
+        caption: "Der orange Punkt Q steht für 3 Hefte und 6 €. Auf der y-Achse ist ein Kästchen 2 €."
         source: eigene Zeichnung
         licence: CC-BY-4.0
       - type: formula
-        formula: 'P\,(3 \,|\, 6)'
+        formula: 'Q\,(3 \,|\, 6)'
       - type: text
         text: |
           Die zwei Zahlen heißen **Koordinaten**. Zuerst kommt immer der x-Wert: so weit gehst du vom Ursprung nach

@@ -46,7 +46,7 @@ blocks:
       - type: text
         text: |
           Die Klammer zeigt: Verdoppelt wird die ganze Summe. Ohne Klammer hieße $2 \cdot x + 4$ „erst verdoppeln,
-          dann 4 addieren“ – genau so kam oben die falsche 16 heraus. Den Malpunkt vor einer Variablen darfst du
+          dann 4 addieren“ – wer bei Lea so rechnet, bekommt die falsche 16. Den Malpunkt vor einer Variablen darfst du
           weglassen: $2 \cdot x = 2x$. Diese Wörter kommen in Aufgaben oft vor:
       - type: table
         caption: Wörter und Rechenzeichen
